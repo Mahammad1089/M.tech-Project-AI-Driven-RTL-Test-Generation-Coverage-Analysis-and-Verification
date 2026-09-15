@@ -1,0 +1,69 @@
+DAY 1 PROJECT SETUP STATUS
+====================================
+
+WSL2
+Status:
+
+Ubuntu
+Status:
+
+systemd
+Status:
+
+Git
+Status:
+
+Python
+Status:
+
+Python venv
+Status:
+
+Icarus Verilog
+Status:
+
+VVP
+Status:
+
+Verilator
+Status:
+
+Yosys
+Status:
+
+GTKWave
+Status:
+
+Verilog simulation
+Status:
+
+VCD generation
+Status:
+
+Yosys RTL processing
+Status:
+
+PyVerilog
+Status:
+
+AST generation
+Status:
+
+Python -> Icarus automation
+Status:
+
+Hermes Agent installation
+Status:
+
+Hermes provider/model
+Status:
+
+Hermes normal prompt
+Status:
+
+Hermes test reasoning
+Status:
+
+====================================
+DAY 1 FINAL STATUS:
+====================================

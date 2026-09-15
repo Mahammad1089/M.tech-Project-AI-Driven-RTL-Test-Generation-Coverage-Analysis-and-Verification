@@ -1,0 +1,21 @@
+{
+    "project": "AI-Driven RTL Test Generation, Coverage Analysis and Verification",
+
+    "rtl_language": "Verilog",
+
+    "agent": "Hermes Agent",
+
+    "rtl_parser": "PyVerilog",
+
+    "structural_tool": "Yosys",
+
+    "simulator": "Icarus Verilog",
+
+    "secondary_simulator": "Verilator",
+
+    "waveform_viewer": "GTKWave",
+
+    "target_coverage": 95,
+
+    "max_iterations": 5
+}
