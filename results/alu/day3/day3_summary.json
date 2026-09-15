@@ -1,0 +1,7 @@
+{
+    "day": 3,
+    "dut": "alu",
+    "rtl_language": "Verilog",
+    "verification_type": "directed_self_checking",
+    "status": "PASS"
+}
