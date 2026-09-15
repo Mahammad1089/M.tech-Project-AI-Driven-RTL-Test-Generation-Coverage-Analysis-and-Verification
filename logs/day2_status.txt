@@ -1,0 +1,62 @@
+DAY 2 - ALU RTL DEVELOPMENT
+====================================
+
+Project environment:
+PASS
+
+alu.v created:
+PASS / FAIL
+
+Icarus RTL compile:
+PASS / FAIL
+
+Verilator lint:
+PASS / FAIL
+
+Yosys RTL processing:
+PASS / FAIL
+
+Manual validation TB:
+PASS / FAIL
+
+ADD:
+PASS / FAIL
+
+SUB:
+PASS / FAIL
+
+AND:
+PASS / FAIL
+
+OR:
+PASS / FAIL
+
+XOR:
+PASS / FAIL
+
+NOT:
+PASS / FAIL
+
+SHIFT LEFT:
+PASS / FAIL
+
+SHIFT RIGHT:
+PASS / FAIL
+
+VCD generated:
+PASS / FAIL
+
+GTKWave checked:
+PASS / FAIL
+
+ALU specification created:
+PASS / FAIL
+
+Verification objectives created:
+PASS / FAIL
+
+====================================
+DAY 2 FINAL STATUS:
+PASS / FAIL
+====================================
+
