@@ -1,0 +1,46 @@
+{
+    "modules": [
+        {
+            "name": "alu",
+            "ports": [
+                {
+                    "name": "a",
+                    "direction": "input",
+                    "width": {
+                        "msb": 3,
+                        "lsb": 0,
+                        "bits": 4
+                    }
+                },
+                {
+                    "name": "b",
+                    "direction": "input",
+                    "width": {
+                        "msb": 3,
+                        "lsb": 0,
+                        "bits": 4
+                    }
+                },
+                {
+                    "name": "sel",
+                    "direction": "input",
+                    "width": {
+                        "msb": 2,
+                        "lsb": 0,
+                        "bits": 3
+                    }
+                },
+                {
+                    "name": "y",
+                    "direction": "output",
+                    "width": {
+                        "msb": 3,
+                        "lsb": 0,
+                        "bits": 4
+                    }
+                }
+            ],
+            "case_statements": 1
+        }
+    ]
+}

@@ -1,0 +1,11 @@
+{
+    "day": 5,
+    "dut": "alu",
+    "rtl_language": "Verilog",
+    "analysis_method": "PyVerilog AST",
+    "module_detected": true,
+    "port_count": 4,
+    "case_statement_count": 1,
+    "structure_json": "results/alu/day5/alu_structure.json",
+    "status": "PASS"
+}
