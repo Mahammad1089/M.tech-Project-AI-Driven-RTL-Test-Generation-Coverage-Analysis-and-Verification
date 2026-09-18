@@ -1,0 +1,12 @@
+{
+    "day": 7,
+    "dut": "alu",
+    "input": "results/alu/day6/alu_knowledge.json",
+    "output": "results/alu/day7/verification_objectives.json",
+    "functional_objectives": 8,
+    "corner_case_objectives": 21,
+    "total_objectives": 29,
+    "high_priority_objectives": 13,
+    "medium_priority_objectives": 16,
+    "status": "PASS"
+}
