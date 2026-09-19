@@ -1,0 +1,94 @@
+DAY 9 - HERMES INITIAL TEST SCENARIO GENERATION
+==================================================
+
+Day-8 summary:
+PASS / FAIL
+
+Hermes health:
+PASS / FAIL
+
+Hermes interface:
+PASS / FAIL
+
+Day-6 knowledge:
+PASS / FAIL
+
+Day-7 objectives:
+PASS / FAIL
+
+Day-7 traceability:
+PASS / FAIL
+
+Day-9 directories:
+PASS / FAIL
+
+day9_prompt_builder.py:
+PASS / FAIL
+
+Day-9 prompt generated:
+PASS / FAIL
+
+RTL knowledge included:
+PASS / FAIL
+
+Verification objectives included:
+PASS / FAIL
+
+No Verilog requested from Hermes:
+PASS / FAIL
+
+Manual Hermes generation:
+PASS / FAIL
+
+Raw Hermes response saved:
+PASS / FAIL
+
+Hermes interface result:
+PASS / FAIL
+
+scenario_extractor.py:
+PASS / FAIL
+
+candidate_tests.json:
+PASS / FAIL
+
+Valid JSON:
+PASS / FAIL
+
+Top-level structure:
+PASS / FAIL
+
+Scenario count consistent:
+PASS / FAIL
+
+Generation marker:
+PASS / FAIL
+
+run_day9.py:
+PASS / FAIL
+
+Missing-input handling:
+PASS / FAIL
+
+Malformed-AI-output handling:
+PASS / FAIL
+
+Final ALU regression:
+PASS / FAIL
+
+Day-9 summary:
+PASS / FAIL
+
+Semantic scenario validation:
+PENDING DAY 10
+
+Verilog generation:
+NOT STARTED
+
+Coverage measurement:
+NOT STARTED
+
+==================================================
+DAY 9 FINAL STATUS:
+PASS / FAIL
+==================================================

@@ -1,0 +1,557 @@
+You are the test-scenario reasoning component
+of an AI-assisted RTL verification framework.
+
+RTL language:
+Verilog
+
+DUT:
+4-bit ALU
+
+Your task is to generate STRUCTURED TEST
+SCENARIOS from the supplied RTL knowledge
+and verification objectives.
+
+IMPORTANT RULES:
+
+1. Do NOT generate Verilog.
+2. Do NOT generate a testbench.
+3. Do NOT modify the RTL.
+4. Do NOT claim simulation results.
+5. Do NOT claim coverage results.
+6. Do NOT invent new RTL operations.
+7. Use only operations supported by the
+   supplied RTL knowledge.
+8. Use the supplied verification objective IDs.
+9. Each scenario must be traceable to one
+   verification objective.
+10. Inputs a and b are unsigned 4-bit values,
+    therefore each must be between 0 and 15.
+11. Do NOT calculate or provide expected_y.
+12. Python will calculate expected results later.
+13. Return JSON only.
+14. Do not use Markdown code fences.
+15. Do not add explanatory text before or
+    after the JSON.
+
+RTL KNOWLEDGE:
+
+{
+  "rtl_language": "Verilog",
+  "analysis_method": "PyVerilog AST",
+  "modules": [
+    {
+      "module_name": "alu",
+      "ports": [
+        {
+          "name": "a",
+          "direction": "input",
+          "width": {
+            "msb": 3,
+            "lsb": 0,
+            "bits": 4
+          }
+        },
+        {
+          "name": "b",
+          "direction": "input",
+          "width": {
+            "msb": 3,
+            "lsb": 0,
+            "bits": 4
+          }
+        },
+        {
+          "name": "sel",
+          "direction": "input",
+          "width": {
+            "msb": 2,
+            "lsb": 0,
+            "bits": 3
+          }
+        },
+        {
+          "name": "y",
+          "direction": "output",
+          "width": {
+            "msb": 3,
+            "lsb": 0,
+            "bits": 4
+          }
+        }
+      ],
+      "case_logic": [
+        {
+          "selector": "sel",
+          "branches": [
+            {
+              "case_value": "3'b000",
+              "destination": "y",
+              "operator": "ADD",
+              "expression": "a + b",
+              "left_operand": "a",
+              "right_operand": "b"
+            },
+            {
+              "case_value": "3'b001",
+              "destination": "y",
+              "operator": "SUB",
+              "expression": "a - b",
+              "left_operand": "a",
+              "right_operand": "b"
+            },
+            {
+              "case_value": "3'b010",
+              "destination": "y",
+              "operator": "AND",
+              "expression": "a & b",
+              "left_operand": "a",
+              "right_operand": "b"
+            },
+            {
+              "case_value": "3'b011",
+              "destination": "y",
+              "operator": "OR",
+              "expression": "a | b",
+              "left_operand": "a",
+              "right_operand": "b"
+            },
+            {
+              "case_value": "3'b100",
+              "destination": "y",
+              "operator": "XOR",
+              "expression": "a ^ b",
+              "left_operand": "a",
+              "right_operand": "b"
+            },
+            {
+              "case_value": "3'b101",
+              "destination": "y",
+              "operator": "NOT",
+              "expression": "~a",
+              "left_operand": "a",
+              "right_operand": null
+            },
+            {
+              "case_value": "3'b110",
+              "destination": "y",
+              "operator": "SHIFT_LEFT",
+              "expression": "a << 1",
+              "left_operand": "a",
+              "right_operand": "1"
+            },
+            {
+              "case_value": "3'b111",
+              "destination": "y",
+              "operator": "SHIFT_RIGHT",
+              "expression": "a >> 1",
+              "left_operand": "a",
+              "right_operand": "1"
+            },
+            {
+              "case_value": "default",
+              "destination": "y",
+              "operator": "CONSTANT",
+              "expression": "4'b0000",
+              "left_operand": "4'b0000",
+              "right_operand": null
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
+
+VERIFICATION OBJECTIVES:
+
+{
+  "rtl_language": "Verilog",
+  "source_analysis": "PyVerilog AST",
+  "modules": [
+    "alu"
+  ],
+  "functional_objective_count": 8,
+  "corner_case_objective_count": 21,
+  "total_objective_count": 29,
+  "objectives": [
+    {
+      "objective_id": "OBJ_ALU_001",
+      "category": "functional",
+      "operation": "ADD",
+      "selector": "sel",
+      "case_value": "3'b000",
+      "expression": "a + b",
+      "description": "Verify ADD operation",
+      "priority": "high",
+      "source": "rtl_knowledge"
+    },
+    {
+      "objective_id": "OBJ_ALU_002",
+      "category": "functional",
+      "operation": "SUB",
+      "selector": "sel",
+      "case_value": "3'b001",
+      "expression": "a - b",
+      "description": "Verify SUB operation",
+      "priority": "high",
+      "source": "rtl_knowledge"
+    },
+    {
+      "objective_id": "OBJ_ALU_003",
+      "category": "functional",
+      "operation": "AND",
+      "selector": "sel",
+      "case_value": "3'b010",
+      "expression": "a & b",
+      "description": "Verify AND operation",
+      "priority": "high",
+      "source": "rtl_knowledge"
+    },
+    {
+      "objective_id": "OBJ_ALU_004",
+      "category": "functional",
+      "operation": "OR",
+      "selector": "sel",
+      "case_value": "3'b011",
+      "expression": "a | b",
+      "description": "Verify OR operation",
+      "priority": "high",
+      "source": "rtl_knowledge"
+    },
+    {
+      "objective_id": "OBJ_ALU_005",
+      "category": "functional",
+      "operation": "XOR",
+      "selector": "sel",
+      "case_value": "3'b100",
+      "expression": "a ^ b",
+      "description": "Verify XOR operation",
+      "priority": "high",
+      "source": "rtl_knowledge"
+    },
+    {
+      "objective_id": "OBJ_ALU_006",
+      "category": "functional",
+      "operation": "NOT",
+      "selector": "sel",
+      "case_value": "3'b101",
+      "expression": "~a",
+      "description": "Verify NOT operation",
+      "priority": "high",
+      "source": "rtl_knowledge"
+    },
+    {
+      "objective_id": "OBJ_ALU_007",
+      "category": "functional",
+      "operation": "SHIFT_LEFT",
+      "selector": "sel",
+      "case_value": "3'b110",
+      "expression": "a << 1",
+      "description": "Verify SHIFT_LEFT operation",
+      "priority": "high",
+      "source": "rtl_knowledge"
+    },
+    {
+      "objective_id": "OBJ_ALU_008",
+      "category": "functional",
+      "operation": "SHIFT_RIGHT",
+      "selector": "sel",
+      "case_value": "3'b111",
+      "expression": "a >> 1",
+      "description": "Verify SHIFT_RIGHT operation",
+      "priority": "high",
+      "source": "rtl_knowledge"
+    },
+    {
+      "objective_id": "OBJ_ALU_009",
+      "category": "corner_case",
+      "operation": "ADD",
+      "selector": "sel",
+      "case_value": "3'b000",
+      "corner_case": "zero_operands",
+      "description": "Verify ADD with zero operands",
+      "priority": "medium",
+      "source": "derived_rule",
+      "parent_objective": "OBJ_ALU_001"
+    },
+    {
+      "objective_id": "OBJ_ALU_010",
+      "category": "corner_case",
+      "operation": "ADD",
+      "selector": "sel",
+      "case_value": "3'b000",
+      "corner_case": "maximum_operands",
+      "description": "Verify ADD with maximum 4-bit operands",
+      "priority": "high",
+      "source": "derived_rule",
+      "parent_objective": "OBJ_ALU_001"
+    },
+    {
+      "objective_id": "OBJ_ALU_011",
+      "category": "corner_case",
+      "operation": "ADD",
+      "selector": "sel",
+      "case_value": "3'b000",
+      "corner_case": "overflow_wraparound",
+      "description": "Verify 4-bit ADD overflow and wraparound behavior",
+      "priority": "high",
+      "source": "derived_rule",
+      "parent_objective": "OBJ_ALU_001"
+    },
+    {
+      "objective_id": "OBJ_ALU_012",
+      "category": "corner_case",
+      "operation": "SUB",
+      "selector": "sel",
+      "case_value": "3'b001",
+      "corner_case": "equal_operands",
+      "description": "Verify SUB with equal operands",
+      "priority": "medium",
+      "source": "derived_rule",
+      "parent_objective": "OBJ_ALU_002"
+    },
+    {
+      "objective_id": "OBJ_ALU_013",
+      "category": "corner_case",
+      "operation": "SUB",
+      "selector": "sel",
+      "case_value": "3'b001",
+      "corner_case": "zero_subtrahend",
+      "description": "Verify SUB when b is zero",
+      "priority": "medium",
+      "source": "derived_rule",
+      "parent_objective": "OBJ_ALU_002"
+    },
+    {
+      "objective_id": "OBJ_ALU_014",
+      "category": "corner_case",
+      "operation": "SUB",
+      "selector": "sel",
+      "case_value": "3'b001",
+      "corner_case": "underflow_wraparound",
+      "description": "Verify 4-bit SUB underflow and wraparound behavior",
+      "priority": "high",
+      "source": "derived_rule",
+      "parent_objective": "OBJ_ALU_002"
+    },
+    {
+      "objective_id": "OBJ_ALU_015",
+      "category": "corner_case",
+      "operation": "AND",
+      "selector": "sel",
+      "case_value": "3'b010",
+      "corner_case": "all_zero",
+      "description": "Verify AND with all-zero input",
+      "priority": "medium",
+      "source": "derived_rule",
+      "parent_objective": "OBJ_ALU_003"
+    },
+    {
+      "objective_id": "OBJ_ALU_016",
+      "category": "corner_case",
+      "operation": "AND",
+      "selector": "sel",
+      "case_value": "3'b010",
+      "corner_case": "all_one",
+      "description": "Verify AND with all-one input",
+      "priority": "medium",
+      "source": "derived_rule",
+      "parent_objective": "OBJ_ALU_003"
+    },
+    {
+      "objective_id": "OBJ_ALU_017",
+      "category": "corner_case",
+      "operation": "AND",
+      "selector": "sel",
+      "case_value": "3'b010",
+      "corner_case": "alternating_patterns",
+      "description": "Verify AND with alternating bit patterns",
+      "priority": "medium",
+      "source": "derived_rule",
+      "parent_objective": "OBJ_ALU_003"
+    },
+    {
+      "objective_id": "OBJ_ALU_018",
+      "category": "corner_case",
+      "operation": "OR",
+      "selector": "sel",
+      "case_value": "3'b011",
+      "corner_case": "all_zero",
+      "description": "Verify OR with all-zero input",
+      "priority": "medium",
+      "source": "derived_rule",
+      "parent_objective": "OBJ_ALU_004"
+    },
+    {
+      "objective_id": "OBJ_ALU_019",
+      "category": "corner_case",
+      "operation": "OR",
+      "selector": "sel",
+      "case_value": "3'b011",
+      "corner_case": "all_one",
+      "description": "Verify OR with all-one input",
+      "priority": "medium",
+      "source": "derived_rule",
+      "parent_objective": "OBJ_ALU_004"
+    },
+    {
+      "objective_id": "OBJ_ALU_020",
+      "category": "corner_case",
+      "operation": "OR",
+      "selector": "sel",
+      "case_value": "3'b011",
+      "corner_case": "alternating_patterns",
+      "description": "Verify OR with alternating bit patterns",
+      "priority": "medium",
+      "source": "derived_rule",
+      "parent_objective": "OBJ_ALU_004"
+    },
+    {
+      "objective_id": "OBJ_ALU_021",
+      "category": "corner_case",
+      "operation": "XOR",
+      "selector": "sel",
+      "case_value": "3'b100",
+      "corner_case": "equal_operands",
+      "description": "Verify XOR with equal operands",
+      "priority": "medium",
+      "source": "derived_rule",
+      "parent_objective": "OBJ_ALU_005"
+    },
+    {
+      "objective_id": "OBJ_ALU_022",
+      "category": "corner_case",
+      "operation": "XOR",
+      "selector": "sel",
+      "case_value": "3'b100",
+      "corner_case": "complementary_patterns",
+      "description": "Verify XOR with complementary bit patterns",
+      "priority": "medium",
+      "source": "derived_rule",
+      "parent_objective": "OBJ_ALU_005"
+    },
+    {
+      "objective_id": "OBJ_ALU_023",
+      "category": "corner_case",
+      "operation": "NOT",
+      "selector": "sel",
+      "case_value": "3'b101",
+      "corner_case": "all_zero",
+      "description": "Verify NOT of all-zero input",
+      "priority": "medium",
+      "source": "derived_rule",
+      "parent_objective": "OBJ_ALU_006"
+    },
+    {
+      "objective_id": "OBJ_ALU_024",
+      "category": "corner_case",
+      "operation": "NOT",
+      "selector": "sel",
+      "case_value": "3'b101",
+      "corner_case": "all_one",
+      "description": "Verify NOT of all-one input",
+      "priority": "medium",
+      "source": "derived_rule",
+      "parent_objective": "OBJ_ALU_006"
+    },
+    {
+      "objective_id": "OBJ_ALU_025",
+      "category": "corner_case",
+      "operation": "NOT",
+      "selector": "sel",
+      "case_value": "3'b101",
+      "corner_case": "alternating_pattern",
+      "description": "Verify NOT of an alternating bit pattern",
+      "priority": "medium",
+      "source": "derived_rule",
+      "parent_objective": "OBJ_ALU_006"
+    },
+    {
+      "objective_id": "OBJ_ALU_026",
+      "category": "corner_case",
+      "operation": "SHIFT_LEFT",
+      "selector": "sel",
+      "case_value": "3'b110",
+      "corner_case": "zero_input",
+      "description": "Verify left shift of zero",
+      "priority": "medium",
+      "source": "derived_rule",
+      "parent_objective": "OBJ_ALU_007"
+    },
+    {
+      "objective_id": "OBJ_ALU_027",
+      "category": "corner_case",
+      "operation": "SHIFT_LEFT",
+      "selector": "sel",
+      "case_value": "3'b110",
+      "corner_case": "msb_discard",
+      "description": "Verify left shift when MSB is discarded",
+      "priority": "high",
+      "source": "derived_rule",
+      "parent_objective": "OBJ_ALU_007"
+    },
+    {
+      "objective_id": "OBJ_ALU_028",
+      "category": "corner_case",
+      "operation": "SHIFT_RIGHT",
+      "selector": "sel",
+      "case_value": "3'b111",
+      "corner_case": "zero_input",
+      "description": "Verify right shift of zero",
+      "priority": "medium",
+      "source": "derived_rule",
+      "parent_objective": "OBJ_ALU_008"
+    },
+    {
+      "objective_id": "OBJ_ALU_029",
+      "category": "corner_case",
+      "operation": "SHIFT_RIGHT",
+      "selector": "sel",
+      "case_value": "3'b111",
+      "corner_case": "lsb_discard",
+      "description": "Verify right shift when LSB is discarded",
+      "priority": "high",
+      "source": "derived_rule",
+      "parent_objective": "OBJ_ALU_008"
+    }
+  ]
+}
+
+Generate test scenarios that address the
+supplied verification objectives.
+
+For functional objectives, provide representative
+normal-operation input combinations.
+
+For corner-case objectives, choose input values
+that specifically exercise the stated corner case.
+
+Use exactly this JSON structure:
+
+{
+  "dut": "alu",
+  "scenario_count": <number>,
+  "scenarios": [
+    {
+      "scenario_id": "TEST_001",
+      "objective_id": "<objective ID>",
+      "category": "functional or corner_case",
+      "operation": "<operation>",
+      "selector": "<selector value>",
+      "inputs": {
+        "a": <integer 0 to 15>,
+        "b": <integer 0 to 15>
+      },
+      "rationale": "<short reason>"
+    }
+  ],
+  "generation_status":
+    "HERMES TEST SCENARIO GENERATION COMPLETE"
+}
+
+Generate at least one meaningful scenario for
+each supplied verification objective.
+
+Scenario IDs must be unique.
+
+Return valid JSON only.

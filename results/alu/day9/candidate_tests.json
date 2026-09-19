@@ -1,0 +1,355 @@
+{
+    "dut": "alu",
+    "scenario_count": 29,
+    "scenarios": [
+        {
+            "scenario_id": "TEST_001",
+            "objective_id": "OBJ_ALU_001",
+            "category": "functional",
+            "operation": "ADD",
+            "selector": "3'b000",
+            "inputs": {
+                "a": 5,
+                "b": 3
+            },
+            "rationale": "Basic ADD operation with non-zero operands"
+        },
+        {
+            "scenario_id": "TEST_002",
+            "objective_id": "OBJ_ALU_002",
+            "category": "functional",
+            "operation": "SUB",
+            "selector": "3'b001",
+            "inputs": {
+                "a": 10,
+                "b": 4
+            },
+            "rationale": "Basic SUB operation with a > b"
+        },
+        {
+            "scenario_id": "TEST_003",
+            "objective_id": "OBJ_ALU_003",
+            "category": "functional",
+            "operation": "AND",
+            "selector": "3'b010",
+            "inputs": {
+                "a": 12,
+                "b": 10
+            },
+            "rationale": "Basic AND operation with overlapping bits"
+        },
+        {
+            "scenario_id": "TEST_004",
+            "objective_id": "OBJ_ALU_004",
+            "category": "functional",
+            "operation": "OR",
+            "selector": "3'b011",
+            "inputs": {
+                "a": 7,
+                "b": 9
+            },
+            "rationale": "Basic OR operation with partially overlapping bits"
+        },
+        {
+            "scenario_id": "TEST_005",
+            "objective_id": "OBJ_ALU_005",
+            "category": "functional",
+            "operation": "XOR",
+            "selector": "3'b100",
+            "inputs": {
+                "a": 6,
+                "b": 5
+            },
+            "rationale": "Basic XOR operation with different bit patterns"
+        },
+        {
+            "scenario_id": "TEST_006",
+            "objective_id": "OBJ_ALU_006",
+            "category": "functional",
+            "operation": "NOT",
+            "selector": "3'b101",
+            "inputs": {
+                "a": 9,
+                "b": 0
+            },
+            "rationale": "Basic NOT operation on non-trivial input"
+        },
+        {
+            "scenario_id": "TEST_007",
+            "objective_id": "OBJ_ALU_007",
+            "category": "functional",
+            "operation": "SHIFT_LEFT",
+            "selector": "3'b110",
+            "inputs": {
+                "a": 3,
+                "b": 0
+            },
+            "rationale": "Basic left shift of a small value"
+        },
+        {
+            "scenario_id": "TEST_008",
+            "objective_id": "OBJ_ALU_008",
+            "category": "functional",
+            "operation": "SHIFT_RIGHT",
+            "selector": "3'b111",
+            "inputs": {
+                "a": 12,
+                "b": 0
+            },
+            "rationale": "Basic right shift of a value with MSB set"
+        },
+        {
+            "scenario_id": "TEST_009",
+            "objective_id": "OBJ_ALU_009",
+            "category": "corner_case",
+            "operation": "ADD",
+            "selector": "3'b000",
+            "inputs": {
+                "a": 0,
+                "b": 0
+            },
+            "rationale": "ADD with both operands zero should yield zero"
+        },
+        {
+            "scenario_id": "TEST_010",
+            "objective_id": "OBJ_ALU_010",
+            "category": "corner_case",
+            "operation": "ADD",
+            "selector": "3'b000",
+            "inputs": {
+                "a": 15,
+                "b": 15
+            },
+            "rationale": "ADD with maximum 4-bit operands (15+15=30, overflows 4-bit)"
+        },
+        {
+            "scenario_id": "TEST_011",
+            "objective_id": "OBJ_ALU_011",
+            "category": "corner_case",
+            "operation": "ADD",
+            "selector": "3'b000",
+            "inputs": {
+                "a": 10,
+                "b": 9
+            },
+            "rationale": "ADD causing overflow wraparound (10+9=19, truncated to 4 bits = 3)"
+        },
+        {
+            "scenario_id": "TEST_012",
+            "objective_id": "OBJ_ALU_012",
+            "category": "corner_case",
+            "operation": "SUB",
+            "selector": "3'b001",
+            "inputs": {
+                "a": 7,
+                "b": 7
+            },
+            "rationale": "SUB with equal operands should yield zero"
+        },
+        {
+            "scenario_id": "TEST_013",
+            "objective_id": "OBJ_ALU_013",
+            "category": "corner_case",
+            "operation": "SUB",
+            "selector": "3'b001",
+            "inputs": {
+                "a": 12,
+                "b": 0
+            },
+            "rationale": "SUB where subtrahend b is zero should return a unchanged"
+        },
+        {
+            "scenario_id": "TEST_014",
+            "objective_id": "OBJ_ALU_014",
+            "category": "corner_case",
+            "operation": "SUB",
+            "selector": "3'b001",
+            "inputs": {
+                "a": 2,
+                "b": 5
+            },
+            "rationale": "SUB causing underflow wraparound (2-5=-3, wraps to 13 in 4-bit)"
+        },
+        {
+            "scenario_id": "TEST_015",
+            "objective_id": "OBJ_ALU_015",
+            "category": "corner_case",
+            "operation": "AND",
+            "selector": "3'b010",
+            "inputs": {
+                "a": 0,
+                "b": 5
+            },
+            "rationale": "AND with all-zero input should yield zero regardless of other operand"
+        },
+        {
+            "scenario_id": "TEST_016",
+            "objective_id": "OBJ_ALU_016",
+            "category": "corner_case",
+            "operation": "AND",
+            "selector": "3'b010",
+            "inputs": {
+                "a": 15,
+                "b": 12
+            },
+            "rationale": "AND with all-one input should yield the other operand unchanged"
+        },
+        {
+            "scenario_id": "TEST_017",
+            "objective_id": "OBJ_ALU_017",
+            "category": "corner_case",
+            "operation": "AND",
+            "selector": "3'b010",
+            "inputs": {
+                "a": 10,
+                "b": 5
+            },
+            "rationale": "AND with alternating bit patterns (1010 AND 0101 = 0000)"
+        },
+        {
+            "scenario_id": "TEST_018",
+            "objective_id": "OBJ_ALU_018",
+            "category": "corner_case",
+            "operation": "OR",
+            "selector": "3'b011",
+            "inputs": {
+                "a": 0,
+                "b": 8
+            },
+            "rationale": "OR with all-zero input should yield the other operand unchanged"
+        },
+        {
+            "scenario_id": "TEST_019",
+            "objective_id": "OBJ_ALU_019",
+            "category": "corner_case",
+            "operation": "OR",
+            "selector": "3'b011",
+            "inputs": {
+                "a": 15,
+                "b": 10
+            },
+            "rationale": "OR with all-one input should yield all-ones (15) regardless of other operand"
+        },
+        {
+            "scenario_id": "TEST_020",
+            "objective_id": "OBJ_ALU_020",
+            "category": "corner_case",
+            "operation": "OR",
+            "selector": "3'b011",
+            "inputs": {
+                "a": 10,
+                "b": 5
+            },
+            "rationale": "OR with alternating bit patterns (1010 OR 0101 = 1111)"
+        },
+        {
+            "scenario_id": "TEST_021",
+            "objective_id": "OBJ_ALU_021",
+            "category": "corner_case",
+            "operation": "XOR",
+            "selector": "3'b100",
+            "inputs": {
+                "a": 8,
+                "b": 8
+            },
+            "rationale": "XOR with equal operands should yield zero"
+        },
+        {
+            "scenario_id": "TEST_022",
+            "objective_id": "OBJ_ALU_022",
+            "category": "corner_case",
+            "operation": "XOR",
+            "selector": "3'b100",
+            "inputs": {
+                "a": 15,
+                "b": 0
+            },
+            "rationale": "XOR with complementary patterns (1111 XOR 0000 = 1111)"
+        },
+        {
+            "scenario_id": "TEST_023",
+            "objective_id": "OBJ_ALU_023",
+            "category": "corner_case",
+            "operation": "NOT",
+            "selector": "3'b101",
+            "inputs": {
+                "a": 0,
+                "b": 0
+            },
+            "rationale": "NOT of all-zero input should yield all-ones (15)"
+        },
+        {
+            "scenario_id": "TEST_024",
+            "objective_id": "OBJ_ALU_024",
+            "category": "corner_case",
+            "operation": "NOT",
+            "selector": "3'b101",
+            "inputs": {
+                "a": 15,
+                "b": 0
+            },
+            "rationale": "NOT of all-one input should yield zero"
+        },
+        {
+            "scenario_id": "TEST_025",
+            "objective_id": "OBJ_ALU_025",
+            "category": "corner_case",
+            "operation": "NOT",
+            "selector": "3'b101",
+            "inputs": {
+                "a": 10,
+                "b": 0
+            },
+            "rationale": "NOT of alternating pattern 1010 should yield 0101 (5)"
+        },
+        {
+            "scenario_id": "TEST_026",
+            "objective_id": "OBJ_ALU_026",
+            "category": "corner_case",
+            "operation": "SHIFT_LEFT",
+            "selector": "3'b110",
+            "inputs": {
+                "a": 0,
+                "b": 0
+            },
+            "rationale": "Left shift of zero should remain zero"
+        },
+        {
+            "scenario_id": "TEST_027",
+            "objective_id": "OBJ_ALU_027",
+            "category": "corner_case",
+            "operation": "SHIFT_LEFT",
+            "selector": "3'b110",
+            "inputs": {
+                "a": 12,
+                "b": 0
+            },
+            "rationale": "Left shift when MSB is discarded (1100 << 1 = 1000, MSB lost)"
+        },
+        {
+            "scenario_id": "TEST_028",
+            "objective_id": "OBJ_ALU_028",
+            "category": "corner_case",
+            "operation": "SHIFT_RIGHT",
+            "selector": "3'b111",
+            "inputs": {
+                "a": 0,
+                "b": 0
+            },
+            "rationale": "Right shift of zero should remain zero"
+        },
+        {
+            "scenario_id": "TEST_029",
+            "objective_id": "OBJ_ALU_029",
+            "category": "corner_case",
+            "operation": "SHIFT_RIGHT",
+            "selector": "3'b111",
+            "inputs": {
+                "a": 5,
+                "b": 0
+            },
+            "rationale": "Right shift when LSB is discarded (0101 >> 1 = 0010, LSB lost)"
+        }
+    ],
+    "generation_status": "HERMES TEST SCENARIO GENERATION COMPLETE"
+}
