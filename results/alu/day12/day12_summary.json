@@ -1,0 +1,73 @@
+{
+  "day": 12,
+  "dut": "alu",
+  "stage": "Functional coverage analysis",
+  "validated_scenarios": 29,
+  "rtl_branches": 9,
+  "functional_operations": 8,
+  "covered_operations": 8,
+  "operation_coverage_percent": 100.0,
+  "verification_objectives": 29,
+  "covered_objectives": 29,
+  "objective_coverage_percent": 100.0,
+  "missing_operations": [],
+  "missing_objectives": [],
+  "operation_count_valid": true,
+  "objective_count_valid": true,
+  "full_operation_coverage": true,
+  "full_objective_coverage": true,
+  "coverage_file": "results/alu/day12/functional_coverage.json",
+  "coverage_file_exists": true,
+  "coverage_csv": "results/alu/day12/operation_coverage.csv",
+  "coverage_csv_exists": true,
+  "operations": {
+    "ADD": {
+      "covered": true,
+      "hits": 4
+    },
+    "AND": {
+      "covered": true,
+      "hits": 4
+    },
+    "NOT": {
+      "covered": true,
+      "hits": 4
+    },
+    "OR": {
+      "covered": true,
+      "hits": 4
+    },
+    "SHIFT_LEFT": {
+      "covered": true,
+      "hits": 3
+    },
+    "SHIFT_RIGHT": {
+      "covered": true,
+      "hits": 3
+    },
+    "SUB": {
+      "covered": true,
+      "hits": 4
+    },
+    "XOR": {
+      "covered": true,
+      "hits": 3
+    }
+  },
+  "category_coverage": {
+    "corner_case": {
+      "total_objectives": 21,
+      "covered_objectives": 21,
+      "scenario_hits": 21,
+      "coverage_percent": 100.0
+    },
+    "functional": {
+      "total_objectives": 8,
+      "covered_objectives": 8,
+      "scenario_hits": 8,
+      "coverage_percent": 100.0
+    }
+  },
+  "coverage_source": "validated Day-10 scenarios executed in Day 11",
+  "status": "PASS"
+}
