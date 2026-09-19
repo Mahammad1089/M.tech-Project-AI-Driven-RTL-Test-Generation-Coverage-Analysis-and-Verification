@@ -1,0 +1,23 @@
+{
+    "day": 8,
+    "dut": "alu",
+    "integration": "Hermes Agent",
+    "input_knowledge": "results/alu/day6/alu_knowledge.json",
+    "input_objectives": "results/alu/day7/verification_objectives.json",
+    "prompt_file": "hermes/prompts/alu_day8_prompt.txt",
+    "interface_status": "PASS",
+    "hermes_exit_code": 0,
+    "detected_operations": [
+        "ADD",
+        "SUB",
+        "AND",
+        "OR",
+        "XOR",
+        "NOT",
+        "SHIFT_LEFT",
+        "SHIFT_RIGHT"
+    ],
+    "operation_count": 8,
+    "completion_marker": true,
+    "status": "PASS"
+}
