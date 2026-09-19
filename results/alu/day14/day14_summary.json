@@ -1,0 +1,22 @@
+{
+  "day": 14,
+  "dut": "alu",
+  "stage": "Hermes feedback and targeted regeneration",
+  "day13_gap_status": "NO_GAPS",
+  "gaps_detected": false,
+  "operation_gap_count": 0,
+  "objective_gap_count": 0,
+  "total_gap_count": 0,
+  "mode": "NO_GAPS",
+  "hermes_result_exists": true,
+  "targeted_candidate_count": 0,
+  "validated_targeted_count": 0,
+  "rejected_targeted_count": 0,
+  "target_gap_validation_status": "PASS",
+  "generation_status": "NO_TARGETED_GENERATION_REQUIRED",
+  "deterministic_validation_required": false,
+  "deterministic_validation_status": "SKIPPED",
+  "targeted_regeneration_required": false,
+  "next_stage": "DAY_15_FINAL_ANALYSIS",
+  "status": "PASS"
+}

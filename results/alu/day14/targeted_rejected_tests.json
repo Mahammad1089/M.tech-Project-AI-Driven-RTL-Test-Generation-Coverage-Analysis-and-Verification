@@ -1,0 +1,10 @@
+{
+  "status": "PASS",
+  "mode": "NO_GAPS",
+  "generation_status": "NO_TARGETED_GENERATION_REQUIRED",
+  "rejected_count": 0,
+  "rejected_test_count": 0,
+  "rejected_scenarios": [],
+  "rejected_tests": [],
+  "reason": "No targeted tests were generated, therefore no targeted tests were rejected."
+}

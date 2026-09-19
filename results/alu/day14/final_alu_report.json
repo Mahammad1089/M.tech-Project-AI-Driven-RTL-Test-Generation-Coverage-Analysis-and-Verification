@@ -1,0 +1,12 @@
+{
+    "generated_at": "2026-09-19T21:08:40.598809",
+    "dut": "alu",
+    "rtl_file": "rtl/alu.v",
+    "testbench_file": "testbench/automated/tb_alu_selfcheck.v",
+    "compile_status": "PASS",
+    "simulation_status": "PASS",
+    "total_tests": 21,
+    "passed_tests": 21,
+    "failed_tests": 0,
+    "verification_status": "PASS"
+}

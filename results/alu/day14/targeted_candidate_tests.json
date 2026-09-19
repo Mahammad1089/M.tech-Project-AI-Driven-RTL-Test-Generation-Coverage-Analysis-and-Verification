@@ -1,0 +1,9 @@
+{
+  "status": "PASS",
+  "mode": "NO_GAPS",
+  "generation_type": "no_gap_no_regeneration",
+  "generation_status": "NO_TARGETED_GENERATION_REQUIRED",
+  "scenario_count": 0,
+  "scenarios": [],
+  "reason": "No verified coverage gaps are present."
+}
