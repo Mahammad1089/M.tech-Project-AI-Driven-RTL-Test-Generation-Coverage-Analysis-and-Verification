@@ -1,0 +1,10 @@
+{
+    "dut": null,
+    "source_stage": "DAY_13_COVERAGE_GAP_ANALYSIS",
+    "gap_status": null,
+    "operation_gaps": [],
+    "objective_gaps": [],
+    "category_summary": {},
+    "instruction": "Use only these verified coverage gaps for targeted test reasoning.",
+    "hermes_execution": "PENDING_DAY_14"
+}
