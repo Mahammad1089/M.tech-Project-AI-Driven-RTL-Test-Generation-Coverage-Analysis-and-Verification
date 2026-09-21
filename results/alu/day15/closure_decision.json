@@ -1,0 +1,21 @@
+{
+  "status": "PASS",
+  "decision": "CLOSE",
+  "coverage_source": "results/alu/day15/closed_loop_coverage.json",
+  "gap_source": "results/alu/day15/remaining_gaps.json",
+  "operation_coverage_percent": 100.0,
+  "objective_coverage_percent": 100.0,
+  "operation_gap_count": 0,
+  "objective_gap_count": 0,
+  "total_gap_count": 0,
+  "allowed_remaining_gaps": 1,
+  "operation_coverage_complete": true,
+  "objective_coverage_complete": true,
+  "gaps_within_allowed_limit": true,
+  "no_remaining_gaps": true,
+  "coverage_status": "PASS",
+  "gap_status": "NO_GAPS",
+  "missing_operations": [],
+  "missing_objectives": [],
+  "closure_ready": true
+}

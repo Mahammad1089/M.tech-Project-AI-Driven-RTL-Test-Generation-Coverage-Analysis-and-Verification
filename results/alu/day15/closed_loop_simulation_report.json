@@ -1,0 +1,9 @@
+{
+  "simulation_log": "results/alu/day15/closed_loop_simulation.log",
+  "total_tests": 58,
+  "passed_tests": 58,
+  "failed_tests": 0,
+  "testbench_result": "PASS",
+  "count_consistent": true,
+  "status": "PASS"
+}

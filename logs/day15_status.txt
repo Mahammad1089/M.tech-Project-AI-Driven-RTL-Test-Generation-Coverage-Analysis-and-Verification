@@ -1,0 +1,166 @@
+DAY 15 - CLOSED-LOOP VERIFICATION
+================================================
+
+DAY 14 PRECHECK
+------------------------------------------------
+Day-14 pipeline:
+PASS / FAIL
+
+Day-14 summary:
+PASS / FAIL
+
+Targeted validated tests available:
+YES / NO
+
+
+TEST MERGING
+------------------------------------------------
+Initial validated tests:
+________
+
+Targeted validated tests:
+________
+
+Combined tests:
+________
+
+Duplicates removed:
+________
+
+merge_test_sets.py:
+PASS / FAIL
+
+
+REVALIDATION
+------------------------------------------------
+Combined revalidation:
+PASS / FAIL
+
+Rejected tests:
+________
+
+
+DETERMINISTIC ORACLE
+------------------------------------------------
+ALU oracle:
+PASS / FAIL
+
+
+TESTBENCH GENERATION
+------------------------------------------------
+Generated Verilog TB:
+PASS / FAIL
+
+Verilog compilation:
+PASS / FAIL
+
+
+SIMULATION
+------------------------------------------------
+Total tests:
+________
+
+Passed tests:
+________
+
+Failed tests:
+________
+
+Simulation:
+PASS / FAIL
+
+Execution cross-check:
+PASS / FAIL
+
+
+COVERAGE
+------------------------------------------------
+Initial operation coverage:
+________ %
+
+New operation coverage:
+________ %
+
+Initial objective coverage:
+________ %
+
+New objective coverage:
+________ %
+
+Operation coverage delta:
+________
+
+Objective coverage delta:
+________
+
+Coverage trend:
+IMPROVED / UNCHANGED / REGRESSION
+
+
+GAP ANALYSIS
+------------------------------------------------
+Initial gaps:
+________
+
+Remaining gaps:
+________
+
+Gaps closed:
+________
+
+Gap trend:
+REDUCED / UNCHANGED / REGRESSION
+
+
+CLOSED-LOOP DECISION
+------------------------------------------------
+Iteration:
+1
+
+Target coverage:
+95 %
+
+Maximum iterations:
+5
+
+Decision:
+STOP / CONTINUE
+
+Reason:
+________________________________________
+
+
+PROJECT BOUNDARIES
+------------------------------------------------
+Hermes feedback source:
+DAY 14
+
+Expected output source:
+DETERMINISTIC PYTHON ORACLE
+
+Verilog generated:
+YES
+
+Targeted tests simulated:
+YES
+
+Coverage remeasured:
+YES
+
+Closed loop demonstrated:
+YES
+
+
+REGRESSION
+------------------------------------------------
+Original ALU regression:
+PASS / FAIL
+
+FAILED TESTS:
+________
+
+
+================================================
+DAY 15 FINAL STATUS:
+PASS / FAIL
+================================================

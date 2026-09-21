@@ -1,0 +1,72 @@
+{
+  "status": "PASS",
+  "validated_scenario_count": 58,
+  "rtl_branch_count": 9,
+  "functional_operation_count": 8,
+  "covered_operation_count": 8,
+  "operation_coverage_percent": 100.0,
+  "objective_count": 29,
+  "covered_objective_count": 29,
+  "objective_coverage_percent": 100.0,
+  "operations": {
+    "ADD": {
+      "covered": true,
+      "hits": 8
+    },
+    "AND": {
+      "covered": true,
+      "hits": 8
+    },
+    "NOT": {
+      "covered": true,
+      "hits": 8
+    },
+    "OR": {
+      "covered": true,
+      "hits": 8
+    },
+    "SHIFT_LEFT": {
+      "covered": true,
+      "hits": 6
+    },
+    "SHIFT_RIGHT": {
+      "covered": true,
+      "hits": 6
+    },
+    "SUB": {
+      "covered": true,
+      "hits": 8
+    },
+    "XOR": {
+      "covered": true,
+      "hits": 6
+    }
+  },
+  "missing_operations": [],
+  "missing_objectives": [],
+  "category_coverage": {
+    "corner_case": {
+      "total_objectives": 21,
+      "covered_objectives": 21,
+      "coverage_percent": 100.0,
+      "scenario_hits": 42
+    },
+    "functional": {
+      "total_objectives": 8,
+      "covered_objectives": 8,
+      "coverage_percent": 100.0,
+      "scenario_hits": 16
+    }
+  },
+  "default_branches_excluded_from_functional_targets": [
+    {
+      "module": "alu",
+      "selector": "sel",
+      "case_value": "default",
+      "operation": "CONSTANT",
+      "expression": "4'b0000",
+      "destination": "y"
+    }
+  ],
+  "coverage_method": "Validated Day-10 scenarios mapped against Day-6 executable RTL operations and Day-7 verification objectives."
+}
