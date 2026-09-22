@@ -1,0 +1,100 @@
+DAY 16 - FSM BENCHMARK INTEGRATION
+================================================
+
+DAY 15 PRECHECK
+------------------------------------------------
+Day-15 summary:
+PASS / FAIL
+
+Closed-loop demonstrated:
+YES / NO
+
+
+FSM RTL
+------------------------------------------------
+DUT:
+fsm_1011
+
+Sequence:
+1011
+
+Overlapping:
+YES
+
+RTL syntax:
+PASS / FAIL
+
+
+BASELINE SIMULATION
+------------------------------------------------
+Icarus compilation:
+PASS / FAIL
+
+Simulation:
+PASS / FAIL
+
+Total checks:
+________
+
+Passed checks:
+________
+
+Failed checks:
+________
+
+VCD generated:
+YES / NO
+
+
+FSM KNOWLEDGE
+------------------------------------------------
+Knowledge generated:
+PASS / FAIL
+
+State count:
+________
+
+Legal transition count:
+________
+
+Knowledge validation:
+PASS / FAIL
+
+
+NEGATIVE TESTS
+------------------------------------------------
+Missing knowledge rejected:
+PASS / FAIL
+
+Malformed simulation log rejected:
+PASS / FAIL
+
+
+DAY-16 BOUNDARY
+------------------------------------------------
+Hermes used:
+NO
+
+AI tests generated:
+NO
+
+State coverage measured:
+NO
+
+Transition coverage measured:
+NO
+
+Coverage closure performed:
+NO
+
+
+NEXT STAGE
+------------------------------------------------
+DAY 17:
+FSM State/Transition Coverage and Closure
+
+
+================================================
+DAY 16 FINAL STATUS:
+PASS / FAIL
+================================================

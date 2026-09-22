@@ -1,0 +1,10 @@
+{
+    "dut": "fsm_1011",
+    "day": 16,
+    "verification_type": "deterministic_fsm_baseline",
+    "total_checks": 15,
+    "passed_checks": 15,
+    "failed_checks": 0,
+    "pass_marker_found": true,
+    "status": "PASS"
+}

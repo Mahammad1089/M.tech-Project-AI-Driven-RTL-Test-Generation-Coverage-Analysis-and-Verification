@@ -1,0 +1,23 @@
+{
+    "day": 16,
+    "dut": "fsm_1011",
+    "stage": "FSM benchmark integration and baseline verification",
+    "design_type": "sequential_fsm",
+    "sequence": "1011",
+    "overlap_enabled": true,
+    "state_count": 4,
+    "legal_transition_count": 8,
+    "total_checks": 15,
+    "passed_checks": 15,
+    "failed_checks": 0,
+    "baseline_simulation": "PASS",
+    "fsm_knowledge_generated": true,
+    "fsm_knowledge_validated": true,
+    "hermes_used": false,
+    "ai_tests_generated": false,
+    "state_coverage_measured": false,
+    "transition_coverage_measured": false,
+    "coverage_closure_performed": false,
+    "next_stage": "DAY_17_FSM_STATE_TRANSITION_COVERAGE",
+    "status": "PASS"
+}
