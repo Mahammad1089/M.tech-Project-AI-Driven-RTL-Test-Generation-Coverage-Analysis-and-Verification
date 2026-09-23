@@ -1,0 +1,95 @@
+{
+  "day": 17,
+  "benchmark": "fsm_1011",
+  "objective": "Demonstrate coverage-guided FSM transition-gap identification, targeted sequence generation and coverage closure.",
+  "baseline": {
+    "transition_coverage": {
+      "total_transitions": 8,
+      "covered_transitions": 6,
+      "missing_transitions": 2,
+      "coverage_percent": 75.0,
+      "covered_transition_ids": [
+        "TR_001",
+        "TR_002",
+        "TR_003",
+        "TR_004",
+        "TR_006",
+        "TR_008"
+      ],
+      "missing_transition_ids": [
+        "TR_005",
+        "TR_007"
+      ],
+      "coverage_complete": false
+    },
+    "state_coverage": {
+      "total_states": 4,
+      "covered_states": 4,
+      "missing_states": 0,
+      "missing_state_ids": [],
+      "coverage_percent": 100.0
+    },
+    "gap_count": 2,
+    "missing_transition_ids": [
+      "TR_005",
+      "TR_007"
+    ]
+  },
+  "targeted_generation": {
+    "target_count": 2,
+    "generated_transition_ids": [
+      "TR_005",
+      "TR_007"
+    ],
+    "unresolved_target_count": 0,
+    "generation_method": "deterministic_fsm_graph_search",
+    "source_gap_status": "coverage_incomplete"
+  },
+  "targeted_simulation": {
+    "log_present": true,
+    "closure_pass": true,
+    "tr_005_covered": true,
+    "tr_007_covered": true
+  },
+  "closed": {
+    "transition_coverage": {
+      "total_transitions": 8,
+      "covered_transitions": 8,
+      "missing_transitions": 0,
+      "coverage_percent": 100.0,
+      "covered_transition_ids": [
+        "TR_001",
+        "TR_002",
+        "TR_003",
+        "TR_004",
+        "TR_005",
+        "TR_006",
+        "TR_007",
+        "TR_008"
+      ],
+      "missing_transition_ids": [],
+      "coverage_complete": true
+    },
+    "state_coverage": {
+      "total_states": 4,
+      "covered_states": 4,
+      "missing_states": 0,
+      "missing_state_ids": [],
+      "coverage_percent": 100.0
+    },
+    "remaining_gap_count": 0,
+    "remaining_transition_ids": []
+  },
+  "coverage_gain_percent": 25.0,
+  "checks": {
+    "baseline_gap_detected": true,
+    "targeted_sequences_generated": true,
+    "coverage_improved": true,
+    "final_transition_coverage_100": true,
+    "final_coverage_complete": true,
+    "no_remaining_gaps": true,
+    "targeted_log_consistent": true
+  },
+  "day17_complete": true,
+  "status": "PASS"
+}

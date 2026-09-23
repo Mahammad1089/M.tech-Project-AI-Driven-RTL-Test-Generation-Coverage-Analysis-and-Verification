@@ -1,0 +1,72 @@
+{
+  "dut": "fsm_1011",
+  "source_gap_status": "coverage_incomplete",
+  "source_missing_transition_ids": [
+    "TR_005",
+    "TR_007"
+  ],
+  "target_count": 2,
+  "targets": [
+    {
+      "target_id": "TARGET_TR_005",
+      "transition_id": "TR_005",
+      "status": "generated",
+      "objective": "Exercise uncovered FSM transition TR_005.",
+      "reset_state": "IDLE",
+      "from_state": "S10",
+      "target_input": 0,
+      "to_state": "IDLE",
+      "input_sequence": [
+        1,
+        0,
+        0
+      ],
+      "sequence_string": "100",
+      "expected_detect_sequence": [
+        0,
+        0,
+        0
+      ],
+      "expected_target_detect": 0,
+      "path_transition_ids": [
+        "TR_002",
+        "TR_003",
+        "TR_005"
+      ]
+    },
+    {
+      "target_id": "TARGET_TR_007",
+      "transition_id": "TR_007",
+      "status": "generated",
+      "objective": "Exercise uncovered FSM transition TR_007.",
+      "reset_state": "IDLE",
+      "from_state": "S101",
+      "target_input": 0,
+      "to_state": "S10",
+      "input_sequence": [
+        1,
+        0,
+        1,
+        0
+      ],
+      "sequence_string": "1010",
+      "expected_detect_sequence": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "expected_target_detect": 0,
+      "path_transition_ids": [
+        "TR_002",
+        "TR_003",
+        "TR_006",
+        "TR_007"
+      ]
+    }
+  ],
+  "unresolved_target_count": 0,
+  "harness_used": false,
+  "knowledge_transition_map_used": true,
+  "generation_method": "deterministic_fsm_graph_search"
+}

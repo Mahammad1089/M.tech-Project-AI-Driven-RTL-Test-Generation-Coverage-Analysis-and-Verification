@@ -1,0 +1,45 @@
+{
+    "dut": "fsm_1011",
+    "coverage_type": "fsm_state_transition_coverage",
+    "measurement_source": "executed_fsm_trace",
+    "trace_rows": 28,
+    "state_coverage": {
+        "total_states": 4,
+        "covered_states": 4,
+        "coverage_percent": 100.0,
+        "visited_states": [
+            "IDLE",
+            "S1",
+            "S10",
+            "S101"
+        ],
+        "missing_states": []
+    },
+    "transition_coverage": {
+        "total_transitions": 8,
+        "covered_transitions": 8,
+        "coverage_percent": 100.0,
+        "covered_transition_ids": [
+            "TR_001",
+            "TR_002",
+            "TR_003",
+            "TR_004",
+            "TR_005",
+            "TR_006",
+            "TR_007",
+            "TR_008"
+        ],
+        "missing_transition_ids": [],
+        "transition_hits": {
+            "TR_001": 5,
+            "TR_002": 5,
+            "TR_003": 6,
+            "TR_004": 1,
+            "TR_005": 1,
+            "TR_006": 5,
+            "TR_007": 1,
+            "TR_008": 4
+        }
+    },
+    "coverage_complete": true
+}

@@ -1,0 +1,92 @@
+DAY 17 - FSM STATE / TRANSITION COVERAGE
+================================================
+
+DAY 16 PRECHECK
+------------------------------------------------
+Day-16 pipeline: PASS / FAIL
+Day-16 summary: PASS / FAIL
+FSM knowledge validated: YES / NO
+
+
+BASELINE TRACE
+------------------------------------------------
+Trace generated: YES / NO
+Simulation: PASS / FAIL
+Failed checks: ________
+
+
+BASELINE COVERAGE
+------------------------------------------------
+State coverage: ________ %
+Transition coverage: ________ %
+
+Missing states: ________
+Missing transitions: ________
+
+Baseline gap status:
+GAPS_FOUND / NO_GAPS
+
+
+TARGET GENERATION
+------------------------------------------------
+Generation method:
+DETERMINISTIC FSM GRAPH SEARCH
+
+Hermes used:
+NO
+
+Target count:
+________
+
+
+TARGETED SIMULATION
+------------------------------------------------
+Generated TB: PASS / FAIL
+Compilation: PASS / FAIL
+Simulation: PASS / FAIL
+Failed checks: ________
+
+
+FINAL COVERAGE
+------------------------------------------------
+State coverage: ________ %
+Transition coverage: ________ %
+
+State coverage delta: ________
+Transition coverage delta: ________
+
+Remaining states: ________
+Remaining transitions: ________
+
+Coverage trend:
+IMPROVED / UNCHANGED / REGRESSION
+
+
+CLOSURE
+------------------------------------------------
+Decision:
+STOP / CONTINUE
+
+Reason:
+________________________________________
+
+
+PROJECT BOUNDARY
+------------------------------------------------
+RTL modified:
+NO
+
+State coverage measured:
+YES
+
+Transition coverage measured:
+YES
+
+Hermes used:
+NO
+
+
+================================================
+DAY 17 FINAL STATUS:
+PASS / FAIL
+================================================

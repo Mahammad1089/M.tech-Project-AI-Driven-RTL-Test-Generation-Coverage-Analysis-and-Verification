@@ -1,0 +1,15 @@
+{
+    "before": {
+        "state_coverage": 100.0,
+        "transition_coverage": 75.0
+    },
+    "after": {
+        "state_coverage": 100.0,
+        "transition_coverage": 100.0
+    },
+    "delta": {
+        "state_coverage": 0.0,
+        "transition_coverage": 25.0
+    },
+    "trend": "IMPROVED"
+}
