@@ -1,0 +1,23 @@
+{
+    "day": 19,
+    "dut": "fifo",
+    "stage": "FIFO functional coverage and deterministic closure",
+    "coverage_model": "10 defined FIFO functional coverage points",
+    "baseline_coverage_percent": 100.0,
+    "baseline_covered_points": 10,
+    "baseline_missing_points": 0,
+    "target_count": 0,
+    "final_coverage_percent": 100.0,
+    "final_covered_points": 10,
+    "coverage_delta": 0.0,
+    "coverage_trend": "UNCHANGED",
+    "remaining_gap_count": 0,
+    "gap_status": "NO_GAPS",
+    "closure_action": "STOP",
+    "closure_reason": "All defined FIFO functional coverage points are covered.",
+    "hermes_used": false,
+    "coverage_measured": true,
+    "target_generation": "deterministic_target_library",
+    "rtl_modified": false,
+    "status": "PASS"
+}

@@ -1,0 +1,11 @@
+{
+    "dut": "fifo",
+    "analysis_type": "fifo_functional_coverage_gap_analysis",
+    "source_coverage_percent": 100.0,
+    "gap_count": 0,
+    "gaps": [],
+    "gap_status": "NO_GAPS",
+    "hermes_used": false,
+    "new_tests_generated": false,
+    "coverage_remeasured": false
+}

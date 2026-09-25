@@ -1,0 +1,7 @@
+{
+    "coverage_percent": 100.0,
+    "missing_points": [],
+    "coverage_complete": true,
+    "action": "STOP",
+    "reason": "All defined FIFO functional coverage points are covered."
+}

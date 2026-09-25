@@ -1,0 +1,8 @@
+{
+    "dut": "fifo",
+    "source_gap_status": "NO_GAPS",
+    "target_count": 0,
+    "targets": [],
+    "hermes_used": false,
+    "generation_method": "deterministic_target_library"
+}

@@ -1,0 +1,52 @@
+DAY 19 - FIFO FUNCTIONAL COVERAGE AND CLOSURE
+
+Day-18 pipeline:
+PASS / FAIL
+
+Baseline simulation:
+PASS / FAIL
+
+Baseline functional coverage:
+________ %
+
+Baseline covered points:
+________ / 10
+
+Baseline gap status:
+GAPS_FOUND / NO_GAPS
+
+Target count:
+________
+
+Target generation:
+DETERMINISTIC
+
+Hermes used:
+NO
+
+Targeted simulation:
+PASS / FAIL
+
+Final functional coverage:
+________ %
+
+Coverage delta:
+________ %
+
+Coverage trend:
+IMPROVED / UNCHANGED / REGRESSION
+
+Remaining gaps:
+________
+
+Closure action:
+STOP / CONTINUE
+
+RTL modified:
+NO
+
+Day-18 regression:
+PASS / FAIL
+
+DAY 19 FINAL STATUS:
+PASS / FAIL
