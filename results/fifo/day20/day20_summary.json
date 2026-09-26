@@ -1,0 +1,28 @@
+{
+    "day": 20,
+    "dut": "fifo",
+    "stage": "baseline verification strategy comparison",
+    "manual_directed": {
+        "coverage_percent": 100.0,
+        "stimulus_cycles": 16,
+        "redundancy_percent": 25.0
+    },
+    "random": {
+        "coverage_percent": 100.0,
+        "stimulus_cycles": 40,
+        "redundancy_percent": 57.5
+    },
+    "feedback_driven": {
+        "coverage_percent": 100.0,
+        "stimulus_cycles": 32,
+        "redundancy_percent": 59.38
+    },
+    "same_rtl": true,
+    "same_coverage_model": true,
+    "random_seed": 20260926,
+    "random_cycles": 20,
+    "hermes_used": false,
+    "rtl_modified": false,
+    "results_are_measured": true,
+    "status": "PASS"
+}

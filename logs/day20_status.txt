@@ -1,0 +1,98 @@
+DAY 20 - VERIFICATION STRATEGY BASELINE COMPARISON
+
+Day-19 precheck:
+PASS / FAIL
+
+Same FIFO RTL:
+YES / NO
+
+Same coverage model:
+YES / NO
+
+
+MANUAL / DIRECTED BASELINE
+
+Simulation:
+PASS / FAIL
+
+Coverage:
+________ %
+
+Covered points:
+________ / 10
+
+Stimulus cycles:
+________
+
+Redundancy:
+________ %
+
+
+RANDOM BASELINE
+
+Seed:
+20260926
+
+Random cycles:
+20
+
+Reproducibility:
+PASS / FAIL
+
+Simulation:
+PASS / FAIL
+
+Coverage:
+________ %
+
+Covered points:
+________ / 10
+
+Stimulus cycles:
+________
+
+Redundancy:
+________ %
+
+
+FEEDBACK-DRIVEN METHOD
+
+Coverage:
+________ %
+
+Covered points:
+________ / 10
+
+Stimulus cycles:
+________
+
+Redundancy:
+________ %
+
+
+COMPARISON
+
+Comparison generation:
+PASS / FAIL
+
+Comparison validation:
+PASS / FAIL
+
+CSV generation:
+PASS / FAIL
+
+Hermes used on Day 20:
+NO
+
+RTL modified:
+NO
+
+Day-19 regression:
+PASS / FAIL
+
+Day-18 regression:
+PASS / FAIL
+
+
+DAY 20 FINAL STATUS:
+PASS / FAIL

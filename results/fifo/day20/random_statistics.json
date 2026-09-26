@@ -1,0 +1,16 @@
+{
+    "strategy": "random",
+    "trace_rows": 41,
+    "reset_cycles": 1,
+    "stimulus_cycles": 40,
+    "idle_cycles": 8,
+    "write_requests": 26,
+    "read_requests": 21,
+    "simultaneous_requests": 15,
+    "blocked_writes": 4,
+    "blocked_reads": 2,
+    "unique_behavior_signatures": 17,
+    "redundant_cycles": 23,
+    "redundancy_percent": 57.5,
+    "signature_definition": "(wr_en, rd_en, count_before)"
+}

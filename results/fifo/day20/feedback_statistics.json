@@ -1,0 +1,16 @@
+{
+    "strategy": "feedback_driven",
+    "trace_rows": 34,
+    "reset_cycles": 2,
+    "stimulus_cycles": 32,
+    "idle_cycles": 2,
+    "write_requests": 16,
+    "read_requests": 16,
+    "simultaneous_requests": 2,
+    "blocked_writes": 2,
+    "blocked_reads": 2,
+    "unique_behavior_signatures": 13,
+    "redundant_cycles": 19,
+    "redundancy_percent": 59.38,
+    "signature_definition": "(wr_en, rd_en, count_before)"
+}

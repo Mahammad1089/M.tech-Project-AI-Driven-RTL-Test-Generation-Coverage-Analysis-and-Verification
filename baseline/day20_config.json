@@ -1,0 +1,22 @@
+{
+    "day": 20,
+    "dut": "fifo",
+    "experiment": "verification_strategy_comparison",
+    "fifo_depth": 4,
+    "data_width": 8,
+    "random_seed": 20260926,
+    "random_cycles": 20,
+    "coverage_model": "day19_fifo_10_point_functional_coverage",
+    "strategies": [
+        "manual_directed",
+        "random",
+        "feedback_driven"
+    ],
+    "fairness_rules": {
+        "same_rtl": true,
+        "same_coverage_analyzer": true,
+        "same_coverage_points": true,
+        "deterministic_random_seed": true,
+        "no_rtl_modification": true
+    }
+}

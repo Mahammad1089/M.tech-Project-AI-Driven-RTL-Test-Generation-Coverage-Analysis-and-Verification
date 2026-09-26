@@ -1,0 +1,47 @@
+{
+    "day": 20,
+    "dut": "fifo",
+    "comparison_type": "verification_strategy_comparison",
+    "coverage_model": "same_day19_10_point_fifo_functional_coverage",
+    "strategies": [
+        {
+            "strategy": "manual_directed",
+            "coverage_percent": 100.0,
+            "covered_points": 10,
+            "total_points": 10,
+            "missing_points": [],
+            "stimulus_cycles": 16,
+            "unique_behavior_signatures": 12,
+            "redundant_cycles": 4,
+            "redundancy_percent": 25.0,
+            "coverage_percent_per_stimulus_cycle": 6.25
+        },
+        {
+            "strategy": "random",
+            "coverage_percent": 100.0,
+            "covered_points": 10,
+            "total_points": 10,
+            "missing_points": [],
+            "stimulus_cycles": 40,
+            "unique_behavior_signatures": 17,
+            "redundant_cycles": 23,
+            "redundancy_percent": 57.5,
+            "coverage_percent_per_stimulus_cycle": 2.5
+        },
+        {
+            "strategy": "feedback_driven",
+            "coverage_percent": 100.0,
+            "covered_points": 10,
+            "total_points": 10,
+            "missing_points": [],
+            "stimulus_cycles": 32,
+            "unique_behavior_signatures": 13,
+            "redundant_cycles": 19,
+            "redundancy_percent": 59.38,
+            "coverage_percent_per_stimulus_cycle": 3.125
+        }
+    ],
+    "interpretation_rule": "Report measured values without assuming a strategy is superior.",
+    "rtl_modified": false,
+    "hermes_used_for_day20_baselines": false
+}
