@@ -1,0 +1,30 @@
+{
+    "day": 21,
+    "dut": "fifo",
+    "experiment": "multi_seed_random_baseline_evaluation",
+    "fifo_depth": 4,
+    "data_width": 8,
+    "random_cycles_per_seed": 20,
+    "seeds": [
+        20260921,
+        20260922,
+        20260923,
+        20260924,
+        20260925,
+        20260926,
+        20260927,
+        20260928,
+        20260929,
+        20260930
+    ],
+    "total_runs": 10,
+    "coverage_model": "day19_fifo_10_point_functional_coverage",
+    "comparison_reference": "day20",
+    "fairness_rules": {
+        "same_rtl": true,
+        "same_coverage_analyzer": true,
+        "same_cycles_per_random_run": true,
+        "fixed_recorded_seeds": true,
+        "no_rtl_modification": true
+    }
+}

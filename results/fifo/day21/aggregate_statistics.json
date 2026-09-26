@@ -1,0 +1,171 @@
+{
+  "day": 21,
+  "dut": "fifo",
+  "strategy": "random_multi_seed",
+  "source_summary": "results/fifo/day21/day21_experiment_summary.json",
+  "experiment_configuration": {
+    "number_of_runs": 10,
+    "transactions_per_run": 20,
+    "base_seed": 20260921,
+    "seeds": [
+      20260921,
+      20260922,
+      20260923,
+      20260924,
+      20260925,
+      20260926,
+      20260927,
+      20260928,
+      20260929,
+      20260930
+    ]
+  },
+  "run_status": {
+    "passed_runs": 10,
+    "failed_runs": 0,
+    "pass_rate_percent": 100.0,
+    "all_simulations_passed": true
+  },
+  "coverage_statistics": {
+    "count": 10,
+    "mean": 86.0,
+    "minimum": 80.0,
+    "maximum": 100.0,
+    "median": 80.0,
+    "population_stddev": 9.1652
+  },
+  "coverage_distribution": {
+    "runs_at_100_percent": 3,
+    "runs_at_or_above_90_percent": 3,
+    "runs_below_90_percent": 7
+  },
+  "redundancy_statistics": {
+    "count": 10,
+    "mean": 48.0,
+    "minimum": 30.0,
+    "maximum": 70.0,
+    "median": 47.5,
+    "population_stddev": 10.2956
+  },
+  "runtime_statistics_seconds": {
+    "count": 10,
+    "mean": 0.117,
+    "minimum": 0.0809,
+    "maximum": 0.1713,
+    "median": 0.1114,
+    "population_stddev": 0.0272
+  },
+  "verification_check_statistics": {
+    "count": 10,
+    "mean": 70.0,
+    "minimum": 67.0,
+    "maximum": 72.0,
+    "median": 71.0,
+    "population_stddev": 1.9494
+  },
+  "unique_behavior_signature_statistics": {
+    "count": 10,
+    "mean": 10.4,
+    "minimum": 6.0,
+    "maximum": 14.0,
+    "median": 10.5,
+    "population_stddev": 2.0591
+  },
+  "redundant_cycle_statistics": {
+    "count": 10,
+    "mean": 9.6,
+    "minimum": 6.0,
+    "maximum": 14.0,
+    "median": 9.5,
+    "population_stddev": 2.0591
+  },
+  "transaction_statistics": {
+    "count": 10,
+    "mean": 20.0,
+    "minimum": 20.0,
+    "maximum": 20.0,
+    "median": 20.0,
+    "population_stddev": 0.0
+  },
+  "totals": {
+    "total_transactions": 200,
+    "total_verification_checks": 700,
+    "total_redundant_cycles": 96
+  },
+  "measured_values": {
+    "coverage_percent_by_run": [
+      80.0,
+      80.0,
+      100.0,
+      100.0,
+      80.0,
+      80.0,
+      80.0,
+      80.0,
+      80.0,
+      100.0
+    ],
+    "redundancy_percent_by_run": [
+      50.0,
+      70.0,
+      30.0,
+      45.0,
+      50.0,
+      45.0,
+      55.0,
+      40.0,
+      55.0,
+      40.0
+    ],
+    "runtime_seconds_by_run": [
+      0.171297,
+      0.119182,
+      0.103685,
+      0.136385,
+      0.127739,
+      0.096128,
+      0.080862,
+      0.093185,
+      0.147515,
+      0.094048
+    ],
+    "total_checks_by_run": [
+      71,
+      69,
+      71,
+      71,
+      72,
+      67,
+      67,
+      68,
+      72,
+      72
+    ],
+    "unique_behavior_signatures_by_run": [
+      10,
+      6,
+      14,
+      11,
+      10,
+      11,
+      9,
+      12,
+      9,
+      12
+    ],
+    "redundant_cycles_by_run": [
+      10,
+      14,
+      6,
+      9,
+      10,
+      9,
+      11,
+      8,
+      11,
+      8
+    ]
+  },
+  "rtl_modified": false,
+  "statistics_complete": true
+}

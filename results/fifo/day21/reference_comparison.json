@@ -1,0 +1,52 @@
+{
+  "day": 21,
+  "dut": "fifo",
+  "comparison_type": "day20_random_reference_vs_day21_multi_seed",
+  "coverage_model": "same_day19_10_point_fifo_functional_coverage",
+  "day20_random_reference": {
+    "strategy": "random",
+    "coverage_percent": 100.0,
+    "stimulus_cycles": 40,
+    "unique_behavior_signatures": 17,
+    "redundant_cycles": 23,
+    "redundancy_percent": 57.5
+  },
+  "day21_multi_seed_measurement": {
+    "number_of_runs": 10,
+    "run_count": 10,
+    "transactions_per_run": 20,
+    "total_transactions": 200,
+    "passed_runs": 10,
+    "failed_runs": 0,
+    "average_coverage_percent": 86.0,
+    "minimum_coverage_percent": 80.0,
+    "maximum_coverage_percent": 100.0,
+    "median_coverage_percent": 80.0,
+    "runs_at_100_percent": 3,
+    "average_redundancy_percent": 48.0,
+    "average_unique_behavior_signatures": 10.4,
+    "average_redundant_cycles": 9.6,
+    "average_runtime_seconds": 0.117003,
+    "total_failed_checks": 0
+  },
+  "measured_differences": {
+    "coverage_percentage_point_difference": -14.0,
+    "redundancy_percentage_point_difference": -9.5,
+    "unique_behavior_signature_difference": -6.6,
+    "stimulus_or_transaction_count_difference_per_run": -20
+  },
+  "interpretation": {
+    "coverage": "Day 21 reports the mean coverage across repeated random seeds; Day 20 is a single random baseline run.",
+    "redundancy": "Redundancy values are reported as measured and are not used alone to declare one method superior.",
+    "experimental_note": "The Day 20 and Day 21 measurements use different random experiment sizes, so differences should be reported together with the number of stimulus cycles/transactions.",
+    "decision_rule": "Report measured values without assuming a strategy is superior."
+  },
+  "source_files": {
+    "day20_reference": "results/fifo/day20/strategy_comparison.json",
+    "day21_summary": "results/fifo/day21/day21_experiment_summary.json",
+    "day21_statistics": "results/fifo/day21/day21_statistics.json"
+  },
+  "statistics_file_present": true,
+  "rtl_modified": false,
+  "comparison_complete": true
+}
