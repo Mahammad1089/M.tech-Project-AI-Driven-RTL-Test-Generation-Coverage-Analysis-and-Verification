@@ -1,0 +1,98 @@
+DAY 22 - EXPERIMENTAL RESULTS VISUALIZATION
+
+DAY 21 PRECHECK
+
+Day-21 experiment validation:
+PASS / FAIL
+
+Random runs:
+________ / 10
+
+Day-21 aggregate statistics:
+PASS / FAIL
+
+Day-20 comparison:
+PASS / FAIL
+
+
+GRAPH DATA
+
+Graph-data JSON:
+PASS / FAIL
+
+Random graph-data CSV:
+PASS / FAIL
+
+Strategy graph-data CSV:
+PASS / FAIL
+
+
+FIGURES
+
+01 Strategy coverage:
+PASS / FAIL
+
+02 Random seed coverage:
+PASS / FAIL
+
+03 Random coverage distribution:
+PASS / FAIL
+
+04 Verification effort:
+PASS / FAIL
+
+05 Random redundancy:
+PASS / FAIL
+
+06 Random coverage range:
+PASS / FAIL
+
+Total figures:
+________ / 6
+
+
+VALIDATION
+
+Graph validation:
+PASS / FAIL
+
+Graph manifest:
+PASS / FAIL
+
+Integrated pipeline:
+PASS / FAIL
+
+Day-22 summary:
+PASS / FAIL
+
+
+BOUNDARIES
+
+Results measured:
+YES / NO
+
+New tests generated:
+NO
+
+Coverage remeasured:
+NO
+
+Hermes used:
+NO
+
+FIFO RTL modified:
+NO
+
+
+REGRESSION
+
+Day-21 validation:
+PASS / FAIL
+
+Day-20 validation:
+PASS / FAIL
+
+
+DAY 22 FINAL STATUS:
+
+PASS / FAIL

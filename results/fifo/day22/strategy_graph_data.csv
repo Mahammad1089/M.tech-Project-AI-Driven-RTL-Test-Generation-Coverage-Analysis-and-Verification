@@ -1,0 +1,4 @@
+strategy,status,coverage_percent,covered_points,total_points,missing_points,stimulus_cycles,unique_behavior_signatures,redundant_cycles,redundancy_percent,coverage_percent_per_stimulus_cycle
+manual_directed,MEASURED,100.0,10,10,,16,12,4,25.0,6.25
+random,MEASURED,100.0,10,10,,40,17,23,57.5,2.5
+feedback_driven,MEASURED,100.0,10,10,,32,13,19,59.38,3.125

@@ -1,0 +1,84 @@
+{
+  "day": 22,
+  "artifact_type": "graph_manifest",
+  "expected_graph_count": 6,
+  "generated_graph_count": 6,
+  "valid_result_copy_count": 6,
+  "all_graphs_valid": true,
+  "all_result_copies_valid": true,
+  "graphs": [
+    {
+      "graph_number": 1,
+      "name": "Strategy Coverage",
+      "graph_file": "graphs/day22_graph1_strategy_coverage.png",
+      "graph_exists": true,
+      "graph_valid_png": true,
+      "graph_size_bytes": 130131,
+      "result_copy": "results/fifo/day22/graph1_strategy_coverage.png",
+      "result_copy_exists": true,
+      "result_copy_valid_png": true,
+      "result_copy_size_bytes": 130131
+    },
+    {
+      "graph_number": 2,
+      "name": "Seed Coverage",
+      "graph_file": "graphs/day22_graph2_seed_coverage.png",
+      "graph_exists": true,
+      "graph_valid_png": true,
+      "graph_size_bytes": 213273,
+      "result_copy": "results/fifo/day22/graph2_seed_coverage.png",
+      "result_copy_exists": true,
+      "result_copy_valid_png": true,
+      "result_copy_size_bytes": 213273
+    },
+    {
+      "graph_number": 3,
+      "name": "Coverage Distribution",
+      "graph_file": "graphs/day22_graph3_coverage_distribution.png",
+      "graph_exists": true,
+      "graph_valid_png": true,
+      "graph_size_bytes": 127420,
+      "result_copy": "results/fifo/day22/graph3_coverage_distribution.png",
+      "result_copy_exists": true,
+      "result_copy_valid_png": true,
+      "result_copy_size_bytes": 127420
+    },
+    {
+      "graph_number": 4,
+      "name": "Verification Effort",
+      "graph_file": "graphs/day22_graph4_verification_effort.png",
+      "graph_exists": true,
+      "graph_valid_png": true,
+      "graph_size_bytes": 172092,
+      "result_copy": "results/fifo/day22/graph4_verification_effort.png",
+      "result_copy_exists": true,
+      "result_copy_valid_png": true,
+      "result_copy_size_bytes": 172092
+    },
+    {
+      "graph_number": 5,
+      "name": "Random Redundancy",
+      "graph_file": "graphs/day22_graph5_random_redundancy.png",
+      "graph_exists": true,
+      "graph_valid_png": true,
+      "graph_size_bytes": 248923,
+      "result_copy": "results/fifo/day22/graph5_random_redundancy.png",
+      "result_copy_exists": true,
+      "result_copy_valid_png": true,
+      "result_copy_size_bytes": 248923
+    },
+    {
+      "graph_number": 6,
+      "name": "Random Coverage Range",
+      "graph_file": "graphs/day22_graph6_random_range.png",
+      "graph_exists": true,
+      "graph_valid_png": true,
+      "graph_size_bytes": 164336,
+      "result_copy": "results/fifo/day22/graph6_random_range.png",
+      "result_copy_exists": true,
+      "result_copy_valid_png": true,
+      "result_copy_size_bytes": 164336
+    }
+  ],
+  "status": "PASS"
+}
