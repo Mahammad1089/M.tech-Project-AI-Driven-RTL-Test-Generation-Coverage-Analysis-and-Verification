@@ -1,0 +1,6 @@
+CASE STATEMENT #1
+Case expression:
+Identifier: sel (at 10)
+Number of case items: 9
+
+Total case statements: 1

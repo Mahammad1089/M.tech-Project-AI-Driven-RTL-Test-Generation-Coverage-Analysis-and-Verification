@@ -1,0 +1,19 @@
+{
+    "status": "PASS",
+    "stage": "complete",
+    "return_code": 0,
+    "hermes_exit_code": 0,
+    "event_count": 72,
+    "invalid_line_count": 0,
+    "session_id": "20260921_113527_f33fd6",
+    "response_text": "{\n  \"dut\": \"alu\",\n  \"generation_type\": \"no_gap_no_regeneration\",\n  \"source_stage\": \"DAY_13_COVERAGE_GAPS\",\n  \"scenario_count\": 0,\n  \"scenarios\": [],\n  \"reason\": \"No verified coverage gaps are present.\",\n  \"generation_status\": \"NO_TARGETED_GENERATION_REQUIRED\"\n}",
+    "tokens": {
+        "input": 12932,
+        "output": 146,
+        "total": 14166,
+        "cache_read": 1088,
+        "cache_write": 0
+    },
+    "duration_ms": 19364,
+    "stderr": "\nsession_id: 20260921_113527_f33fd6\n"
+}

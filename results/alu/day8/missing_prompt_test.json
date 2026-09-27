@@ -1,0 +1,5 @@
+{
+    "status": "FAIL",
+    "stage": "input",
+    "error": "Prompt file not found: hermes/prompts/not_existing.txt"
+}

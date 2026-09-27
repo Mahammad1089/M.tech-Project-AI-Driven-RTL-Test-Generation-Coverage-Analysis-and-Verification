@@ -1,0 +1,356 @@
+{
+  "day": 22,
+  "dut": "fifo",
+  "build_type": "graph_and_table_data",
+  "status": "PASS",
+  "source_files": {
+    "day20_strategy_comparison": "results/fifo/day20/strategy_comparison.json",
+    "day21_summary": "results/fifo/day21/day21_final_summary.json",
+    "day21_statistics": "results/fifo/day21/day21_statistics.json",
+    "day21_reference_comparison": "results/fifo/day21/reference_comparison.json"
+  },
+  "day20_strategy_comparison": [
+    {
+      "strategy": "manual_directed",
+      "status": "MEASURED",
+      "coverage_percent": 100.0,
+      "covered_points": 10,
+      "total_points": 10,
+      "missing_points": "",
+      "stimulus_cycles": 16,
+      "unique_behavior_signatures": 12,
+      "redundant_cycles": 4,
+      "redundancy_percent": 25.0,
+      "coverage_percent_per_stimulus_cycle": 6.25
+    },
+    {
+      "strategy": "random",
+      "status": "MEASURED",
+      "coverage_percent": 100.0,
+      "covered_points": 10,
+      "total_points": 10,
+      "missing_points": "",
+      "stimulus_cycles": 40,
+      "unique_behavior_signatures": 17,
+      "redundant_cycles": 23,
+      "redundancy_percent": 57.5,
+      "coverage_percent_per_stimulus_cycle": 2.5
+    },
+    {
+      "strategy": "feedback_driven",
+      "status": "MEASURED",
+      "coverage_percent": 100.0,
+      "covered_points": 10,
+      "total_points": 10,
+      "missing_points": "",
+      "stimulus_cycles": 32,
+      "unique_behavior_signatures": 13,
+      "redundant_cycles": 19,
+      "redundancy_percent": 59.38,
+      "coverage_percent_per_stimulus_cycle": 3.125
+    }
+  ],
+  "day21_multi_seed_summary": {
+    "status": "PASS",
+    "number_of_runs": 10,
+    "transactions_per_run": 20,
+    "total_transactions": 200,
+    "passed_runs": 10,
+    "failed_runs": 0,
+    "average_coverage_percent": 86.0,
+    "minimum_coverage_percent": 80.0,
+    "maximum_coverage_percent": 100.0,
+    "average_redundancy_percent": 48.0,
+    "average_runtime_seconds": 0.117003,
+    "average_unique_behavior_signatures": 10.4,
+    "total_verification_checks": 700,
+    "total_passed_checks": 700,
+    "total_failed_checks": 0
+  },
+  "day21_runs": [
+    {
+      "run": 1,
+      "seed": 20260921,
+      "transactions": 20,
+      "status": "PASS",
+      "total_checks": 71,
+      "passed_checks": 71,
+      "failed_checks": 0,
+      "coverage_percent": 80.0,
+      "unique_behavior_signatures": 10,
+      "redundant_cycles": 10,
+      "redundancy_percent": 50.0,
+      "runtime_seconds": 0.171297
+    },
+    {
+      "run": 2,
+      "seed": 20260922,
+      "transactions": 20,
+      "status": "PASS",
+      "total_checks": 69,
+      "passed_checks": 69,
+      "failed_checks": 0,
+      "coverage_percent": 80.0,
+      "unique_behavior_signatures": 6,
+      "redundant_cycles": 14,
+      "redundancy_percent": 70.0,
+      "runtime_seconds": 0.119182
+    },
+    {
+      "run": 3,
+      "seed": 20260923,
+      "transactions": 20,
+      "status": "PASS",
+      "total_checks": 71,
+      "passed_checks": 71,
+      "failed_checks": 0,
+      "coverage_percent": 100.0,
+      "unique_behavior_signatures": 14,
+      "redundant_cycles": 6,
+      "redundancy_percent": 30.0,
+      "runtime_seconds": 0.103685
+    },
+    {
+      "run": 4,
+      "seed": 20260924,
+      "transactions": 20,
+      "status": "PASS",
+      "total_checks": 71,
+      "passed_checks": 71,
+      "failed_checks": 0,
+      "coverage_percent": 100.0,
+      "unique_behavior_signatures": 11,
+      "redundant_cycles": 9,
+      "redundancy_percent": 45.0,
+      "runtime_seconds": 0.136385
+    },
+    {
+      "run": 5,
+      "seed": 20260925,
+      "transactions": 20,
+      "status": "PASS",
+      "total_checks": 72,
+      "passed_checks": 72,
+      "failed_checks": 0,
+      "coverage_percent": 80.0,
+      "unique_behavior_signatures": 10,
+      "redundant_cycles": 10,
+      "redundancy_percent": 50.0,
+      "runtime_seconds": 0.127739
+    },
+    {
+      "run": 6,
+      "seed": 20260926,
+      "transactions": 20,
+      "status": "PASS",
+      "total_checks": 67,
+      "passed_checks": 67,
+      "failed_checks": 0,
+      "coverage_percent": 80.0,
+      "unique_behavior_signatures": 11,
+      "redundant_cycles": 9,
+      "redundancy_percent": 45.0,
+      "runtime_seconds": 0.096128
+    },
+    {
+      "run": 7,
+      "seed": 20260927,
+      "transactions": 20,
+      "status": "PASS",
+      "total_checks": 67,
+      "passed_checks": 67,
+      "failed_checks": 0,
+      "coverage_percent": 80.0,
+      "unique_behavior_signatures": 9,
+      "redundant_cycles": 11,
+      "redundancy_percent": 55.0,
+      "runtime_seconds": 0.080862
+    },
+    {
+      "run": 8,
+      "seed": 20260928,
+      "transactions": 20,
+      "status": "PASS",
+      "total_checks": 68,
+      "passed_checks": 68,
+      "failed_checks": 0,
+      "coverage_percent": 80.0,
+      "unique_behavior_signatures": 12,
+      "redundant_cycles": 8,
+      "redundancy_percent": 40.0,
+      "runtime_seconds": 0.093185
+    },
+    {
+      "run": 9,
+      "seed": 20260929,
+      "transactions": 20,
+      "status": "PASS",
+      "total_checks": 72,
+      "passed_checks": 72,
+      "failed_checks": 0,
+      "coverage_percent": 80.0,
+      "unique_behavior_signatures": 9,
+      "redundant_cycles": 11,
+      "redundancy_percent": 55.0,
+      "runtime_seconds": 0.147515
+    },
+    {
+      "run": 10,
+      "seed": 20260930,
+      "transactions": 20,
+      "status": "PASS",
+      "total_checks": 72,
+      "passed_checks": 72,
+      "failed_checks": 0,
+      "coverage_percent": 100.0,
+      "unique_behavior_signatures": 12,
+      "redundant_cycles": 8,
+      "redundancy_percent": 40.0,
+      "runtime_seconds": 0.094048
+    }
+  ],
+  "coverage_distribution": [
+    {
+      "coverage_percent": 80.0,
+      "run_count": 7
+    },
+    {
+      "coverage_percent": 100.0,
+      "run_count": 3
+    }
+  ],
+  "graph_specs": {
+    "graph_01_strategy_coverage": {
+      "title": "FIFO Functional Coverage by Verification Strategy",
+      "x_label": "Verification Strategy",
+      "y_label": "Functional Coverage (%)",
+      "x": [
+        "manual_directed",
+        "random",
+        "feedback_driven"
+      ],
+      "y": [
+        100.0,
+        100.0,
+        100.0
+      ]
+    },
+    "graph_02_tests_vs_coverage": {
+      "title": "FIFO Stimulus Count vs Functional Coverage",
+      "x_label": "Stimulus Cycles",
+      "y_label": "Functional Coverage (%)",
+      "points": [
+        {
+          "strategy": "manual_directed",
+          "stimulus_cycles": 16,
+          "coverage_percent": 100.0
+        },
+        {
+          "strategy": "random",
+          "stimulus_cycles": 40,
+          "coverage_percent": 100.0
+        },
+        {
+          "strategy": "feedback_driven",
+          "stimulus_cycles": 32,
+          "coverage_percent": 100.0
+        }
+      ]
+    },
+    "graph_03_redundancy": {
+      "title": "FIFO Verification Strategy Redundancy",
+      "x_label": "Verification Strategy",
+      "y_label": "Redundancy (%)",
+      "x": [
+        "manual_directed",
+        "random",
+        "feedback_driven"
+      ],
+      "y": [
+        25.0,
+        57.5,
+        59.38
+      ]
+    },
+    "graph_04_day21_seed_coverage": {
+      "title": "Day 21 FIFO Coverage Across Random Seeds",
+      "x_label": "Experiment Run",
+      "y_label": "Functional Coverage (%)",
+      "x": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "y": [
+        80.0,
+        80.0,
+        100.0,
+        100.0,
+        80.0,
+        80.0,
+        80.0,
+        80.0,
+        80.0,
+        100.0
+      ]
+    },
+    "graph_05_day21_seed_redundancy": {
+      "title": "Day 21 FIFO Redundancy Across Random Seeds",
+      "x_label": "Experiment Run",
+      "y_label": "Redundancy (%)",
+      "x": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "y": [
+        50.0,
+        70.0,
+        30.0,
+        45.0,
+        50.0,
+        45.0,
+        55.0,
+        40.0,
+        55.0,
+        40.0
+      ]
+    },
+    "graph_06_day20_vs_day21_random": {
+      "title": "Single-Run and Multi-Seed Random FIFO Coverage",
+      "x_label": "Measurement",
+      "y_label": "Functional Coverage (%)",
+      "x": [
+        "Day20 Random",
+        "Day21 Random Mean",
+        "Day21 Random Min",
+        "Day21 Random Max"
+      ],
+      "y": [
+        100.0,
+        86.0,
+        80.0,
+        100.0
+      ]
+    }
+  },
+  "day21_statistics_available": true,
+  "day21_reference_comparison_available": true,
+  "interpretation_rule": "Report measured values without assuming a strategy is superior.",
+  "rtl_modified": false,
+  "graph_data_complete": true
+}

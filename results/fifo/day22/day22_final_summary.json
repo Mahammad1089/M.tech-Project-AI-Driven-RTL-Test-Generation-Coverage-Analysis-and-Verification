@@ -1,0 +1,140 @@
+{
+  "day": 22,
+  "dut": "fifo",
+  "task": "generate_graphs_and_tables",
+  "status": "PASS",
+  "graph_manifest": {
+    "source": "results/fifo/day22/day22_manifest.json",
+    "expected_graph_count": 6,
+    "generated_graph_count": 6,
+    "valid_result_copy_count": 6,
+    "all_graphs_valid": true,
+    "all_result_copies_valid": true,
+    "graphs": [
+      {
+        "graph_number": 1,
+        "name": "Strategy Coverage",
+        "graph_file": "graphs/day22_graph1_strategy_coverage.png",
+        "graph_exists": true,
+        "graph_valid_png": true,
+        "graph_size_bytes": 130131,
+        "result_copy": "results/fifo/day22/graph1_strategy_coverage.png",
+        "result_copy_exists": true,
+        "result_copy_valid_png": true,
+        "result_copy_size_bytes": 130131
+      },
+      {
+        "graph_number": 2,
+        "name": "Seed Coverage",
+        "graph_file": "graphs/day22_graph2_seed_coverage.png",
+        "graph_exists": true,
+        "graph_valid_png": true,
+        "graph_size_bytes": 213273,
+        "result_copy": "results/fifo/day22/graph2_seed_coverage.png",
+        "result_copy_exists": true,
+        "result_copy_valid_png": true,
+        "result_copy_size_bytes": 213273
+      },
+      {
+        "graph_number": 3,
+        "name": "Coverage Distribution",
+        "graph_file": "graphs/day22_graph3_coverage_distribution.png",
+        "graph_exists": true,
+        "graph_valid_png": true,
+        "graph_size_bytes": 127420,
+        "result_copy": "results/fifo/day22/graph3_coverage_distribution.png",
+        "result_copy_exists": true,
+        "result_copy_valid_png": true,
+        "result_copy_size_bytes": 127420
+      },
+      {
+        "graph_number": 4,
+        "name": "Verification Effort",
+        "graph_file": "graphs/day22_graph4_verification_effort.png",
+        "graph_exists": true,
+        "graph_valid_png": true,
+        "graph_size_bytes": 172092,
+        "result_copy": "results/fifo/day22/graph4_verification_effort.png",
+        "result_copy_exists": true,
+        "result_copy_valid_png": true,
+        "result_copy_size_bytes": 172092
+      },
+      {
+        "graph_number": 5,
+        "name": "Random Redundancy",
+        "graph_file": "graphs/day22_graph5_random_redundancy.png",
+        "graph_exists": true,
+        "graph_valid_png": true,
+        "graph_size_bytes": 248923,
+        "result_copy": "results/fifo/day22/graph5_random_redundancy.png",
+        "result_copy_exists": true,
+        "result_copy_valid_png": true,
+        "result_copy_size_bytes": 248923
+      },
+      {
+        "graph_number": 6,
+        "name": "Random Coverage Range",
+        "graph_file": "graphs/day22_graph6_random_range.png",
+        "graph_exists": true,
+        "graph_valid_png": true,
+        "graph_size_bytes": 164336,
+        "result_copy": "results/fifo/day22/graph6_random_range.png",
+        "result_copy_exists": true,
+        "result_copy_valid_png": true,
+        "result_copy_size_bytes": 164336
+      }
+    ]
+  },
+  "day20_strategy_comparison": [
+    {
+      "strategy": "manual_directed",
+      "coverage_percent": 100.0,
+      "stimulus_cycles": 16,
+      "unique_behavior_signatures": 12,
+      "redundant_cycles": 4,
+      "redundancy_percent": 25.0
+    },
+    {
+      "strategy": "random",
+      "coverage_percent": 100.0,
+      "stimulus_cycles": 40,
+      "unique_behavior_signatures": 17,
+      "redundant_cycles": 23,
+      "redundancy_percent": 57.5
+    },
+    {
+      "strategy": "feedback_driven",
+      "coverage_percent": 100.0,
+      "stimulus_cycles": 32,
+      "unique_behavior_signatures": 13,
+      "redundant_cycles": 19,
+      "redundancy_percent": 59.38
+    }
+  ],
+  "day21_multi_seed_summary": {
+    "number_of_runs": 10,
+    "transactions_per_run": 20,
+    "total_transactions": 200,
+    "passed_runs": 10,
+    "failed_runs": 0,
+    "average_coverage_percent": 86.0,
+    "minimum_coverage_percent": 80.0,
+    "maximum_coverage_percent": 100.0,
+    "average_redundancy_percent": 48.0,
+    "average_runtime_seconds": 0.117003,
+    "total_verification_checks": 700,
+    "total_passed_checks": 700,
+    "total_failed_checks": 0
+  },
+  "artifacts": {
+    "graph_data_json": "results/fifo/day22/day22_graph_data.json",
+    "strategy_csv": "results/fifo/day22/strategy_comparison.csv",
+    "multi_seed_csv": "results/fifo/day22/day21_multi_seed.csv",
+    "coverage_distribution_csv": "results/fifo/day22/coverage_distribution.csv",
+    "graph_points_csv": "results/fifo/day22/graph_points.csv",
+    "summary_csv": "results/fifo/day22/day22_summary.csv",
+    "manifest_json": "results/fifo/day22/day22_manifest.json"
+  },
+  "validation_issues": [],
+  "rtl_modified": false
+}

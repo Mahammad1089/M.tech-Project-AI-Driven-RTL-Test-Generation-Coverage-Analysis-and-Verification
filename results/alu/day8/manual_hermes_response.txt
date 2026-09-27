@@ -1,0 +1,552 @@
+Query: You are assisting an RTL verification framework.
+
+The RTL language is Verilog.
+
+Your task for this stage is ONLY to understand
+the supplied RTL knowledge and verification
+objectives.
+
+Do not generate Verilog code.
+Do not generate a testbench.
+Do not modify RTL.
+Do not run simulation.
+Do not invent coverage results.
+
+RTL KNOWLEDGE:
+{
+  "rtl_language": "Verilog",
+  "analysis_method": "PyVerilog AST",
+  "modules": [
+    {
+      "module_name": "alu",
+      "ports": [
+        {
+          "name": "a",
+          "direction": "input",
+          "width": {
+            "msb": 3,
+            "lsb": 0,
+            "bits": 4
+          }
+        },
+        {
+          "name": "b",
+          "direction": "input",
+          "width": {
+            "msb": 3,
+            "lsb": 0,
+            "bits": 4
+          }
+        },
+        {
+          "name": "sel",
+          "direction": "input",
+          "width": {
+            "msb": 2,
+            "lsb": 0,
+            "bits": 3
+          }
+        },
+        {
+          "name": "y",
+          "direction": "output",
+          "width": {
+            "msb": 3,
+            "lsb": 0,
+            "bits": 4
+          }
+        }
+      ],
+      "case_logic": [
+        {
+          "selector": "sel",
+          "branches": [
+            {
+              "case_value": "3'b000",
+              "destination": "y",
+              "operator": "ADD",
+              "expression": "a + b",
+              "left_operand": "a",
+              "right_operand": "b"
+            },
+            {
+              "case_value": "3'b001",
+              "destination": "y",
+              "operator": "SUB",
+              "expression": "a - b",
+              "left_operand": "a",
+              "right_operand": "b"
+            },
+            {
+              "case_value": "3'b010",
+              "destination": "y",
+              "operator": "AND",
+              "expression": "a & b",
+              "left_operand": "a",
+              "right_operand": "b"
+            },
+            {
+              "case_value": "3'b011",
+              "destination": "y",
+              "operator": "OR",
+              "expression": "a | b",
+              "left_operand": "a",
+              "right_operand": "b"
+            },
+            {
+              "case_value": "3'b100",
+              "destination": "y",
+              "operator": "XOR",
+              "expression": "a ^ b",
+              "left_operand": "a",
+              "right_operand": "b"
+            },
+            {
+              "case_value": "3'b101",
+              "destination": "y",
+              "operator": "NOT",
+              "expression": "~a",
+              "left_operand": "a",
+              "right_operand": null
+            },
+            {
+              "case_value": "3'b110",
+              "destination": "y",
+              "operator": "SHIFT_LEFT",
+              "expression": "a << 1",
+              "left_operand": "a",
+              "right_operand": "1"
+            },
+            {
+              "case_value": "3'b111",
+              "destination": "y",
+              "operator": "SHIFT_RIGHT",
+              "expression": "a >> 1",
+              "left_operand": "a",
+              "right_operand": "1"
+            },
+            {
+              "case_value": "default",
+              "destination": "y",
+              "operator": "CONSTANT",
+              "expression": "4'b0000",
+              "left_operand": "4'b0000",
+              "right_operand": null
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
+
+VERIFICATION OBJECTIVES:
+{
+  "rtl_language": "Verilog",
+  "source_analysis": "PyVerilog AST",
+  "modules": [
+    "alu"
+  ],
+  "functional_objective_count": 8,
+  "corner_case_objective_count": 21,
+  "total_objective_count": 29,
+  "objectives": [
+    {
+      "objective_id": "OBJ_ALU_001",
+      "category": "functional",
+      "operation": "ADD",
+      "selector": "sel",
+      "case_value": "3'b000",
+      "expression": "a + b",
+      "description": "Verify ADD operation",
+      "priority": "high",
+      "source": "rtl_knowledge"
+    },
+    {
+      "objective_id": "OBJ_ALU_002",
+      "category": "functional",
+      "operation": "SUB",
+      "selector": "sel",
+      "case_value": "3'b001",
+      "expression": "a - b",
+      "description": "Verify SUB operation",
+      "priority": "high",
+      "source": "rtl_knowledge"
+    },
+    {
+      "objective_id": "OBJ_ALU_003",
+      "category": "functional",
+      "operation": "AND",
+      "selector": "sel",
+      "case_value": "3'b010",
+      "expression": "a & b",
+      "description": "Verify AND operation",
+      "priority": "high",
+      "source": "rtl_knowledge"
+    },
+    {
+      "objective_id": "OBJ_ALU_004",
+      "category": "functional",
+      "operation": "OR",
+      "selector": "sel",
+      "case_value": "3'b011",
+      "expression": "a | b",
+      "description": "Verify OR operation",
+      "priority": "high",
+      "source": "rtl_knowledge"
+    },
+    {
+      "objective_id": "OBJ_ALU_005",
+      "category": "functional",
+      "operation": "XOR",
+      "selector": "sel",
+      "case_value": "3'b100",
+      "expression": "a ^ b",
+      "description": "Verify XOR operation",
+      "priority": "high",
+      "source": "rtl_knowledge"
+    },
+    {
+      "objective_id": "OBJ_ALU_006",
+      "category": "functional",
+      "operation": "NOT",
+      "selector": "sel",
+      "case_value": "3'b101",
+      "expression": "~a",
+      "description": "Verify NOT operation",
+      "priority": "high",
+      "source": "rtl_knowledge"
+    },
+    {
+      "objective_id": "OBJ_ALU_007",
+      "category": "functional",
+      "operation": "SHIFT_LEFT",
+      "selector": "sel",
+      "case_value": "3'b110",
+      "expression": "a << 1",
+      "description": "Verify SHIFT_LEFT operation",
+      "priority": "high",
+      "source": "rtl_knowledge"
+    },
+    {
+      "objective_id": "OBJ_ALU_008",
+      "category": "functional",
+      "operation": "SHIFT_RIGHT",
+      "selector": "sel",
+      "case_value": "3'b111",
+      "expression": "a >> 1",
+      "description": "Verify SHIFT_RIGHT operation",
+      "priority": "high",
+      "source": "rtl_knowledge"
+    },
+    {
+      "objective_id": "OBJ_ALU_009",
+      "category": "corner_case",
+      "operation": "ADD",
+      "selector": "sel",
+      "case_value": "3'b000",
+      "corner_case": "zero_operands",
+      "description": "Verify ADD with zero operands",
+      "priority": "medium",
+      "source": "derived_rule",
+      "parent_objective": "OBJ_ALU_001"
+    },
+    {
+      "objective_id": "OBJ_ALU_010",
+      "category": "corner_case",
+      "operation": "ADD",
+      "selector": "sel",
+      "case_value": "3'b000",
+      "corner_case": "maximum_operands",
+      "description": "Verify ADD with maximum 4-bit operands",
+      "priority": "high",
+      "source": "derived_rule",
+      "parent_objective": "OBJ_ALU_001"
+    },
+    {
+      "objective_id": "OBJ_ALU_011",
+      "category": "corner_case",
+      "operation": "ADD",
+      "selector": "sel",
+      "case_value": "3'b000",
+      "corner_case": "overflow_wraparound",
+      "description": "Verify 4-bit ADD overflow and wraparound behavior",
+      "priority": "high",
+      "source": "derived_rule",
+      "parent_objective": "OBJ_ALU_001"
+    },
+    {
+      "objective_id": "OBJ_ALU_012",
+      "category": "corner_case",
+      "operation": "SUB",
+      "selector": "sel",
+      "case_value": "3'b001",
+      "corner_case": "equal_operands",
+      "description": "Verify SUB with equal operands",
+      "priority": "medium",
+      "source": "derived_rule",
+      "parent_objective": "OBJ_ALU_002"
+    },
+    {
+      "objective_id": "OBJ_ALU_013",
+      "category": "corner_case",
+      "operation": "SUB",
+      "selector": "sel",
+      "case_value": "3'b001",
+      "corner_case": "zero_subtrahend",
+      "description": "Verify SUB when b is zero",
+      "priority": "medium",
+      "source": "derived_rule",
+      "parent_objective": "OBJ_ALU_002"
+    },
+    {
+      "objective_id": "OBJ_ALU_014",
+      "category": "corner_case",
+      "operation": "SUB",
+      "selector": "sel",
+      "case_value": "3'b001",
+      "corner_case": "underflow_wraparound",
+      "description": "Verify 4-bit SUB underflow and wraparound behavior",
+      "priority": "high",
+      "source": "derived_rule",
+      "parent_objective": "OBJ_ALU_002"
+    },
+    {
+      "objective_id": "OBJ_ALU_015",
+      "category": "corner_case",
+      "operation": "AND",
+      "selector": "sel",
+      "case_value": "3'b010",
+      "corner_case": "all_zero",
+      "description": "Verify AND with all-zero input",
+      "priority": "medium",
+      "source": "derived_rule",
+      "parent_objective": "OBJ_ALU_003"
+    },
+    {
+      "objective_id": "OBJ_ALU_016",
+      "category": "corner_case",
+      "operation": "AND",
+      "selector": "sel",
+      "case_value": "3'b010",
+      "corner_case": "all_one",
+      "description": "Verify AND with all-one input",
+      "priority": "medium",
+      "source": "derived_rule",
+      "parent_objective": "OBJ_ALU_003"
+    },
+    {
+      "objective_id": "OBJ_ALU_017",
+      "category": "corner_case",
+      "operation": "AND",
+      "selector": "sel",
+      "case_value": "3'b010",
+      "corner_case": "alternating_patterns",
+      "description": "Verify AND with alternating bit patterns",
+      "priority": "medium",
+      "source": "derived_rule",
+      "parent_objective": "OBJ_ALU_003"
+    },
+    {
+      "objective_id": "OBJ_ALU_018",
+      "category": "corner_case",
+      "operation": "OR",
+      "selector": "sel",
+      "case_value": "3'b011",
+      "corner_case": "all_zero",
+      "description": "Verify OR with all-zero input",
+      "priority": "medium",
+      "source": "derived_rule",
+      "parent_objective": "OBJ_ALU_004"
+    },
+    {
+      "objective_id": "OBJ_ALU_019",
+      "category": "corner_case",
+      "operation": "OR",
+      "selector": "sel",
+      "case_value": "3'b011",
+      "corner_case": "all_one",
+      "description": "Verify OR with all-one input",
+      "priority": "medium",
+      "source": "derived_rule",
+      "parent_objective": "OBJ_ALU_004"
+    },
+    {
+      "objective_id": "OBJ_ALU_020",
+      "category": "corner_case",
+      "operation": "OR",
+      "selector": "sel",
+      "case_value": "3'b011",
+      "corner_case": "alternating_patterns",
+      "description": "Verify OR with alternating bit patterns",
+      "priority": "medium",
+      "source": "derived_rule",
+      "parent_objective": "OBJ_ALU_004"
+    },
+    {
+      "objective_id": "OBJ_ALU_021",
+      "category": "corner_case",
+      "operation": "XOR",
+      "selector": "sel",
+      "case_value": "3'b100",
+      "corner_case": "equal_operands",
+      "description": "Verify XOR with equal operands",
+      "priority": "medium",
+      "source": "derived_rule",
+      "parent_objective": "OBJ_ALU_005"
+    },
+    {
+      "objective_id": "OBJ_ALU_022",
+      "category": "corner_case",
+      "operation": "XOR",
+      "selector": "sel",
+      "case_value": "3'b100",
+      "corner_case": "complementary_patterns",
+      "description": "Verify XOR with complementary bit patterns",
+      "priority": "medium",
+      "source": "derived_rule",
+      "parent_objective": "OBJ_ALU_005"
+    },
+    {
+      "objective_id": "OBJ_ALU_023",
+      "category": "corner_case",
+      "operation": "NOT",
+      "selector": "sel",
+      "case_value": "3'b101",
+      "corner_case": "all_zero",
+      "description": "Verify NOT of all-zero input",
+      "priority": "medium",
+      "source": "derived_rule",
+      "parent_objective": "OBJ_ALU_006"
+    },
+    {
+      "objective_id": "OBJ_ALU_024",
+      "category": "corner_case",
+      "operation": "NOT",
+      "selector": "sel",
+      "case_value": "3'b101",
+      "corner_case": "all_one",
+      "description": "Verify NOT of all-one input",
+      "priority": "medium",
+      "source": "derived_rule",
+      "parent_objective": "OBJ_ALU_006"
+    },
+    {
+      "objective_id": "OBJ_ALU_025",
+      "category": "corner_case",
+      "operation": "NOT",
+      "selector": "sel",
+      "case_value": "3'b101",
+      "corner_case": "alternating_pattern",
+      "description": "Verify NOT of an alternating bit pattern",
+      "priority": "medium",
+      "source": "derived_rule",
+      "parent_objective": "OBJ_ALU_006"
+    },
+    {
+      "objective_id": "OBJ_ALU_026",
+      "category": "corner_case",
+      "operation": "SHIFT_LEFT",
+      "selector": "sel",
+      "case_value": "3'b110",
+      "corner_case": "zero_input",
+      "description": "Verify left shift of zero",
+      "priority": "medium",
+      "source": "derived_rule",
+      "parent_objective": "OBJ_ALU_007"
+    },
+    {
+      "objective_id": "OBJ_ALU_027",
+      "category": "corner_case",
+      "operation": "SHIFT_LEFT",
+      "selector": "sel",
+      "case_value": "3'b110",
+      "corner_case": "msb_discard",
+      "description": "Verify left shift when MSB is discarded",
+      "priority": "high",
+      "source": "derived_rule",
+      "parent_objective": "OBJ_ALU_007"
+    },
+    {
+      "objective_id": "OBJ_ALU_028",
+      "category": "corner_case",
+      "operation": "SHIFT_RIGHT",
+      "selector": "sel",
+      "case_value": "3'b111",
+      "corner_case": "zero_input",
+      "description": "Verify right shift of zero",
+      "priority": "medium",
+      "source": "derived_rule",
+      "parent_objective": "OBJ_ALU_008"
+    },
+    {
+      "objective_id": "OBJ_ALU_029",
+      "category": "corner_case",
+      "operation": "SHIFT_RIGHT",
+      "selector": "sel",
+      "case_value": "3'b111",
+      "corner_case": "lsb_discard",
+      "description": "Verify right shift when LSB is discarded",
+      "priority": "high",
+      "source": "derived_rule",
+      "parent_objective": "OBJ_ALU_008"
+    }
+  ]
+}
+
+Analyze the supplied information.
+
+Return a concise response containing:
+
+1. DUT name
+2. Detected operations
+3. Number of functional objectives
+4. Number of corner-case objectives
+5. The highest-priority verification areas
+6. A statement confirming whether the supplied
+   objectives are consistent with the RTL
+   knowledge.
+
+End your response with exactly:
+
+HERMES RTL ANALYSIS COMPLETE
+Initializing agent...
+────────────────────────────────────────
+
+
+╭─ ☤ Hermes ───────────────────────────────────────────────────────────────────╮
+DUT name: alu
+
+Detected operations (8):
+- ADD (sel=3'b000): a + b
+- SUB (sel=3'b001): a - b
+- AND (sel=3'b010): a & b
+- OR (sel=3'b011): a | b
+- XOR (sel=3'b100): a ^ b
+- NOT (sel=3'b101): ~a
+- SHIFT_LEFT (sel=3'b110): a << 1
+- SHIFT_RIGHT (sel=3'b111): a >> 1
+- (default: CONSTANT 4'b0000)
+
+Number of functional objectives: 8 (OBJ_ALU_001 through OBJ_ALU_008)
+
+Number of corner-case objectives: 21 (OBJ_ALU_009 through OBJ_ALU_029)
+
+Highest-priority verification areas:
+- All 8 functional operations (priority=high): ADD, SUB, AND, OR, XOR, NOT, SHIFT_LEFT, SHIFT_RIGHT
+- Arithmetic boundary behavior: ADD overflow/wraparound (OBJ_ALU_011), ADD with maximum 4-bit operands (OBJ_ALU_010), SUB underflow/wraparound (OBJ_ALU_014)
+- Shift bit-discard scenarios: SHIFT_LEFT MSB discard (OBJ_ALU_027), SHIFT_RIGHT LSB discard (OBJ_ALU_029)
+
+Consistency statement: The supplied objectives are fully consistent with the RTL knowledge. Each of the 8 functional objectives maps 1:1 to a case branch in the alu module's sel-controlled case statement, and all 21 corner-case objectives are derived from their corresponding parent functional objectives via derived_rule source, targeting boundary conditions (zero operands, max operands, overflow/underflow, equal operands, all-zero/all-one inputs, alternating/complementary patterns, and bit-discard behavior for shifts) that are relevant to 4-bit unsigned arithmetic and bitwise operations.
+
+HERMES RTL ANALYSIS COMPLETE
+╰──────────────────────────────────────────────────────────────────────────────╯
+
+Resume this session with:
+  hermes --resume 20260919_062438_94bac9
+  hermes -c "Analyze RTL knowledge and verification objectives for alu module"
+
+Session:        20260919_062438_94bac9
+Title:          Analyze RTL knowledge and verification objectives for alu module
+Duration:       15s
+Messages:       2 (1 user, 0 tool calls)

@@ -1,0 +1,126 @@
+{
+    "rtl_language": "Verilog",
+    "analysis_method": "PyVerilog AST",
+    "modules": [
+        {
+            "module_name": "alu",
+            "ports": [
+                {
+                    "name": "a",
+                    "direction": "input",
+                    "width": {
+                        "msb": 3,
+                        "lsb": 0,
+                        "bits": 4
+                    }
+                },
+                {
+                    "name": "b",
+                    "direction": "input",
+                    "width": {
+                        "msb": 3,
+                        "lsb": 0,
+                        "bits": 4
+                    }
+                },
+                {
+                    "name": "sel",
+                    "direction": "input",
+                    "width": {
+                        "msb": 2,
+                        "lsb": 0,
+                        "bits": 3
+                    }
+                },
+                {
+                    "name": "y",
+                    "direction": "output",
+                    "width": {
+                        "msb": 3,
+                        "lsb": 0,
+                        "bits": 4
+                    }
+                }
+            ],
+            "case_logic": [
+                {
+                    "selector": "sel",
+                    "branches": [
+                        {
+                            "case_value": "3'b000",
+                            "destination": "y",
+                            "operator": "ADD",
+                            "expression": "a + b",
+                            "left_operand": "a",
+                            "right_operand": "b"
+                        },
+                        {
+                            "case_value": "3'b001",
+                            "destination": "y",
+                            "operator": "SUB",
+                            "expression": "a - b",
+                            "left_operand": "a",
+                            "right_operand": "b"
+                        },
+                        {
+                            "case_value": "3'b010",
+                            "destination": "y",
+                            "operator": "AND",
+                            "expression": "a & b",
+                            "left_operand": "a",
+                            "right_operand": "b"
+                        },
+                        {
+                            "case_value": "3'b011",
+                            "destination": "y",
+                            "operator": "OR",
+                            "expression": "a | b",
+                            "left_operand": "a",
+                            "right_operand": "b"
+                        },
+                        {
+                            "case_value": "3'b100",
+                            "destination": "y",
+                            "operator": "XOR",
+                            "expression": "a ^ b",
+                            "left_operand": "a",
+                            "right_operand": "b"
+                        },
+                        {
+                            "case_value": "3'b101",
+                            "destination": "y",
+                            "operator": "NOT",
+                            "expression": "~a",
+                            "left_operand": "a",
+                            "right_operand": null
+                        },
+                        {
+                            "case_value": "3'b110",
+                            "destination": "y",
+                            "operator": "SHIFT_LEFT",
+                            "expression": "a << 1",
+                            "left_operand": "a",
+                            "right_operand": "1"
+                        },
+                        {
+                            "case_value": "3'b111",
+                            "destination": "y",
+                            "operator": "SHIFT_RIGHT",
+                            "expression": "a >> 1",
+                            "left_operand": "a",
+                            "right_operand": "1"
+                        },
+                        {
+                            "case_value": "default",
+                            "destination": "y",
+                            "operator": "CONSTANT",
+                            "expression": "4'b0000",
+                            "left_operand": "4'b0000",
+                            "right_operand": null
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

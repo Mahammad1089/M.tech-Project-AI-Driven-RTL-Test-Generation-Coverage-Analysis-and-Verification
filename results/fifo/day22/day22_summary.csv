@@ -1,0 +1,13 @@
+metric,value
+dut,fifo
+day22_status,PASS
+day20_strategy_count,3
+day21_run_count,10
+day21_passed_runs,10
+day21_failed_runs,0
+day21_average_coverage_percent,86.0
+day21_minimum_coverage_percent,80.0
+day21_maximum_coverage_percent,100.0
+day21_average_redundancy_percent,48.0
+graph_specification_count,6
+exported_graph_points,33

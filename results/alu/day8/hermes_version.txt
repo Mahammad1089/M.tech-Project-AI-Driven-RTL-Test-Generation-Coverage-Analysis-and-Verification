@@ -1,0 +1,6 @@
+Hermes Agent v0.21.3 (2026.9.14) · upstream 67757285
+Install directory: /home/maham_mtech/.hermes/hermes-agent
+Install method: git
+Python: 3.11.16
+OpenAI SDK: 2.24.0
+Up to date

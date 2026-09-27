@@ -1,0 +1,83 @@
+{
+  "status": "FAIL",
+  "objective_count": 29,
+  "candidate_test_count": 1,
+  "validated_test_count": 0,
+  "rejected_test_count": 1,
+  "rtl_operation_count": 9,
+  "input_widths": {
+    "a": 4,
+    "b": 4
+  },
+  "rtl_operations": [
+    {
+      "case_value": "3'b000",
+      "operator": "ADD",
+      "expression": "a + b"
+    },
+    {
+      "case_value": "3'b001",
+      "operator": "SUB",
+      "expression": "a - b"
+    },
+    {
+      "case_value": "3'b010",
+      "operator": "AND",
+      "expression": "a & b"
+    },
+    {
+      "case_value": "3'b011",
+      "operator": "OR",
+      "expression": "a | b"
+    },
+    {
+      "case_value": "3'b100",
+      "operator": "XOR",
+      "expression": "a ^ b"
+    },
+    {
+      "case_value": "3'b101",
+      "operator": "NOT",
+      "expression": "~a"
+    },
+    {
+      "case_value": "3'b110",
+      "operator": "SHIFT_LEFT",
+      "expression": "a << 1"
+    },
+    {
+      "case_value": "3'b111",
+      "operator": "SHIFT_RIGHT",
+      "expression": "a >> 1"
+    },
+    {
+      "case_value": "default",
+      "operator": "CONSTANT",
+      "expression": "4'b0000"
+    }
+  ],
+  "operation_coverage": {
+    "ADD": 0,
+    "SUB": 0,
+    "AND": 0,
+    "OR": 0,
+    "XOR": 0,
+    "NOT": 0,
+    "SHIFT_LEFT": 0,
+    "SHIFT_RIGHT": 0,
+    "CONSTANT": 0
+  },
+  "covered_operations": [],
+  "uncovered_operations": [
+    "ADD",
+    "SUB",
+    "AND",
+    "OR",
+    "XOR",
+    "NOT",
+    "SHIFT_LEFT",
+    "SHIFT_RIGHT",
+    "CONSTANT"
+  ],
+  "operation_coverage_percent": 0.0
+}

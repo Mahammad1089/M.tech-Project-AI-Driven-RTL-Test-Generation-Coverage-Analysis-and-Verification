@@ -1,0 +1,23 @@
+{
+  "day": 21,
+  "run": 8,
+  "seed": 20260928,
+  "dut": "fifo",
+  "strategy": "random",
+  "transactions": 20,
+  "simulation_status": "PASS",
+  "total_checks": 68,
+  "passed_checks": 68,
+  "failed_checks": 0,
+  "pass_marker_found": true,
+  "coverage_percent": 80.0,
+  "covered_points": 8,
+  "missing_points": [
+    "COV_FIFO_007",
+    "COV_FIFO_009"
+  ],
+  "unique_behavior_signatures": 12,
+  "redundant_cycles": 8,
+  "redundancy_percent": 40.0,
+  "runtime_seconds": 0.093185
+}

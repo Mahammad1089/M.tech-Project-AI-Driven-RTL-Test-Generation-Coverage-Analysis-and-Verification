@@ -6,6 +6,7 @@
   "objective_gap_count": 0,
   "total_gap_count": 0,
   "targeted_scenario_count": 0,
-  "generation_status": "NO_TARGETED_GENERATION_REQUIRED",
-  "message": "No targeted scenarios are required because Day 13 reported no coverage gaps."
+  "passed_tests": 0,
+  "failed_tests": 0,
+  "generation_status": "NO_TARGETED_GENERATION_REQUIRED"
 }

@@ -1,0 +1,51 @@
+{
+  "source": "results/alu/day10/invalid_test.json",
+  "rejected_test_count": 1,
+  "rejected_tests": [
+    {
+      "scenario_id": "INVALID_001",
+      "objective_id": "OBJ_DOES_NOT_EXIST",
+      "category": "functional",
+      "operation": "ADD",
+      "selector": "3'b111",
+      "inputs": {
+        "a": 25,
+        "b": 3
+      },
+      "rationale": "Intentional Day-10 negative test.",
+      "_validator": {
+        "index": 1,
+        "resolved_operation": "ADD",
+        "status": "REJECTED",
+        "reasons": [
+          "Operation/selector mismatch: operation=ADD, selector resolves to SHIFT_RIGHT.",
+          "Input a=25 exceeds 4-bit width."
+        ]
+      }
+    }
+  ],
+  "rejected_count": 1,
+  "rejected_scenarios": [
+    {
+      "scenario_id": "INVALID_001",
+      "objective_id": "OBJ_DOES_NOT_EXIST",
+      "category": "functional",
+      "operation": "ADD",
+      "selector": "3'b111",
+      "inputs": {
+        "a": 25,
+        "b": 3
+      },
+      "rationale": "Intentional Day-10 negative test.",
+      "_validator": {
+        "index": 1,
+        "resolved_operation": "ADD",
+        "status": "REJECTED",
+        "reasons": [
+          "Operation/selector mismatch: operation=ADD, selector resolves to SHIFT_RIGHT.",
+          "Input a=25 exceeds 4-bit width."
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,48 @@
+{
+  "dut": "fifo",
+  "coverage_type": "fifo_functional_coverage",
+  "measurement_source": "executed_fifo_trace",
+  "trace_rows": 21,
+  "total_coverage_points": 10,
+  "covered_coverage_points": 8,
+  "coverage_percent": 80.0,
+  "covered_points": [
+    "COV_FIFO_001",
+    "COV_FIFO_002",
+    "COV_FIFO_003",
+    "COV_FIFO_004",
+    "COV_FIFO_005",
+    "COV_FIFO_006",
+    "COV_FIFO_008",
+    "COV_FIFO_010"
+  ],
+  "missing_points": [
+    "COV_FIFO_007",
+    "COV_FIFO_009"
+  ],
+  "point_hits": {
+    "COV_FIFO_001": 1,
+    "COV_FIFO_002": 6,
+    "COV_FIFO_003": 4,
+    "COV_FIFO_004": 10,
+    "COV_FIFO_005": 2,
+    "COV_FIFO_006": 7,
+    "COV_FIFO_007": 0,
+    "COV_FIFO_008": 2,
+    "COV_FIFO_009": 0,
+    "COV_FIFO_010": 2
+  },
+  "point_definitions": {
+    "COV_FIFO_001": "RESET",
+    "COV_FIFO_002": "WRITE",
+    "COV_FIFO_003": "READ",
+    "COV_FIFO_004": "IDLE",
+    "COV_FIFO_005": "SIMULTANEOUS_WRITE_READ",
+    "COV_FIFO_006": "EMPTY_STATE",
+    "COV_FIFO_007": "FULL_STATE",
+    "COV_FIFO_008": "READ_WHEN_EMPTY",
+    "COV_FIFO_009": "WRITE_WHEN_FULL",
+    "COV_FIFO_010": "POINTER_WRAPAROUND"
+  },
+  "coverage_complete": false
+}

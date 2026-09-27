@@ -1,385 +1,4 @@
-#!/usr/bin/env python3
-
-"""
-FIFO Random Testbench Generator
-===============================
-
-Project:
-AI-Driven RTL Test Generation,
-Coverage Analysis and Verification
-
-Purpose:
-- Read deterministic random FIFO transactions from JSON.
-- Generate a self-checking Verilog testbench.
-- Use an independent FIFO reference model.
-- Generate one trace CSV per Day-21 seed/run.
-- Generate one VCD per Day-21 seed/run.
-- Avoid malformed adjacent Verilog string literals.
-
-Usage:
-    python baseline/random_fifo_tb_generator.py \
-        INPUT_TRANSACTIONS.json \
-        OUTPUT_TESTBENCH.v
-"""
-
-import json
-import re
-import sys
-from pathlib import Path
-
-
-# ============================================================
-# PROJECT ROOT
-# ============================================================
-
-ROOT = Path(__file__).resolve().parents[1]
-
-
-# ============================================================
-# LOAD JSON
-# ============================================================
-
-def load_json(path):
-    if not path.exists():
-        raise FileNotFoundError(
-            f"Transaction file not found: {path}"
-        )
-
-    try:
-        with path.open(
-            "r",
-            encoding="utf-8"
-        ) as f:
-            data = json.load(f)
-
-    except json.JSONDecodeError as exc:
-        raise ValueError(
-            f"Invalid JSON in {path}: "
-            f"line {exc.lineno}, "
-            f"column {exc.colno}: "
-            f"{exc.msg}"
-        ) from exc
-
-    return data
-
-
-# ============================================================
-# FIND TRANSACTION LIST
-# ============================================================
-
-def extract_transactions(data):
-    """
-    Supports common formats:
-
-    [
-        {...},
-        {...}
-    ]
-
-    or:
-
-    {
-        "transactions": [...]
-    }
-
-    Also accepts a few alternate container names.
-    """
-
-    if isinstance(data, list):
-        transactions = data
-
-    elif isinstance(data, dict):
-
-        transactions = None
-
-        for key in (
-            "transactions",
-            "tests",
-            "vectors",
-            "stimulus",
-            "stimuli"
-        ):
-            value = data.get(key)
-
-            if isinstance(value, list):
-                transactions = value
-                break
-
-        if transactions is None:
-            raise ValueError(
-                "Could not find transaction list in JSON. "
-                "Expected key 'transactions'."
-            )
-
-    else:
-        raise ValueError(
-            "Transaction JSON must contain an object or list."
-        )
-
-    if not transactions:
-        raise ValueError(
-            "Transaction list is empty."
-        )
-
-    return transactions
-
-
-# ============================================================
-# INTEGER/BIT NORMALIZATION
-# ============================================================
-
-def parse_int(value, field_name):
-    if isinstance(value, bool):
-        return int(value)
-
-    if isinstance(value, int):
-        return value
-
-    text = str(value).strip().lower()
-
-    if text in {
-        "true",
-        "high",
-        "1'b1",
-        "1"
-    }:
-        return 1
-
-    if text in {
-        "false",
-        "low",
-        "1'b0",
-        "0"
-    }:
-        return 0
-
-    try:
-        if text.startswith("0x"):
-            return int(text, 16)
-
-        if text.startswith("0b"):
-            return int(text, 2)
-
-        return int(text)
-
-    except ValueError as exc:
-        raise ValueError(
-            f"Invalid value for {field_name}: {value!r}"
-        ) from exc
-
-
-# ============================================================
-# READ ALTERNATE FIELD NAMES
-# ============================================================
-
-def first_present(record, names, default=None):
-    for name in names:
-        if name in record:
-            return record[name]
-
-    return default
-
-
-# ============================================================
-# NORMALIZE ONE TRANSACTION
-# ============================================================
-
-def normalize_transaction(record, index):
-    if not isinstance(record, dict):
-        raise ValueError(
-            f"Transaction {index} must be a JSON object."
-        )
-
-    wr_raw = first_present(
-        record,
-        (
-            "wr_en",
-            "write_enable",
-            "write_en",
-            "write"
-        ),
-        0
-    )
-
-    rd_raw = first_present(
-        record,
-        (
-            "rd_en",
-            "read_enable",
-            "read_en",
-            "read"
-        ),
-        0
-    )
-
-    data_raw = first_present(
-        record,
-        (
-            "data_in",
-            "write_data",
-            "data",
-            "value"
-        ),
-        0
-    )
-
-    wr_en = parse_int(
-        wr_raw,
-        f"transaction {index} wr_en"
-    )
-
-    rd_en = parse_int(
-        rd_raw,
-        f"transaction {index} rd_en"
-    )
-
-    data_in = parse_int(
-        data_raw,
-        f"transaction {index} data_in"
-    )
-
-    if wr_en not in (0, 1):
-        raise ValueError(
-            f"Transaction {index}: wr_en must be 0 or 1."
-        )
-
-    if rd_en not in (0, 1):
-        raise ValueError(
-            f"Transaction {index}: rd_en must be 0 or 1."
-        )
-
-    if not 0 <= data_in <= 255:
-        raise ValueError(
-            f"Transaction {index}: data_in must be 0..255."
-        )
-
-    return {
-        "wr_en": wr_en,
-        "rd_en": rd_en,
-        "data_in": data_in,
-    }
-
-
-# ============================================================
-# GET SEED IF AVAILABLE
-# ============================================================
-
-def extract_seed(data):
-    if isinstance(data, dict):
-        value = data.get(
-            "seed"
-        )
-
-        if value is not None:
-            try:
-                return int(value)
-            except (TypeError, ValueError):
-                pass
-
-    return None
-
-
-# ============================================================
-# SAFE VERILOG MODULE NAME
-# ============================================================
-
-def make_module_name(output_path):
-    stem = output_path.stem
-
-    stem = re.sub(
-        r"[^A-Za-z0-9_]",
-        "_",
-        stem
-    )
-
-    if not stem:
-        stem = "tb_fifo_day21_random"
-
-    if stem[0].isdigit():
-        stem = "tb_" + stem
-
-    return stem
-
-
-# ============================================================
-# PATH FOR GENERATED VERILOG
-# ============================================================
-
-def project_relative(path):
-    try:
-        return path.resolve().relative_to(
-            ROOT.resolve()
-        ).as_posix()
-
-    except ValueError:
-        return path.resolve().as_posix()
-
-
-# ============================================================
-# BUILD VERILOG TRANSACTION CALLS
-# ============================================================
-
-def build_transaction_calls(transactions):
-    lines = []
-
-    for index, tx in enumerate(
-        transactions,
-        start=1
-    ):
-        lines.extend(
-            [
-                "",
-                f"        // Random transaction {index}",
-                "        apply_transaction(",
-                f"            1'b{tx['wr_en']},",
-                f"            1'b{tx['rd_en']},",
-                f"            8'h{tx['data_in']:02X}",
-                "        );",
-            ]
-        )
-
-    return "\n".join(lines)
-
-
-# ============================================================
-# GENERATE VERILOG TESTBENCH
-# ============================================================
-
-def generate_testbench(
-    transactions,
-    input_path,
-    output_path,
-    seed
-):
-    module_name = make_module_name(
-        output_path
-    )
-
-    run_directory = input_path.parent
-
-    trace_path = project_relative(
-        run_directory
-        / "random_trace.csv"
-    )
-
-    vcd_path = project_relative(
-        run_directory
-        / "random.vcd"
-    )
-
-    transaction_calls = (
-        build_transaction_calls(
-            transactions
-        )
-    )
-
-    seed_display = (
-        str(seed)
-        if seed is not None
-        else "UNKNOWN"
-    )
-
-    template = r'''`timescale 1ns/1ps
+`timescale 1ns/1ps
 
 // ============================================================
 // DAY 21 - GENERATED FIFO RANDOM TESTBENCH
@@ -400,7 +19,7 @@ def generate_testbench(
 // - produces a VCD waveform.
 // ============================================================
 
-module __MODULE_NAME__;
+module tb_fifo_seed_20260925;
 
     // ========================================================
     // FIFO SIGNALS
@@ -1020,12 +639,12 @@ module __MODULE_NAME__;
         // ----------------------------------------------------
 
         $dumpfile(
-            "__VCD_PATH__"
+            "results/fifo/day21/runs/seed_20260925/random.vcd"
         );
 
         $dumpvars(
             0,
-            __MODULE_NAME__
+            tb_fifo_seed_20260925
         );
 
 
@@ -1034,7 +653,7 @@ module __MODULE_NAME__;
         // ----------------------------------------------------
 
         trace_file = $fopen(
-            "__TRACE_PATH__",
+            "results/fifo/day21/runs/seed_20260925/random_trace.csv",
             "w"
         );
 
@@ -1076,8 +695,8 @@ module __MODULE_NAME__;
         $display("================================================");
         $display("DAY 21 FIFO RANDOM GENERATED TESTBENCH");
         $display("================================================");
-        $display("SEED         = __SEED__");
-        $display("TRANSACTIONS = __TRANSACTION_COUNT__");
+        $display("SEED         = 20260925");
+        $display("TRANSACTIONS = 20");
         $display("------------------------------------------------");
 
 
@@ -1092,7 +711,146 @@ module __MODULE_NAME__;
         // PRE-GENERATED RANDOM TRANSACTIONS
         // ====================================================
 
-__TRANSACTION_CALLS__
+
+        // Random transaction 1
+        apply_transaction(
+            1'b1,
+            1'b0,
+            8'h3C
+        );
+
+        // Random transaction 2
+        apply_transaction(
+            1'b1,
+            1'b0,
+            8'hF9
+        );
+
+        // Random transaction 3
+        apply_transaction(
+            1'b1,
+            1'b0,
+            8'h87
+        );
+
+        // Random transaction 4
+        apply_transaction(
+            1'b0,
+            1'b1,
+            8'h04
+        );
+
+        // Random transaction 5
+        apply_transaction(
+            1'b1,
+            1'b0,
+            8'h72
+        );
+
+        // Random transaction 6
+        apply_transaction(
+            1'b1,
+            1'b0,
+            8'h38
+        );
+
+        // Random transaction 7
+        apply_transaction(
+            1'b0,
+            1'b1,
+            8'hD5
+        );
+
+        // Random transaction 8
+        apply_transaction(
+            1'b1,
+            1'b0,
+            8'h76
+        );
+
+        // Random transaction 9
+        apply_transaction(
+            1'b0,
+            1'b1,
+            8'hFE
+        );
+
+        // Random transaction 10
+        apply_transaction(
+            1'b1,
+            1'b0,
+            8'h27
+        );
+
+        // Random transaction 11
+        apply_transaction(
+            1'b0,
+            1'b1,
+            8'hEB
+        );
+
+        // Random transaction 12
+        apply_transaction(
+            1'b0,
+            1'b1,
+            8'h5F
+        );
+
+        // Random transaction 13
+        apply_transaction(
+            1'b1,
+            1'b1,
+            8'hB9
+        );
+
+        // Random transaction 14
+        apply_transaction(
+            1'b0,
+            1'b1,
+            8'hCD
+        );
+
+        // Random transaction 15
+        apply_transaction(
+            1'b1,
+            1'b1,
+            8'h19
+        );
+
+        // Random transaction 16
+        apply_transaction(
+            1'b0,
+            1'b0,
+            8'h55
+        );
+
+        // Random transaction 17
+        apply_transaction(
+            1'b0,
+            1'b0,
+            8'hB4
+        );
+
+        // Random transaction 18
+        apply_transaction(
+            1'b1,
+            1'b0,
+            8'hE1
+        );
+
+        // Random transaction 19
+        apply_transaction(
+            1'b1,
+            1'b0,
+            8'h94
+        );
+
+        // Random transaction 20
+        apply_transaction(
+            1'b0,
+            1'b1,
+            8'h77
+        );
 
 
         // ====================================================
@@ -1165,164 +923,3 @@ __TRANSACTION_CALLS__
     end
 
 endmodule
-'''
-
-    verilog = template
-
-    verilog = verilog.replace(
-        "__MODULE_NAME__",
-        module_name
-    )
-
-    verilog = verilog.replace(
-        "__VCD_PATH__",
-        vcd_path
-    )
-
-    verilog = verilog.replace(
-        "__TRACE_PATH__",
-        trace_path
-    )
-
-    verilog = verilog.replace(
-        "__SEED__",
-        seed_display
-    )
-
-    verilog = verilog.replace(
-        "__TRANSACTION_COUNT__",
-        str(
-            len(transactions)
-        )
-    )
-
-    verilog = verilog.replace(
-        "__TRANSACTION_CALLS__",
-        transaction_calls
-    )
-
-    output_path.parent.mkdir(
-        parents=True,
-        exist_ok=True
-    )
-
-    output_path.write_text(
-        verilog,
-        encoding="utf-8"
-    )
-
-
-# ============================================================
-# MAIN
-# ============================================================
-
-def main():
-    if len(sys.argv) != 3:
-        print(
-            "Usage:"
-        )
-
-        print(
-            "  python baseline/random_fifo_tb_generator.py "
-            "<transactions.json> <output_testbench.v>"
-        )
-
-        return 2
-
-    input_path = Path(
-        sys.argv[1]
-    )
-
-    output_path = Path(
-        sys.argv[2]
-    )
-
-    if not input_path.is_absolute():
-        input_path = ROOT / input_path
-
-    if not output_path.is_absolute():
-        output_path = ROOT / output_path
-
-    try:
-        data = load_json(
-            input_path
-        )
-
-        raw_transactions = (
-            extract_transactions(
-                data
-            )
-        )
-
-        transactions = []
-
-        for index, transaction in enumerate(
-            raw_transactions,
-            start=1
-        ):
-            transactions.append(
-                normalize_transaction(
-                    transaction,
-                    index
-                )
-            )
-
-        seed = extract_seed(
-            data
-        )
-
-        generate_testbench(
-            transactions,
-            input_path,
-            output_path,
-            seed
-        )
-
-    except (
-        FileNotFoundError,
-        ValueError,
-        OSError
-    ) as exc:
-
-        print(
-            "RANDOM FIFO TB GENERATION: FAIL"
-        )
-
-        print(
-            f"ERROR: {exc}"
-        )
-
-        return 1
-
-    try:
-        display_output = (
-            output_path.relative_to(
-                ROOT
-            )
-        )
-
-    except ValueError:
-        display_output = output_path
-
-    print(
-        "RANDOM FIFO TB GENERATION: PASS"
-    )
-
-    print(
-        f"Transactions: {len(transactions)}"
-    )
-
-    print(
-        f"Output      : {display_output}"
-    )
-
-    if seed is not None:
-        print(
-            f"Seed        : {seed}"
-        )
-
-    return 0
-
-
-if __name__ == "__main__":
-    sys.exit(main())

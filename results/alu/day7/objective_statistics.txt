@@ -1,0 +1,22 @@
+OBJECTIVE STATISTICS
+====================
+
+Total: 29
+
+By category:
+  corner_case: 21
+  functional: 8
+
+By operation:
+  ADD: 4
+  AND: 4
+  NOT: 4
+  OR: 4
+  SHIFT_LEFT: 3
+  SHIFT_RIGHT: 3
+  SUB: 4
+  XOR: 3
+
+By priority:
+  high: 13
+  medium: 16

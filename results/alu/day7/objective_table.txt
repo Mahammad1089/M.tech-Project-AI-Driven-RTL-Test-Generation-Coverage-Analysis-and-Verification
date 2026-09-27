@@ -1,0 +1,31 @@
+ID | CATEGORY | OPERATION | CASE | PRIORITY | DESCRIPTION
+--------------------------------------------------------------------------------------------------------------
+OBJ_ALU_001 | functional | ADD | 3'b000 | high | Verify ADD operation
+OBJ_ALU_002 | functional | SUB | 3'b001 | high | Verify SUB operation
+OBJ_ALU_003 | functional | AND | 3'b010 | high | Verify AND operation
+OBJ_ALU_004 | functional | OR | 3'b011 | high | Verify OR operation
+OBJ_ALU_005 | functional | XOR | 3'b100 | high | Verify XOR operation
+OBJ_ALU_006 | functional | NOT | 3'b101 | high | Verify NOT operation
+OBJ_ALU_007 | functional | SHIFT_LEFT | 3'b110 | high | Verify SHIFT_LEFT operation
+OBJ_ALU_008 | functional | SHIFT_RIGHT | 3'b111 | high | Verify SHIFT_RIGHT operation
+OBJ_ALU_009 | corner_case | ADD | 3'b000 | medium | Verify ADD with zero operands
+OBJ_ALU_010 | corner_case | ADD | 3'b000 | high | Verify ADD with maximum 4-bit operands
+OBJ_ALU_011 | corner_case | ADD | 3'b000 | high | Verify 4-bit ADD overflow and wraparound behavior
+OBJ_ALU_012 | corner_case | SUB | 3'b001 | medium | Verify SUB with equal operands
+OBJ_ALU_013 | corner_case | SUB | 3'b001 | medium | Verify SUB when b is zero
+OBJ_ALU_014 | corner_case | SUB | 3'b001 | high | Verify 4-bit SUB underflow and wraparound behavior
+OBJ_ALU_015 | corner_case | AND | 3'b010 | medium | Verify AND with all-zero input
+OBJ_ALU_016 | corner_case | AND | 3'b010 | medium | Verify AND with all-one input
+OBJ_ALU_017 | corner_case | AND | 3'b010 | medium | Verify AND with alternating bit patterns
+OBJ_ALU_018 | corner_case | OR | 3'b011 | medium | Verify OR with all-zero input
+OBJ_ALU_019 | corner_case | OR | 3'b011 | medium | Verify OR with all-one input
+OBJ_ALU_020 | corner_case | OR | 3'b011 | medium | Verify OR with alternating bit patterns
+OBJ_ALU_021 | corner_case | XOR | 3'b100 | medium | Verify XOR with equal operands
+OBJ_ALU_022 | corner_case | XOR | 3'b100 | medium | Verify XOR with complementary bit patterns
+OBJ_ALU_023 | corner_case | NOT | 3'b101 | medium | Verify NOT of all-zero input
+OBJ_ALU_024 | corner_case | NOT | 3'b101 | medium | Verify NOT of all-one input
+OBJ_ALU_025 | corner_case | NOT | 3'b101 | medium | Verify NOT of an alternating bit pattern
+OBJ_ALU_026 | corner_case | SHIFT_LEFT | 3'b110 | medium | Verify left shift of zero
+OBJ_ALU_027 | corner_case | SHIFT_LEFT | 3'b110 | high | Verify left shift when MSB is discarded
+OBJ_ALU_028 | corner_case | SHIFT_RIGHT | 3'b111 | medium | Verify right shift of zero
+OBJ_ALU_029 | corner_case | SHIFT_RIGHT | 3'b111 | high | Verify right shift when LSB is discarded

@@ -1,0 +1,15 @@
+Module: alu
+
+Case selector: sel
+
+VALUE | OPERATION | DEST | EXPRESSION
+-------------------------------------------------------
+3'b000 | ADD | y | a + b
+3'b001 | SUB | y | a - b
+3'b010 | AND | y | a & b
+3'b011 | OR | y | a | b
+3'b100 | XOR | y | a ^ b
+3'b101 | NOT | y | ~a
+3'b110 | SHIFT_LEFT | y | a << 1
+3'b111 | SHIFT_RIGHT | y | a >> 1
+default | CONSTANT | y | 4'b0000

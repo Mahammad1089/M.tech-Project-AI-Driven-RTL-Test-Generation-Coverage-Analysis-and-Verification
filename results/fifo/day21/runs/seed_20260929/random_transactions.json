@@ -1,0 +1,228 @@
+{
+    "dut": "fifo",
+    "strategy": "random",
+    "seed": 20260929,
+    "cycles": 20,
+    "transactions": [
+        {
+            "cycle": 1,
+            "wr_en": 1,
+            "rd_en": 1,
+            "data_in": 237,
+            "count_before": 0,
+            "write_accepted": true,
+            "read_accepted": false,
+            "expected_read": null,
+            "count_after": 1
+        },
+        {
+            "cycle": 2,
+            "wr_en": 0,
+            "rd_en": 1,
+            "data_in": 121,
+            "count_before": 1,
+            "write_accepted": false,
+            "read_accepted": true,
+            "expected_read": 237,
+            "count_after": 0
+        },
+        {
+            "cycle": 3,
+            "wr_en": 1,
+            "rd_en": 1,
+            "data_in": 34,
+            "count_before": 0,
+            "write_accepted": true,
+            "read_accepted": false,
+            "expected_read": null,
+            "count_after": 1
+        },
+        {
+            "cycle": 4,
+            "wr_en": 0,
+            "rd_en": 1,
+            "data_in": 216,
+            "count_before": 1,
+            "write_accepted": false,
+            "read_accepted": true,
+            "expected_read": 34,
+            "count_after": 0
+        },
+        {
+            "cycle": 5,
+            "wr_en": 1,
+            "rd_en": 1,
+            "data_in": 229,
+            "count_before": 0,
+            "write_accepted": true,
+            "read_accepted": false,
+            "expected_read": null,
+            "count_after": 1
+        },
+        {
+            "cycle": 6,
+            "wr_en": 0,
+            "rd_en": 0,
+            "data_in": 95,
+            "count_before": 1,
+            "write_accepted": false,
+            "read_accepted": false,
+            "expected_read": null,
+            "count_after": 1
+        },
+        {
+            "cycle": 7,
+            "wr_en": 1,
+            "rd_en": 1,
+            "data_in": 64,
+            "count_before": 1,
+            "write_accepted": true,
+            "read_accepted": true,
+            "expected_read": 229,
+            "count_after": 1
+        },
+        {
+            "cycle": 8,
+            "wr_en": 0,
+            "rd_en": 1,
+            "data_in": 161,
+            "count_before": 1,
+            "write_accepted": false,
+            "read_accepted": true,
+            "expected_read": 64,
+            "count_after": 0
+        },
+        {
+            "cycle": 9,
+            "wr_en": 1,
+            "rd_en": 0,
+            "data_in": 4,
+            "count_before": 0,
+            "write_accepted": true,
+            "read_accepted": false,
+            "expected_read": null,
+            "count_after": 1
+        },
+        {
+            "cycle": 10,
+            "wr_en": 0,
+            "rd_en": 1,
+            "data_in": 233,
+            "count_before": 1,
+            "write_accepted": false,
+            "read_accepted": true,
+            "expected_read": 4,
+            "count_after": 0
+        },
+        {
+            "cycle": 11,
+            "wr_en": 1,
+            "rd_en": 1,
+            "data_in": 103,
+            "count_before": 0,
+            "write_accepted": true,
+            "read_accepted": false,
+            "expected_read": null,
+            "count_after": 1
+        },
+        {
+            "cycle": 12,
+            "wr_en": 1,
+            "rd_en": 1,
+            "data_in": 96,
+            "count_before": 1,
+            "write_accepted": true,
+            "read_accepted": true,
+            "expected_read": 103,
+            "count_after": 1
+        },
+        {
+            "cycle": 13,
+            "wr_en": 0,
+            "rd_en": 1,
+            "data_in": 10,
+            "count_before": 1,
+            "write_accepted": false,
+            "read_accepted": true,
+            "expected_read": 96,
+            "count_after": 0
+        },
+        {
+            "cycle": 14,
+            "wr_en": 1,
+            "rd_en": 1,
+            "data_in": 124,
+            "count_before": 0,
+            "write_accepted": true,
+            "read_accepted": false,
+            "expected_read": null,
+            "count_after": 1
+        },
+        {
+            "cycle": 15,
+            "wr_en": 1,
+            "rd_en": 1,
+            "data_in": 250,
+            "count_before": 1,
+            "write_accepted": true,
+            "read_accepted": true,
+            "expected_read": 124,
+            "count_after": 1
+        },
+        {
+            "cycle": 16,
+            "wr_en": 1,
+            "rd_en": 0,
+            "data_in": 7,
+            "count_before": 1,
+            "write_accepted": true,
+            "read_accepted": false,
+            "expected_read": null,
+            "count_after": 2
+        },
+        {
+            "cycle": 17,
+            "wr_en": 0,
+            "rd_en": 0,
+            "data_in": 69,
+            "count_before": 2,
+            "write_accepted": false,
+            "read_accepted": false,
+            "expected_read": null,
+            "count_after": 2
+        },
+        {
+            "cycle": 18,
+            "wr_en": 0,
+            "rd_en": 0,
+            "data_in": 61,
+            "count_before": 2,
+            "write_accepted": false,
+            "read_accepted": false,
+            "expected_read": null,
+            "count_after": 2
+        },
+        {
+            "cycle": 19,
+            "wr_en": 1,
+            "rd_en": 0,
+            "data_in": 30,
+            "count_before": 2,
+            "write_accepted": true,
+            "read_accepted": false,
+            "expected_read": null,
+            "count_after": 3
+        },
+        {
+            "cycle": 20,
+            "wr_en": 0,
+            "rd_en": 1,
+            "data_in": 173,
+            "count_before": 3,
+            "write_accepted": false,
+            "read_accepted": true,
+            "expected_read": 250,
+            "count_after": 2
+        }
+    ]
+}

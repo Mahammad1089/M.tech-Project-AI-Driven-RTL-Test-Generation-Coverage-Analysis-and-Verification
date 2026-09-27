@@ -1,0 +1,88 @@
+================================
+CASE STATEMENT #1
+================================
+Selector node:
+Identifier: sel (at 10)
+
+Complete case subtree:
+CaseStatement
+  Identifier
+  Case
+    IntConst
+    BlockingSubstitution
+      Lvalue
+        Identifier
+      Rvalue
+        Plus
+          Identifier
+          Identifier
+  Case
+    IntConst
+    BlockingSubstitution
+      Lvalue
+        Identifier
+      Rvalue
+        Minus
+          Identifier
+          Identifier
+  Case
+    IntConst
+    BlockingSubstitution
+      Lvalue
+        Identifier
+      Rvalue
+        And
+          Identifier
+          Identifier
+  Case
+    IntConst
+    BlockingSubstitution
+      Lvalue
+        Identifier
+      Rvalue
+        Or
+          Identifier
+          Identifier
+  Case
+    IntConst
+    BlockingSubstitution
+      Lvalue
+        Identifier
+      Rvalue
+        Xor
+          Identifier
+          Identifier
+  Case
+    IntConst
+    BlockingSubstitution
+      Lvalue
+        Identifier
+      Rvalue
+        Unot
+          Identifier
+  Case
+    IntConst
+    BlockingSubstitution
+      Lvalue
+        Identifier
+      Rvalue
+        Sll
+          Identifier
+          IntConst
+  Case
+    IntConst
+    BlockingSubstitution
+      Lvalue
+        Identifier
+      Rvalue
+        Srl
+          Identifier
+          IntConst
+  Case
+    BlockingSubstitution
+      Lvalue
+        Identifier
+      Rvalue
+        IntConst
+
+Total case statements: 1

@@ -1,0 +1,8 @@
+from_state,input,to_state,detected,result
+00,1,01,0,NORMAL
+01,0,10,0,NORMAL
+10,0,00,0,TARGET_PASS
+00,1,01,0,NORMAL
+01,0,10,0,NORMAL
+10,1,11,0,NORMAL
+11,0,10,0,TARGET_PASS

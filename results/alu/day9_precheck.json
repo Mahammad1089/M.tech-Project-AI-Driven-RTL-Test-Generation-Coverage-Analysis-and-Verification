@@ -1,0 +1,19 @@
+{
+    "status": "PASS",
+    "stage": "complete",
+    "return_code": 0,
+    "hermes_exit_code": 0,
+    "event_count": 393,
+    "invalid_line_count": 0,
+    "session_id": "20260919_071430_fc6ee7",
+    "response_text": "1. DUT name: alu\n\n2. Detected operations (from PyVerilog AST case logic on sel):\n   ADD (3'b000), SUB (3'b001), AND (3'b010), OR (3'b011),\n   XOR (3'b100), NOT (3'b101), SHIFT_LEFT (3'b110), SHIFT_RIGHT (3'b111),\n   plus a default CONSTANT branch (4'b0000).\n\n3. Functional objectives: 8  (OBJ_ALU_001 to OBJ_ALU_008)\n\n4. Corner-case objectives: 21  (OBJ_ALU_009 to OBJ_ALU_029)\n\n5. Highest-priority verification areas:\n   - All 8 functional objectives (priority: high) \u2014 every named operation.\n   - ADD overflow/wraparound (OBJ_ALU_011, high)\n   - ADD with maximum 4-bit operands (OBJ_ALU_010, high)\n   - SUB underflow/wraparound (OBJ_ALU_014, high)\n   - SHIFT_LEFT MSB discard (OBJ_ALU_027, high)\n   - SHIFT_RIGHT LSB discard (OBJ_ALU_029, high)\n\n6. Consistency: Yes \u2014 the 8 functional objectives map one-to-one onto the 8 non-default case branches in the RTL knowledge (ADD, SUB, AND, OR, XOR, NOT, SHIFT_LEFT, SHIFT_RIGHT). The 21 corner-case objectives are all derived from these functional objectives with parent_objective links back to the correct functional objective IDs. No objective references a non-existent operation, and no RTL operation is missing from the objective set. The default CONSTANT branch (4'b0000) has no dedicated objective, which is acceptable since it is a fallback, not a primary operation.\n\nHERMES RTL ANALYSIS COMPLETE",
+    "tokens": {
+        "input": 16607,
+        "output": 792,
+        "total": 18487,
+        "cache_read": 1088,
+        "cache_write": 0
+    },
+    "duration_ms": 15175,
+    "stderr": "\nsession_id: 20260919_071430_fc6ee7\n"
+}
