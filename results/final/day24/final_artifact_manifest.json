@@ -1,0 +1,100 @@
+{
+    "day": 24,
+    "project": "AI-Driven RTL Test Generation, Coverage Analysis and Verification",
+    "artifact_count": 18,
+    "required_artifact_count": 18,
+    "missing_artifacts": [],
+    "artifacts": [
+        {
+            "path": "rtl/alu.v",
+            "size_bytes": 527,
+            "sha256": "875082963a7354436d6eb9bdbbd8b904cf930cb61c4f6da8ef36788000b0b175"
+        },
+        {
+            "path": "rtl/fsm_1011.v",
+            "size_bytes": 1608,
+            "sha256": "1f6d267b23aedb3f9d204f3cc02d8f200ab73e29ab93ed9a1e3627a6d1b1b6ff"
+        },
+        {
+            "path": "rtl/fifo.v",
+            "size_bytes": 1851,
+            "sha256": "7380a67fd12e284ff16fcb5e1d717392540f2c3a2c602f81dbbc42f9468fe634"
+        },
+        {
+            "path": "main.py",
+            "size_bytes": 821,
+            "sha256": "cc78e87e1e265324a90acaaae16451b896b97ad834d9658052b745f0867c6bf3"
+        },
+        {
+            "path": "run_day23.py",
+            "size_bytes": 3836,
+            "sha256": "a834be556b4d7684bacb18c60dd176f6ba13131c575986e2a90c85181dfee46c"
+        },
+        {
+            "path": "integration_validator.py",
+            "size_bytes": 3142,
+            "sha256": "7abea63103383031d9dacf7b351a7e332502a79bdcb57f181c9619648885ef67"
+        },
+        {
+            "path": "validate_project_results.py",
+            "size_bytes": 3335,
+            "sha256": "9179c63dc2f72f8365a32aa380eef08e18b1eda661a0a6cf0c5f87bc49c11957"
+        },
+        {
+            "path": "day23_summary.py",
+            "size_bytes": 3058,
+            "sha256": "b3db016135e22af99eae18149e79af025c3dc446f768d67bf3cd0e269b10b034"
+        },
+        {
+            "path": "results/alu/day15/day15_summary.json",
+            "size_bytes": 783,
+            "sha256": "435a3bccd60174221ad05883cf8f38ebab643454eced39fc2bfd3639fc2238ef"
+        },
+        {
+            "path": "results/fsm/day17/day17_summary.json",
+            "size_bytes": 2313,
+            "sha256": "c1f080a713ae341c255402b7449eeabad2246c2586a6ffcbcb780c2a1de5b6a2"
+        },
+        {
+            "path": "results/fifo/day19/day19_summary.json",
+            "size_bytes": 768,
+            "sha256": "f2cd0bc0c0c7212a35df5a19caa4995d6ecc37001a2415c864b5b1d8736291a2"
+        },
+        {
+            "path": "results/fifo/day20/day20_summary.json",
+            "size_bytes": 703,
+            "sha256": "0e97da9962d245de26f3faf1a480ae629e25741d720c568e0387edd9de3711a9"
+        },
+        {
+            "path": "results/fifo/day21/day21_summary.json",
+            "size_bytes": 4828,
+            "sha256": "6b0ceca94bdbb58a4a3f0fb6c641b88e7a54b99c2ad2baee23f005ff3630a600"
+        },
+        {
+            "path": "results/fifo/day22/day22_summary.json",
+            "size_bytes": 4659,
+            "sha256": "e895f5467ba83fe5c529a7b839f3ac7075cc952e9fd7545fb60d2f45b401e67b"
+        },
+        {
+            "path": "results/integration/day23/day23_execution_report.json",
+            "size_bytes": 2099,
+            "sha256": "7db069ce13693a90f0efdbbec1f3e7f160522ade879a6ef966169ea06a020cc6"
+        },
+        {
+            "path": "results/integration/day23/day23_summary.json",
+            "size_bytes": 592,
+            "sha256": "28534b8cf97108076275b879f9d53237bd8a25936e247d99a1b83a56bfef0fa1"
+        },
+        {
+            "path": "results/final/day24/tool_versions.json",
+            "size_bytes": 1148,
+            "sha256": "c5ce76623787b9e3e10a69d74517f72764c0e95906d442eaf19374c807399f0b"
+        },
+        {
+            "path": "results/final/day24/rtl_sha256.txt",
+            "size_bytes": 234,
+            "sha256": "921ee29c18b13947e8f8a4e851bcc7b9381552813a6ceb0c3bf93d67cde82761"
+        }
+    ],
+    "status": "PASS"
+}
