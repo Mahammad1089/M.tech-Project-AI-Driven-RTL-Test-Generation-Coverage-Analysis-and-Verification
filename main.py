@@ -1,7 +1,12 @@
+import subprocess
+import sys
+
+
 def main():
 
+    print()
     print(
-        "=" * 60
+        "=" * 72
     )
 
     print(
@@ -9,31 +14,50 @@ def main():
     )
 
     print(
-        "=" * 60
+        "M.Tech Project Integration"
     )
 
     print(
-        "RTL Language : Verilog"
+        "=" * 72
+    )
+
+    result = subprocess.run(
+        [
+            sys.executable,
+            "run_day23.py"
+        ]
+    )
+
+    if (
+        result.returncode
+        != 0
+    ):
+
+        print()
+        print(
+            "PROJECT INTEGRATION: FAIL"
+        )
+
+        sys.exit(
+            result.returncode
+        )
+
+    print()
+    print(
+        "=" * 72
     )
 
     print(
-        "AI Agent     : Hermes Agent"
+        "PROJECT INTEGRATION: PASS"
     )
 
     print(
-        "Simulator    : Icarus Verilog"
+        "Validated ALU, FSM, FIFO "
+        "and experimental evidence."
     )
 
     print(
-        "RTL Parser   : PyVerilog"
-    )
-
-    print(
-        "Status       : Day 1 environment initialized"
-    )
-
-    print(
-        "=" * 60
+        "=" * 72
     )
 
 

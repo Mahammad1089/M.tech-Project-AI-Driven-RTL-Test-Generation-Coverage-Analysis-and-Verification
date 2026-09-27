@@ -1,0 +1,49 @@
+{
+    "day": 23,
+    "check": "historical_results",
+    "milestones": [
+        {
+            "milestone": "day15_alu",
+            "file": "results/alu/day15/day15_summary.json",
+            "exists": true,
+            "reported_status": "PASS",
+            "validation": "PASS"
+        },
+        {
+            "milestone": "day17_fsm",
+            "file": "results/fsm/day17/day17_summary.json",
+            "exists": true,
+            "reported_status": "PASS",
+            "validation": "PASS"
+        },
+        {
+            "milestone": "day19_fifo",
+            "file": "results/fifo/day19/day19_summary.json",
+            "exists": true,
+            "reported_status": "PASS",
+            "validation": "PASS"
+        },
+        {
+            "milestone": "day20_comparison",
+            "file": "results/fifo/day20/day20_summary.json",
+            "exists": true,
+            "reported_status": "PASS",
+            "validation": "PASS"
+        },
+        {
+            "milestone": "day21_experiments",
+            "file": "results/fifo/day21/day21_summary.json",
+            "exists": true,
+            "reported_status": "PASS",
+            "validation": "PASS"
+        },
+        {
+            "milestone": "day22_visualization",
+            "file": "results/fifo/day22/day22_summary.json",
+            "exists": true,
+            "reported_status": "PASS",
+            "validation": "PASS"
+        }
+    ],
+    "status": "PASS"
+}

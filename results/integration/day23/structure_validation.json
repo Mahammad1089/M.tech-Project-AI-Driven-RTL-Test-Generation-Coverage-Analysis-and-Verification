@@ -1,0 +1,14 @@
+{
+    "day": 23,
+    "check": "project_structure",
+    "required_file_count": 16,
+    "existing_file_count": 16,
+    "missing_files": [],
+    "rtl_files": [
+        "rtl/alu.v",
+        "rtl/fsm_1011.v",
+        "rtl/fifo.v"
+    ],
+    "rtl_modification_permitted": false,
+    "status": "PASS"
+}

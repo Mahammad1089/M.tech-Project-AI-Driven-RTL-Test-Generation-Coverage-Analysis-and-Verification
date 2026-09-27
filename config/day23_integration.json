@@ -1,0 +1,32 @@
+{
+    "day": 23,
+    "project": "AI-Driven RTL Test Generation, Coverage Analysis and Verification",
+    "mode": "integration_validation",
+    "required_duts": [
+        "alu",
+        "fsm",
+        "fifo"
+    ],
+    "required_completed_days": [
+        15,
+        17,
+        19,
+        20,
+        21,
+        22
+    ],
+    "requirements": {
+        "alu_phase_complete": true,
+        "fsm_phase_complete": true,
+        "fifo_phase_complete": true,
+        "experimental_comparison_complete": true,
+        "multi_seed_experiment_complete": true,
+        "visualization_complete": true
+    },
+    "boundaries": {
+        "modify_rtl": false,
+        "generate_new_tests": false,
+        "remeasure_coverage": false,
+        "hermes_required": false
+    }
+}
