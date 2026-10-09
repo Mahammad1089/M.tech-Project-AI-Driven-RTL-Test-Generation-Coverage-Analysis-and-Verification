@@ -1,0 +1,10 @@
+
+read_verilog /home/maham_mtech/Mtech_project/AI_RTL_Verification/extensions/rtl/uart/uart_tx.v
+hierarchy -check -top uart_tx
+synth -top uart_tx
+dfflibmap -liberty /home/maham_mtech/Mtech_project/AI_RTL_Verification/extensions/technology/nangate45/NangateOpenCellLibrary_typical.lib
+abc -liberty /home/maham_mtech/Mtech_project/AI_RTL_Verification/extensions/technology/nangate45/NangateOpenCellLibrary_typical.lib
+clean
+tee -o /home/maham_mtech/Mtech_project/AI_RTL_Verification/extensions/results/day30/uart/ppa/baseline_tx_stat.txt stat -liberty /home/maham_mtech/Mtech_project/AI_RTL_Verification/extensions/technology/nangate45/NangateOpenCellLibrary_typical.lib
+write_verilog -noattr -noexpr /home/maham_mtech/Mtech_project/AI_RTL_Verification/extensions/results/day30/uart/ppa/baseline_tx_mapped.v
+write_json /home/maham_mtech/Mtech_project/AI_RTL_Verification/extensions/results/day30/uart/ppa/baseline_tx_mapped.json

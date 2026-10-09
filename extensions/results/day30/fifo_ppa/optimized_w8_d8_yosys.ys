@@ -1,0 +1,11 @@
+
+read_verilog /home/maham_mtech/Mtech_project/AI_RTL_Verification/extensions/rtl/optimized/fifo_opt.v
+chparam -set DATA_WIDTH 8 -set DEPTH 8 -set ADDR_WIDTH 3 fifo_opt
+hierarchy -check -top fifo_opt
+synth -top fifo_opt
+dfflibmap -liberty /home/maham_mtech/Mtech_project/AI_RTL_Verification/extensions/technology/nangate45/NangateOpenCellLibrary_typical.lib
+abc -liberty /home/maham_mtech/Mtech_project/AI_RTL_Verification/extensions/technology/nangate45/NangateOpenCellLibrary_typical.lib
+clean
+tee -o /home/maham_mtech/Mtech_project/AI_RTL_Verification/extensions/results/day30/fifo_ppa/optimized_w8_d8_stat.txt stat -liberty /home/maham_mtech/Mtech_project/AI_RTL_Verification/extensions/technology/nangate45/NangateOpenCellLibrary_typical.lib
+write_verilog -noattr -noexpr /home/maham_mtech/Mtech_project/AI_RTL_Verification/extensions/results/day30/fifo_ppa/optimized_w8_d8_mapped.v
+write_json /home/maham_mtech/Mtech_project/AI_RTL_Verification/extensions/results/day30/fifo_ppa/optimized_w8_d8_mapped.json
