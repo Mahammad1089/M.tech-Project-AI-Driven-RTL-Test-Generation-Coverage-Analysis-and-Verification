@@ -1,0 +1,19 @@
+id,module,requirement,status,evidence,next_action
+ALU-01,ALU,Baseline RTL,PRESENT,rtl/alu.v,Preserve baseline
+ALU-02,ALU,Optimized RTL,PRESENT,extensions/rtl/optimized/alu_opt.v,Review implementation
+ALU-03,ALU,Equivalence testbench,PRESENT,extensions/testbench/tb_alu_equivalence.v,Re-run 2048 comparisons
+FIFO-01,FIFO,Baseline RTL,PRESENT,rtl/fifo.v,"Verify reset, full, empty and simultaneous operations"
+FIFO-02,FIFO,Optimized RTL,MISSING,,Implement optimized FIFO and equivalence test
+FSM-01,FSM,Original RTL,PRESENT,rtl/fsm_1011.v,Verify requested pattern/overlap combinations
+FSM-02,FSM,Parameterized Mealy RTL,PRESENT,extensions/rtl/fsm_variants/fsm_mealy_ext.v,Verify requested pattern/overlap combinations
+FSM-03,FSM,Parameterized Moore RTL,PRESENT,extensions/rtl/fsm_variants/fsm_moore_ext.v,Verify requested pattern/overlap combinations
+FSM-04,FSM,Day 30 functional audit log,LOG_PASS,extensions/results/day30/day30_fsm_functional_audit.log,Expand validation to all 20 configurations
+FSM-05,FSM,All 20 required FSM configurations,NEEDS_VERIFICATION,20 required combinations generated in audit,Run independent functional checks for every combination
+PPA-01,PPA,day26_fsm_ppa_summary.csv,DATA_PRESENT,extensions/results/day26/day26_fsm_ppa_summary.csv (13 records),"Reconcile configurations, methodology and units"
+PPA-02,PPA,day27_efficiency_metrics.csv,DATA_PRESENT,extensions/results/day27/day27_efficiency_metrics.csv (13 records),"Reconcile configurations, methodology and units"
+PPA-03,PPA,day27_mealy_moore_comparison.csv,DATA_PRESENT,extensions/results/day27/day27_mealy_moore_comparison.csv (6 records),"Reconcile configurations, methodology and units"
+PPA-04,PPA,day27_pareto_analysis.csv,DATA_PRESENT,extensions/results/day27/day27_pareto_analysis.csv (13 records),"Reconcile configurations, methodology and units"
+UART-01,UART,UART TX/RX RTL,MISSING,,Implement baseline UART TX/RX and baud timing
+UART-02,UART,UART functional verification,MISSING,,Create independent TX/RX and loopback scoreboard
+UART-03,UART,UART optimization and equivalence,NEEDS_VERIFICATION,,Implement optimized UART and compare against baseline
+UART-04,UART,UART technology-mapped PPA,NEEDS_VERIFICATION,,"Run consistent synthesis, timing and power estimates"

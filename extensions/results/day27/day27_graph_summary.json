@@ -1,0 +1,46 @@
+{
+  "day": 27,
+  "step": 5,
+  "status": "PASS",
+  "configurations_analyzed": 13,
+  "graphs_generated": 6,
+  "global_pareto_front": [
+    "moore_1011_overlap_0",
+    "moore_1011_overlap_1"
+  ],
+  "best_area": {
+    "configuration": "moore_1011_overlap_1",
+    "value_um2": 23.94
+  },
+  "best_power": {
+    "configuration": "moore_1011_overlap_1",
+    "value_uw": 3.95
+  },
+  "best_arrival": {
+    "configuration": "moore_1011_overlap_0",
+    "value_ns": 0.13
+  },
+  "best_adp": {
+    "configuration": "moore_1011_overlap_0",
+    "value_um2_ns": 3.2159400000000002
+  },
+  "best_pdp": {
+    "configuration": "moore_1011_overlap_0",
+    "value_fj": 0.0005200000000000001
+  },
+  "graphs": [
+    "extensions/results/day27/graphs/01_fsm_area_comparison.png",
+    "extensions/results/day27/graphs/02_fsm_power_comparison.png",
+    "extensions/results/day27/graphs/03_fsm_arrival_time_comparison.png",
+    "extensions/results/day27/graphs/04_fsm_area_delay_product.png",
+    "extensions/results/day27/graphs/05_fsm_power_delay_product.png",
+    "extensions/results/day27/graphs/06_fsm_pareto_tradeoff.png"
+  ],
+  "limitations": [
+    "Pre-layout mapped area only",
+    "Power based on assumed switching activity",
+    "Timing uses reported data arrival time",
+    "Global Pareto comparison mixes FSM semantics",
+    "No physical layout or post-route analysis"
+  ]
+}

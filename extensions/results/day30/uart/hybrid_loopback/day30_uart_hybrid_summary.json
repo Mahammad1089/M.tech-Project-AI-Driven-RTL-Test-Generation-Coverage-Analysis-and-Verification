@@ -1,0 +1,51 @@
+{
+  "step": "Day 30 Step 4E-6",
+  "architecture": "Baseline TX + Optimized RX",
+  "status": "PASS",
+  "results": [
+    {
+      "clks_per_bit": 8,
+      "status": "PASS",
+      "TOTAL CHECKS": 194,
+      "PASSED CHECKS": 194,
+      "FAILED CHECKS": 0,
+      "TX FRAMES": 38,
+      "RX VALID FRAMES": 38,
+      "RX FRAMING ERRORS": 1,
+      "log": "extensions/results/day30/uart/hybrid_loopback/hybrid_8.log"
+    },
+    {
+      "clks_per_bit": 16,
+      "status": "PASS",
+      "TOTAL CHECKS": 194,
+      "PASSED CHECKS": 194,
+      "FAILED CHECKS": 0,
+      "TX FRAMES": 38,
+      "RX VALID FRAMES": 38,
+      "RX FRAMING ERRORS": 1,
+      "log": "extensions/results/day30/uart/hybrid_loopback/hybrid_16.log"
+    },
+    {
+      "clks_per_bit": 32,
+      "status": "PASS",
+      "TOTAL CHECKS": 194,
+      "PASSED CHECKS": 194,
+      "FAILED CHECKS": 0,
+      "TX FRAMES": 38,
+      "RX VALID FRAMES": 38,
+      "RX FRAMING ERRORS": 1,
+      "log": "extensions/results/day30/uart/hybrid_loopback/hybrid_32.log"
+    },
+    {
+      "clks_per_bit": 64,
+      "status": "PASS",
+      "TOTAL CHECKS": 194,
+      "PASSED CHECKS": 194,
+      "FAILED CHECKS": 0,
+      "TX FRAMES": 38,
+      "RX VALID FRAMES": 38,
+      "RX FRAMING ERRORS": 1,
+      "log": "extensions/results/day30/uart/hybrid_loopback/hybrid_64.log"
+    }
+  ]
+}

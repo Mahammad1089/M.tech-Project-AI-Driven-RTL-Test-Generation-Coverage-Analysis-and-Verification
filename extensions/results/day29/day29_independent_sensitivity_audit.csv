@@ -1,0 +1,217 @@
+constraint_case,scenario,field,expected,observed,status
+area_85pct,area_priority,eligible_count,11,11,PASS
+area_85pct,area_priority,excluded_count,2,2,PASS
+area_85pct,area_priority,selection_status,SELECTED,SELECTED,PASS
+area_85pct,area_priority,selected_configuration,['moore_1011_overlap_1'],moore_1011_overlap_1,PASS
+area_85pct,area_priority,tied_winners,['moore_1011_overlap_1'],['moore_1011_overlap_1'],PASS
+area_85pct,area_priority,weighted_score,0.000000000000,0.000000000000,PASS
+area_85pct,power_priority,eligible_count,11,11,PASS
+area_85pct,power_priority,excluded_count,2,2,PASS
+area_85pct,power_priority,selection_status,SELECTED,SELECTED,PASS
+area_85pct,power_priority,selected_configuration,['moore_1011_overlap_1'],moore_1011_overlap_1,PASS
+area_85pct,power_priority,tied_winners,['moore_1011_overlap_1'],['moore_1011_overlap_1'],PASS
+area_85pct,power_priority,weighted_score,0.000000000000,0.000000000000,PASS
+area_85pct,timing_priority,eligible_count,11,11,PASS
+area_85pct,timing_priority,excluded_count,2,2,PASS
+area_85pct,timing_priority,selection_status,SELECTED,SELECTED,PASS
+area_85pct,timing_priority,selected_configuration,['moore_1011_overlap_0'],moore_1011_overlap_0,PASS
+area_85pct,timing_priority,tied_winners,['moore_1011_overlap_0'],['moore_1011_overlap_0'],PASS
+area_85pct,timing_priority,weighted_score,0.000000000000,0.000000000000,PASS
+area_85pct,balanced,eligible_count,11,11,PASS
+area_85pct,balanced,excluded_count,2,2,PASS
+area_85pct,balanced,selection_status,SELECTED,SELECTED,PASS
+area_85pct,balanced,selected_configuration,['moore_1011_overlap_0'],moore_1011_overlap_0,PASS
+area_85pct,balanced,tied_winners,['moore_1011_overlap_0'],['moore_1011_overlap_0'],PASS
+area_85pct,balanced,weighted_score,0.020518214298,0.020518214000,PASS
+area_85pct,power_priority,constraint_limits_consistent,"{'area': 35.4977, 'power': None, 'arrival_time': None}","{'area': 35.4977, 'power': None, 'arrival_time': None}",PASS
+area_85pct,timing_priority,constraint_limits_consistent,"{'area': 35.4977, 'power': None, 'arrival_time': None}","{'area': 35.4977, 'power': None, 'arrival_time': None}",PASS
+area_85pct,balanced,constraint_limits_consistent,"{'area': 35.4977, 'power': None, 'arrival_time': None}","{'area': 35.4977, 'power': None, 'arrival_time': None}",PASS
+area_95pct,area_priority,eligible_count,12,12,PASS
+area_95pct,area_priority,excluded_count,1,1,PASS
+area_95pct,area_priority,selection_status,SELECTED,SELECTED,PASS
+area_95pct,area_priority,selected_configuration,['moore_1011_overlap_1'],moore_1011_overlap_1,PASS
+area_95pct,area_priority,tied_winners,['moore_1011_overlap_1'],['moore_1011_overlap_1'],PASS
+area_95pct,area_priority,weighted_score,0.000000000000,0.000000000000,PASS
+area_95pct,power_priority,eligible_count,12,12,PASS
+area_95pct,power_priority,excluded_count,1,1,PASS
+area_95pct,power_priority,selection_status,SELECTED,SELECTED,PASS
+area_95pct,power_priority,selected_configuration,['moore_1011_overlap_1'],moore_1011_overlap_1,PASS
+area_95pct,power_priority,tied_winners,['moore_1011_overlap_1'],['moore_1011_overlap_1'],PASS
+area_95pct,power_priority,weighted_score,0.000000000000,0.000000000000,PASS
+area_95pct,timing_priority,eligible_count,12,12,PASS
+area_95pct,timing_priority,excluded_count,1,1,PASS
+area_95pct,timing_priority,selection_status,SELECTED,SELECTED,PASS
+area_95pct,timing_priority,selected_configuration,['moore_1011_overlap_0'],moore_1011_overlap_0,PASS
+area_95pct,timing_priority,tied_winners,['moore_1011_overlap_0'],['moore_1011_overlap_0'],PASS
+area_95pct,timing_priority,weighted_score,0.000000000000,0.000000000000,PASS
+area_95pct,balanced,eligible_count,12,12,PASS
+area_95pct,balanced,excluded_count,1,1,PASS
+area_95pct,balanced,selection_status,SELECTED,SELECTED,PASS
+area_95pct,balanced,selected_configuration,['moore_1011_overlap_0'],moore_1011_overlap_0,PASS
+area_95pct,balanced,tied_winners,['moore_1011_overlap_0'],['moore_1011_overlap_0'],PASS
+area_95pct,balanced,weighted_score,0.020518214298,0.020518214000,PASS
+area_95pct,power_priority,constraint_limits_consistent,"{'area': 39.673899999999996, 'power': None, 'arrival_time': None}","{'area': 39.673899999999996, 'power': None, 'arrival_time': None}",PASS
+area_95pct,timing_priority,constraint_limits_consistent,"{'area': 39.673899999999996, 'power': None, 'arrival_time': None}","{'area': 39.673899999999996, 'power': None, 'arrival_time': None}",PASS
+area_95pct,balanced,constraint_limits_consistent,"{'area': 39.673899999999996, 'power': None, 'arrival_time': None}","{'area': 39.673899999999996, 'power': None, 'arrival_time': None}",PASS
+arrival_85pct,area_priority,eligible_count,10,10,PASS
+arrival_85pct,area_priority,excluded_count,3,3,PASS
+arrival_85pct,area_priority,selection_status,SELECTED,SELECTED,PASS
+arrival_85pct,area_priority,selected_configuration,['moore_1011_overlap_1'],moore_1011_overlap_1,PASS
+arrival_85pct,area_priority,tied_winners,['moore_1011_overlap_1'],['moore_1011_overlap_1'],PASS
+arrival_85pct,area_priority,weighted_score,0.000000000000,0.000000000000,PASS
+arrival_85pct,power_priority,eligible_count,10,10,PASS
+arrival_85pct,power_priority,excluded_count,3,3,PASS
+arrival_85pct,power_priority,selection_status,SELECTED,SELECTED,PASS
+arrival_85pct,power_priority,selected_configuration,['moore_1011_overlap_1'],moore_1011_overlap_1,PASS
+arrival_85pct,power_priority,tied_winners,['moore_1011_overlap_1'],['moore_1011_overlap_1'],PASS
+arrival_85pct,power_priority,weighted_score,0.000000000000,0.000000000000,PASS
+arrival_85pct,timing_priority,eligible_count,10,10,PASS
+arrival_85pct,timing_priority,excluded_count,3,3,PASS
+arrival_85pct,timing_priority,selection_status,SELECTED,SELECTED,PASS
+arrival_85pct,timing_priority,selected_configuration,['moore_1011_overlap_0'],moore_1011_overlap_0,PASS
+arrival_85pct,timing_priority,tied_winners,['moore_1011_overlap_0'],['moore_1011_overlap_0'],PASS
+arrival_85pct,timing_priority,weighted_score,0.000000000000,0.000000000000,PASS
+arrival_85pct,balanced,eligible_count,10,10,PASS
+arrival_85pct,balanced,excluded_count,3,3,PASS
+arrival_85pct,balanced,selection_status,SELECTED,SELECTED,PASS
+arrival_85pct,balanced,selected_configuration,['moore_1011_overlap_0'],moore_1011_overlap_0,PASS
+arrival_85pct,balanced,tied_winners,['moore_1011_overlap_0'],['moore_1011_overlap_0'],PASS
+arrival_85pct,balanced,weighted_score,0.020518214298,0.020518214000,PASS
+arrival_85pct,power_priority,constraint_limits_consistent,"{'area': None, 'power': None, 'arrival_time': 0.306}","{'area': None, 'power': None, 'arrival_time': 0.306}",PASS
+arrival_85pct,timing_priority,constraint_limits_consistent,"{'area': None, 'power': None, 'arrival_time': 0.306}","{'area': None, 'power': None, 'arrival_time': 0.306}",PASS
+arrival_85pct,balanced,constraint_limits_consistent,"{'area': None, 'power': None, 'arrival_time': 0.306}","{'area': None, 'power': None, 'arrival_time': 0.306}",PASS
+arrival_95pct,area_priority,eligible_count,11,11,PASS
+arrival_95pct,area_priority,excluded_count,2,2,PASS
+arrival_95pct,area_priority,selection_status,SELECTED,SELECTED,PASS
+arrival_95pct,area_priority,selected_configuration,['moore_1011_overlap_1'],moore_1011_overlap_1,PASS
+arrival_95pct,area_priority,tied_winners,['moore_1011_overlap_1'],['moore_1011_overlap_1'],PASS
+arrival_95pct,area_priority,weighted_score,0.000000000000,0.000000000000,PASS
+arrival_95pct,power_priority,eligible_count,11,11,PASS
+arrival_95pct,power_priority,excluded_count,2,2,PASS
+arrival_95pct,power_priority,selection_status,SELECTED,SELECTED,PASS
+arrival_95pct,power_priority,selected_configuration,['moore_1011_overlap_1'],moore_1011_overlap_1,PASS
+arrival_95pct,power_priority,tied_winners,['moore_1011_overlap_1'],['moore_1011_overlap_1'],PASS
+arrival_95pct,power_priority,weighted_score,0.000000000000,0.000000000000,PASS
+arrival_95pct,timing_priority,eligible_count,11,11,PASS
+arrival_95pct,timing_priority,excluded_count,2,2,PASS
+arrival_95pct,timing_priority,selection_status,SELECTED,SELECTED,PASS
+arrival_95pct,timing_priority,selected_configuration,['moore_1011_overlap_0'],moore_1011_overlap_0,PASS
+arrival_95pct,timing_priority,tied_winners,['moore_1011_overlap_0'],['moore_1011_overlap_0'],PASS
+arrival_95pct,timing_priority,weighted_score,0.000000000000,0.000000000000,PASS
+arrival_95pct,balanced,eligible_count,11,11,PASS
+arrival_95pct,balanced,excluded_count,2,2,PASS
+arrival_95pct,balanced,selection_status,SELECTED,SELECTED,PASS
+arrival_95pct,balanced,selected_configuration,['moore_1011_overlap_0'],moore_1011_overlap_0,PASS
+arrival_95pct,balanced,tied_winners,['moore_1011_overlap_0'],['moore_1011_overlap_0'],PASS
+arrival_95pct,balanced,weighted_score,0.020518214298,0.020518214000,PASS
+arrival_95pct,power_priority,constraint_limits_consistent,"{'area': None, 'power': None, 'arrival_time': 0.34199999999999997}","{'area': None, 'power': None, 'arrival_time': 0.34199999999999997}",PASS
+arrival_95pct,timing_priority,constraint_limits_consistent,"{'area': None, 'power': None, 'arrival_time': 0.34199999999999997}","{'area': None, 'power': None, 'arrival_time': 0.34199999999999997}",PASS
+arrival_95pct,balanced,constraint_limits_consistent,"{'area': None, 'power': None, 'arrival_time': 0.34199999999999997}","{'area': None, 'power': None, 'arrival_time': 0.34199999999999997}",PASS
+combined_90pct,area_priority,eligible_count,9,9,PASS
+combined_90pct,area_priority,excluded_count,4,4,PASS
+combined_90pct,area_priority,selection_status,SELECTED,SELECTED,PASS
+combined_90pct,area_priority,selected_configuration,['moore_1011_overlap_1'],moore_1011_overlap_1,PASS
+combined_90pct,area_priority,tied_winners,['moore_1011_overlap_1'],['moore_1011_overlap_1'],PASS
+combined_90pct,area_priority,weighted_score,0.000000000000,0.000000000000,PASS
+combined_90pct,power_priority,eligible_count,9,9,PASS
+combined_90pct,power_priority,excluded_count,4,4,PASS
+combined_90pct,power_priority,selection_status,SELECTED,SELECTED,PASS
+combined_90pct,power_priority,selected_configuration,['moore_1011_overlap_1'],moore_1011_overlap_1,PASS
+combined_90pct,power_priority,tied_winners,['moore_1011_overlap_1'],['moore_1011_overlap_1'],PASS
+combined_90pct,power_priority,weighted_score,0.000000000000,0.000000000000,PASS
+combined_90pct,timing_priority,eligible_count,9,9,PASS
+combined_90pct,timing_priority,excluded_count,4,4,PASS
+combined_90pct,timing_priority,selection_status,SELECTED,SELECTED,PASS
+combined_90pct,timing_priority,selected_configuration,['moore_1011_overlap_0'],moore_1011_overlap_0,PASS
+combined_90pct,timing_priority,tied_winners,['moore_1011_overlap_0'],['moore_1011_overlap_0'],PASS
+combined_90pct,timing_priority,weighted_score,0.000000000000,0.000000000000,PASS
+combined_90pct,balanced,eligible_count,9,9,PASS
+combined_90pct,balanced,excluded_count,4,4,PASS
+combined_90pct,balanced,selection_status,SELECTED,SELECTED,PASS
+combined_90pct,balanced,selected_configuration,['moore_1011_overlap_0'],moore_1011_overlap_0,PASS
+combined_90pct,balanced,tied_winners,['moore_1011_overlap_0'],['moore_1011_overlap_0'],PASS
+combined_90pct,balanced,weighted_score,0.020518214298,0.020518214000,PASS
+combined_90pct,power_priority,constraint_limits_consistent,"{'area': 37.5858, 'power': 6.237, 'arrival_time': 0.324}","{'area': 37.5858, 'power': 6.237, 'arrival_time': 0.324}",PASS
+combined_90pct,timing_priority,constraint_limits_consistent,"{'area': 37.5858, 'power': 6.237, 'arrival_time': 0.324}","{'area': 37.5858, 'power': 6.237, 'arrival_time': 0.324}",PASS
+combined_90pct,balanced,constraint_limits_consistent,"{'area': 37.5858, 'power': 6.237, 'arrival_time': 0.324}","{'area': 37.5858, 'power': 6.237, 'arrival_time': 0.324}",PASS
+original_constraints,area_priority,eligible_count,13,13,PASS
+original_constraints,area_priority,excluded_count,0,0,PASS
+original_constraints,area_priority,selection_status,SELECTED,SELECTED,PASS
+original_constraints,area_priority,selected_configuration,['moore_1011_overlap_1'],moore_1011_overlap_1,PASS
+original_constraints,area_priority,tied_winners,['moore_1011_overlap_1'],['moore_1011_overlap_1'],PASS
+original_constraints,area_priority,weighted_score,0.000000000000,0.000000000000,PASS
+original_constraints,power_priority,eligible_count,13,13,PASS
+original_constraints,power_priority,excluded_count,0,0,PASS
+original_constraints,power_priority,selection_status,SELECTED,SELECTED,PASS
+original_constraints,power_priority,selected_configuration,['moore_1011_overlap_1'],moore_1011_overlap_1,PASS
+original_constraints,power_priority,tied_winners,['moore_1011_overlap_1'],['moore_1011_overlap_1'],PASS
+original_constraints,power_priority,weighted_score,0.000000000000,0.000000000000,PASS
+original_constraints,timing_priority,eligible_count,13,13,PASS
+original_constraints,timing_priority,excluded_count,0,0,PASS
+original_constraints,timing_priority,selection_status,SELECTED,SELECTED,PASS
+original_constraints,timing_priority,selected_configuration,['moore_1011_overlap_0'],moore_1011_overlap_0,PASS
+original_constraints,timing_priority,tied_winners,['moore_1011_overlap_0'],['moore_1011_overlap_0'],PASS
+original_constraints,timing_priority,weighted_score,0.000000000000,0.000000000000,PASS
+original_constraints,balanced,eligible_count,13,13,PASS
+original_constraints,balanced,excluded_count,0,0,PASS
+original_constraints,balanced,selection_status,SELECTED,SELECTED,PASS
+original_constraints,balanced,selected_configuration,['moore_1011_overlap_0'],moore_1011_overlap_0,PASS
+original_constraints,balanced,tied_winners,['moore_1011_overlap_0'],['moore_1011_overlap_0'],PASS
+original_constraints,balanced,weighted_score,0.020518214298,0.020518214000,PASS
+original_constraints,power_priority,constraint_limits_consistent,"{'area': None, 'power': None, 'arrival_time': None}","{'area': None, 'power': None, 'arrival_time': None}",PASS
+original_constraints,timing_priority,constraint_limits_consistent,"{'area': None, 'power': None, 'arrival_time': None}","{'area': None, 'power': None, 'arrival_time': None}",PASS
+original_constraints,balanced,constraint_limits_consistent,"{'area': None, 'power': None, 'arrival_time': None}","{'area': None, 'power': None, 'arrival_time': None}",PASS
+power_85pct,area_priority,eligible_count,11,11,PASS
+power_85pct,area_priority,excluded_count,2,2,PASS
+power_85pct,area_priority,selection_status,SELECTED,SELECTED,PASS
+power_85pct,area_priority,selected_configuration,['moore_1011_overlap_1'],moore_1011_overlap_1,PASS
+power_85pct,area_priority,tied_winners,['moore_1011_overlap_1'],['moore_1011_overlap_1'],PASS
+power_85pct,area_priority,weighted_score,0.000000000000,0.000000000000,PASS
+power_85pct,power_priority,eligible_count,11,11,PASS
+power_85pct,power_priority,excluded_count,2,2,PASS
+power_85pct,power_priority,selection_status,SELECTED,SELECTED,PASS
+power_85pct,power_priority,selected_configuration,['moore_1011_overlap_1'],moore_1011_overlap_1,PASS
+power_85pct,power_priority,tied_winners,['moore_1011_overlap_1'],['moore_1011_overlap_1'],PASS
+power_85pct,power_priority,weighted_score,0.000000000000,0.000000000000,PASS
+power_85pct,timing_priority,eligible_count,11,11,PASS
+power_85pct,timing_priority,excluded_count,2,2,PASS
+power_85pct,timing_priority,selection_status,SELECTED,SELECTED,PASS
+power_85pct,timing_priority,selected_configuration,['moore_1011_overlap_0'],moore_1011_overlap_0,PASS
+power_85pct,timing_priority,tied_winners,['moore_1011_overlap_0'],['moore_1011_overlap_0'],PASS
+power_85pct,timing_priority,weighted_score,0.000000000000,0.000000000000,PASS
+power_85pct,balanced,eligible_count,11,11,PASS
+power_85pct,balanced,excluded_count,2,2,PASS
+power_85pct,balanced,selection_status,SELECTED,SELECTED,PASS
+power_85pct,balanced,selected_configuration,['moore_1011_overlap_0'],moore_1011_overlap_0,PASS
+power_85pct,balanced,tied_winners,['moore_1011_overlap_0'],['moore_1011_overlap_0'],PASS
+power_85pct,balanced,weighted_score,0.020518214298,0.020518214000,PASS
+power_85pct,power_priority,constraint_limits_consistent,"{'area': None, 'power': 5.890499999999999, 'arrival_time': None}","{'area': None, 'power': 5.890499999999999, 'arrival_time': None}",PASS
+power_85pct,timing_priority,constraint_limits_consistent,"{'area': None, 'power': 5.890499999999999, 'arrival_time': None}","{'area': None, 'power': 5.890499999999999, 'arrival_time': None}",PASS
+power_85pct,balanced,constraint_limits_consistent,"{'area': None, 'power': 5.890499999999999, 'arrival_time': None}","{'area': None, 'power': 5.890499999999999, 'arrival_time': None}",PASS
+power_95pct,area_priority,eligible_count,12,12,PASS
+power_95pct,area_priority,excluded_count,1,1,PASS
+power_95pct,area_priority,selection_status,SELECTED,SELECTED,PASS
+power_95pct,area_priority,selected_configuration,['moore_1011_overlap_1'],moore_1011_overlap_1,PASS
+power_95pct,area_priority,tied_winners,['moore_1011_overlap_1'],['moore_1011_overlap_1'],PASS
+power_95pct,area_priority,weighted_score,0.000000000000,0.000000000000,PASS
+power_95pct,power_priority,eligible_count,12,12,PASS
+power_95pct,power_priority,excluded_count,1,1,PASS
+power_95pct,power_priority,selection_status,SELECTED,SELECTED,PASS
+power_95pct,power_priority,selected_configuration,['moore_1011_overlap_1'],moore_1011_overlap_1,PASS
+power_95pct,power_priority,tied_winners,['moore_1011_overlap_1'],['moore_1011_overlap_1'],PASS
+power_95pct,power_priority,weighted_score,0.000000000000,0.000000000000,PASS
+power_95pct,timing_priority,eligible_count,12,12,PASS
+power_95pct,timing_priority,excluded_count,1,1,PASS
+power_95pct,timing_priority,selection_status,SELECTED,SELECTED,PASS
+power_95pct,timing_priority,selected_configuration,['moore_1011_overlap_0'],moore_1011_overlap_0,PASS
+power_95pct,timing_priority,tied_winners,['moore_1011_overlap_0'],['moore_1011_overlap_0'],PASS
+power_95pct,timing_priority,weighted_score,0.000000000000,0.000000000000,PASS
+power_95pct,balanced,eligible_count,12,12,PASS
+power_95pct,balanced,excluded_count,1,1,PASS
+power_95pct,balanced,selection_status,SELECTED,SELECTED,PASS
+power_95pct,balanced,selected_configuration,['moore_1011_overlap_0'],moore_1011_overlap_0,PASS
+power_95pct,balanced,tied_winners,['moore_1011_overlap_0'],['moore_1011_overlap_0'],PASS
+power_95pct,balanced,weighted_score,0.020518214298,0.020518214000,PASS
+power_95pct,power_priority,constraint_limits_consistent,"{'area': None, 'power': 6.583499999999999, 'arrival_time': None}","{'area': None, 'power': 6.583499999999999, 'arrival_time': None}",PASS
+power_95pct,timing_priority,constraint_limits_consistent,"{'area': None, 'power': 6.583499999999999, 'arrival_time': None}","{'area': None, 'power': 6.583499999999999, 'arrival_time': None}",PASS
+power_95pct,balanced,constraint_limits_consistent,"{'area': None, 'power': 6.583499999999999, 'arrival_time': None}","{'area': None, 'power': 6.583499999999999, 'arrival_time': None}",PASS

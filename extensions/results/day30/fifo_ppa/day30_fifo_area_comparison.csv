@@ -1,0 +1,5 @@
+configuration,data_width,depth,addr_width,baseline_area_um2,optimized_area_um2,area_reduction_percent,baseline_mapped_cells,optimized_mapped_cells
+w8_d4,8,4,2,381.178,376.124,1.3258897418004119,217,178
+w8_d8,8,8,3,656.754,649.04,1.1745646010530664,372,284
+w16_d4,16,4,2,683.886,678.3,0.8168028004667464,378,306
+w8_d16,8,16,4,1242.752,1239.028,0.29965753424656993,712,569

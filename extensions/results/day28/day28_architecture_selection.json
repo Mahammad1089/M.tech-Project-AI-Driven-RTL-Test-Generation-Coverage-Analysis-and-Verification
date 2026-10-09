@@ -1,0 +1,511 @@
+{
+  "day": 28,
+  "step": 3,
+  "status": "PASS",
+  "source_csv": "extensions/results/day27/day27_efficiency_metrics.csv",
+  "configuration_count": 13,
+  "eligible_count": 13,
+  "scenario_count": 4,
+  "controlled_group_count": 6,
+  "metric_bounds": {
+    "area": {
+      "minimum": 23.94,
+      "maximum": 41.762
+    },
+    "power": {
+      "minimum": 3.95,
+      "maximum": 6.93
+    },
+    "arrival_time": {
+      "minimum": 0.13,
+      "maximum": 0.36
+    }
+  },
+  "hard_constraints": {
+    "maximum_area_um2": null,
+    "maximum_power_uw": null,
+    "maximum_arrival_time_ns": null
+  },
+  "scenario_weights": {
+    "area_priority": {
+      "area": 1.0,
+      "power": 0.0,
+      "arrival_time": 0.0
+    },
+    "power_priority": {
+      "area": 0.0,
+      "power": 1.0,
+      "arrival_time": 0.0
+    },
+    "timing_priority": {
+      "area": 0.0,
+      "power": 0.0,
+      "arrival_time": 1.0
+    },
+    "balanced": {
+      "area": 0.3333333333333333,
+      "power": 0.3333333333333333,
+      "arrival_time": 0.3333333333333334
+    }
+  },
+  "global_winners": {
+    "area_priority": {
+      "status": "SELECTED",
+      "winner": "moore_1011_overlap_1",
+      "tied_winners": [
+        "moore_1011_overlap_1"
+      ],
+      "best_score": 0.0
+    },
+    "power_priority": {
+      "status": "SELECTED",
+      "winner": "moore_1011_overlap_1",
+      "tied_winners": [
+        "moore_1011_overlap_1"
+      ],
+      "best_score": 0.0
+    },
+    "timing_priority": {
+      "status": "SELECTED",
+      "winner": "moore_1011_overlap_0",
+      "tied_winners": [
+        "moore_1011_overlap_0"
+      ],
+      "best_score": 0.0
+    },
+    "balanced": {
+      "status": "SELECTED",
+      "winner": "moore_1011_overlap_0",
+      "tied_winners": [
+        "moore_1011_overlap_0"
+      ],
+      "best_score": 0.02051821429763927
+    }
+  },
+  "controlled_comparisons": {
+    "pattern_10101_overlap_0": {
+      "configurations": [
+        "mealy_10101_overlap_0",
+        "moore_10101_overlap_0"
+      ],
+      "scenarios": {
+        "area_priority": {
+          "status": "SELECTED",
+          "winner": "moore_10101_overlap_0",
+          "tied_winners": [
+            "moore_10101_overlap_0"
+          ],
+          "best_score": 0.08955223880597016,
+          "eligible_count": 2
+        },
+        "power_priority": {
+          "status": "SELECTED",
+          "winner": "moore_10101_overlap_0",
+          "tied_winners": [
+            "moore_10101_overlap_0"
+          ],
+          "best_score": 0.10402684563758378,
+          "eligible_count": 2
+        },
+        "timing_priority": {
+          "status": "SELECTED",
+          "winner": "moore_10101_overlap_0",
+          "tied_winners": [
+            "moore_10101_overlap_0"
+          ],
+          "best_score": 0.2608695652173913,
+          "eligible_count": 2
+        },
+        "balanced": {
+          "status": "SELECTED",
+          "winner": "moore_10101_overlap_0",
+          "tied_winners": [
+            "moore_10101_overlap_0"
+          ],
+          "best_score": 0.1514828832203151,
+          "eligible_count": 2
+        }
+      }
+    },
+    "pattern_10101_overlap_1": {
+      "configurations": [
+        "mealy_10101_overlap_1",
+        "moore_10101_overlap_1"
+      ],
+      "scenarios": {
+        "area_priority": {
+          "status": "SELECTED",
+          "winner": "moore_10101_overlap_1",
+          "tied_winners": [
+            "moore_10101_overlap_1"
+          ],
+          "best_score": 0.41791044776119407,
+          "eligible_count": 2
+        },
+        "power_priority": {
+          "status": "SELECTED",
+          "winner": "moore_10101_overlap_1",
+          "tied_winners": [
+            "moore_10101_overlap_1"
+          ],
+          "best_score": 0.25503355704697983,
+          "eligible_count": 2
+        },
+        "timing_priority": {
+          "status": "SELECTED",
+          "winner": "mealy_10101_overlap_1",
+          "tied_winners": [
+            "mealy_10101_overlap_1"
+          ],
+          "best_score": 0.4347826086956522,
+          "eligible_count": 2
+        },
+        "balanced": {
+          "status": "SELECTED",
+          "winner": "moore_10101_overlap_1",
+          "tied_winners": [
+            "moore_10101_overlap_1"
+          ],
+          "best_score": 0.5576480016027248,
+          "eligible_count": 2
+        }
+      }
+    },
+    "pattern_1011_overlap_0": {
+      "configurations": [
+        "mealy_1011_overlap_0",
+        "moore_1011_overlap_0"
+      ],
+      "scenarios": {
+        "area_priority": {
+          "status": "SELECTED",
+          "winner": "moore_1011_overlap_0",
+          "tied_winners": [
+            "moore_1011_overlap_0"
+          ],
+          "best_score": 0.04477611940298498,
+          "eligible_count": 2
+        },
+        "power_priority": {
+          "status": "SELECTED",
+          "winner": "moore_1011_overlap_0",
+          "tied_winners": [
+            "moore_1011_overlap_0"
+          ],
+          "best_score": 0.01677852348993283,
+          "eligible_count": 2
+        },
+        "timing_priority": {
+          "status": "SELECTED",
+          "winner": "moore_1011_overlap_0",
+          "tied_winners": [
+            "moore_1011_overlap_0"
+          ],
+          "best_score": 0.0,
+          "eligible_count": 2
+        },
+        "balanced": {
+          "status": "SELECTED",
+          "winner": "moore_1011_overlap_0",
+          "tied_winners": [
+            "moore_1011_overlap_0"
+          ],
+          "best_score": 0.02051821429763927,
+          "eligible_count": 2
+        }
+      }
+    },
+    "pattern_1011_overlap_1": {
+      "configurations": [
+        "mealy_1011_overlap_1",
+        "moore_1011_overlap_1"
+      ],
+      "scenarios": {
+        "area_priority": {
+          "status": "SELECTED",
+          "winner": "moore_1011_overlap_1",
+          "tied_winners": [
+            "moore_1011_overlap_1"
+          ],
+          "best_score": 0.0,
+          "eligible_count": 2
+        },
+        "power_priority": {
+          "status": "SELECTED",
+          "winner": "moore_1011_overlap_1",
+          "tied_winners": [
+            "moore_1011_overlap_1"
+          ],
+          "best_score": 0.0,
+          "eligible_count": 2
+        },
+        "timing_priority": {
+          "status": "SELECTED",
+          "winner": "mealy_1011_overlap_1",
+          "tied_winners": [
+            "mealy_1011_overlap_1"
+          ],
+          "best_score": 0.47826086956521735,
+          "eligible_count": 2
+        },
+        "balanced": {
+          "status": "SELECTED",
+          "winner": "moore_1011_overlap_1",
+          "tied_winners": [
+            "moore_1011_overlap_1"
+          ],
+          "best_score": 0.24637681159420294,
+          "eligible_count": 2
+        }
+      }
+    },
+    "pattern_1101_overlap_0": {
+      "configurations": [
+        "mealy_1101_overlap_0",
+        "moore_1101_overlap_0"
+      ],
+      "scenarios": {
+        "area_priority": {
+          "status": "SELECTED",
+          "winner": "moore_1101_overlap_0",
+          "tied_winners": [
+            "moore_1101_overlap_0"
+          ],
+          "best_score": 0.23880597014925375,
+          "eligible_count": 2
+        },
+        "power_priority": {
+          "status": "SELECTED",
+          "winner": "moore_1101_overlap_0",
+          "tied_winners": [
+            "moore_1101_overlap_0"
+          ],
+          "best_score": 0.14765100671140924,
+          "eligible_count": 2
+        },
+        "timing_priority": {
+          "status": "SELECTED",
+          "winner": "mealy_1101_overlap_0",
+          "tied_winners": [
+            "mealy_1101_overlap_0"
+          ],
+          "best_score": 0.4347826086956522,
+          "eligible_count": 2
+        },
+        "balanced": {
+          "status": "SELECTED",
+          "winner": "mealy_1101_overlap_0",
+          "tied_winners": [
+            "mealy_1101_overlap_0"
+          ],
+          "best_score": 0.36909194906703713,
+          "eligible_count": 2
+        }
+      }
+    },
+    "pattern_1101_overlap_1": {
+      "configurations": [
+        "mealy_1101_overlap_1",
+        "moore_1101_overlap_1"
+      ],
+      "scenarios": {
+        "area_priority": {
+          "status": "SELECTED",
+          "winner": "moore_1101_overlap_1",
+          "tied_winners": [
+            "moore_1101_overlap_1"
+          ],
+          "best_score": 0.1492537313432836,
+          "eligible_count": 2
+        },
+        "power_priority": {
+          "status": "SELECTED",
+          "winner": "moore_1101_overlap_1",
+          "tied_winners": [
+            "moore_1101_overlap_1"
+          ],
+          "best_score": 0.10402684563758378,
+          "eligible_count": 2
+        },
+        "timing_priority": {
+          "status": "SELECTED",
+          "winner": "mealy_1101_overlap_1",
+          "tied_winners": [
+            "mealy_1101_overlap_1"
+          ],
+          "best_score": 0.4347826086956522,
+          "eligible_count": 2
+        },
+        "balanced": {
+          "status": "SELECTED",
+          "winner": "moore_1101_overlap_1",
+          "tied_winners": [
+            "moore_1101_overlap_1"
+          ],
+          "best_score": 0.40326743870376747,
+          "eligible_count": 2
+        }
+      }
+    }
+  },
+  "configuration_records": [
+    {
+      "configuration": "fsm_original_1011",
+      "area": 27.132,
+      "power": 4.75,
+      "arrival_time": 0.22,
+      "architecture": "original",
+      "pattern": "1011",
+      "overlap": null,
+      "comparison_group": null,
+      "eligible": true
+    },
+    {
+      "configuration": "mealy_10101_overlap_0",
+      "area": 38.304,
+      "power": 6.55,
+      "arrival_time": 0.23,
+      "architecture": "mealy",
+      "pattern": "10101",
+      "overlap": 0,
+      "comparison_group": "pattern_10101_overlap_0",
+      "eligible": true
+    },
+    {
+      "configuration": "mealy_10101_overlap_1",
+      "area": 41.762,
+      "power": 6.93,
+      "arrival_time": 0.23,
+      "architecture": "mealy",
+      "pattern": "10101",
+      "overlap": 1,
+      "comparison_group": "pattern_10101_overlap_1",
+      "eligible": true
+    },
+    {
+      "configuration": "mealy_1011_overlap_0",
+      "area": 32.452,
+      "power": 5.3,
+      "arrival_time": 0.23,
+      "architecture": "mealy",
+      "pattern": "1011",
+      "overlap": 0,
+      "comparison_group": "pattern_1011_overlap_0",
+      "eligible": true
+    },
+    {
+      "configuration": "mealy_1011_overlap_1",
+      "area": 30.324,
+      "power": 5.17,
+      "arrival_time": 0.24,
+      "architecture": "mealy",
+      "pattern": "1011",
+      "overlap": 1,
+      "comparison_group": "pattern_1011_overlap_1",
+      "eligible": true
+    },
+    {
+      "configuration": "mealy_1101_overlap_0",
+      "area": 29.526,
+      "power": 5.02,
+      "arrival_time": 0.23,
+      "architecture": "mealy",
+      "pattern": "1101",
+      "overlap": 0,
+      "comparison_group": "pattern_1101_overlap_0",
+      "eligible": true
+    },
+    {
+      "configuration": "mealy_1101_overlap_1",
+      "area": 31.92,
+      "power": 5.26,
+      "arrival_time": 0.23,
+      "architecture": "mealy",
+      "pattern": "1101",
+      "overlap": 1,
+      "comparison_group": "pattern_1101_overlap_1",
+      "eligible": true
+    },
+    {
+      "configuration": "moore_10101_overlap_0",
+      "area": 25.536,
+      "power": 4.26,
+      "arrival_time": 0.19,
+      "architecture": "moore",
+      "pattern": "10101",
+      "overlap": 0,
+      "comparison_group": "pattern_10101_overlap_0",
+      "eligible": true
+    },
+    {
+      "configuration": "moore_10101_overlap_1",
+      "area": 31.388,
+      "power": 4.71,
+      "arrival_time": 0.36,
+      "architecture": "moore",
+      "pattern": "10101",
+      "overlap": 1,
+      "comparison_group": "pattern_10101_overlap_1",
+      "eligible": true
+    },
+    {
+      "configuration": "moore_1011_overlap_0",
+      "area": 24.738,
+      "power": 4.0,
+      "arrival_time": 0.13,
+      "architecture": "moore",
+      "pattern": "1011",
+      "overlap": 0,
+      "comparison_group": "pattern_1011_overlap_0",
+      "eligible": true
+    },
+    {
+      "configuration": "moore_1011_overlap_1",
+      "area": 23.94,
+      "power": 3.95,
+      "arrival_time": 0.3,
+      "architecture": "moore",
+      "pattern": "1011",
+      "overlap": 1,
+      "comparison_group": "pattern_1011_overlap_1",
+      "eligible": true
+    },
+    {
+      "configuration": "moore_1101_overlap_0",
+      "area": 28.196,
+      "power": 4.39,
+      "arrival_time": 0.32,
+      "architecture": "moore",
+      "pattern": "1101",
+      "overlap": 0,
+      "comparison_group": "pattern_1101_overlap_0",
+      "eligible": true
+    },
+    {
+      "configuration": "moore_1101_overlap_1",
+      "area": 26.6,
+      "power": 4.26,
+      "arrival_time": 0.35,
+      "architecture": "moore",
+      "pattern": "1101",
+      "overlap": 1,
+      "comparison_group": "pattern_1101_overlap_1",
+      "eligible": true
+    }
+  ],
+  "methodology": {
+    "score_method": "min_max_normalized_weighted_sum",
+    "normalization_population": "all_13_source_records",
+    "tie_tolerance": 1e-12,
+    "functional_equivalence_established": false,
+    "rtl_modified": false,
+    "synthesis_rerun": false,
+    "simulation_rerun": false
+  },
+  "limitations": [
+    "Pre-layout technology-mapped estimates",
+    "Assumed switching activity for power",
+    "Reported data arrival time is a timing proxy",
+    "Different FSM variants may have different cycle semantics"
+  ]
+}

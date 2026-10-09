@@ -1,0 +1,39 @@
+
+6. Printing statistics.
+
+=== uart_rx ===
+
+   Number of wires:                166
+   Number of wire bits:            188
+   Number of public wires:          13
+   Number of public wire bits:      35
+   Number of ports:                  7
+   Number of port bits:             14
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                153
+     AND2_X1                         2
+     AND3_X1                         1
+     AND4_X1                         1
+     AOI211_X1                      12
+     AOI21_X1                       16
+     DFF_X1                         32
+     INV_X1                         18
+     NAND2_X1                       11
+     NAND3_X1                        3
+     NAND4_X1                        2
+     NOR2_X1                        20
+     NOR3_X1                        10
+     NOR4_X1                         2
+     OAI211_X1                       1
+     OAI21_X1                       11
+     OR2_X1                          6
+     OR3_X1                          1
+     OR4_X1                          1
+     XNOR2_X1                        2
+     XOR2_X1                         1
+
+   Chip area for module '\uart_rx': 263.340000
+     of which used for sequential elements: 144.704000 (54.95%)
+

@@ -1,0 +1,267 @@
+{
+  "day": 29,
+  "step": 2,
+  "status": "PASS",
+  "passed_checks": 45,
+  "failed_checks": 0,
+  "configuration_count": 13,
+  "ranking_count": 52,
+  "scenarios": [
+    "area_priority",
+    "power_priority",
+    "timing_priority",
+    "balanced"
+  ],
+  "metric_minima": {
+    "area": 23.94,
+    "power": 3.95,
+    "arrival_time": 0.13
+  },
+  "metric_maxima": {
+    "area": 41.762,
+    "power": 6.93,
+    "arrival_time": 0.36
+  },
+  "scenario_results": {
+    "area_priority": {
+      "independent_winner": "moore_1011_overlap_1",
+      "independent_tied_winners": [
+        "moore_1011_overlap_1"
+      ],
+      "saved_winner": "moore_1011_overlap_1",
+      "saved_tied_winners": [
+        "moore_1011_overlap_1"
+      ],
+      "minimum_score": 0.0,
+      "winner_match": true
+    },
+    "power_priority": {
+      "independent_winner": "moore_1011_overlap_1",
+      "independent_tied_winners": [
+        "moore_1011_overlap_1"
+      ],
+      "saved_winner": "moore_1011_overlap_1",
+      "saved_tied_winners": [
+        "moore_1011_overlap_1"
+      ],
+      "minimum_score": 0.0,
+      "winner_match": true
+    },
+    "timing_priority": {
+      "independent_winner": "moore_1011_overlap_0",
+      "independent_tied_winners": [
+        "moore_1011_overlap_0"
+      ],
+      "saved_winner": "moore_1011_overlap_0",
+      "saved_tied_winners": [
+        "moore_1011_overlap_0"
+      ],
+      "minimum_score": 0.0,
+      "winner_match": true
+    },
+    "balanced": {
+      "independent_winner": "moore_1011_overlap_0",
+      "independent_tied_winners": [
+        "moore_1011_overlap_0"
+      ],
+      "saved_winner": "moore_1011_overlap_0",
+      "saved_tied_winners": [
+        "moore_1011_overlap_0"
+      ],
+      "minimum_score": 0.02051821429763927,
+      "winner_match": true
+    }
+  },
+  "checks": [
+    {
+      "description": "Source exists: day27_efficiency_metrics.csv",
+      "status": "PASS"
+    },
+    {
+      "description": "Source exists: day28_architecture_rankings.csv",
+      "status": "PASS"
+    },
+    {
+      "description": "Source exists: day28_architecture_selection.json",
+      "status": "PASS"
+    },
+    {
+      "description": "Source exists: day29_baseline_validation.json",
+      "status": "PASS"
+    },
+    {
+      "description": "Day 29 Step 1 baseline status PASS",
+      "status": "PASS"
+    },
+    {
+      "description": "Day 28 selection status PASS",
+      "status": "PASS"
+    },
+    {
+      "description": "Exactly 13 source configurations",
+      "status": "PASS"
+    },
+    {
+      "description": "Exactly 52 saved ranking records",
+      "status": "PASS"
+    },
+    {
+      "description": "Required Day 27 source columns present",
+      "status": "PASS"
+    },
+    {
+      "description": "Required Day 28 ranking columns present",
+      "status": "PASS"
+    },
+    {
+      "description": "Expected scoring method",
+      "status": "PASS"
+    },
+    {
+      "description": "Expected normalization population",
+      "status": "PASS"
+    },
+    {
+      "description": "No hard constraints in baseline selection",
+      "status": "PASS"
+    },
+    {
+      "description": "Valid weights: area_priority",
+      "status": "PASS"
+    },
+    {
+      "description": "Weights sum to one: area_priority",
+      "status": "PASS"
+    },
+    {
+      "description": "Complete unique ranking set: area_priority",
+      "status": "PASS"
+    },
+    {
+      "description": "Consecutive saved ranks: area_priority",
+      "status": "PASS"
+    },
+    {
+      "description": "All weighted scores match: area_priority",
+      "status": "PASS"
+    },
+    {
+      "description": "All normalized metrics match: area_priority",
+      "status": "PASS"
+    },
+    {
+      "description": "Saved ranking order valid: area_priority",
+      "status": "PASS"
+    },
+    {
+      "description": "Global winner and ties match: area_priority",
+      "status": "PASS"
+    },
+    {
+      "description": "Valid weights: power_priority",
+      "status": "PASS"
+    },
+    {
+      "description": "Weights sum to one: power_priority",
+      "status": "PASS"
+    },
+    {
+      "description": "Complete unique ranking set: power_priority",
+      "status": "PASS"
+    },
+    {
+      "description": "Consecutive saved ranks: power_priority",
+      "status": "PASS"
+    },
+    {
+      "description": "All weighted scores match: power_priority",
+      "status": "PASS"
+    },
+    {
+      "description": "All normalized metrics match: power_priority",
+      "status": "PASS"
+    },
+    {
+      "description": "Saved ranking order valid: power_priority",
+      "status": "PASS"
+    },
+    {
+      "description": "Global winner and ties match: power_priority",
+      "status": "PASS"
+    },
+    {
+      "description": "Valid weights: timing_priority",
+      "status": "PASS"
+    },
+    {
+      "description": "Weights sum to one: timing_priority",
+      "status": "PASS"
+    },
+    {
+      "description": "Complete unique ranking set: timing_priority",
+      "status": "PASS"
+    },
+    {
+      "description": "Consecutive saved ranks: timing_priority",
+      "status": "PASS"
+    },
+    {
+      "description": "All weighted scores match: timing_priority",
+      "status": "PASS"
+    },
+    {
+      "description": "All normalized metrics match: timing_priority",
+      "status": "PASS"
+    },
+    {
+      "description": "Saved ranking order valid: timing_priority",
+      "status": "PASS"
+    },
+    {
+      "description": "Global winner and ties match: timing_priority",
+      "status": "PASS"
+    },
+    {
+      "description": "Valid weights: balanced",
+      "status": "PASS"
+    },
+    {
+      "description": "Weights sum to one: balanced",
+      "status": "PASS"
+    },
+    {
+      "description": "Complete unique ranking set: balanced",
+      "status": "PASS"
+    },
+    {
+      "description": "Consecutive saved ranks: balanced",
+      "status": "PASS"
+    },
+    {
+      "description": "All weighted scores match: balanced",
+      "status": "PASS"
+    },
+    {
+      "description": "All normalized metrics match: balanced",
+      "status": "PASS"
+    },
+    {
+      "description": "Saved ranking order valid: balanced",
+      "status": "PASS"
+    },
+    {
+      "description": "Global winner and ties match: balanced",
+      "status": "PASS"
+    }
+  ],
+  "methodology": {
+    "source": "extensions/results/day27/day27_efficiency_metrics.csv",
+    "reference_rankings": "extensions/results/day28/day28_architecture_rankings.csv",
+    "normalization": "min_max_all_13",
+    "scoring": "weighted_sum",
+    "tie_tolerance": 1e-12,
+    "rtl_modified": false,
+    "eda_rerun": false,
+    "functional_equivalence_proven": false
+  }
+}

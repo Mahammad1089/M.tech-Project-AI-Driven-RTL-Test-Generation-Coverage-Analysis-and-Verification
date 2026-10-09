@@ -1,0 +1,58 @@
+{
+  "title": "Day 30 Final ALU PPA Verification",
+  "generated_utc": "2026-10-09T19:04:23.387865+00:00",
+  "status": "PASS",
+  "equivalence_checks": {
+    "total": 2048,
+    "passed": 2048,
+    "failed": 0
+  },
+  "technology": "Nangate45 typical",
+  "method": "Pre-layout technology-mapped analysis",
+  "clock": "10 ns virtual clock",
+  "sdc_output_load": 0.005,
+  "liberty_capacitance_unit": "1 ff",
+  "power_activity": "0.1 transitions/ns input activity, duty cycle 0.5",
+  "results": [
+    {
+      "design": "original",
+      "top_module": "alu",
+      "area_um2": 68.096,
+      "mapped_cell_count": 62,
+      "setup_slack_ns": 9.29,
+      "minimum_path_slack_ns": 0.41,
+      "timing_status": "MET",
+      "internal_power_uw": 4.220000000000001,
+      "switching_power_uw": 1.19,
+      "leakage_power_uw": 1.54,
+      "total_power_uw": 6.95
+    },
+    {
+      "design": "optimized",
+      "top_module": "alu_opt",
+      "area_um2": 59.052,
+      "mapped_cell_count": 51,
+      "setup_slack_ns": 9.34,
+      "minimum_path_slack_ns": 0.41,
+      "timing_status": "MET",
+      "internal_power_uw": 3.6799999999999997,
+      "switching_power_uw": 0.851,
+      "leakage_power_uw": 1.32,
+      "total_power_uw": 5.859999999999999
+    }
+  ],
+  "comparison": {
+    "area_reduction_percent": 13.281250000000005,
+    "estimated_power_reduction_percent": 15.683453237410083,
+    "setup_slack_improvement_ns": 0.05000000000000071,
+    "setup_slack_improvement_ps": 50.00000000000071,
+    "cell_count_reduction": 11
+  },
+  "limitations": [
+    "Pre-layout cell area, not placed die area",
+    "Timing depends on virtual-clock constraints",
+    "Power uses assumed input activity",
+    "No waveform-based power measurement",
+    "No routed parasitics included"
+  ]
+}

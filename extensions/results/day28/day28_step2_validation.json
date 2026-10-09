@@ -1,0 +1,26 @@
+{
+  "day": 28,
+  "step": 2,
+  "status": "PASS",
+  "passed_checks": 16,
+  "failed_checks": 0,
+  "configuration_count": 13,
+  "source_columns": [
+    "configuration",
+    "area_um2",
+    "data_arrival_ns",
+    "setup_slack_ns",
+    "total_power_uw",
+    "arrival_based_adp_um2_ns",
+    "arrival_based_pdp_fj",
+    "area_power_product_um2_uw",
+    "setup_timing_met"
+  ],
+  "scenarios": [
+    "area_priority",
+    "power_priority",
+    "timing_priority",
+    "balanced"
+  ],
+  "configuration_file": "extensions/config/day28_selection_constraints.json"
+}

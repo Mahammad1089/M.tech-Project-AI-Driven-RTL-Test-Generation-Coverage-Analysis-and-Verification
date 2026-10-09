@@ -1,0 +1,73 @@
+DAY 25 - COMPLETE ALU OPTIMIZATION DIAGNOSIS
+==================================================================
+
+1. FUNCTIONAL EQUIVALENCE
+Total checks : 2048
+Passed       : 2048
+Failed       : 0
+Status       : PASS
+
+2. TECHNOLOGY-MAPPED CELL COUNT
+Original     : 62
+Optimized    : 51
+Reduction    : 17.74%
+
+3. STANDARD-CELL AREA
+Original     : 68.096000 um^2
+Optimized    : 59.052000 um^2
+Reduction    : 13.28%
+
+4. CRITICAL-PATH TIMING
+Original startpoint : sel[2] (input port clocked by virtual_clk)
+Original endpoint   : y[2] (output port clocked by virtual_clk)
+Original arrival    : 0.5100 ns
+Original input delay: 0.2000 ns
+Original cell delay : 0.3100 ns
+Original slack      : 9.2900 ns
+
+Optimized startpoint : sel[0] (input port clocked by virtual_clk)
+Optimized endpoint   : y[3] (output port clocked by virtual_clk)
+Optimized arrival    : 0.4600 ns
+Optimized input delay: 0.2000 ns
+Optimized cell delay : 0.2600 ns
+Optimized slack      : 9.3400 ns
+
+Delay reduction: 16.13%
+
+5. ESTIMATED POWER
+Internal power:
+  Original  : 4.220000 uW
+  Optimized : 3.680000 uW
+  Reduction : 12.80%
+Switching power:
+  Original  : 1.190000 uW
+  Optimized : 0.851000 uW
+  Reduction : 28.49%
+Leakage power:
+  Original  : 1.540000 uW
+  Optimized : 1.320000 uW
+  Reduction : 14.29%
+Total power:
+  Original  : 6.950000 uW
+  Optimized : 5.860000 uW
+  Reduction : 15.68%
+
+6. COMBINED EFFICIENCY METRICS
+Original ADP  : 21.109760 um^2*ns
+Optimized ADP : 15.353520 um^2*ns
+ADP reduction : 27.27%
+
+Original PDP  : 2.154500 fJ
+Optimized PDP : 1.523600 fJ
+PDP reduction : 29.28%
+
+7. LIMITATIONS
+- Equivalence covers binary input combinations only.
+- Area is technology-mapped standard-cell area, not layout area.
+- Timing excludes post-route interconnect parasitics.
+- Delay is derived from rounded STA report values.
+- Power is library-based and uses assumed switching activity.
+- VCD-validated power has not been demonstrated.
+
+8. FINAL DIAGNOSIS
+PASS - FUNCTIONALLY EQUIVALENT; PRE-LAYOUT PPA ESTIMATES IMPROVED

@@ -1,0 +1,40 @@
+==============================================================================================================
+DAY 27 - FSM ARCHITECTURAL EFFICIENCY REPORT
+==============================================================================================================
+
+Technology: Nangate45 typical
+Source: Day 26 PPA measurements
+Configurations: 13
+
+Configuration                      Area    Arrival     Slack     Power          ADP         PDP
+--------------------------------------------------------------------------------------------------------------
+fsm_original_1011                27.132      0.220     9.580     4.750       5.9690      1.0450
+mealy_10101_overlap_0            38.304      0.230     9.570     6.550       8.8099      1.5065
+mealy_10101_overlap_1            41.762      0.230     9.570     6.930       9.6053      1.5939
+mealy_1011_overlap_0             32.452      0.230     9.570     5.300       7.4640      1.2190
+mealy_1011_overlap_1             30.324      0.240     9.560     5.170       7.2778      1.2408
+mealy_1101_overlap_0             29.526      0.230     9.570     5.020       6.7910      1.1546
+mealy_1101_overlap_1             31.920      0.230     9.570     5.260       7.3416      1.2098
+moore_10101_overlap_0            25.536      0.190     9.610     4.260       4.8518      0.8094
+moore_10101_overlap_1            31.388      0.360     9.600     4.710      11.2997      1.6956
+moore_1011_overlap_0             24.738      0.130     9.670     4.000       3.2159      0.5200
+moore_1011_overlap_1             23.940      0.300     9.660     3.950       7.1820      1.1850
+moore_1101_overlap_0             28.196      0.320     9.650     4.390       9.0227      1.4048
+moore_1101_overlap_1             26.600      0.350     9.610     4.260       9.3100      1.4910
+
+==============================================================================================================
+SUMMARY
+==============================================================================================================
+Lowest mapped area: moore_1011_overlap_1
+Lowest estimated power: moore_1011_overlap_1
+Lowest arrival-based ADP: moore_1011_overlap_0
+Lowest arrival-based PDP: moore_1011_overlap_0
+Highest setup slack: moore_1011_overlap_0
+
+IMPORTANT INTERPRETATION
+ADP/PDP use reported arrival time rather than intrinsic path delay.
+Results are exploratory pre-layout comparison metrics.
+Different path types and output latencies limit direct comparisons.
+Power values use assumed switching activity, not measured VCD/SAIF activity.
+
+DAY 27 STEP 3: PASS

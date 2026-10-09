@@ -1,0 +1,23 @@
+{
+  "day": 29,
+  "step": 3,
+  "status": "PASS",
+  "source_metrics": "extensions/results/day27/day27_efficiency_metrics.csv",
+  "source_constraints": "extensions/results/day28/day28_constraint_sensitivity.csv",
+  "source_scenarios": "extensions/results/day28/day28_architecture_selection.json",
+  "configuration_count": 13,
+  "constraint_case_count": 8,
+  "scenario_count": 4,
+  "decision_count": 32,
+  "passed_checks": 216,
+  "failed_checks": 0,
+  "failed_findings": [],
+  "methodology": {
+    "normalization": "min-max over all 13 source configurations",
+    "objective": "minimize weighted normalized metrics",
+    "normalization_recomputed": true,
+    "rtl_modified": false,
+    "synthesis_rerun": false,
+    "simulation_rerun": false
+  }
+}

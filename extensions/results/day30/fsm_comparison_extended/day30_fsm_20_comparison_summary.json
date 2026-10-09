@@ -1,0 +1,64 @@
+{
+  "generated_utc": "2026-10-09T19:34:42.709233+00:00",
+  "status": "PASS",
+  "source": "extensions/results/day30/fsm_ppa_extension/day30_fsm_20_ppa_summary.csv",
+  "historical_reference_source": "extensions/results/day26/day26_fsm_ppa_summary.csv",
+  "technology": "Nangate45 typical",
+  "analysis_scope": "20 extended variants; original FSM separately referenced",
+  "extended_configuration_count": 20,
+  "matched_pair_count": 10,
+  "pareto_record_count": 20,
+  "exploratory_global_pareto_count": 2,
+  "controlled_pareto_count": 14,
+  "exploratory_global_pareto_variants": [
+    "moore_1110_overlap_0",
+    "moore_1110_overlap_1"
+  ],
+  "controlled_pareto_variants": [
+    "mealy_10101_overlap_1",
+    "mealy_1011_overlap_1",
+    "mealy_1101_overlap_0",
+    "mealy_1101_overlap_1",
+    "moore_1001_overlap_0",
+    "moore_1001_overlap_1",
+    "moore_10101_overlap_0",
+    "moore_10101_overlap_1",
+    "moore_1011_overlap_0",
+    "moore_1011_overlap_1",
+    "moore_1101_overlap_0",
+    "moore_1101_overlap_1",
+    "moore_1110_overlap_0",
+    "moore_1110_overlap_1"
+  ],
+  "original_fsm_reference": {
+    "configuration": "fsm_original_1011",
+    "area_um2": "27.132",
+    "setup_slack_ns": "9.58",
+    "data_arrival_ns": "0.22",
+    "internal_power_uw": "4.04",
+    "switching_power_uw": "0.174",
+    "leakage_power_uw": "0.537",
+    "total_power_uw": "4.75"
+  },
+  "formulae": {
+    "arrival_based_adp_um2_ns": "area_um2 * data_arrival_ns",
+    "arrival_based_pdp_fj": "total_power_uw * data_arrival_ns",
+    "area_power_product_um2_uw": "area_um2 * total_power_uw",
+    "moore_change_pct": "100 * (Moore - Mealy) / Mealy",
+    "pareto": "minimize area_um2, total_power_uw, data_arrival_ns"
+  },
+  "constraints_and_limits": [
+    "Technology-mapped pre-layout results, no parasitics or die area",
+    "Power estimated from assumed switching activity (not waveform/silicon power)",
+    "Reported data arrival is not necessarily intrinsic combinational delay",
+    "Mealy and Moore output event timing can differ; PPA does not establish cycle equivalence",
+    "Only same-pattern/same-overlap Mealy\u2013Moore comparisons are controlled",
+    "Global Pareto across different patterns and overlap settings is exploratory only",
+    "Reported power/area/arrival optimization not equivalent to functional quality"
+  ],
+  "historic_sources_sha256": {
+    "/home/maham_mtech/Mtech_project/AI_RTL_Verification/extensions/results/day30/fsm_ppa_extension/day30_fsm_20_ppa_summary.csv": "4fec05e0618e6ea9af436c4051552d6cbc576b93a4bc28b85f26c5d3d486bb9d",
+    "/home/maham_mtech/Mtech_project/AI_RTL_Verification/extensions/results/day26/day26_fsm_ppa_summary.csv": "95b7db9b0d9a15b8c30f13ceef24ecebfcd2d52d9477862fc6ee497199b5482d",
+    "/home/maham_mtech/Mtech_project/AI_RTL_Verification/extensions/results/day27/day27_mealy_moore_comparison.csv": "806d08453ac18359f92806f9819bb0fb961eb7ea793a7898a492f3a1e332a703"
+  }
+}

@@ -1,0 +1,81 @@
+{
+  "status": "ANALYSIS_COMPLETED",
+  "technology": "Nangate45 typical",
+  "scope": "Pre-layout maximum-path timing",
+  "constraints": {
+    "clock_period_ns": 10.0,
+    "input_delay_ns": 0.2,
+    "output_delay_ns": 0.2,
+    "input_transition_ns": 0.05,
+    "output_load_ff": 5.0
+  },
+  "records": [
+    {
+      "design": "baseline_tx",
+      "top_module": "uart_tx",
+      "technology": "Nangate45 typical",
+      "clks_per_bit": 16,
+      "clock_period_ns": 10.0,
+      "input_delay_ns": 0.2,
+      "output_delay_ns": 0.2,
+      "input_transition_ns": 0.05,
+      "output_load_ff": 5.0,
+      "reported_paths": 20,
+      "worst_setup_slack_ns": 9.47,
+      "setup_status": "MET",
+      "timing_log": "extensions/results/day30/uart/ppa/baseline_tx_timing.log"
+    },
+    {
+      "design": "optimized_tx",
+      "top_module": "uart_tx_opt",
+      "technology": "Nangate45 typical",
+      "clks_per_bit": 16,
+      "clock_period_ns": 10.0,
+      "input_delay_ns": 0.2,
+      "output_delay_ns": 0.2,
+      "input_transition_ns": 0.05,
+      "output_load_ff": 5.0,
+      "reported_paths": 20,
+      "worst_setup_slack_ns": 9.52,
+      "setup_status": "MET",
+      "timing_log": "extensions/results/day30/uart/ppa/optimized_tx_timing.log"
+    },
+    {
+      "design": "baseline_rx",
+      "top_module": "uart_rx",
+      "technology": "Nangate45 typical",
+      "clks_per_bit": 16,
+      "clock_period_ns": 10.0,
+      "input_delay_ns": 0.2,
+      "output_delay_ns": 0.2,
+      "input_transition_ns": 0.05,
+      "output_load_ff": 5.0,
+      "reported_paths": 20,
+      "worst_setup_slack_ns": 9.46,
+      "setup_status": "MET",
+      "timing_log": "extensions/results/day30/uart/ppa/baseline_rx_timing.log"
+    },
+    {
+      "design": "optimized_rx",
+      "top_module": "uart_rx_opt",
+      "technology": "Nangate45 typical",
+      "clks_per_bit": 16,
+      "clock_period_ns": 10.0,
+      "input_delay_ns": 0.2,
+      "output_delay_ns": 0.2,
+      "input_transition_ns": 0.05,
+      "output_load_ff": 5.0,
+      "reported_paths": 20,
+      "worst_setup_slack_ns": 9.39,
+      "setup_status": "MET",
+      "timing_log": "extensions/results/day30/uart/ppa/optimized_rx_timing.log"
+    }
+  ],
+  "limitations": [
+    "No routed interconnect parasitics",
+    "Default CLKS_PER_BIT=16",
+    "Only reported maximum-delay paths assessed",
+    "Hold timing not certified",
+    "Power not measured"
+  ]
+}

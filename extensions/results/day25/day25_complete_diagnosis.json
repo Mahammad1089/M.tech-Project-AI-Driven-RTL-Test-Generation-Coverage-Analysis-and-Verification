@@ -1,0 +1,76 @@
+{
+  "day": 25,
+  "benchmark": "ALU",
+  "generated_at_utc": "2026-10-08T15:33:40.969491+00:00",
+  "functional_equivalence": {
+    "total": 2048,
+    "passed": 2048,
+    "failed": 0,
+    "status": "PASS"
+  },
+  "technology": {
+    "library": "Nangate45 typical",
+    "flow": "Pre-layout Yosys and OpenSTA"
+  },
+  "original": {
+    "mapped_cells": 62,
+    "area_um2": 68.096,
+    "timing": {
+      "startpoint": "sel[2] (input port clocked by virtual_clk)",
+      "endpoint": "y[2] (output port clocked by virtual_clk)",
+      "arrival_ns": 0.51,
+      "input_delay_ns": 0.2,
+      "required_ns": 9.8,
+      "slack_ns": 9.29,
+      "timing_status": "MET",
+      "cell_path_delay_ns": 0.31
+    },
+    "power": {
+      "internal_w": 4.22e-06,
+      "switching_w": 1.19e-06,
+      "leakage_w": 1.54e-06,
+      "total_w": 6.95e-06
+    },
+    "adp_um2_ns": 21.10976,
+    "pdp_j": 2.1545000000000006e-15
+  },
+  "optimized": {
+    "mapped_cells": 51,
+    "area_um2": 59.052,
+    "timing": {
+      "startpoint": "sel[0] (input port clocked by virtual_clk)",
+      "endpoint": "y[3] (output port clocked by virtual_clk)",
+      "arrival_ns": 0.46,
+      "input_delay_ns": 0.2,
+      "required_ns": 9.8,
+      "slack_ns": 9.34,
+      "timing_status": "MET",
+      "cell_path_delay_ns": 0.26
+    },
+    "power": {
+      "internal_w": 3.68e-06,
+      "switching_w": 8.51e-07,
+      "leakage_w": 1.32e-06,
+      "total_w": 5.86e-06
+    },
+    "adp_um2_ns": 15.35352,
+    "pdp_j": 1.5236e-15
+  },
+  "improvements_percent": {
+    "mapped_cells": 17.741935483870968,
+    "area": 13.281250000000005,
+    "cell_path_delay": 16.129032258064512,
+    "estimated_power": 15.68345323741008,
+    "adp": 27.268145161290327,
+    "pdp": 29.282896263634274
+  },
+  "limitations": [
+    "Equivalence covers binary input combinations only.",
+    "Area is technology-mapped standard-cell area, not layout area.",
+    "Timing excludes post-route interconnect parasitics.",
+    "Delay is derived from rounded STA report values.",
+    "Power is library-based and uses assumed switching activity.",
+    "VCD-validated power has not been demonstrated."
+  ],
+  "final_verdict": "PASS - FUNCTIONALLY EQUIVALENT; PRE-LAYOUT PPA ESTIMATES IMPROVED"
+}

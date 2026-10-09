@@ -1,0 +1,371 @@
+======================================================================
+DAY 30 STEP 9B-2 — SUBMISSION AND GIT INSPECTION
+======================================================================
+
+========== CORRECTED MASTER AUDIT ==========
+Requirements: 18
+Status counts: {'PASS': 18}
+All 18 PASS: True
+
+========== FINAL DOCUMENTATION CONTENT ==========
+
+FILE: README.md
+Total lines: 26
+----- CONTENT START -----
+# AI-Driven RTL Test Generation, Coverage Analysis and Verification
+
+M.Tech Major Project
+
+## Implementation
+
+RTL: Verilog HDL
+
+AI Agent: Hermes Agent
+
+RTL Parsing: PyVerilog
+
+Simulation:
+- Icarus Verilog
+- Verilator
+
+RTL Analysis:
+- Yosys
+
+Coverage:
+- Python
+- Verilator
+
+Data Analysis:
+- Pandas
+- Matplotlib
+----- CONTENT END -----
+
+FILE: docs/final/README_FINAL.md
+Total lines: 102
+----- CONTENT START -----
+# AI-Driven RTL Test Generation, Coverage Analysis and Verification
+
+## Project Overview
+
+This M.Tech project implements a simulation-only RTL verification
+framework using Verilog, Python, open-source EDA tools and Hermes-assisted
+structured test reasoning.
+
+The framework integrates RTL analysis, structured verification-objective
+generation, AI-assisted test-scenario generation, deterministic scenario
+validation, automatic Verilog testbench generation, simulation, functional
+coverage analysis, coverage-gap identification and targeted coverage closure.
+
+## Benchmarks
+
+The framework is evaluated using:
+
+1. 4-bit ALU
+2. Overlapping 1011 sequence detector FSM
+3. 4-entry x 8-bit synchronous FIFO
+
+## Main Verification Flow
+
+Verilog RTL
+→ RTL structural analysis
+→ RTL knowledge model
+→ verification objectives
+→ Hermes structured scenarios
+→ deterministic validation
+→ Verilog testbench generation
+→ simulation
+→ functional coverage
+→ gap analysis
+→ targeted verification
+→ coverage closure
+
+## Experimental Evaluation
+
+The FIFO phase additionally compares:
+
+- manual/directed verification
+- deterministic random verification
+- feedback-driven verification
+
+Random verification is evaluated over multiple fixed seeds to study
+run-to-run variation.
+
+## Main Tools
+
+- Verilog
+- Python
+- Icarus Verilog
+- VVP
+- Yosys
+- Verilator
+- GTKWave
+- PyVerilog
+- Hermes Agent
+- Matplotlib
+
+Exact environment versions are recorded in:
+
+results/final/day24/tool_versions.json
+
+## One-Command Integration Validation
+
+Run:
+
+python main.py
+
+## Final Freeze Validation
+
+Run:
+
+python docs/final/run_day24.py
+
+## Important Result Directories
+
+- results/alu/
+- results/fsm/
+- results/fifo/
+- results/integration/day23/
+- results/final/day24/
+- graphs/day22/
+
+## Project Boundaries
+
+The project is simulation-only.
+
+No FPGA or physical hardware implementation is required.
+
+Day 24 does not modify RTL, generate new tests, change the coverage
+model or fabricate experimental measurements.
+
+## Final Status
+
+The final status must be taken from:
+
+results/final/day24/final_project_summary.json
+
+A project should be treated as successfully frozen only when
+docs/final/validate_final_project.py reports PASS.
+----- CONTENT END -----
+
+FILE: docs/specifications/alu_specification.md
+Total lines: 35
+----- CONTENT START -----
+# 4-Bit ALU Functional Specification
+
+Module:
+alu
+
+Inputs:
+a[3:0]
+b[3:0]
+sel[2:0]
+
+Output:
+y[3:0]
+
+Operation Mapping:
+
+000 : ADD
+001 : SUB
+010 : AND
+011 : OR
+100 : XOR
+101 : NOT A
+110 : SHIFT LEFT A
+111 : SHIFT RIGHT A
+
+Design Type:
+Combinational
+
+Clock:
+None
+
+Reset:
+None
+
+Output Width:
+4 bits
+----- CONTENT END -----
+
+FILE: docs/specifications/fsm_1011_specification.md
+Total lines: 85
+----- CONTENT START -----
+# 1011 Sequence Detector Specification
+
+## DUT
+
+fsm_1011
+
+## Design Type
+
+Sequential finite state machine.
+
+## Sequence
+
+1011
+
+## Detection Type
+
+Overlapping sequence detection.
+
+## Inputs
+
+clk   - clock
+rst   - active-high synchronous reset
+din   - serial input bit
+
+## Output
+
+detected - asserted for one clock cycle when 1011 is detected
+
+## States
+
+IDLE
+S1
+S10
+S101
+
+## State Meaning
+
+IDLE:
+No useful prefix currently matched.
+
+S1:
+Prefix 1 has been matched.
+
+S10:
+Prefix 10 has been matched.
+
+S101:
+Prefix 101 has been matched.
+
+## State Transitions
+
+IDLE + 0 -> IDLE
+IDLE + 1 -> S1
+
+S1 + 0 -> S10
+S1 + 1 -> S1
+
+S10 + 0 -> IDLE
+S10 + 1 -> S101
+
+S101 + 0 -> S10
+S101 + 1 -> S1 and detected = 1
+
+## Reset
+
+rst = 1 forces the FSM to IDLE.
+
+## Implementation
+
+Verilog RTL only.
+
+## Verification
+
+Simulation only.
+
+## Hardware Requirement
+
+None.
+
+## Day-16 Goal
+
+Implement and establish deterministic baseline
+verification of the FSM.
+
+State and transition coverage are handled on Day 17.
+----- CONTENT END -----
+
+========== DOCUMENTATION AND REFERENCES ==========
+[NOT FOUND] PDF/DOCX/PPTX/BIB/TEX files
+
+========== REPRODUCIBILITY ==========
+
+FILE: requirements.txt
+attrs==26.1.0
+certifi==2026.7.22
+charset-normalizer==3.5.1
+contourpy==1.4.0
+cycler==0.12.1
+fonttools==4.65.0
+idna==3.19
+iniconfig==2.3.0
+Jinja2==3.1.6
+jsonschema==4.26.0
+jsonschema-specifications==2025.9.1
+kiwisolver==1.5.1
+MarkupSafe==3.0.3
+matplotlib==3.11.2
+numpy==2.5.3
+packaging==26.3
+pandas==3.0.5
+pillow==12.3.0
+pluggy==1.6.0
+ply==3.11
+Pygments==2.21.0
+pyparsing==3.3.2
+pytest==9.1.1
+python-dateutil==2.9.0.post0
+pyverilog==1.3.0
+referencing==0.37.0
+requests==2.34.2
+rpds-py==2026.6.3
+setuptools==84.0.0
+six==1.17.0
+urllib3==2.7.0
+wheel==0.48.0
+
+FILE: .gitignore
+.venv/
+__pycache__/
+*.pyc
+*.vcd
+*.fst
+*.out
+*.log
+simulation.out
+
+
+
+========== GIT STATUS ==========
+Git status return code: 0
+?? .history_sta
+?? extensions/
+
+========== EXTENSIONS SIZE ==========
+19M	extensions
+
+========== TRACKED FILE COUNT ==========
+Tracked files: 441
+
+========== EXTENSIONS FILE TYPES ==========
+.log 234
+.v 71
+.tcl 70
+.out 69
+.json 50
+.py 35
+.pyc 34
+.csv 31
+.txt 30
+.sh 14
+.ys 12
+.png 12
+.md 8
+.bak 6
+.gz 4
+.backup 4
+.before_fix 1
+.previous 1
+.sdc 1
+.backup2 1
+
+========== CORRECTED SUBMISSION STATUS ==========
+18-requirement master audit: PASS
+Technical verification: Previously completed
+Thesis document content: REQUIRES REVIEW
+Git repository contents: REQUIRES REVIEW
+
+CORRECTED JSON: extensions/results/day30/submission_audit/day30_submission_readiness_corrected.json
+========== STEP 9B-2 COMPLETE ==========

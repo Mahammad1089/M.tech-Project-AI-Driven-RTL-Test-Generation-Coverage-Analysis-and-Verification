@@ -1,0 +1,305 @@
+{
+  "day": 27,
+  "step": 4,
+  "status": "PASS",
+  "generated_utc": "2026-10-09T13:27:56.547259+00:00",
+  "source": "extensions/results/day27/day27_efficiency_metrics.csv",
+  "configuration_count": 13,
+  "comparison_group_count": 6,
+  "objectives_minimized": [
+    "area_um2",
+    "total_power_uw",
+    "data_arrival_ns"
+  ],
+  "global_pareto_front": [
+    "moore_1011_overlap_0",
+    "moore_1011_overlap_1"
+  ],
+  "controlled_pareto_fronts": {
+    "pattern_10101_overlap_0": [
+      "moore_10101_overlap_0"
+    ],
+    "pattern_10101_overlap_1": [
+      "mealy_10101_overlap_1",
+      "moore_10101_overlap_1"
+    ],
+    "pattern_1011_overlap_0": [
+      "moore_1011_overlap_0"
+    ],
+    "pattern_1011_overlap_1": [
+      "mealy_1011_overlap_1",
+      "moore_1011_overlap_1"
+    ],
+    "pattern_1101_overlap_0": [
+      "mealy_1101_overlap_0",
+      "moore_1101_overlap_0"
+    ],
+    "pattern_1101_overlap_1": [
+      "mealy_1101_overlap_1",
+      "moore_1101_overlap_1"
+    ]
+  },
+  "limitations": [
+    "Global comparison includes functionally different FSM variants",
+    "Controlled comparisons match pattern and overlap but do not establish cycle-level Mealy/Moore equivalence",
+    "Data arrival time is a timing proxy",
+    "Power is based on assumed activity",
+    "Area and timing are pre-layout estimates",
+    "No post-route or VCD/SAIF-based results"
+  ],
+  "records": [
+    {
+      "configuration": "fsm_original_1011",
+      "architecture": "baseline",
+      "pattern": "1011",
+      "overlap": "baseline",
+      "comparison_group": "baseline_only",
+      "area_um2": 27.132,
+      "total_power_uw": 4.75,
+      "data_arrival_ns": 0.22,
+      "setup_slack_ns": 9.58,
+      "global_pareto_status": "DOMINATED",
+      "global_dominated_by": [
+        "moore_10101_overlap_0",
+        "moore_1011_overlap_0"
+      ],
+      "controlled_pareto_status": "NOT_APPLICABLE",
+      "controlled_dominated_by": []
+    },
+    {
+      "configuration": "mealy_10101_overlap_0",
+      "architecture": "mealy",
+      "pattern": "10101",
+      "overlap": "0",
+      "comparison_group": "pattern_10101_overlap_0",
+      "area_um2": 38.304,
+      "total_power_uw": 6.55,
+      "data_arrival_ns": 0.23,
+      "setup_slack_ns": 9.57,
+      "global_pareto_status": "DOMINATED",
+      "global_dominated_by": [
+        "fsm_original_1011",
+        "mealy_1011_overlap_0",
+        "mealy_1101_overlap_0",
+        "mealy_1101_overlap_1",
+        "moore_10101_overlap_0",
+        "moore_1011_overlap_0"
+      ],
+      "controlled_pareto_status": "DOMINATED",
+      "controlled_dominated_by": [
+        "moore_10101_overlap_0"
+      ]
+    },
+    {
+      "configuration": "mealy_10101_overlap_1",
+      "architecture": "mealy",
+      "pattern": "10101",
+      "overlap": "1",
+      "comparison_group": "pattern_10101_overlap_1",
+      "area_um2": 41.762,
+      "total_power_uw": 6.93,
+      "data_arrival_ns": 0.23,
+      "setup_slack_ns": 9.57,
+      "global_pareto_status": "DOMINATED",
+      "global_dominated_by": [
+        "fsm_original_1011",
+        "mealy_10101_overlap_0",
+        "mealy_1011_overlap_0",
+        "mealy_1101_overlap_0",
+        "mealy_1101_overlap_1",
+        "moore_10101_overlap_0",
+        "moore_1011_overlap_0"
+      ],
+      "controlled_pareto_status": "PARETO",
+      "controlled_dominated_by": []
+    },
+    {
+      "configuration": "mealy_1011_overlap_0",
+      "architecture": "mealy",
+      "pattern": "1011",
+      "overlap": "0",
+      "comparison_group": "pattern_1011_overlap_0",
+      "area_um2": 32.452,
+      "total_power_uw": 5.3,
+      "data_arrival_ns": 0.23,
+      "setup_slack_ns": 9.57,
+      "global_pareto_status": "DOMINATED",
+      "global_dominated_by": [
+        "fsm_original_1011",
+        "mealy_1101_overlap_0",
+        "mealy_1101_overlap_1",
+        "moore_10101_overlap_0",
+        "moore_1011_overlap_0"
+      ],
+      "controlled_pareto_status": "DOMINATED",
+      "controlled_dominated_by": [
+        "moore_1011_overlap_0"
+      ]
+    },
+    {
+      "configuration": "mealy_1011_overlap_1",
+      "architecture": "mealy",
+      "pattern": "1011",
+      "overlap": "1",
+      "comparison_group": "pattern_1011_overlap_1",
+      "area_um2": 30.324,
+      "total_power_uw": 5.17,
+      "data_arrival_ns": 0.24,
+      "setup_slack_ns": 9.56,
+      "global_pareto_status": "DOMINATED",
+      "global_dominated_by": [
+        "fsm_original_1011",
+        "mealy_1101_overlap_0",
+        "moore_10101_overlap_0",
+        "moore_1011_overlap_0"
+      ],
+      "controlled_pareto_status": "PARETO",
+      "controlled_dominated_by": []
+    },
+    {
+      "configuration": "mealy_1101_overlap_0",
+      "architecture": "mealy",
+      "pattern": "1101",
+      "overlap": "0",
+      "comparison_group": "pattern_1101_overlap_0",
+      "area_um2": 29.526,
+      "total_power_uw": 5.02,
+      "data_arrival_ns": 0.23,
+      "setup_slack_ns": 9.57,
+      "global_pareto_status": "DOMINATED",
+      "global_dominated_by": [
+        "fsm_original_1011",
+        "moore_10101_overlap_0",
+        "moore_1011_overlap_0"
+      ],
+      "controlled_pareto_status": "PARETO",
+      "controlled_dominated_by": []
+    },
+    {
+      "configuration": "mealy_1101_overlap_1",
+      "architecture": "mealy",
+      "pattern": "1101",
+      "overlap": "1",
+      "comparison_group": "pattern_1101_overlap_1",
+      "area_um2": 31.92,
+      "total_power_uw": 5.26,
+      "data_arrival_ns": 0.23,
+      "setup_slack_ns": 9.57,
+      "global_pareto_status": "DOMINATED",
+      "global_dominated_by": [
+        "fsm_original_1011",
+        "mealy_1101_overlap_0",
+        "moore_10101_overlap_0",
+        "moore_1011_overlap_0"
+      ],
+      "controlled_pareto_status": "PARETO",
+      "controlled_dominated_by": []
+    },
+    {
+      "configuration": "moore_10101_overlap_0",
+      "architecture": "moore",
+      "pattern": "10101",
+      "overlap": "0",
+      "comparison_group": "pattern_10101_overlap_0",
+      "area_um2": 25.536,
+      "total_power_uw": 4.26,
+      "data_arrival_ns": 0.19,
+      "setup_slack_ns": 9.61,
+      "global_pareto_status": "DOMINATED",
+      "global_dominated_by": [
+        "moore_1011_overlap_0"
+      ],
+      "controlled_pareto_status": "PARETO",
+      "controlled_dominated_by": []
+    },
+    {
+      "configuration": "moore_10101_overlap_1",
+      "architecture": "moore",
+      "pattern": "10101",
+      "overlap": "1",
+      "comparison_group": "pattern_10101_overlap_1",
+      "area_um2": 31.388,
+      "total_power_uw": 4.71,
+      "data_arrival_ns": 0.36,
+      "setup_slack_ns": 9.6,
+      "global_pareto_status": "DOMINATED",
+      "global_dominated_by": [
+        "moore_10101_overlap_0",
+        "moore_1011_overlap_0",
+        "moore_1011_overlap_1",
+        "moore_1101_overlap_0",
+        "moore_1101_overlap_1"
+      ],
+      "controlled_pareto_status": "PARETO",
+      "controlled_dominated_by": []
+    },
+    {
+      "configuration": "moore_1011_overlap_0",
+      "architecture": "moore",
+      "pattern": "1011",
+      "overlap": "0",
+      "comparison_group": "pattern_1011_overlap_0",
+      "area_um2": 24.738,
+      "total_power_uw": 4.0,
+      "data_arrival_ns": 0.13,
+      "setup_slack_ns": 9.67,
+      "global_pareto_status": "PARETO",
+      "global_dominated_by": [],
+      "controlled_pareto_status": "PARETO",
+      "controlled_dominated_by": []
+    },
+    {
+      "configuration": "moore_1011_overlap_1",
+      "architecture": "moore",
+      "pattern": "1011",
+      "overlap": "1",
+      "comparison_group": "pattern_1011_overlap_1",
+      "area_um2": 23.94,
+      "total_power_uw": 3.95,
+      "data_arrival_ns": 0.3,
+      "setup_slack_ns": 9.66,
+      "global_pareto_status": "PARETO",
+      "global_dominated_by": [],
+      "controlled_pareto_status": "PARETO",
+      "controlled_dominated_by": []
+    },
+    {
+      "configuration": "moore_1101_overlap_0",
+      "architecture": "moore",
+      "pattern": "1101",
+      "overlap": "0",
+      "comparison_group": "pattern_1101_overlap_0",
+      "area_um2": 28.196,
+      "total_power_uw": 4.39,
+      "data_arrival_ns": 0.32,
+      "setup_slack_ns": 9.65,
+      "global_pareto_status": "DOMINATED",
+      "global_dominated_by": [
+        "moore_10101_overlap_0",
+        "moore_1011_overlap_0",
+        "moore_1011_overlap_1"
+      ],
+      "controlled_pareto_status": "PARETO",
+      "controlled_dominated_by": []
+    },
+    {
+      "configuration": "moore_1101_overlap_1",
+      "architecture": "moore",
+      "pattern": "1101",
+      "overlap": "1",
+      "comparison_group": "pattern_1101_overlap_1",
+      "area_um2": 26.6,
+      "total_power_uw": 4.26,
+      "data_arrival_ns": 0.35,
+      "setup_slack_ns": 9.61,
+      "global_pareto_status": "DOMINATED",
+      "global_dominated_by": [
+        "moore_10101_overlap_0",
+        "moore_1011_overlap_0",
+        "moore_1011_overlap_1"
+      ],
+      "controlled_pareto_status": "PARETO",
+      "controlled_dominated_by": []
+    }
+  ]
+}

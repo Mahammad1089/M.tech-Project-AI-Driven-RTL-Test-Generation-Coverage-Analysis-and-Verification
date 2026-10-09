@@ -1,0 +1,113 @@
+{
+  "generated_utc": "2026-10-09T19:39:56.330111+00:00",
+  "project": "/home/maham_mtech/Mtech_project/AI_RTL_Verification",
+  "technical_evidence": {
+    "ALU final PPA": {
+      "present": true,
+      "path": "extensions/results/day30/alu_final_report/day30_alu_final_report.json"
+    },
+    "ALU 5 fF comparison": {
+      "present": true,
+      "path": "extensions/results/day30/alu_5ff_sensitivity/day30_alu_5ff_comparison.json"
+    },
+    "FIFO final report": {
+      "present": true,
+      "path": "extensions/results/day30/fifo_final_report/day30_fifo_final_report.json"
+    },
+    "FSM functional matrix": {
+      "present": true,
+      "path": "extensions/results/day30/fsm_20_matrix/day30_fsm_20_matrix_results.csv"
+    },
+    "FSM independent coverage": {
+      "present": true,
+      "path": "extensions/results/day30/fsm_independent_coverage/day30_fsm_independent_coverage.json"
+    },
+    "FSM 20-variant PPA": {
+      "present": true,
+      "path": "extensions/results/day30/fsm_ppa_extension/day30_fsm_20_ppa_summary.csv"
+    },
+    "FSM efficiency comparison": {
+      "present": true,
+      "path": "extensions/results/day30/fsm_comparison_extended/day30_fsm_20_efficiency_metrics.csv"
+    },
+    "FSM Mealy/Moore comparison": {
+      "present": true,
+      "path": "extensions/results/day30/fsm_comparison_extended/day30_fsm_10_mealy_moore_comparison.csv"
+    },
+    "FSM Pareto analysis": {
+      "present": true,
+      "path": "extensions/results/day30/fsm_comparison_extended/day30_fsm_20_pareto_analysis.csv"
+    },
+    "UART final report": {
+      "present": true,
+      "path": "extensions/results/day30/uart/final_report/day30_uart_final_report.json"
+    },
+    "Final master requirements": {
+      "present": true,
+      "path": "extensions/results/day30/master_audit_reconciled_v3/day30_master_requirements_reconciled_v3.csv"
+    }
+  },
+  "master_audit_18_pass": false,
+  "missing_evidence": [],
+  "document_candidates": [
+    "README.md",
+    "docs/final/README_FINAL.md",
+    "docs/specifications/alu_specification.md",
+    "docs/specifications/alu_verification_objectives.md",
+    "docs/specifications/fsm_1011_specification.md",
+    "extensions/results/day30/alu_5ff_sensitivity/day30_alu_5ff_report.md",
+    "extensions/results/day30/alu_final_report/day30_alu_final_report.md",
+    "extensions/results/day30/fifo_final_report/day30_fifo_final_report.md",
+    "extensions/results/day30/fsm_comparison_extended/day30_fsm_20_comparison_report.md",
+    "extensions/results/day30/master_audit_reconciled/day30_master_requirements_reconciled.md",
+    "extensions/results/day30/master_audit_reconciled_v2/day30_master_requirements_reconciled_v2.md",
+    "extensions/results/day30/master_audit_reconciled_v3/day30_master_requirements_reconciled_v3.md",
+    "extensions/results/day30/uart/final_report/day30_uart_final_report.md"
+  ],
+  "image_candidates": [
+    "extensions/results/day27/graphs/01_fsm_area_comparison.png",
+    "extensions/results/day27/graphs/02_fsm_power_comparison.png",
+    "extensions/results/day27/graphs/03_fsm_arrival_time_comparison.png",
+    "extensions/results/day27/graphs/04_fsm_area_delay_product.png",
+    "extensions/results/day27/graphs/05_fsm_power_delay_product.png",
+    "extensions/results/day27/graphs/06_fsm_pareto_tradeoff.png",
+    "extensions/results/day30/fsm_comparison_extended/graphs/01_fsm_area_comparison.png",
+    "extensions/results/day30/fsm_comparison_extended/graphs/02_fsm_power_comparison.png",
+    "extensions/results/day30/fsm_comparison_extended/graphs/03_fsm_arrival_time_comparison.png",
+    "extensions/results/day30/fsm_comparison_extended/graphs/04_fsm_arrival_based_adp.png",
+    "extensions/results/day30/fsm_comparison_extended/graphs/05_fsm_arrival_based_pdp.png",
+    "extensions/results/day30/fsm_comparison_extended/graphs/06_fsm_pareto_tradeoff.png",
+    "graphs/day22/day22_graph1_strategy_coverage.png",
+    "graphs/day22/day22_graph2_seed_coverage.png",
+    "graphs/day22/day22_graph3_coverage_distribution.png",
+    "graphs/day22/day22_graph4_verification_effort.png",
+    "graphs/day22/day22_graph5_random_redundancy.png",
+    "graphs/day22/day22_graph6_random_range.png",
+    "graphs/day22_graph1_strategy_coverage.png",
+    "graphs/day22_graph2_seed_coverage.png",
+    "graphs/day22_graph3_coverage_distribution.png",
+    "graphs/day22_graph4_verification_effort.png",
+    "graphs/day22_graph5_random_redundancy.png",
+    "graphs/day22_graph6_random_range.png",
+    "results/fifo/day22/graph1_strategy_coverage.png",
+    "results/fifo/day22/graph2_seed_coverage.png",
+    "results/fifo/day22/graph3_coverage_distribution.png",
+    "results/fifo/day22/graph4_verification_effort.png",
+    "results/fifo/day22/graph5_random_redundancy.png",
+    "results/fifo/day22/graph6_random_range.png"
+  ],
+  "fsm_graph_count": 6,
+  "reproducibility_files": {
+    "README.md": true,
+    "requirements.txt": true,
+    "pyproject.toml": false,
+    "Makefile": false,
+    ".gitignore": true
+  },
+  "git": {
+    "repository_available": true,
+    "changed_files": 2
+  },
+  "submission_status": "REQUIRES_DOCUMENT_REVIEW",
+  "note": "Evidence presence and master-audit status do not certify thesis document quality, reference validity or university compliance."
+}

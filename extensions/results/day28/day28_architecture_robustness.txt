@@ -1,0 +1,80 @@
+========================================================================
+DAY 28 - STEP 5
+FSM ARCHITECTURE SELECTION ROBUSTNESS REPORT
+========================================================================
+
+Configurations: 13
+Constraint cases: 8
+Selection scenarios: 4
+Total decisions: 32
+Stable decisions: 32
+Changed decisions: 0
+Selection stability: 100.00%
+
+SCENARIO SUMMARY
+------------------------------------------------------------------------
+Scenario: area_priority
+  Original winner: moore_1011_overlap_1
+  Stable cases: 8
+  Changed cases: 0
+
+Scenario: power_priority
+  Original winner: moore_1011_overlap_1
+  Stable cases: 8
+  Changed cases: 0
+
+Scenario: timing_priority
+  Original winner: moore_1011_overlap_0
+  Stable cases: 8
+  Changed cases: 0
+
+Scenario: balanced
+  Original winner: moore_1011_overlap_0
+  Stable cases: 8
+  Changed cases: 0
+
+DETAILED CONSTRAINT RESULTS
+------------------------------------------------------------------------
+original_constraints | area_priority | moore_1011_overlap_1 | STABLE
+original_constraints | power_priority | moore_1011_overlap_1 | STABLE
+original_constraints | timing_priority | moore_1011_overlap_0 | STABLE
+original_constraints | balanced | moore_1011_overlap_0 | STABLE
+area_95pct | area_priority | moore_1011_overlap_1 | STABLE
+area_95pct | power_priority | moore_1011_overlap_1 | STABLE
+area_95pct | timing_priority | moore_1011_overlap_0 | STABLE
+area_95pct | balanced | moore_1011_overlap_0 | STABLE
+area_85pct | area_priority | moore_1011_overlap_1 | STABLE
+area_85pct | power_priority | moore_1011_overlap_1 | STABLE
+area_85pct | timing_priority | moore_1011_overlap_0 | STABLE
+area_85pct | balanced | moore_1011_overlap_0 | STABLE
+power_95pct | area_priority | moore_1011_overlap_1 | STABLE
+power_95pct | power_priority | moore_1011_overlap_1 | STABLE
+power_95pct | timing_priority | moore_1011_overlap_0 | STABLE
+power_95pct | balanced | moore_1011_overlap_0 | STABLE
+power_85pct | area_priority | moore_1011_overlap_1 | STABLE
+power_85pct | power_priority | moore_1011_overlap_1 | STABLE
+power_85pct | timing_priority | moore_1011_overlap_0 | STABLE
+power_85pct | balanced | moore_1011_overlap_0 | STABLE
+arrival_95pct | area_priority | moore_1011_overlap_1 | STABLE
+arrival_95pct | power_priority | moore_1011_overlap_1 | STABLE
+arrival_95pct | timing_priority | moore_1011_overlap_0 | STABLE
+arrival_95pct | balanced | moore_1011_overlap_0 | STABLE
+arrival_85pct | area_priority | moore_1011_overlap_1 | STABLE
+arrival_85pct | power_priority | moore_1011_overlap_1 | STABLE
+arrival_85pct | timing_priority | moore_1011_overlap_0 | STABLE
+arrival_85pct | balanced | moore_1011_overlap_0 | STABLE
+combined_90pct | area_priority | moore_1011_overlap_1 | STABLE
+combined_90pct | power_priority | moore_1011_overlap_1 | STABLE
+combined_90pct | timing_priority | moore_1011_overlap_0 | STABLE
+combined_90pct | balanced | moore_1011_overlap_0 | STABLE
+
+METHODOLOGY AND LIMITATIONS
+------------------------------------------------------------------------
+1. Results reuse existing pre-layout PPA evidence.
+2. Power is based on assumed switching activity.
+3. Timing is based on reported arrival-time metrics.
+4. Different FSM variants are not proven equivalent.
+5. Robustness applies only to the tested constraints.
+6. No new RTL, simulation, synthesis, or STA was run.
+
+DAY 28 STEP 5: PASS

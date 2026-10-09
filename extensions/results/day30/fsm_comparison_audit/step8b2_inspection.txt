@@ -1,0 +1,478 @@
+========== DAY 27 COMPARISON SCRIPT ==========
+#!/usr/bin/env python3
+
+"""
+Extension Day 3 / Day 27
+Step 2: Matched Mealy versus Moore FSM comparison.
+
+Reads existing Day 26 PPA CSV.
+Does not modify RTL, synthesis results, or Day 26 reports.
+"""
+
+import csv
+import json
+import math
+import sys
+from datetime import datetime, timezone
+from pathlib import Path
+
+ROOT = Path.home() / "Mtech_project" / "AI_RTL_Verification"
+
+INPUT = (
+    ROOT
+    / "extensions/results/day26/day26_fsm_ppa_summary.csv"
+)
+
+OUTPUT = ROOT / "extensions/results/day27"
+
+PATTERNS = ("1011", "10101", "1101")
+OVERLAPS = (0, 1)
+
+REQUIRED_COLUMNS = (
+    "configuration",
+    "area_um2",
+    "setup_slack_ns",
+    "data_arrival_ns",
+    "internal_power_uw",
+    "switching_power_uw",
+    "leakage_power_uw",
+    "total_power_uw",
+)
+
+NUMERIC_COLUMNS = REQUIRED_COLUMNS[1:]
+
+
+def load_data():
+    if not INPUT.is_file():
+        raise FileNotFoundError(
+            f"Day 26 CSV not found: {INPUT}"
+        )
+
+    with INPUT.open(newline="", encoding="utf-8") as f:
+        reader = csv.DictReader(f)
+
+        if not reader.fieldnames:
+            raise ValueError("CSV header is missing")
+
+        missing = [
+            name
+            for name in REQUIRED_COLUMNS
+            if name not in reader.fieldnames
+        ]
+
+        if missing:
+            raise ValueError(
+                "Missing required columns: "
+                + ", ".join(missing)
+            )
+
+        rows = list(reader)
+
+    if len(rows) != 13:
+        raise ValueError(
+            f"Expected 13 configurations; found {len(rows)}"
+        )
+
+    records = {}
+
+    for row in rows:
+        name = row["configuration"].strip()
+
+        if not name:
+            raise ValueError("Empty configuration name")
+
+        if name in records:
+            raise ValueError(
+                f"Duplicate configuration: {name}"
+            )
+
+        values = {"configuration": name}
+
+        for column in NUMERIC_COLUMNS:
+            try:
+                number = float(row[column])
+            except (ValueError, TypeError) as exc:
+                raise ValueError(
+                    f"{name}: invalid {column}"
+                ) from exc
+
+            if not math.isfinite(number):
+                raise ValueError(
+                    f"{name}: nonfinite {column}"
+                )
+
+            if column != "setup_slack_ns" and number < 0:
+                raise ValueError(
+                    f"{name}: negative {column}"
+                )
+
+            values[column] = number
+
+        if values["area_um2"] <= 0:
+            raise ValueError(
+                f"{name}: area must be positive"
+            )
+
+        if values["total_power_uw"] <= 0:
+            raise ValueError(
+                f"{name}: total power must be positive"
+            )
+
+        records[name] = values
+
+    return records
+
+
+def percentage_change(mealy, moore):
+    """
+    Positive: Moore value is larger.
+    Negative: Moore value is smaller.
+    """
+    if mealy == 0:
+        raise ValueError(
+            "Cannot calculate change from zero baseline"
+        )
+
+    return 100.0 * (moore - mealy) / mealy
+
+
+def compare_pair(mealy, moore, pattern, overlap):
+    result = {
+        "pattern": pattern,
+        "overlap": overlap,
+        "mealy_configuration": mealy["configuration"],
+        "moore_configuration": moore["configuration"],
+    }
+
+    fields = (
+        "area_um2",
+        "setup_slack_ns",
+        "data_arrival_ns",
+        "internal_power_uw",
+        "switching_power_uw",
+        "leakage_power_uw",
+        "total_power_uw",
+    )
+
+    for field in fields:
+        a = mealy[field]
+        b = moore[field]
+
+        result["mealy_" + field] = round(a, 6)
+        result["moore_" + field] = round(b, 6)
+        result[field + "_difference"] = round(b - a, 6)
+
+        result[field + "_change_pct"] = round(
+            percentage_change(a, b), 4
+        ) if a != 0 else None
+
+    result["lower_area"] = (
+        "Mealy"
+        if mealy["area_um2"] < moore["area_um2"]
+        else "Moore"
+        if moore["area_um2"] < mealy["area_um2"]
+        else "Tie"
+    )
+
+    result["lower_power"] = (
+        "Mealy"
+        if mealy["total_power_uw"]
+        < moore["total_power_uw"]
+        else "Moore"
+        if moore["total_power_uw"]
+        < mealy["total_power_uw"]
+        else "Tie"
+    )
+
+    result["higher_setup_slack"] = (
+        "Mealy"
+        if mealy["setup_slack_ns"]
+        > moore["setup_slack_ns"]
+        else "Moore"
+        if moore["setup_slack_ns"]
+        > mealy["setup_slack_ns"]
+        else "Tie"
+    )
+
+    return result
+
+
+def save_csv(comparisons):
+    path = OUTPUT / "day27_mealy_moore_comparison.csv"
+
+    with path.open(
+        "w",
+        newline="",
+        encoding="utf-8"
+    ) as f:
+        writer = csv.DictWriter(
+            f,
+            fieldnames=list(comparisons[0].keys())
+        )
+
+        writer.writeheader()
+        writer.writerows(comparisons)
+
+    return path
+
+
+def save_json(comparisons):
+    path = OUTPUT / "day27_mealy_moore_comparison.json"
+
+    document = {
+        "day": 27,
+        "step": 2,
+        "analysis": "matched_mealy_moore_comparison",
+        "technology": "Nangate45 typical",
+        "source": str(INPUT.relative_to(ROOT)),
+        "generated_utc": datetime.now(
+            timezone.utc
+        ).isoformat(),
+        "pair_count": len(comparisons),
+        "status": "PASS",
+        "limitations": [
+            "Pre-layout technology-mapped estimates",
+            "Power based on assumed switching activity",
+            "Setup slack is not the same as path delay",
+            "Data arrival includes external input delay "
+            "for input-origin paths",
+            "Mealy and Moore detection timing can differ",
+            "Cross-variant cycle-level equivalence "
+            "has not been established",
+        ],
+        "comparisons": comparisons,
+    }
+
+    path.write_text(
+        json.dumps(document, indent=2) + "\n",
+        encoding="utf-8"
+    )
+
+    return path
+
+
+def save_text(comparisons):
+    path = OUTPUT / "day27_mealy_moore_comparison.txt"
+
+    lines = [
+        "=" * 76,
+        "DAY 27 - STEP 2",
+        "MATCHED MEALY VERSUS MOORE FSM COMPARISON",
+        "=" * 76,
+        "",
+        "Technology: Nangate45 typical",
+        "Source: Day 26 consolidated PPA CSV",
+        "Matched pairs: 6",
+        "",
+    ]
+
+    for item in comparisons:
+        lines.extend([
+            "-" * 76,
+            (
+                f"PATTERN: {item['pattern']} | "
+                f"OVERLAP: {item['overlap']}"
+            ),
+            "-" * 76,
+            (
+                "Mealy: "
+                + item["mealy_configuration"]
+            ),
+            (
+                "Moore: "
+                + item["moore_configuration"]
+            ),
+            "",
+            (
+                "Area (um^2): "
+                f"Mealy={item['mealy_area_um2']:.3f}, "
+                f"Moore={item['moore_area_um2']:.3f}"
+            ),
+            (
+                "Total power (uW): "
+                f"Mealy={item['mealy_total_power_uw']:.3f}, "
+                f"Moore={item['moore_total_power_uw']:.3f}"
+            ),
+            (
+                "Setup slack (ns): "
+                f"Mealy={item['mealy_setup_slack_ns']:.3f}, "
+                f"Moore={item['moore_setup_slack_ns']:.3f}"
+            ),
+            "",
+            (
+                "Area change (Moore vs Mealy): "
+                f"{item['area_um2_change_pct']:+.2f}%"
+            ),
+            (
+                "Power change (Moore vs Mealy): "
+                f"{item['total_power_uw_change_pct']:+.2f}%"
+            ),
+            "",
+            "Lower area: " + item["lower_area"],
+            "Lower power: " + item["lower_power"],
+            (
+                "Higher setup slack: "
+                + item["higher_setup_slack"]
+            ),
+            "",
+        ])
+
+    lines.extend([
+        "=" * 76,
+        "INTERPRETATION",
+        "=" * 76,
+        "Negative area/power change means Moore uses less.",
+        "Positive area/power change means Moore uses more.",
+        "Higher setup slack indicates greater margin "
+        "under the applied timing constraints.",
+        "",
+        "IMPORTANT LIMITATIONS",
+        "- Pre-layout standard-cell measurements.",
+        "- Assumed switching activity for power.",
+        "- Setup slack must not be called path delay.",
+        "- Mealy/Moore output timing may differ.",
+        "- Functional equivalence across variants "
+        "is not established by PPA comparison.",
+        "",
+        "DAY 27 STEP 2: PASS",
+        "",
+    ])
+
+    path.write_text(
+        "\n".join(lines),
+        encoding="utf-8"
+    )
+
+    return path
+
+
+def main():
+    print("=" * 68)
+    print("DAY 27 - STEP 2")
+    print("MEALY VERSUS MOORE ARCHITECTURAL COMPARISON")
+    print("=" * 68)
+
+    records = load_data()
+    comparisons = []
+
+    for pattern in PATTERNS:
+        for overlap in OVERLAPS:
+            mealy_name = (
+                f"mealy_{pattern}_overlap_{overlap}"
+            )
+            moore_name = (
+                f"moore_{pattern}_overlap_{overlap}"
+            )
+
+            if mealy_name not in records:
+                raise ValueError(
+                    f"Missing Mealy case: {mealy_name}"
+                )
+
+            if moore_name not in records:
+                raise ValueError(
+                    f"Missing Moore case: {moore_name}"
+                )
+
+            item = compare_pair(
+                records[mealy_name],
+                records[moore_name],
+                pattern,
+                overlap
+            )
+
+            comparisons.append(item)
+
+            print()
+            print(
+                f"PATTERN={pattern} OVERLAP={overlap}"
+            )
+            print(
+                "Area: "
+                f"Mealy={item['mealy_area_um2']:.3f}, "
+                f"Moore={item['moore_area_um2']:.3f}"
+            )
+            print(
+                "Power: "
+                f"Mealy={item['mealy_total_power_uw']:.3f}, "
+                f"Moore={item['moore_total_power_uw']:.3f}"
+            )
+            print(
+                "Slack: "
+                f"Mealy={item['mealy_setup_slack_ns']:.3f}, "
+                f"Moore={item['moore_setup_slack_ns']:.3f}"
+            )
+
+    assert len(comparisons) == 6
+
+    OUTPUT.mkdir(
+        parents=True,
+        exist_ok=True
+    )
+
+    paths = [
+        save_csv(comparisons),
+        save_json(comparisons),
+        save_text(comparisons),
+    ]
+
+    print()
+    print("=" * 68)
+    print("GENERATED REPORTS")
+    print("=" * 68)
+
+    for path in paths:
+        print(path.relative_to(ROOT))
+
+    print()
+    print("MATCHED COMPARISONS: 6")
+    print("DAY 27 STEP 2: PASS")
+
+
+if __name__ == "__main__":
+    try:
+        main()
+    except (
+        OSError,
+        ValueError,
+        AssertionError,
+        KeyError
+    ) as exc:
+        print(
+            "DAY 27 STEP 2: FAIL -",
+            exc,
+            file=sys.stderr
+        )
+        sys.exit(1)
+
+========== CSV STRUCTURES AND SAMPLE DATA ==========
+
+FILE: extensions/results/day27/day27_efficiency_metrics.csv
+COLUMNS: ['configuration', 'area_um2', 'data_arrival_ns', 'setup_slack_ns', 'total_power_uw', 'arrival_based_adp_um2_ns', 'arrival_based_pdp_fj', 'area_power_product_um2_uw', 'setup_timing_met']
+ROW COUNT: 13
+SAMPLE: {'configuration': 'fsm_original_1011', 'area_um2': '27.132', 'data_arrival_ns': '0.22', 'setup_slack_ns': '9.58', 'total_power_uw': '4.75', 'arrival_based_adp_um2_ns': '5.96904', 'arrival_based_pdp_fj': '1.045', 'area_power_product_um2_uw': '128.877', 'setup_timing_met': 'True'}
+SAMPLE: {'configuration': 'mealy_10101_overlap_0', 'area_um2': '38.304', 'data_arrival_ns': '0.23', 'setup_slack_ns': '9.57', 'total_power_uw': '6.55', 'arrival_based_adp_um2_ns': '8.80992', 'arrival_based_pdp_fj': '1.5065', 'area_power_product_um2_uw': '250.8912', 'setup_timing_met': 'True'}
+SAMPLE: {'configuration': 'mealy_10101_overlap_1', 'area_um2': '41.762', 'data_arrival_ns': '0.23', 'setup_slack_ns': '9.57', 'total_power_uw': '6.93', 'arrival_based_adp_um2_ns': '9.60526', 'arrival_based_pdp_fj': '1.5939', 'area_power_product_um2_uw': '289.41066', 'setup_timing_met': 'True'}
+
+FILE: extensions/results/day27/day27_mealy_moore_comparison.csv
+COLUMNS: ['pattern', 'overlap', 'mealy_configuration', 'moore_configuration', 'mealy_area_um2', 'moore_area_um2', 'area_um2_difference', 'area_um2_change_pct', 'mealy_setup_slack_ns', 'moore_setup_slack_ns', 'setup_slack_ns_difference', 'setup_slack_ns_change_pct', 'mealy_data_arrival_ns', 'moore_data_arrival_ns', 'data_arrival_ns_difference', 'data_arrival_ns_change_pct', 'mealy_internal_power_uw', 'moore_internal_power_uw', 'internal_power_uw_difference', 'internal_power_uw_change_pct', 'mealy_switching_power_uw', 'moore_switching_power_uw', 'switching_power_uw_difference', 'switching_power_uw_change_pct', 'mealy_leakage_power_uw', 'moore_leakage_power_uw', 'leakage_power_uw_difference', 'leakage_power_uw_change_pct', 'mealy_total_power_uw', 'moore_total_power_uw', 'total_power_uw_difference', 'total_power_uw_change_pct', 'lower_area', 'lower_power', 'higher_setup_slack']
+ROW COUNT: 6
+SAMPLE: {'pattern': '1011', 'overlap': '0', 'mealy_configuration': 'mealy_1011_overlap_0', 'moore_configuration': 'moore_1011_overlap_0', 'mealy_area_um2': '32.452', 'moore_area_um2': '24.738', 'area_um2_difference': '-7.714', 'area_um2_change_pct': '-23.7705', 'mealy_setup_slack_ns': '9.57', 'moore_setup_slack_ns': '9.67', 'setup_slack_ns_difference': '0.1', 'setup_slack_ns_change_pct': '1.0449', 'mealy_data_arrival_ns': '0.23', 'moore_data_arrival_ns': '0.13', 'data_arrival_ns_difference': '-0.1', 'data_arrival_ns_change_pct': '-43.4783', 'mealy_internal_power_uw': '4.31', 'moore_internal_power_uw': '3.24', 'internal_power_uw_difference': '-1.07', 'internal_power_uw_change_pct': '-24.826', 'mealy_switching_power_uw': '0.337', 'moore_switching_power_uw': '0.278', 'switching_power_uw_difference': '-0.059', 'switching_power_uw_change_pct': '-17.5074', 'mealy_leakage_power_uw': '0.649', 'moore_leakage_power_uw': '0.49', 'leakage_power_uw_difference': '-0.159', 'leakage_power_uw_change_pct': '-24.4992', 'mealy_total_power_uw': '5.3', 'moore_total_power_uw': '4.0', 'total_power_uw_difference': '-1.3', 'total_power_uw_change_pct': '-24.5283', 'lower_area': 'Moore', 'lower_power': 'Moore', 'higher_setup_slack': 'Moore'}
+SAMPLE: {'pattern': '1011', 'overlap': '1', 'mealy_configuration': 'mealy_1011_overlap_1', 'moore_configuration': 'moore_1011_overlap_1', 'mealy_area_um2': '30.324', 'moore_area_um2': '23.94', 'area_um2_difference': '-6.384', 'area_um2_change_pct': '-21.0526', 'mealy_setup_slack_ns': '9.56', 'moore_setup_slack_ns': '9.66', 'setup_slack_ns_difference': '0.1', 'setup_slack_ns_change_pct': '1.046', 'mealy_data_arrival_ns': '0.24', 'moore_data_arrival_ns': '0.3', 'data_arrival_ns_difference': '0.06', 'data_arrival_ns_change_pct': '25.0', 'mealy_internal_power_uw': '4.22', 'moore_internal_power_uw': '3.23', 'internal_power_uw_difference': '-0.99', 'internal_power_uw_change_pct': '-23.4597', 'mealy_switching_power_uw': '0.326', 'moore_switching_power_uw': '0.24', 'switching_power_uw_difference': '-0.086', 'switching_power_uw_change_pct': '-26.3804', 'mealy_leakage_power_uw': '0.626', 'moore_leakage_power_uw': '0.478', 'leakage_power_uw_difference': '-0.148', 'leakage_power_uw_change_pct': '-23.6422', 'mealy_total_power_uw': '5.17', 'moore_total_power_uw': '3.95', 'total_power_uw_difference': '-1.22', 'total_power_uw_change_pct': '-23.5977', 'lower_area': 'Moore', 'lower_power': 'Moore', 'higher_setup_slack': 'Moore'}
+SAMPLE: {'pattern': '10101', 'overlap': '0', 'mealy_configuration': 'mealy_10101_overlap_0', 'moore_configuration': 'moore_10101_overlap_0', 'mealy_area_um2': '38.304', 'moore_area_um2': '25.536', 'area_um2_difference': '-12.768', 'area_um2_change_pct': '-33.3333', 'mealy_setup_slack_ns': '9.57', 'moore_setup_slack_ns': '9.61', 'setup_slack_ns_difference': '0.04', 'setup_slack_ns_change_pct': '0.418', 'mealy_data_arrival_ns': '0.23', 'moore_data_arrival_ns': '0.19', 'data_arrival_ns_difference': '-0.04', 'data_arrival_ns_change_pct': '-17.3913', 'mealy_internal_power_uw': '5.31', 'moore_internal_power_uw': '3.4', 'internal_power_uw_difference': '-1.91', 'internal_power_uw_change_pct': '-35.9699', 'mealy_switching_power_uw': '0.45', 'moore_switching_power_uw': '0.326', 'switching_power_uw_difference': '-0.124', 'switching_power_uw_change_pct': '-27.5556', 'mealy_leakage_power_uw': '0.789', 'moore_leakage_power_uw': '0.528', 'leakage_power_uw_difference': '-0.261', 'leakage_power_uw_change_pct': '-33.0798', 'mealy_total_power_uw': '6.55', 'moore_total_power_uw': '4.26', 'total_power_uw_difference': '-2.29', 'total_power_uw_change_pct': '-34.9618', 'lower_area': 'Moore', 'lower_power': 'Moore', 'higher_setup_slack': 'Moore'}
+
+FILE: extensions/results/day27/day27_pareto_analysis.csv
+COLUMNS: ['configuration', 'architecture', 'pattern', 'overlap', 'comparison_group', 'area_um2', 'total_power_uw', 'data_arrival_ns', 'setup_slack_ns', 'global_pareto_status', 'global_dominated_by', 'controlled_pareto_status', 'controlled_dominated_by']
+ROW COUNT: 13
+SAMPLE: {'configuration': 'fsm_original_1011', 'architecture': 'baseline', 'pattern': '1011', 'overlap': 'baseline', 'comparison_group': 'baseline_only', 'area_um2': '27.132', 'total_power_uw': '4.75', 'data_arrival_ns': '0.22', 'setup_slack_ns': '9.58', 'global_pareto_status': 'DOMINATED', 'global_dominated_by': 'moore_10101_overlap_0;moore_1011_overlap_0', 'controlled_pareto_status': 'NOT_APPLICABLE', 'controlled_dominated_by': ''}
+SAMPLE: {'configuration': 'mealy_10101_overlap_0', 'architecture': 'mealy', 'pattern': '10101', 'overlap': '0', 'comparison_group': 'pattern_10101_overlap_0', 'area_um2': '38.304', 'total_power_uw': '6.55', 'data_arrival_ns': '0.23', 'setup_slack_ns': '9.57', 'global_pareto_status': 'DOMINATED', 'global_dominated_by': 'fsm_original_1011;mealy_1011_overlap_0;mealy_1101_overlap_0;mealy_1101_overlap_1;moore_10101_overlap_0;moore_1011_overlap_0', 'controlled_pareto_status': 'DOMINATED', 'controlled_dominated_by': 'moore_10101_overlap_0'}
+SAMPLE: {'configuration': 'mealy_10101_overlap_1', 'architecture': 'mealy', 'pattern': '10101', 'overlap': '1', 'comparison_group': 'pattern_10101_overlap_1', 'area_um2': '41.762', 'total_power_uw': '6.93', 'data_arrival_ns': '0.23', 'setup_slack_ns': '9.57', 'global_pareto_status': 'DOMINATED', 'global_dominated_by': 'fsm_original_1011;mealy_10101_overlap_0;mealy_1011_overlap_0;mealy_1101_overlap_0;mealy_1101_overlap_1;moore_10101_overlap_0;moore_1011_overlap_0', 'controlled_pareto_status': 'PARETO', 'controlled_dominated_by': ''}
+
+FILE: extensions/results/day30/fsm_ppa_extension/day30_fsm_20_ppa_summary.csv
+COLUMNS: ['configuration', 'area_um2', 'startpoint', 'endpoint', 'setup_slack_ns', 'data_arrival_ns', 'internal_power_uw', 'switching_power_uw', 'leakage_power_uw', 'total_power_uw', 'timing_status', 'mapping_log', 'timing_log', 'power_log']
+ROW COUNT: 20
+SAMPLE: {'configuration': 'mealy_10101_overlap_0', 'area_um2': '38.304', 'startpoint': 'din (input port clocked by fsm_clk)', 'endpoint': 'detected (output port clocked by fsm_clk)', 'setup_slack_ns': '9.57', 'data_arrival_ns': '0.23', 'internal_power_uw': '5.31', 'switching_power_uw': '0.44999999999999996', 'leakage_power_uw': '0.789', 'total_power_uw': '6.55', 'timing_status': 'MET', 'mapping_log': 'extensions/results/day26/ppa/mealy_10101_overlap_0_mapping.log', 'timing_log': 'extensions/results/day26/ppa/mealy_10101_overlap_0_timing.log', 'power_log': 'extensions/results/day26/ppa/mealy_10101_overlap_0_power.log'}
+SAMPLE: {'configuration': 'mealy_10101_overlap_1', 'area_um2': '41.762', 'startpoint': 'din (input port clocked by fsm_clk)', 'endpoint': 'detected (output port clocked by fsm_clk)', 'setup_slack_ns': '9.57', 'data_arrival_ns': '0.23', 'internal_power_uw': '5.52', 'switching_power_uw': '0.5489999999999999', 'leakage_power_uw': '0.859', 'total_power_uw': '6.93', 'timing_status': 'MET', 'mapping_log': 'extensions/results/day26/ppa/mealy_10101_overlap_1_mapping.log', 'timing_log': 'extensions/results/day26/ppa/mealy_10101_overlap_1_timing.log', 'power_log': 'extensions/results/day26/ppa/mealy_10101_overlap_1_power.log'}
+SAMPLE: {'configuration': 'mealy_1011_overlap_0', 'area_um2': '32.452', 'startpoint': 'din (input port clocked by fsm_clk)', 'endpoint': 'detected (output port clocked by fsm_clk)', 'setup_slack_ns': '9.57', 'data_arrival_ns': '0.23', 'internal_power_uw': '4.3100000000000005', 'switching_power_uw': '0.337', 'leakage_power_uw': '0.6489999999999999', 'total_power_uw': '5.3', 'timing_status': 'MET', 'mapping_log': 'extensions/results/day26/ppa/mealy_1011_overlap_0_mapping.log', 'timing_log': 'extensions/results/day26/ppa/mealy_1011_overlap_0_timing.log', 'power_log': 'extensions/results/day26/ppa/mealy_1011_overlap_0_power.log'}
+
+========== STEP 8B-2 COMPLETE ==========

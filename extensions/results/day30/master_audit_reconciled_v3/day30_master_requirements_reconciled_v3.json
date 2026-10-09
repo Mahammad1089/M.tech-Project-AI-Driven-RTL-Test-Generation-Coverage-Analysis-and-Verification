@@ -1,0 +1,194 @@
+{
+  "generated_utc": "2026-10-09T19:38:35.096919+00:00",
+  "scope": "18 original master requirements; v2 evidence inherited for 15; extended PPA comparisons recomputed for three",
+  "status": "PASS",
+  "overall_status": "PASS_18_OF_18_REQUIREMENTS",
+  "status_counts": {
+    "PASS": 18
+  },
+  "source_master": "extensions/results/day30/master_audit/master_requirements_audit.csv",
+  "source_v2": "extensions/results/day30/master_audit_reconciled_v2/day30_master_requirements_reconciled_v2.json",
+  "comparison_validation": {
+    "efficiency_rows": 20,
+    "matched_pair_rows": 10,
+    "pareto_rows": 20,
+    "global_pareto_count": 2,
+    "controlled_pareto_count": 14,
+    "graph_count": 6,
+    "original_reference": "fsm_original_1011"
+  },
+  "requirements": [
+    {
+      "id": "ALU-01",
+      "module": "ALU",
+      "requirement": "Baseline RTL",
+      "old_status": "PRESENT",
+      "reconciled_status": "PASS",
+      "evidence": "rtl/alu.v; extensions/results/day25/alu_equivalence.log",
+      "notes": "Inherited from Step 8A-4 validated evidence. Baseline module verified against optimized ALU."
+    },
+    {
+      "id": "ALU-02",
+      "module": "ALU",
+      "requirement": "Optimized RTL",
+      "old_status": "PRESENT",
+      "reconciled_status": "PASS",
+      "evidence": "extensions/rtl/optimized/alu_opt.v; extensions/results/day25/alu_equivalence.log; extensions/results/day30/alu_5ff_sensitivity/day30_alu_5ff_comparison.json",
+      "notes": "Inherited from Step 8A-4 validated evidence. Area/timing/power validated at 5 fF."
+    },
+    {
+      "id": "ALU-03",
+      "module": "ALU",
+      "requirement": "Equivalence testbench",
+      "old_status": "PRESENT",
+      "reconciled_status": "PASS",
+      "evidence": "extensions/testbench/tb_alu_equivalence.v; extensions/results/day25/alu_equivalence.log",
+      "notes": "Inherited from Step 8A-4 validated evidence. 2048/2048 exhaustive input combinations passed."
+    },
+    {
+      "id": "FIFO-01",
+      "module": "FIFO",
+      "requirement": "Baseline RTL",
+      "old_status": "PRESENT",
+      "reconciled_status": "PASS",
+      "evidence": "rtl/fifo.v; extensions/results/day30/fifo_final_report/day30_fifo_final_report.json; extensions/results/day30/fifo_final_report/day30_fifo_final_comparison.csv",
+      "notes": "Inherited from Step 8A-4 validated evidence. Requires 124008 checks encoded in final JSON."
+    },
+    {
+      "id": "FIFO-02",
+      "module": "FIFO",
+      "requirement": "Optimized RTL",
+      "old_status": "MISSING",
+      "reconciled_status": "PASS",
+      "evidence": "extensions/rtl/optimized/fifo_opt.v; extensions/results/day30/fifo_final_report/day30_fifo_final_report.json; extensions/results/day30/fifo_final_report/day30_fifo_final_comparison.csv",
+      "notes": "Inherited from Step 8A-4 validated evidence. Four configurations; 124008 checks."
+    },
+    {
+      "id": "FSM-01",
+      "module": "FSM",
+      "requirement": "Original RTL",
+      "old_status": "PRESENT",
+      "reconciled_status": "PASS",
+      "evidence": "rtl/fsm_1011.v; extensions/results/day30/day30_fsm_functional_audit.log",
+      "notes": "Inherited from Step 8A-4 validated evidence. Original 1011 regression audit."
+    },
+    {
+      "id": "FSM-02",
+      "module": "FSM",
+      "requirement": "Parameterized Mealy RTL",
+      "old_status": "PRESENT",
+      "reconciled_status": "PASS",
+      "evidence": "extensions/rtl/fsm_variants/fsm_mealy_ext.v; extensions/results/day30/fsm_20_matrix/day30_fsm_20_matrix_results.csv; extensions/results/day30/fsm_independent_coverage/day30_fsm_independent_coverage.json",
+      "notes": "Inherited from Step 8A-4 validated evidence. 10 Mealy variants passed; independent coverage validated."
+    },
+    {
+      "id": "FSM-03",
+      "module": "FSM",
+      "requirement": "Parameterized Moore RTL",
+      "old_status": "PRESENT",
+      "reconciled_status": "PASS",
+      "evidence": "extensions/rtl/fsm_variants/fsm_moore_ext.v; extensions/results/day30/fsm_20_matrix/day30_fsm_20_matrix_results.csv; extensions/results/day30/fsm_independent_coverage/day30_fsm_independent_coverage.json",
+      "notes": "Inherited from Step 8A-4 validated evidence. 10 Moore variants passed; independent coverage validated."
+    },
+    {
+      "id": "FSM-04",
+      "module": "FSM",
+      "requirement": "Day 30 functional audit log",
+      "old_status": "LOG_PASS",
+      "reconciled_status": "PASS",
+      "evidence": "extensions/results/day30/day30_fsm_functional_audit.log",
+      "notes": "Inherited from Step 8A-4 validated evidence. Existing Day 30 original FSM audit."
+    },
+    {
+      "id": "FSM-05",
+      "module": "FSM",
+      "requirement": "All 20 required FSM configurations",
+      "old_status": "NEEDS_VERIFICATION",
+      "reconciled_status": "PASS",
+      "evidence": "extensions/results/day30/fsm_20_matrix/day30_fsm_20_matrix_results.csv; extensions/results/day30/fsm_independent_coverage/day30_fsm_independent_coverage.json; extensions/results/day30/fsm_independent_coverage/day30_fsm_independent_coverage.csv",
+      "notes": "Inherited from Step 8A-4 validated evidence. 20 functional variants and 147844 independent checks."
+    },
+    {
+      "id": "PPA-01",
+      "module": "PPA",
+      "requirement": "day26_fsm_ppa_summary.csv",
+      "old_status": "DATA_PRESENT",
+      "reconciled_status": "PASS",
+      "evidence": "extensions/results/day26/day26_fsm_ppa_summary.csv; extensions/results/day30/fsm_ppa_extension/day30_fsm_20_ppa_summary.csv",
+      "notes": "Inherited from Step 8A-4 validated evidence. 13 historic original+extended records; 20 extended variants in Day 30."
+    },
+    {
+      "id": "PPA-02",
+      "module": "PPA",
+      "requirement": "day27_efficiency_metrics.csv",
+      "old_status": "DATA_PRESENT",
+      "reconciled_status": "PASS",
+      "evidence": "extensions/results/day30/fsm_comparison_extended/day30_fsm_20_efficiency_metrics.csv; extensions/results/day30/fsm_comparison_extended/day30_fsm_20_comparison_summary.json",
+      "notes": "Day 30: 20/20 efficiency metrics, formulae independently verified. Day 27 retained as history."
+    },
+    {
+      "id": "PPA-03",
+      "module": "PPA",
+      "requirement": "day27_mealy_moore_comparison.csv",
+      "old_status": "DATA_PRESENT",
+      "reconciled_status": "PASS",
+      "evidence": "extensions/results/day30/fsm_comparison_extended/day30_fsm_10_mealy_moore_comparison.csv; extensions/results/day30/fsm_comparison_extended/day30_fsm_20_comparison_summary.json",
+      "notes": "Day 30: 10/10 matched Mealy/Moore pairs; change percentages verified."
+    },
+    {
+      "id": "PPA-04",
+      "module": "PPA",
+      "requirement": "day27_pareto_analysis.csv",
+      "old_status": "DATA_PRESENT",
+      "reconciled_status": "PASS",
+      "evidence": "extensions/results/day30/fsm_comparison_extended/day30_fsm_20_pareto_analysis.csv; extensions/results/day30/fsm_comparison_extended/day30_fsm_20_comparison_summary.json",
+      "notes": "Day 30: 20/20 Pareto records, global and controlled dominance verified; global comparisons exploratory."
+    },
+    {
+      "id": "UART-01",
+      "module": "UART",
+      "requirement": "UART TX/RX RTL",
+      "old_status": "MISSING",
+      "reconciled_status": "PASS",
+      "evidence": "extensions/rtl/uart/uart_tx.v; extensions/rtl/uart/uart_rx.v; extensions/rtl/uart/optimized/uart_tx_opt.v; extensions/rtl/uart/optimized/uart_rx_opt.v",
+      "notes": "Inherited from Step 8A-4 validated evidence. Baseline and optimized TX/RX RTL."
+    },
+    {
+      "id": "UART-02",
+      "module": "UART",
+      "requirement": "UART functional verification",
+      "old_status": "MISSING",
+      "reconciled_status": "PASS",
+      "evidence": "extensions/results/day30/uart/final_report/day30_uart_final_report.json",
+      "notes": "Inherited from Step 8A-4 validated evidence. Final report must contain an explicit top-level PASS status."
+    },
+    {
+      "id": "UART-03",
+      "module": "UART",
+      "requirement": "UART optimization and equivalence",
+      "old_status": "NEEDS_VERIFICATION",
+      "reconciled_status": "PASS",
+      "evidence": "extensions/rtl/uart/optimized/uart_tx_opt.v; extensions/rtl/uart/optimized/uart_rx_opt.v; extensions/results/day30/uart/final_report/day30_uart_final_report.json",
+      "notes": "Inherited from Step 8A-4 validated evidence. Optimization and equivalence report."
+    },
+    {
+      "id": "UART-04",
+      "module": "UART",
+      "requirement": "UART technology-mapped PPA",
+      "old_status": "NEEDS_VERIFICATION",
+      "reconciled_status": "PASS",
+      "evidence": "extensions/results/day30/uart/final_report/day30_uart_final_report.json; extensions/results/day30/uart/final_report/day30_uart_architecture_comparison.csv",
+      "notes": "Inherited from Step 8A-4 validated evidence. Architecture comparison and final report."
+    }
+  ],
+  "limitations": [
+    "No new RTL simulations, synthesis or STA performed during this reconciliation.",
+    "The first 15 results inherit verified Step 8A-4 evidence; this is not a clean-room reproduction.",
+    "Power and area are technology-mapped pre-layout estimates, not routed silicon results.",
+    "Reported arrival time is not an intrinsic combinational delay measurement.",
+    "Mealy and Moore detection cycle timing may differ.",
+    "Global Pareto comparison across patterns is exploratory, not a functional replacement recommendation.",
+    "The 18-requirement master list does not cover thesis writing, repository archival, or final submission readiness.",
+    "All original Day 26, Day 27 and v2 audit files were read-only inputs."
+  ]
+}

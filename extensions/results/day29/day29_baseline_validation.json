@@ -1,0 +1,132 @@
+{
+  "day": 29,
+  "step": 1,
+  "analysis": "baseline_evidence_validation",
+  "status": "PASS",
+  "passed_checks": 27,
+  "failed_checks": 0,
+  "source_files": {
+    "day26_ppa_csv": "extensions/results/day26/day26_fsm_ppa_summary.csv",
+    "day27_efficiency_csv": "extensions/results/day27/day27_efficiency_metrics.csv",
+    "day27_pareto_json": "extensions/results/day27/day27_pareto_analysis.json",
+    "day28_selection_json": "extensions/results/day28/day28_architecture_selection.json",
+    "day28_sensitivity_json": "extensions/results/day28/day28_constraint_sensitivity.json",
+    "day28_robustness_json": "extensions/results/day28/day28_architecture_robustness.json"
+  },
+  "checks": [
+    {
+      "description": "Source available: day26_ppa_csv",
+      "status": "PASS"
+    },
+    {
+      "description": "Source available: day27_efficiency_csv",
+      "status": "PASS"
+    },
+    {
+      "description": "Source available: day27_pareto_json",
+      "status": "PASS"
+    },
+    {
+      "description": "Source available: day28_selection_json",
+      "status": "PASS"
+    },
+    {
+      "description": "Source available: day28_sensitivity_json",
+      "status": "PASS"
+    },
+    {
+      "description": "Source available: day28_robustness_json",
+      "status": "PASS"
+    },
+    {
+      "description": "Readable nonempty CSV: day26_ppa_csv",
+      "status": "PASS"
+    },
+    {
+      "description": "Readable nonempty CSV: day27_efficiency_csv",
+      "status": "PASS"
+    },
+    {
+      "description": "Valid JSON object: day27_pareto_json",
+      "status": "PASS"
+    },
+    {
+      "description": "Valid JSON object: day28_selection_json",
+      "status": "PASS"
+    },
+    {
+      "description": "Valid JSON object: day28_sensitivity_json",
+      "status": "PASS"
+    },
+    {
+      "description": "Valid JSON object: day28_robustness_json",
+      "status": "PASS"
+    },
+    {
+      "description": "Day 26 PPA CSV contains 13 configurations",
+      "status": "PASS"
+    },
+    {
+      "description": "Day 26 PPA CSV has configuration column",
+      "status": "PASS"
+    },
+    {
+      "description": "Day 27 efficiency CSV contains 13 configurations",
+      "status": "PASS"
+    },
+    {
+      "description": "Day 27 efficiency CSV has configuration column",
+      "status": "PASS"
+    },
+    {
+      "description": "Day 26 and Day 27 configuration sets match",
+      "status": "PASS"
+    },
+    {
+      "description": "Source report status PASS: day27_pareto_json",
+      "status": "PASS"
+    },
+    {
+      "description": "Source report status PASS: day28_selection_json",
+      "status": "PASS"
+    },
+    {
+      "description": "Source report status PASS: day28_sensitivity_json",
+      "status": "PASS"
+    },
+    {
+      "description": "Source report status PASS: day28_robustness_json",
+      "status": "PASS"
+    },
+    {
+      "description": "Day 28 selection contains 13 configurations",
+      "status": "PASS"
+    },
+    {
+      "description": "Day 28 selection contains four scenarios",
+      "status": "PASS"
+    },
+    {
+      "description": "Day 28 sensitivity contains eight cases",
+      "status": "PASS"
+    },
+    {
+      "description": "Day 28 robustness contains 32 decisions",
+      "status": "PASS"
+    },
+    {
+      "description": "Day 28 reports 32 stable decisions",
+      "status": "PASS"
+    },
+    {
+      "description": "Day 28 reports zero changed decisions",
+      "status": "PASS"
+    }
+  ],
+  "limitations": [
+    "Validates report presence and selected metadata.",
+    "Does not independently recompute PPA values.",
+    "Does not establish functional equivalence.",
+    "Does not perform simulation or synthesis."
+  ]
+}

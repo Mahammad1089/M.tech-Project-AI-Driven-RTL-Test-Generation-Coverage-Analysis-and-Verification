@@ -1,0 +1,291 @@
+{
+  "day": 28,
+  "step": 5,
+  "analysis": "FSM architecture selection robustness",
+  "status": "PASS",
+  "source_files": [
+    "extensions/results/day28/day28_architecture_selection.json",
+    "extensions/results/day28/day28_constraint_sensitivity.json"
+  ],
+  "configuration_count": 13,
+  "constraint_case_count": 8,
+  "scenario_count": 4,
+  "total_decisions": 32,
+  "stable_decisions": 32,
+  "changed_decisions": 0,
+  "stability_percentage": 100.0,
+  "baseline_winners": {
+    "area_priority": "moore_1011_overlap_1",
+    "power_priority": "moore_1011_overlap_1",
+    "timing_priority": "moore_1011_overlap_0",
+    "balanced": "moore_1011_overlap_0"
+  },
+  "scenario_summary": {
+    "area_priority": {
+      "baseline_winner": "moore_1011_overlap_1",
+      "stable_cases": 8,
+      "changed_cases": 0,
+      "selected_architectures": {
+        "moore_1011_overlap_1": 8
+      }
+    },
+    "power_priority": {
+      "baseline_winner": "moore_1011_overlap_1",
+      "stable_cases": 8,
+      "changed_cases": 0,
+      "selected_architectures": {
+        "moore_1011_overlap_1": 8
+      }
+    },
+    "timing_priority": {
+      "baseline_winner": "moore_1011_overlap_0",
+      "stable_cases": 8,
+      "changed_cases": 0,
+      "selected_architectures": {
+        "moore_1011_overlap_0": 8
+      }
+    },
+    "balanced": {
+      "baseline_winner": "moore_1011_overlap_0",
+      "stable_cases": 8,
+      "changed_cases": 0,
+      "selected_architectures": {
+        "moore_1011_overlap_0": 8
+      }
+    }
+  },
+  "records": [
+    {
+      "constraint_case": "original_constraints",
+      "scenario": "area_priority",
+      "baseline_winner": "moore_1011_overlap_1",
+      "constraint_winner": "moore_1011_overlap_1",
+      "stable": true
+    },
+    {
+      "constraint_case": "original_constraints",
+      "scenario": "power_priority",
+      "baseline_winner": "moore_1011_overlap_1",
+      "constraint_winner": "moore_1011_overlap_1",
+      "stable": true
+    },
+    {
+      "constraint_case": "original_constraints",
+      "scenario": "timing_priority",
+      "baseline_winner": "moore_1011_overlap_0",
+      "constraint_winner": "moore_1011_overlap_0",
+      "stable": true
+    },
+    {
+      "constraint_case": "original_constraints",
+      "scenario": "balanced",
+      "baseline_winner": "moore_1011_overlap_0",
+      "constraint_winner": "moore_1011_overlap_0",
+      "stable": true
+    },
+    {
+      "constraint_case": "area_95pct",
+      "scenario": "area_priority",
+      "baseline_winner": "moore_1011_overlap_1",
+      "constraint_winner": "moore_1011_overlap_1",
+      "stable": true
+    },
+    {
+      "constraint_case": "area_95pct",
+      "scenario": "power_priority",
+      "baseline_winner": "moore_1011_overlap_1",
+      "constraint_winner": "moore_1011_overlap_1",
+      "stable": true
+    },
+    {
+      "constraint_case": "area_95pct",
+      "scenario": "timing_priority",
+      "baseline_winner": "moore_1011_overlap_0",
+      "constraint_winner": "moore_1011_overlap_0",
+      "stable": true
+    },
+    {
+      "constraint_case": "area_95pct",
+      "scenario": "balanced",
+      "baseline_winner": "moore_1011_overlap_0",
+      "constraint_winner": "moore_1011_overlap_0",
+      "stable": true
+    },
+    {
+      "constraint_case": "area_85pct",
+      "scenario": "area_priority",
+      "baseline_winner": "moore_1011_overlap_1",
+      "constraint_winner": "moore_1011_overlap_1",
+      "stable": true
+    },
+    {
+      "constraint_case": "area_85pct",
+      "scenario": "power_priority",
+      "baseline_winner": "moore_1011_overlap_1",
+      "constraint_winner": "moore_1011_overlap_1",
+      "stable": true
+    },
+    {
+      "constraint_case": "area_85pct",
+      "scenario": "timing_priority",
+      "baseline_winner": "moore_1011_overlap_0",
+      "constraint_winner": "moore_1011_overlap_0",
+      "stable": true
+    },
+    {
+      "constraint_case": "area_85pct",
+      "scenario": "balanced",
+      "baseline_winner": "moore_1011_overlap_0",
+      "constraint_winner": "moore_1011_overlap_0",
+      "stable": true
+    },
+    {
+      "constraint_case": "power_95pct",
+      "scenario": "area_priority",
+      "baseline_winner": "moore_1011_overlap_1",
+      "constraint_winner": "moore_1011_overlap_1",
+      "stable": true
+    },
+    {
+      "constraint_case": "power_95pct",
+      "scenario": "power_priority",
+      "baseline_winner": "moore_1011_overlap_1",
+      "constraint_winner": "moore_1011_overlap_1",
+      "stable": true
+    },
+    {
+      "constraint_case": "power_95pct",
+      "scenario": "timing_priority",
+      "baseline_winner": "moore_1011_overlap_0",
+      "constraint_winner": "moore_1011_overlap_0",
+      "stable": true
+    },
+    {
+      "constraint_case": "power_95pct",
+      "scenario": "balanced",
+      "baseline_winner": "moore_1011_overlap_0",
+      "constraint_winner": "moore_1011_overlap_0",
+      "stable": true
+    },
+    {
+      "constraint_case": "power_85pct",
+      "scenario": "area_priority",
+      "baseline_winner": "moore_1011_overlap_1",
+      "constraint_winner": "moore_1011_overlap_1",
+      "stable": true
+    },
+    {
+      "constraint_case": "power_85pct",
+      "scenario": "power_priority",
+      "baseline_winner": "moore_1011_overlap_1",
+      "constraint_winner": "moore_1011_overlap_1",
+      "stable": true
+    },
+    {
+      "constraint_case": "power_85pct",
+      "scenario": "timing_priority",
+      "baseline_winner": "moore_1011_overlap_0",
+      "constraint_winner": "moore_1011_overlap_0",
+      "stable": true
+    },
+    {
+      "constraint_case": "power_85pct",
+      "scenario": "balanced",
+      "baseline_winner": "moore_1011_overlap_0",
+      "constraint_winner": "moore_1011_overlap_0",
+      "stable": true
+    },
+    {
+      "constraint_case": "arrival_95pct",
+      "scenario": "area_priority",
+      "baseline_winner": "moore_1011_overlap_1",
+      "constraint_winner": "moore_1011_overlap_1",
+      "stable": true
+    },
+    {
+      "constraint_case": "arrival_95pct",
+      "scenario": "power_priority",
+      "baseline_winner": "moore_1011_overlap_1",
+      "constraint_winner": "moore_1011_overlap_1",
+      "stable": true
+    },
+    {
+      "constraint_case": "arrival_95pct",
+      "scenario": "timing_priority",
+      "baseline_winner": "moore_1011_overlap_0",
+      "constraint_winner": "moore_1011_overlap_0",
+      "stable": true
+    },
+    {
+      "constraint_case": "arrival_95pct",
+      "scenario": "balanced",
+      "baseline_winner": "moore_1011_overlap_0",
+      "constraint_winner": "moore_1011_overlap_0",
+      "stable": true
+    },
+    {
+      "constraint_case": "arrival_85pct",
+      "scenario": "area_priority",
+      "baseline_winner": "moore_1011_overlap_1",
+      "constraint_winner": "moore_1011_overlap_1",
+      "stable": true
+    },
+    {
+      "constraint_case": "arrival_85pct",
+      "scenario": "power_priority",
+      "baseline_winner": "moore_1011_overlap_1",
+      "constraint_winner": "moore_1011_overlap_1",
+      "stable": true
+    },
+    {
+      "constraint_case": "arrival_85pct",
+      "scenario": "timing_priority",
+      "baseline_winner": "moore_1011_overlap_0",
+      "constraint_winner": "moore_1011_overlap_0",
+      "stable": true
+    },
+    {
+      "constraint_case": "arrival_85pct",
+      "scenario": "balanced",
+      "baseline_winner": "moore_1011_overlap_0",
+      "constraint_winner": "moore_1011_overlap_0",
+      "stable": true
+    },
+    {
+      "constraint_case": "combined_90pct",
+      "scenario": "area_priority",
+      "baseline_winner": "moore_1011_overlap_1",
+      "constraint_winner": "moore_1011_overlap_1",
+      "stable": true
+    },
+    {
+      "constraint_case": "combined_90pct",
+      "scenario": "power_priority",
+      "baseline_winner": "moore_1011_overlap_1",
+      "constraint_winner": "moore_1011_overlap_1",
+      "stable": true
+    },
+    {
+      "constraint_case": "combined_90pct",
+      "scenario": "timing_priority",
+      "baseline_winner": "moore_1011_overlap_0",
+      "constraint_winner": "moore_1011_overlap_0",
+      "stable": true
+    },
+    {
+      "constraint_case": "combined_90pct",
+      "scenario": "balanced",
+      "baseline_winner": "moore_1011_overlap_0",
+      "constraint_winner": "moore_1011_overlap_0",
+      "stable": true
+    }
+  ],
+  "limitations": [
+    "Results reuse existing pre-layout PPA evidence.",
+    "Power is based on assumed switching activity.",
+    "Timing is based on reported arrival-time metrics.",
+    "Different FSM variants are not proven equivalent.",
+    "Robustness applies only to the tested constraints.",
+    "No new RTL, simulation, synthesis, or STA was run."
+  ]
+}

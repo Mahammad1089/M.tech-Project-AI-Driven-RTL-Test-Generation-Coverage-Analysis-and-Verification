@@ -1,0 +1,5 @@
+design,top_module,technology,clks_per_bit,clock_period_ns,assumed_input_transitions_per_cycle,assumed_input_transitions_per_ns,output_load_ff,internal_power_uw,switching_power_uw,leakage_power_uw,total_power_uw,power_log
+baseline_tx,uart_tx,Nangate45 typical,16,10.0,1.0,0.1,5.0,143.5103,32.29385,3.855628,179.65970000000002,extensions/results/day30/uart/ppa/baseline_tx_power.log
+optimized_tx,uart_tx_opt,Nangate45 typical,16,10.0,1.0,0.1,5.0,165.7446,35.9893,4.1397829999999995,205.87369999999999,extensions/results/day30/uart/ppa/optimized_tx_power.log
+baseline_rx,uart_rx,Nangate45 typical,16,10.0,1.0,0.1,5.0,152.10580000000002,33.155460000000005,5.360738,190.62199999999999,extensions/results/day30/uart/ppa/baseline_rx_power.log
+optimized_rx,uart_rx_opt,Nangate45 typical,16,10.0,1.0,0.1,5.0,153.7036,28.4108,4.772884,186.88729999999998,extensions/results/day30/uart/ppa/optimized_rx_power.log

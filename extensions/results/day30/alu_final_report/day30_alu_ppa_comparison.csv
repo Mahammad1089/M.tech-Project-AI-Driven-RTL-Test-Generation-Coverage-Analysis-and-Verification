@@ -1,0 +1,3 @@
+design,top_module,area_um2,mapped_cell_count,setup_slack_ns,minimum_path_slack_ns,timing_status,internal_power_uw,switching_power_uw,leakage_power_uw,total_power_uw
+original,alu,68.096,62,9.29,0.41,MET,4.220000000000001,1.19,1.54,6.95
+optimized,alu_opt,59.052,51,9.34,0.41,MET,3.6799999999999997,0.851,1.32,5.859999999999999

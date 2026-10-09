@@ -1,0 +1,5 @@
+design,top_module,clks_per_bit,technology,mapped_cells,cell_area_um2,mapped_netlist,synthesis_log
+baseline_tx,uart_tx,16,Nangate45 typical,113,187.264,extensions/results/day30/uart/ppa/baseline_tx_mapped.v,extensions/results/day30/uart/ppa/baseline_tx_synthesis.log
+optimized_tx,uart_tx_opt,16,Nangate45 typical,115,201.894,extensions/results/day30/uart/ppa/optimized_tx_mapped.v,extensions/results/day30/uart/ppa/optimized_tx_synthesis.log
+baseline_rx,uart_rx,16,Nangate45 typical,153,263.34,extensions/results/day30/uart/ppa/baseline_rx_mapped.v,extensions/results/day30/uart/ppa/baseline_rx_synthesis.log
+optimized_rx,uart_rx_opt,16,Nangate45 typical,124,238.336,extensions/results/day30/uart/ppa/optimized_rx_mapped.v,extensions/results/day30/uart/ppa/optimized_rx_synthesis.log

@@ -1,0 +1,33 @@
+DAY 29 - STEP 1 BASELINE VALIDATION
+============================================================
+[PASS] Source available: day26_ppa_csv
+[PASS] Source available: day27_efficiency_csv
+[PASS] Source available: day27_pareto_json
+[PASS] Source available: day28_selection_json
+[PASS] Source available: day28_sensitivity_json
+[PASS] Source available: day28_robustness_json
+[PASS] Readable nonempty CSV: day26_ppa_csv
+[PASS] Readable nonempty CSV: day27_efficiency_csv
+[PASS] Valid JSON object: day27_pareto_json
+[PASS] Valid JSON object: day28_selection_json
+[PASS] Valid JSON object: day28_sensitivity_json
+[PASS] Valid JSON object: day28_robustness_json
+[PASS] Day 26 PPA CSV contains 13 configurations
+[PASS] Day 26 PPA CSV has configuration column
+[PASS] Day 27 efficiency CSV contains 13 configurations
+[PASS] Day 27 efficiency CSV has configuration column
+[PASS] Day 26 and Day 27 configuration sets match
+[PASS] Source report status PASS: day27_pareto_json
+[PASS] Source report status PASS: day28_selection_json
+[PASS] Source report status PASS: day28_sensitivity_json
+[PASS] Source report status PASS: day28_robustness_json
+[PASS] Day 28 selection contains 13 configurations
+[PASS] Day 28 selection contains four scenarios
+[PASS] Day 28 sensitivity contains eight cases
+[PASS] Day 28 robustness contains 32 decisions
+[PASS] Day 28 reports 32 stable decisions
+[PASS] Day 28 reports zero changed decisions
+
+PASSED CHECKS: 27
+FAILED CHECKS: 0
+FINAL STATUS: PASS

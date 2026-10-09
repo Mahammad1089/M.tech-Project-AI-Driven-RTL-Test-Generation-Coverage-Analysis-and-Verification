@@ -1,0 +1,171 @@
+{
+  "day": 27,
+  "step": 3,
+  "status": "PASS",
+  "generated_utc": "2026-10-09T13:26:21.794644+00:00",
+  "technology": "Nangate45 typical",
+  "source": "extensions/results/day26/day26_fsm_ppa_summary.csv",
+  "configuration_count": 13,
+  "methodology": {
+    "adp": "mapped cell area multiplied by reported data arrival time",
+    "pdp": "estimated total power multiplied by reported data arrival time",
+    "app": "mapped cell area multiplied by estimated total power",
+    "pdp_units": "fJ",
+    "timing_basis": "reported OpenSTA data arrival time"
+  },
+  "limitations": [
+    "Pre-layout mapped standard-cell area",
+    "Power uses assumed switching activity",
+    "Arrival-based ADP/PDP are proxy metrics",
+    "Data arrival can include input delay",
+    "Different critical-path classes may not be directly comparable",
+    "No measured maximum clock frequency",
+    "No post-route parasitics",
+    "Cross-variant cycle-level equivalence has not been established"
+  ],
+  "records": [
+    {
+      "configuration": "fsm_original_1011",
+      "area_um2": 27.132,
+      "data_arrival_ns": 0.22,
+      "setup_slack_ns": 9.58,
+      "total_power_uw": 4.75,
+      "arrival_based_adp_um2_ns": 5.96904,
+      "arrival_based_pdp_fj": 1.045,
+      "area_power_product_um2_uw": 128.877,
+      "setup_timing_met": true
+    },
+    {
+      "configuration": "mealy_10101_overlap_0",
+      "area_um2": 38.304,
+      "data_arrival_ns": 0.23,
+      "setup_slack_ns": 9.57,
+      "total_power_uw": 6.55,
+      "arrival_based_adp_um2_ns": 8.80992,
+      "arrival_based_pdp_fj": 1.5065,
+      "area_power_product_um2_uw": 250.8912,
+      "setup_timing_met": true
+    },
+    {
+      "configuration": "mealy_10101_overlap_1",
+      "area_um2": 41.762,
+      "data_arrival_ns": 0.23,
+      "setup_slack_ns": 9.57,
+      "total_power_uw": 6.93,
+      "arrival_based_adp_um2_ns": 9.60526,
+      "arrival_based_pdp_fj": 1.5939,
+      "area_power_product_um2_uw": 289.41066,
+      "setup_timing_met": true
+    },
+    {
+      "configuration": "mealy_1011_overlap_0",
+      "area_um2": 32.452,
+      "data_arrival_ns": 0.23,
+      "setup_slack_ns": 9.57,
+      "total_power_uw": 5.3,
+      "arrival_based_adp_um2_ns": 7.46396,
+      "arrival_based_pdp_fj": 1.219,
+      "area_power_product_um2_uw": 171.9956,
+      "setup_timing_met": true
+    },
+    {
+      "configuration": "mealy_1011_overlap_1",
+      "area_um2": 30.324,
+      "data_arrival_ns": 0.24,
+      "setup_slack_ns": 9.56,
+      "total_power_uw": 5.17,
+      "arrival_based_adp_um2_ns": 7.27776,
+      "arrival_based_pdp_fj": 1.2408,
+      "area_power_product_um2_uw": 156.77508,
+      "setup_timing_met": true
+    },
+    {
+      "configuration": "mealy_1101_overlap_0",
+      "area_um2": 29.526,
+      "data_arrival_ns": 0.23,
+      "setup_slack_ns": 9.57,
+      "total_power_uw": 5.02,
+      "arrival_based_adp_um2_ns": 6.79098,
+      "arrival_based_pdp_fj": 1.1546,
+      "area_power_product_um2_uw": 148.22052,
+      "setup_timing_met": true
+    },
+    {
+      "configuration": "mealy_1101_overlap_1",
+      "area_um2": 31.92,
+      "data_arrival_ns": 0.23,
+      "setup_slack_ns": 9.57,
+      "total_power_uw": 5.26,
+      "arrival_based_adp_um2_ns": 7.3416,
+      "arrival_based_pdp_fj": 1.2098,
+      "area_power_product_um2_uw": 167.8992,
+      "setup_timing_met": true
+    },
+    {
+      "configuration": "moore_10101_overlap_0",
+      "area_um2": 25.536,
+      "data_arrival_ns": 0.19,
+      "setup_slack_ns": 9.61,
+      "total_power_uw": 4.26,
+      "arrival_based_adp_um2_ns": 4.85184,
+      "arrival_based_pdp_fj": 0.8094,
+      "area_power_product_um2_uw": 108.78336,
+      "setup_timing_met": true
+    },
+    {
+      "configuration": "moore_10101_overlap_1",
+      "area_um2": 31.388,
+      "data_arrival_ns": 0.36,
+      "setup_slack_ns": 9.6,
+      "total_power_uw": 4.71,
+      "arrival_based_adp_um2_ns": 11.29968,
+      "arrival_based_pdp_fj": 1.6956,
+      "area_power_product_um2_uw": 147.83748,
+      "setup_timing_met": true
+    },
+    {
+      "configuration": "moore_1011_overlap_0",
+      "area_um2": 24.738,
+      "data_arrival_ns": 0.13,
+      "setup_slack_ns": 9.67,
+      "total_power_uw": 4.0,
+      "arrival_based_adp_um2_ns": 3.21594,
+      "arrival_based_pdp_fj": 0.52,
+      "area_power_product_um2_uw": 98.952,
+      "setup_timing_met": true
+    },
+    {
+      "configuration": "moore_1011_overlap_1",
+      "area_um2": 23.94,
+      "data_arrival_ns": 0.3,
+      "setup_slack_ns": 9.66,
+      "total_power_uw": 3.95,
+      "arrival_based_adp_um2_ns": 7.182,
+      "arrival_based_pdp_fj": 1.185,
+      "area_power_product_um2_uw": 94.563,
+      "setup_timing_met": true
+    },
+    {
+      "configuration": "moore_1101_overlap_0",
+      "area_um2": 28.196,
+      "data_arrival_ns": 0.32,
+      "setup_slack_ns": 9.65,
+      "total_power_uw": 4.39,
+      "arrival_based_adp_um2_ns": 9.02272,
+      "arrival_based_pdp_fj": 1.4048,
+      "area_power_product_um2_uw": 123.78044,
+      "setup_timing_met": true
+    },
+    {
+      "configuration": "moore_1101_overlap_1",
+      "area_um2": 26.6,
+      "data_arrival_ns": 0.35,
+      "setup_slack_ns": 9.61,
+      "total_power_uw": 4.26,
+      "arrival_based_adp_um2_ns": 9.31,
+      "arrival_based_pdp_fj": 1.491,
+      "area_power_product_um2_uw": 113.316,
+      "setup_timing_met": true
+    }
+  ]
+}

@@ -1,0 +1,267 @@
+{
+  "day": 29,
+  "step": 4,
+  "status": "PASS",
+  "passed_checks": 63,
+  "failed_checks": 0,
+  "checks": [
+    {
+      "description": "Required evidence available: day27_efficiency",
+      "status": "PASS"
+    },
+    {
+      "description": "Required evidence available: day28_selection",
+      "status": "PASS"
+    },
+    {
+      "description": "Required evidence available: day28_rankings",
+      "status": "PASS"
+    },
+    {
+      "description": "Required evidence available: day28_sensitivity",
+      "status": "PASS"
+    },
+    {
+      "description": "Required evidence available: day28_sensitivity_csv",
+      "status": "PASS"
+    },
+    {
+      "description": "Required evidence available: day28_robustness",
+      "status": "PASS"
+    },
+    {
+      "description": "Required evidence available: day29_baseline",
+      "status": "PASS"
+    },
+    {
+      "description": "Required evidence available: day29_ranking",
+      "status": "PASS"
+    },
+    {
+      "description": "Required evidence available: day29_ranking_csv",
+      "status": "PASS"
+    },
+    {
+      "description": "Required evidence available: day29_sensitivity",
+      "status": "PASS"
+    },
+    {
+      "description": "Required evidence available: day29_sensitivity_csv",
+      "status": "PASS"
+    },
+    {
+      "description": "day28_selection reports PASS",
+      "status": "PASS"
+    },
+    {
+      "description": "day28_sensitivity reports PASS",
+      "status": "PASS"
+    },
+    {
+      "description": "day28_robustness reports PASS",
+      "status": "PASS"
+    },
+    {
+      "description": "day29_baseline reports PASS",
+      "status": "PASS"
+    },
+    {
+      "description": "day29_ranking reports PASS",
+      "status": "PASS"
+    },
+    {
+      "description": "day29_sensitivity reports PASS",
+      "status": "PASS"
+    },
+    {
+      "description": "Day 27 contains 13 configurations",
+      "status": "PASS"
+    },
+    {
+      "description": "Day 27 configuration names are unique",
+      "status": "PASS"
+    },
+    {
+      "description": "Day 28 contains 52 ranking records",
+      "status": "PASS"
+    },
+    {
+      "description": "Day 28 contains 32 sensitivity records",
+      "status": "PASS"
+    },
+    {
+      "description": "Day 28 rankings contain four scenarios",
+      "status": "PASS"
+    },
+    {
+      "description": "Day 28 area_priority: 13 ranking records",
+      "status": "PASS"
+    },
+    {
+      "description": "Day 28 area_priority: unique configurations",
+      "status": "PASS"
+    },
+    {
+      "description": "Day 28 area_priority: consecutive ranks",
+      "status": "PASS"
+    },
+    {
+      "description": "Day 28 balanced: 13 ranking records",
+      "status": "PASS"
+    },
+    {
+      "description": "Day 28 balanced: unique configurations",
+      "status": "PASS"
+    },
+    {
+      "description": "Day 28 balanced: consecutive ranks",
+      "status": "PASS"
+    },
+    {
+      "description": "Day 28 power_priority: 13 ranking records",
+      "status": "PASS"
+    },
+    {
+      "description": "Day 28 power_priority: unique configurations",
+      "status": "PASS"
+    },
+    {
+      "description": "Day 28 power_priority: consecutive ranks",
+      "status": "PASS"
+    },
+    {
+      "description": "Day 28 timing_priority: 13 ranking records",
+      "status": "PASS"
+    },
+    {
+      "description": "Day 28 timing_priority: unique configurations",
+      "status": "PASS"
+    },
+    {
+      "description": "Day 28 timing_priority: consecutive ranks",
+      "status": "PASS"
+    },
+    {
+      "description": "Day 28 contains eight constraint cases",
+      "status": "PASS"
+    },
+    {
+      "description": "Day 28 sensitivity decisions are unique",
+      "status": "PASS"
+    },
+    {
+      "description": "area_85pct: four selection scenarios",
+      "status": "PASS"
+    },
+    {
+      "description": "area_95pct: four selection scenarios",
+      "status": "PASS"
+    },
+    {
+      "description": "arrival_85pct: four selection scenarios",
+      "status": "PASS"
+    },
+    {
+      "description": "arrival_95pct: four selection scenarios",
+      "status": "PASS"
+    },
+    {
+      "description": "combined_90pct: four selection scenarios",
+      "status": "PASS"
+    },
+    {
+      "description": "original_constraints: four selection scenarios",
+      "status": "PASS"
+    },
+    {
+      "description": "power_85pct: four selection scenarios",
+      "status": "PASS"
+    },
+    {
+      "description": "power_95pct: four selection scenarios",
+      "status": "PASS"
+    },
+    {
+      "description": "Step 1: 27 passed checks, zero failures",
+      "status": "PASS"
+    },
+    {
+      "description": "Step 2: 45 passed checks, zero failures",
+      "status": "PASS"
+    },
+    {
+      "description": "Step 3: 216 passed checks, zero failures",
+      "status": "PASS"
+    },
+    {
+      "description": "Step 2: 13 configurations",
+      "status": "PASS"
+    },
+    {
+      "description": "Step 2: 52 ranking records",
+      "status": "PASS"
+    },
+    {
+      "description": "Step 3: 13 configurations",
+      "status": "PASS"
+    },
+    {
+      "description": "Step 3: eight constraint cases",
+      "status": "PASS"
+    },
+    {
+      "description": "Step 3: four scenarios",
+      "status": "PASS"
+    },
+    {
+      "description": "Step 3: 32 audited decisions",
+      "status": "PASS"
+    },
+    {
+      "description": "Step 3: no failed findings",
+      "status": "PASS"
+    },
+    {
+      "description": "Step 2 audit CSV has no failed records",
+      "status": "PASS"
+    },
+    {
+      "description": "Step 3 audit CSV consistent with 216 passed checks",
+      "status": "PASS"
+    },
+    {
+      "description": "Global winner agreement: area_priority",
+      "status": "PASS"
+    },
+    {
+      "description": "Global winner agreement: balanced",
+      "status": "PASS"
+    },
+    {
+      "description": "Global winner agreement: power_priority",
+      "status": "PASS"
+    },
+    {
+      "description": "Global winner agreement: timing_priority",
+      "status": "PASS"
+    },
+    {
+      "description": "No RTL modifications recorded in Step 3",
+      "status": "PASS"
+    },
+    {
+      "description": "No synthesis rerun recorded in Step 3",
+      "status": "PASS"
+    },
+    {
+      "description": "No simulation rerun recorded in Step 3",
+      "status": "PASS"
+    }
+  ],
+  "limitations": [
+    "Existing evidence is reused without RTL or EDA reruns.",
+    "Numerical consistency does not prove functional equivalence.",
+    "Power values are based on assumed switching activity.",
+    "Timing values are not post-layout signoff results."
+  ]
+}

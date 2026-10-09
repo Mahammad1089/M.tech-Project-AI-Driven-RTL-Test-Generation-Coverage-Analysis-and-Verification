@@ -1,0 +1,67 @@
+{
+  "project": "AI-Driven RTL Verification",
+  "extension_day": 4,
+  "execution_day": 28,
+  "analysis": "Constraint-aware FSM architecture selection",
+  "source_csv": "extensions/results/day27/day27_efficiency_metrics.csv",
+  "source_baseline_validation": "extensions/results/day28/day28_baseline_validation.json",
+  "expected_configurations": 13,
+  "metrics": {
+    "area": {
+      "unit": "um2",
+      "direction": "minimize"
+    },
+    "power": {
+      "unit": "uW",
+      "direction": "minimize",
+      "measurement_type": "estimated_assumed_activity"
+    },
+    "arrival_time": {
+      "unit": "ns",
+      "direction": "minimize",
+      "measurement_type": "reported_sta_arrival_time"
+    }
+  },
+  "hard_constraints": {
+    "maximum_area_um2": null,
+    "maximum_power_uw": null,
+    "maximum_arrival_time_ns": null
+  },
+  "selection_scenarios": {
+    "area_priority": {
+      "area": 1.0,
+      "power": 0.0,
+      "arrival_time": 0.0
+    },
+    "power_priority": {
+      "area": 0.0,
+      "power": 1.0,
+      "arrival_time": 0.0
+    },
+    "timing_priority": {
+      "area": 0.0,
+      "power": 0.0,
+      "arrival_time": 1.0
+    },
+    "balanced": {
+      "area": 0.3333333333333333,
+      "power": 0.3333333333333333,
+      "arrival_time": 0.3333333333333334
+    }
+  },
+  "comparison_rules": {
+    "global_numerical_ranking": true,
+    "controlled_mealy_moore_comparison": true,
+    "require_matching_pattern": true,
+    "require_matching_overlap_mode": true,
+    "claim_cross_architecture_equivalence": false
+  },
+  "methodology": {
+    "score_method": "min_max_normalized_weighted_sum",
+    "lower_score_is_better": true,
+    "require_finite_nonnegative_metrics": true,
+    "modify_existing_rtl": false,
+    "rerun_synthesis": false,
+    "rerun_simulation": false
+  }
+}

@@ -1,0 +1,126 @@
+============================================================================
+DAY 27 - STEP 2
+MATCHED MEALY VERSUS MOORE FSM COMPARISON
+============================================================================
+
+Technology: Nangate45 typical
+Source: Day 26 consolidated PPA CSV
+Matched pairs: 6
+
+----------------------------------------------------------------------------
+PATTERN: 1011 | OVERLAP: 0
+----------------------------------------------------------------------------
+Mealy: mealy_1011_overlap_0
+Moore: moore_1011_overlap_0
+
+Area (um^2): Mealy=32.452, Moore=24.738
+Total power (uW): Mealy=5.300, Moore=4.000
+Setup slack (ns): Mealy=9.570, Moore=9.670
+
+Area change (Moore vs Mealy): -23.77%
+Power change (Moore vs Mealy): -24.53%
+
+Lower area: Moore
+Lower power: Moore
+Higher setup slack: Moore
+
+----------------------------------------------------------------------------
+PATTERN: 1011 | OVERLAP: 1
+----------------------------------------------------------------------------
+Mealy: mealy_1011_overlap_1
+Moore: moore_1011_overlap_1
+
+Area (um^2): Mealy=30.324, Moore=23.940
+Total power (uW): Mealy=5.170, Moore=3.950
+Setup slack (ns): Mealy=9.560, Moore=9.660
+
+Area change (Moore vs Mealy): -21.05%
+Power change (Moore vs Mealy): -23.60%
+
+Lower area: Moore
+Lower power: Moore
+Higher setup slack: Moore
+
+----------------------------------------------------------------------------
+PATTERN: 10101 | OVERLAP: 0
+----------------------------------------------------------------------------
+Mealy: mealy_10101_overlap_0
+Moore: moore_10101_overlap_0
+
+Area (um^2): Mealy=38.304, Moore=25.536
+Total power (uW): Mealy=6.550, Moore=4.260
+Setup slack (ns): Mealy=9.570, Moore=9.610
+
+Area change (Moore vs Mealy): -33.33%
+Power change (Moore vs Mealy): -34.96%
+
+Lower area: Moore
+Lower power: Moore
+Higher setup slack: Moore
+
+----------------------------------------------------------------------------
+PATTERN: 10101 | OVERLAP: 1
+----------------------------------------------------------------------------
+Mealy: mealy_10101_overlap_1
+Moore: moore_10101_overlap_1
+
+Area (um^2): Mealy=41.762, Moore=31.388
+Total power (uW): Mealy=6.930, Moore=4.710
+Setup slack (ns): Mealy=9.570, Moore=9.600
+
+Area change (Moore vs Mealy): -24.84%
+Power change (Moore vs Mealy): -32.03%
+
+Lower area: Moore
+Lower power: Moore
+Higher setup slack: Moore
+
+----------------------------------------------------------------------------
+PATTERN: 1101 | OVERLAP: 0
+----------------------------------------------------------------------------
+Mealy: mealy_1101_overlap_0
+Moore: moore_1101_overlap_0
+
+Area (um^2): Mealy=29.526, Moore=28.196
+Total power (uW): Mealy=5.020, Moore=4.390
+Setup slack (ns): Mealy=9.570, Moore=9.650
+
+Area change (Moore vs Mealy): -4.50%
+Power change (Moore vs Mealy): -12.55%
+
+Lower area: Moore
+Lower power: Moore
+Higher setup slack: Moore
+
+----------------------------------------------------------------------------
+PATTERN: 1101 | OVERLAP: 1
+----------------------------------------------------------------------------
+Mealy: mealy_1101_overlap_1
+Moore: moore_1101_overlap_1
+
+Area (um^2): Mealy=31.920, Moore=26.600
+Total power (uW): Mealy=5.260, Moore=4.260
+Setup slack (ns): Mealy=9.570, Moore=9.610
+
+Area change (Moore vs Mealy): -16.67%
+Power change (Moore vs Mealy): -19.01%
+
+Lower area: Moore
+Lower power: Moore
+Higher setup slack: Moore
+
+============================================================================
+INTERPRETATION
+============================================================================
+Negative area/power change means Moore uses less.
+Positive area/power change means Moore uses more.
+Higher setup slack indicates greater margin under the applied timing constraints.
+
+IMPORTANT LIMITATIONS
+- Pre-layout standard-cell measurements.
+- Assumed switching activity for power.
+- Setup slack must not be called path delay.
+- Mealy/Moore output timing may differ.
+- Functional equivalence across variants is not established by PPA comparison.
+
+DAY 27 STEP 2: PASS

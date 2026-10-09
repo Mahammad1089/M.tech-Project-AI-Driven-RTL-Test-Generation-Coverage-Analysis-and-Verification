@@ -1,0 +1,4 @@
+configuration,tx_design,rx_design,combined_area_um2,combined_estimated_power_uw,minimum_individual_setup_slack_ns
+baseline,baseline_tx,baseline_rx,450.604000,370.281700,9.460000
+fully_optimized,optimized_tx,optimized_rx,440.230000,392.761000,9.390000
+hybrid,baseline_tx,optimized_rx,425.600000,366.547000,9.390000

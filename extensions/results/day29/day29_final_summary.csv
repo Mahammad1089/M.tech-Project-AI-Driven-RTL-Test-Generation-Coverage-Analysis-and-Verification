@@ -1,0 +1,5 @@
+step,description,status,passed_checks,failed_checks,expected_passed_checks,source_file,sha256,errors
+1,Baseline evidence validation,PASS,27,0,27,extensions/results/day29/day29_baseline_validation.json,449a2aa69b8dd477b9aab1174b2dd55b73bb06379c7ad5503490f2bda5566845,
+2,Independent architecture ranking audit,PASS,45,0,45,extensions/results/day29/day29_independent_ranking_audit.json,d0ca957ce31b542332b80d98bb9b17866f3edbe97bf875c2fb41ca3b65cc9386,
+3,Independent constraint sensitivity audit,PASS,216,0,216,extensions/results/day29/day29_independent_sensitivity_audit.json,548f73aa1a9360bafcc06fbb482f62c44d0bf21bc124927d7e742ed70f1fa5dc,
+4,Cross-report consistency verification,PASS,63,0,63,extensions/results/day29/day29_cross_report_verification.json,4137682b811f0c2587e420773501cbaa939b6a9995271c75135af82c69f95a34,

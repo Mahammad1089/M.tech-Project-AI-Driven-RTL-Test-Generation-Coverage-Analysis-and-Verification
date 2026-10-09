@@ -1,0 +1,37 @@
+
+7. Printing statistics.
+
+=== fifo ===
+
+   Number of wires:                389
+   Number of wire bits:            473
+   Number of public wires:          19
+   Number of public wire bits:      96
+   Number of ports:                  8
+   Number of port bits:             22
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                372
+     AND2_X1                         1
+     AOI211_X1                       1
+     AOI21_X1                       34
+     AOI221_X1                      11
+     AOI22_X1                       13
+     DFF_X1                         82
+     INV_X1                         84
+     NAND2_X1                       16
+     NAND3_X1                        9
+     NAND4_X1                        1
+     NOR2_X1                        16
+     NOR3_X1                         7
+     OAI21_X1                       26
+     OAI22_X1                       64
+     OAI33_X1                        1
+     OR3_X1                          1
+     XNOR2_X1                        4
+     XOR2_X1                         1
+
+   Chip area for module '\fifo': 656.754000
+     of which used for sequential elements: 370.804000 (56.46%)
+

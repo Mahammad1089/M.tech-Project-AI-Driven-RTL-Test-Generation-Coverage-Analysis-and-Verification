@@ -1,0 +1,39 @@
+DAY 26 - FSM CONSOLIDATED PPA REPORT
+================================================================================
+
+Configurations: 13
+Technology: Nangate45 typical
+Clock period: 10 ns
+Power activity: assumed 0.1 transitions/ns
+
+Configuration                 Area (um2)   Slack (ns)   Power (uW)
+--------------------------------------------------------------------------------
+fsm_original_1011                 27.132        9.580        4.750
+mealy_10101_overlap_0             38.304        9.570        6.550
+mealy_10101_overlap_1             41.762        9.570        6.930
+mealy_1011_overlap_0              32.452        9.570        5.300
+mealy_1011_overlap_1              30.324        9.560        5.170
+mealy_1101_overlap_0              29.526        9.570        5.020
+mealy_1101_overlap_1              31.920        9.570        5.260
+moore_10101_overlap_0             25.536        9.610        4.260
+moore_10101_overlap_1             31.388        9.600        4.710
+moore_1011_overlap_0              24.738        9.670        4.000
+moore_1011_overlap_1              23.940        9.660        3.950
+moore_1101_overlap_0              28.196        9.650        4.390
+moore_1101_overlap_1              26.600        9.610        4.260
+
+SUMMARY
+--------------------------------------------------------------------------------
+Lowest mapped area: moore_1011_overlap_1
+Lowest estimated power: moore_1011_overlap_1
+Highest reported setup slack: moore_1011_overlap_0
+
+LIMITATIONS
+- Pre-layout technology-mapped estimates only.
+- Power uses assumed switching activity, not VCD/SAIF.
+- Data arrival time includes input delay for input-origin paths.
+- Different FSM variants are not necessarily functionally equivalent.
+- Positive setup slack does not establish hold closure.
+- No post-route parasitics or physical layout effects included.
+
+FINAL STATUS: PASS - 13 PPA RECORDS EXTRACTED

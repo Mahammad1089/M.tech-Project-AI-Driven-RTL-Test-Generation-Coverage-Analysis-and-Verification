@@ -1,0 +1,9 @@
+design,configuration,data_width,depth,addr_width,technology,clock_period_ns,input_delay_ns,output_delay_ns,input_transition_ns,output_load_ff,reported_paths,worst_setup_slack_ns,setup_status,timing_log
+baseline,w8_d4,8,4,2,Nangate45 typical,10.0,0.2,0.2,0.05,5.0,20,9.28,MET,extensions/results/day30/fifo_ppa/baseline_w8_d4_timing.log
+optimized,w8_d4,8,4,2,Nangate45 typical,10.0,0.2,0.2,0.05,5.0,20,9.28,MET,extensions/results/day30/fifo_ppa/optimized_w8_d4_timing.log
+baseline,w8_d8,8,8,3,Nangate45 typical,10.0,0.2,0.2,0.05,5.0,20,9.21,MET,extensions/results/day30/fifo_ppa/baseline_w8_d8_timing.log
+optimized,w8_d8,8,8,3,Nangate45 typical,10.0,0.2,0.2,0.05,5.0,20,9.23,MET,extensions/results/day30/fifo_ppa/optimized_w8_d8_timing.log
+baseline,w16_d4,16,4,2,Nangate45 typical,10.0,0.2,0.2,0.05,5.0,20,9.08,MET,extensions/results/day30/fifo_ppa/baseline_w16_d4_timing.log
+optimized,w16_d4,16,4,2,Nangate45 typical,10.0,0.2,0.2,0.05,5.0,20,9.07,MET,extensions/results/day30/fifo_ppa/optimized_w16_d4_timing.log
+baseline,w8_d16,8,16,4,Nangate45 typical,10.0,0.2,0.2,0.05,5.0,20,9.09,MET,extensions/results/day30/fifo_ppa/baseline_w8_d16_timing.log
+optimized,w8_d16,8,16,4,Nangate45 typical,10.0,0.2,0.2,0.05,5.0,20,9.12,MET,extensions/results/day30/fifo_ppa/optimized_w8_d16_timing.log

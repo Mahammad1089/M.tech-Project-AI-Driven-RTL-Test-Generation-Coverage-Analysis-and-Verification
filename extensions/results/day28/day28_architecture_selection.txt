@@ -1,0 +1,136 @@
+============================================================================
+DAY 28 - STEP 3
+CONSTRAINT-AWARE FSM ARCHITECTURE SELECTION
+============================================================================
+
+Total configurations: 13
+Eligible configurations: 13
+Selection scenarios: 4
+
+METRIC NORMALIZATION BOUNDS
+----------------------------------------------------------------------------
+Area (um2): min=23.940000, max=41.762000
+Estimated power (uW): min=3.950000, max=6.930000
+Reported data arrival time (ns): min=0.130000, max=0.360000
+
+GLOBAL SCENARIO RANKINGS
+----------------------------------------------------------------------------
+
+SCENARIO: area_priority
+BEST CONFIGURATION: moore_1011_overlap_1
+   1. moore_1011_overlap_1         score=0.000000000 area=23.940 power=3.950 arrival=0.300
+   2. moore_1011_overlap_0         score=0.044776119 area=24.738 power=4.000 arrival=0.130
+   3. moore_10101_overlap_0        score=0.089552239 area=25.536 power=4.260 arrival=0.190
+   4. moore_1101_overlap_1         score=0.149253731 area=26.600 power=4.260 arrival=0.350
+   5. fsm_original_1011            score=0.179104478 area=27.132 power=4.750 arrival=0.220
+   6. moore_1101_overlap_0         score=0.238805970 area=28.196 power=4.390 arrival=0.320
+   7. mealy_1101_overlap_0         score=0.313432836 area=29.526 power=5.020 arrival=0.230
+   8. mealy_1011_overlap_1         score=0.358208955 area=30.324 power=5.170 arrival=0.240
+   9. moore_10101_overlap_1        score=0.417910448 area=31.388 power=4.710 arrival=0.360
+  10. mealy_1101_overlap_1         score=0.447761194 area=31.920 power=5.260 arrival=0.230
+  11. mealy_1011_overlap_0         score=0.477611940 area=32.452 power=5.300 arrival=0.230
+  12. mealy_10101_overlap_0        score=0.805970149 area=38.304 power=6.550 arrival=0.230
+  13. mealy_10101_overlap_1        score=1.000000000 area=41.762 power=6.930 arrival=0.230
+
+SCENARIO: power_priority
+BEST CONFIGURATION: moore_1011_overlap_1
+   1. moore_1011_overlap_1         score=0.000000000 area=23.940 power=3.950 arrival=0.300
+   2. moore_1011_overlap_0         score=0.016778523 area=24.738 power=4.000 arrival=0.130
+   3. moore_10101_overlap_0        score=0.104026846 area=25.536 power=4.260 arrival=0.190
+   4. moore_1101_overlap_1         score=0.104026846 area=26.600 power=4.260 arrival=0.350
+   5. moore_1101_overlap_0         score=0.147651007 area=28.196 power=4.390 arrival=0.320
+   6. moore_10101_overlap_1        score=0.255033557 area=31.388 power=4.710 arrival=0.360
+   7. fsm_original_1011            score=0.268456376 area=27.132 power=4.750 arrival=0.220
+   8. mealy_1101_overlap_0         score=0.359060403 area=29.526 power=5.020 arrival=0.230
+   9. mealy_1011_overlap_1         score=0.409395973 area=30.324 power=5.170 arrival=0.240
+  10. mealy_1101_overlap_1         score=0.439597315 area=31.920 power=5.260 arrival=0.230
+  11. mealy_1011_overlap_0         score=0.453020134 area=32.452 power=5.300 arrival=0.230
+  12. mealy_10101_overlap_0        score=0.872483221 area=38.304 power=6.550 arrival=0.230
+  13. mealy_10101_overlap_1        score=1.000000000 area=41.762 power=6.930 arrival=0.230
+
+SCENARIO: timing_priority
+BEST CONFIGURATION: moore_1011_overlap_0
+   1. moore_1011_overlap_0         score=0.000000000 area=24.738 power=4.000 arrival=0.130
+   2. moore_10101_overlap_0        score=0.260869565 area=25.536 power=4.260 arrival=0.190
+   3. fsm_original_1011            score=0.391304348 area=27.132 power=4.750 arrival=0.220
+   4. mealy_1101_overlap_0         score=0.434782609 area=29.526 power=5.020 arrival=0.230
+   5. mealy_1101_overlap_1         score=0.434782609 area=31.920 power=5.260 arrival=0.230
+   6. mealy_1011_overlap_0         score=0.434782609 area=32.452 power=5.300 arrival=0.230
+   7. mealy_10101_overlap_0        score=0.434782609 area=38.304 power=6.550 arrival=0.230
+   8. mealy_10101_overlap_1        score=0.434782609 area=41.762 power=6.930 arrival=0.230
+   9. mealy_1011_overlap_1         score=0.478260870 area=30.324 power=5.170 arrival=0.240
+  10. moore_1011_overlap_1         score=0.739130435 area=23.940 power=3.950 arrival=0.300
+  11. moore_1101_overlap_0         score=0.826086957 area=28.196 power=4.390 arrival=0.320
+  12. moore_1101_overlap_1         score=0.956521739 area=26.600 power=4.260 arrival=0.350
+  13. moore_10101_overlap_1        score=1.000000000 area=31.388 power=4.710 arrival=0.360
+
+SCENARIO: balanced
+BEST CONFIGURATION: moore_1011_overlap_0
+   1. moore_1011_overlap_0         score=0.020518214 area=24.738 power=4.000 arrival=0.130
+   2. moore_10101_overlap_0        score=0.151482883 area=25.536 power=4.260 arrival=0.190
+   3. moore_1011_overlap_1         score=0.246376812 area=23.940 power=3.950 arrival=0.300
+   4. fsm_original_1011            score=0.279621734 area=27.132 power=4.750 arrival=0.220
+   5. mealy_1101_overlap_0         score=0.369091949 area=29.526 power=5.020 arrival=0.230
+   6. moore_1101_overlap_1         score=0.403267439 area=26.600 power=4.260 arrival=0.350
+   7. moore_1101_overlap_0         score=0.404181311 area=28.196 power=4.390 arrival=0.320
+   8. mealy_1011_overlap_1         score=0.415288599 area=30.324 power=5.170 arrival=0.240
+   9. mealy_1101_overlap_1         score=0.440713706 area=31.920 power=5.260 arrival=0.230
+  10. mealy_1011_overlap_0         score=0.455138228 area=32.452 power=5.300 arrival=0.230
+  11. moore_10101_overlap_1        score=0.557648002 area=31.388 power=4.710 arrival=0.360
+  12. mealy_10101_overlap_0        score=0.704411993 area=38.304 power=6.550 arrival=0.230
+  13. mealy_10101_overlap_1        score=0.811594203 area=41.762 power=6.930 arrival=0.230
+
+CONTROLLED MEALY VS MOORE COMPARISONS
+----------------------------------------------------------------------------
+
+GROUP: pattern_10101_overlap_0
+  area_priority     : moore_10101_overlap_0
+  power_priority    : moore_10101_overlap_0
+  timing_priority   : moore_10101_overlap_0
+  balanced          : moore_10101_overlap_0
+
+GROUP: pattern_10101_overlap_1
+  area_priority     : moore_10101_overlap_1
+  power_priority    : moore_10101_overlap_1
+  timing_priority   : mealy_10101_overlap_1
+  balanced          : moore_10101_overlap_1
+
+GROUP: pattern_1011_overlap_0
+  area_priority     : moore_1011_overlap_0
+  power_priority    : moore_1011_overlap_0
+  timing_priority   : moore_1011_overlap_0
+  balanced          : moore_1011_overlap_0
+
+GROUP: pattern_1011_overlap_1
+  area_priority     : moore_1011_overlap_1
+  power_priority    : moore_1011_overlap_1
+  timing_priority   : mealy_1011_overlap_1
+  balanced          : moore_1011_overlap_1
+
+GROUP: pattern_1101_overlap_0
+  area_priority     : moore_1101_overlap_0
+  power_priority    : moore_1101_overlap_0
+  timing_priority   : mealy_1101_overlap_0
+  balanced          : mealy_1101_overlap_0
+
+GROUP: pattern_1101_overlap_1
+  area_priority     : moore_1101_overlap_1
+  power_priority    : moore_1101_overlap_1
+  timing_priority   : mealy_1101_overlap_1
+  balanced          : moore_1101_overlap_1
+
+METHODOLOGY AND LIMITATIONS
+----------------------------------------------------------------------------
+1. Lower area, estimated power and arrival time are preferred.
+2. Scores use min-max normalization across all 13 source records.
+3. Hard constraints exclude ineligible configurations.
+4. Global rankings are numerical comparisons only.
+5. Controlled comparisons match sequence pattern and overlap.
+6. Mealy and Moore outputs may have different cycle semantics.
+7. Cross-architecture functional equivalence is not established.
+8. Power is based on assumed switching activity.
+9. Timing uses reported data arrival time, not full signoff.
+10. Results are pre-layout technology-mapped estimates.
+11. No new RTL, synthesis or simulation is performed.
+
+DAY 28 STEP 3: PASS

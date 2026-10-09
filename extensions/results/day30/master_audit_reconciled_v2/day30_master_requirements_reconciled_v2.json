@@ -1,0 +1,181 @@
+{
+  "generated_utc": "2026-10-09T19:26:06.649066+00:00",
+  "source": "extensions/results/day30/master_audit/master_requirements_audit.csv",
+  "scope": "Reconciliation v2 of 18 original requirements only",
+  "overall_status": "PASS_WITH_HISTORICAL_SCOPE",
+  "status_counts": {
+    "PASS": 15,
+    "HISTORICAL_SCOPE": 3
+  },
+  "requirements": [
+    {
+      "id": "ALU-01",
+      "module": "ALU",
+      "requirement": "Baseline RTL",
+      "old_status": "PRESENT",
+      "reconciled_status": "PASS",
+      "evidence": "rtl/alu.v; extensions/results/day25/alu_equivalence.log",
+      "notes": "Baseline module verified against optimized ALU."
+    },
+    {
+      "id": "ALU-02",
+      "module": "ALU",
+      "requirement": "Optimized RTL",
+      "old_status": "PRESENT",
+      "reconciled_status": "PASS",
+      "evidence": "extensions/rtl/optimized/alu_opt.v; extensions/results/day25/alu_equivalence.log; extensions/results/day30/alu_5ff_sensitivity/day30_alu_5ff_comparison.json",
+      "notes": "Area/timing/power validated at 5 fF."
+    },
+    {
+      "id": "ALU-03",
+      "module": "ALU",
+      "requirement": "Equivalence testbench",
+      "old_status": "PRESENT",
+      "reconciled_status": "PASS",
+      "evidence": "extensions/testbench/tb_alu_equivalence.v; extensions/results/day25/alu_equivalence.log",
+      "notes": "2048/2048 exhaustive input combinations passed."
+    },
+    {
+      "id": "FIFO-01",
+      "module": "FIFO",
+      "requirement": "Baseline RTL",
+      "old_status": "PRESENT",
+      "reconciled_status": "PASS",
+      "evidence": "rtl/fifo.v; extensions/results/day30/fifo_final_report/day30_fifo_final_report.json; extensions/results/day30/fifo_final_report/day30_fifo_final_comparison.csv",
+      "notes": "Requires 124008 checks encoded in final JSON."
+    },
+    {
+      "id": "FIFO-02",
+      "module": "FIFO",
+      "requirement": "Optimized RTL",
+      "old_status": "MISSING",
+      "reconciled_status": "PASS",
+      "evidence": "extensions/rtl/optimized/fifo_opt.v; extensions/results/day30/fifo_final_report/day30_fifo_final_report.json; extensions/results/day30/fifo_final_report/day30_fifo_final_comparison.csv",
+      "notes": "Four configurations; 124008 checks."
+    },
+    {
+      "id": "FSM-01",
+      "module": "FSM",
+      "requirement": "Original RTL",
+      "old_status": "PRESENT",
+      "reconciled_status": "PASS",
+      "evidence": "rtl/fsm_1011.v; extensions/results/day30/day30_fsm_functional_audit.log",
+      "notes": "Original 1011 regression audit."
+    },
+    {
+      "id": "FSM-02",
+      "module": "FSM",
+      "requirement": "Parameterized Mealy RTL",
+      "old_status": "PRESENT",
+      "reconciled_status": "PASS",
+      "evidence": "extensions/rtl/fsm_variants/fsm_mealy_ext.v; extensions/results/day30/fsm_20_matrix/day30_fsm_20_matrix_results.csv; extensions/results/day30/fsm_independent_coverage/day30_fsm_independent_coverage.json",
+      "notes": "10 Mealy variants passed; independent coverage validated."
+    },
+    {
+      "id": "FSM-03",
+      "module": "FSM",
+      "requirement": "Parameterized Moore RTL",
+      "old_status": "PRESENT",
+      "reconciled_status": "PASS",
+      "evidence": "extensions/rtl/fsm_variants/fsm_moore_ext.v; extensions/results/day30/fsm_20_matrix/day30_fsm_20_matrix_results.csv; extensions/results/day30/fsm_independent_coverage/day30_fsm_independent_coverage.json",
+      "notes": "10 Moore variants passed; independent coverage validated."
+    },
+    {
+      "id": "FSM-04",
+      "module": "FSM",
+      "requirement": "Day 30 functional audit log",
+      "old_status": "LOG_PASS",
+      "reconciled_status": "PASS",
+      "evidence": "extensions/results/day30/day30_fsm_functional_audit.log",
+      "notes": "Existing Day 30 original FSM audit."
+    },
+    {
+      "id": "FSM-05",
+      "module": "FSM",
+      "requirement": "All 20 required FSM configurations",
+      "old_status": "NEEDS_VERIFICATION",
+      "reconciled_status": "PASS",
+      "evidence": "extensions/results/day30/fsm_20_matrix/day30_fsm_20_matrix_results.csv; extensions/results/day30/fsm_independent_coverage/day30_fsm_independent_coverage.json; extensions/results/day30/fsm_independent_coverage/day30_fsm_independent_coverage.csv",
+      "notes": "20 functional variants and 147844 independent checks."
+    },
+    {
+      "id": "PPA-01",
+      "module": "PPA",
+      "requirement": "day26_fsm_ppa_summary.csv",
+      "old_status": "DATA_PRESENT",
+      "reconciled_status": "PASS",
+      "evidence": "extensions/results/day26/day26_fsm_ppa_summary.csv; extensions/results/day30/fsm_ppa_extension/day30_fsm_20_ppa_summary.csv",
+      "notes": "13 historic original+extended records; 20 extended variants in Day 30."
+    },
+    {
+      "id": "PPA-02",
+      "module": "PPA",
+      "requirement": "day27_efficiency_metrics.csv",
+      "old_status": "DATA_PRESENT",
+      "reconciled_status": "HISTORICAL_SCOPE",
+      "evidence": "extensions/results/day27/day27_efficiency_metrics.csv",
+      "notes": "HISTORICAL: 13 records; not expanded to 20 variants."
+    },
+    {
+      "id": "PPA-03",
+      "module": "PPA",
+      "requirement": "day27_mealy_moore_comparison.csv",
+      "old_status": "DATA_PRESENT",
+      "reconciled_status": "HISTORICAL_SCOPE",
+      "evidence": "extensions/results/day27/day27_mealy_moore_comparison.csv",
+      "notes": "HISTORICAL: 6 pair comparisons; not expanded to 10."
+    },
+    {
+      "id": "PPA-04",
+      "module": "PPA",
+      "requirement": "day27_pareto_analysis.csv",
+      "old_status": "DATA_PRESENT",
+      "reconciled_status": "HISTORICAL_SCOPE",
+      "evidence": "extensions/results/day27/day27_pareto_analysis.csv",
+      "notes": "HISTORICAL: 13 records; not expanded to 20 variants."
+    },
+    {
+      "id": "UART-01",
+      "module": "UART",
+      "requirement": "UART TX/RX RTL",
+      "old_status": "MISSING",
+      "reconciled_status": "PASS",
+      "evidence": "extensions/rtl/uart/uart_tx.v; extensions/rtl/uart/uart_rx.v; extensions/rtl/uart/optimized/uart_tx_opt.v; extensions/rtl/uart/optimized/uart_rx_opt.v",
+      "notes": "Baseline and optimized TX/RX RTL."
+    },
+    {
+      "id": "UART-02",
+      "module": "UART",
+      "requirement": "UART functional verification",
+      "old_status": "MISSING",
+      "reconciled_status": "PASS",
+      "evidence": "extensions/results/day30/uart/final_report/day30_uart_final_report.json",
+      "notes": "Final report must contain an explicit top-level PASS status."
+    },
+    {
+      "id": "UART-03",
+      "module": "UART",
+      "requirement": "UART optimization and equivalence",
+      "old_status": "NEEDS_VERIFICATION",
+      "reconciled_status": "PASS",
+      "evidence": "extensions/rtl/uart/optimized/uart_tx_opt.v; extensions/rtl/uart/optimized/uart_rx_opt.v; extensions/results/day30/uart/final_report/day30_uart_final_report.json",
+      "notes": "Optimization and equivalence report."
+    },
+    {
+      "id": "UART-04",
+      "module": "UART",
+      "requirement": "UART technology-mapped PPA",
+      "old_status": "NEEDS_VERIFICATION",
+      "reconciled_status": "PASS",
+      "evidence": "extensions/results/day30/uart/final_report/day30_uart_final_report.json; extensions/results/day30/uart/final_report/day30_uart_architecture_comparison.csv",
+      "notes": "Architecture comparison and final report."
+    }
+  ],
+  "limitations": [
+    "Day27 comparative reports remain historical at 13/6/13 rows.",
+    "File existence plus a reported PASS is not a clean-room reproducibility test.",
+    "Original 18 requirements do not include thesis documentation/publication readiness.",
+    "Any REVIEW result requires checking report schema or underlying evidence before closing.",
+    "No RTL, source reports or original master audit changed."
+  ]
+}

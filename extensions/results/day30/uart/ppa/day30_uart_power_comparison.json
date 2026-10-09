@@ -1,0 +1,98 @@
+{
+  "status": "ANALYSIS_COMPLETED",
+  "scope": "Pre-layout, assumed-activity power estimation",
+  "technology": "Nangate45 typical",
+  "clock_period_ns": 10.0,
+  "assumed_input_activity_transitions_per_ns": 0.1,
+  "reset_activity": 0.0,
+  "output_load_ff": 5.0,
+  "records": [
+    {
+      "design": "baseline_tx",
+      "top_module": "uart_tx",
+      "technology": "Nangate45 typical",
+      "clks_per_bit": 16,
+      "clock_period_ns": 10.0,
+      "assumed_input_transitions_per_cycle": 1.0,
+      "assumed_input_transitions_per_ns": 0.1,
+      "output_load_ff": 5.0,
+      "internal_power_uw": 143.5103,
+      "switching_power_uw": 32.29385,
+      "leakage_power_uw": 3.855628,
+      "total_power_uw": 179.65970000000002,
+      "power_log": "extensions/results/day30/uart/ppa/baseline_tx_power.log"
+    },
+    {
+      "design": "optimized_tx",
+      "top_module": "uart_tx_opt",
+      "technology": "Nangate45 typical",
+      "clks_per_bit": 16,
+      "clock_period_ns": 10.0,
+      "assumed_input_transitions_per_cycle": 1.0,
+      "assumed_input_transitions_per_ns": 0.1,
+      "output_load_ff": 5.0,
+      "internal_power_uw": 165.7446,
+      "switching_power_uw": 35.9893,
+      "leakage_power_uw": 4.1397829999999995,
+      "total_power_uw": 205.87369999999999,
+      "power_log": "extensions/results/day30/uart/ppa/optimized_tx_power.log"
+    },
+    {
+      "design": "baseline_rx",
+      "top_module": "uart_rx",
+      "technology": "Nangate45 typical",
+      "clks_per_bit": 16,
+      "clock_period_ns": 10.0,
+      "assumed_input_transitions_per_cycle": 1.0,
+      "assumed_input_transitions_per_ns": 0.1,
+      "output_load_ff": 5.0,
+      "internal_power_uw": 152.10580000000002,
+      "switching_power_uw": 33.155460000000005,
+      "leakage_power_uw": 5.360738,
+      "total_power_uw": 190.62199999999999,
+      "power_log": "extensions/results/day30/uart/ppa/baseline_rx_power.log"
+    },
+    {
+      "design": "optimized_rx",
+      "top_module": "uart_rx_opt",
+      "technology": "Nangate45 typical",
+      "clks_per_bit": 16,
+      "clock_period_ns": 10.0,
+      "assumed_input_transitions_per_cycle": 1.0,
+      "assumed_input_transitions_per_ns": 0.1,
+      "output_load_ff": 5.0,
+      "internal_power_uw": 153.7036,
+      "switching_power_uw": 28.4108,
+      "leakage_power_uw": 4.772884,
+      "total_power_uw": 186.88729999999998,
+      "power_log": "extensions/results/day30/uart/ppa/optimized_rx_power.log"
+    }
+  ],
+  "comparisons": [
+    {
+      "block": "TX",
+      "baseline_power_uw": 179.65970000000002,
+      "optimized_power_uw": 205.87369999999999,
+      "power_reduction_percent": -14.590918274938659
+    },
+    {
+      "block": "RX",
+      "baseline_power_uw": 190.62199999999999,
+      "optimized_power_uw": 186.88729999999998,
+      "power_reduction_percent": 1.9592177188362327
+    }
+  ],
+  "combined": {
+    "baseline_power_uw": 370.2817,
+    "optimized_power_uw": 392.76099999999997,
+    "power_reduction_percent": -6.070864425652137
+  },
+  "limitations": [
+    "Switching activity is assumed, not measured from VCD or SAIF",
+    "Actual UART traffic and idle intervals are not modeled",
+    "No routed interconnect parasitics",
+    "No physical clock tree",
+    "Values depend on assumed activity and output load",
+    "Mapped design uses default CLKS_PER_BIT=16"
+  ]
+}

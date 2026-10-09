@@ -1,0 +1,14 @@
+configuration,architecture,pattern,overlap,comparison_group,area_um2,total_power_uw,data_arrival_ns,setup_slack_ns,global_pareto_status,global_dominated_by,controlled_pareto_status,controlled_dominated_by
+fsm_original_1011,baseline,1011,baseline,baseline_only,27.132,4.75,0.22,9.58,DOMINATED,moore_10101_overlap_0;moore_1011_overlap_0,NOT_APPLICABLE,
+mealy_10101_overlap_0,mealy,10101,0,pattern_10101_overlap_0,38.304,6.55,0.23,9.57,DOMINATED,fsm_original_1011;mealy_1011_overlap_0;mealy_1101_overlap_0;mealy_1101_overlap_1;moore_10101_overlap_0;moore_1011_overlap_0,DOMINATED,moore_10101_overlap_0
+mealy_10101_overlap_1,mealy,10101,1,pattern_10101_overlap_1,41.762,6.93,0.23,9.57,DOMINATED,fsm_original_1011;mealy_10101_overlap_0;mealy_1011_overlap_0;mealy_1101_overlap_0;mealy_1101_overlap_1;moore_10101_overlap_0;moore_1011_overlap_0,PARETO,
+mealy_1011_overlap_0,mealy,1011,0,pattern_1011_overlap_0,32.452,5.3,0.23,9.57,DOMINATED,fsm_original_1011;mealy_1101_overlap_0;mealy_1101_overlap_1;moore_10101_overlap_0;moore_1011_overlap_0,DOMINATED,moore_1011_overlap_0
+mealy_1011_overlap_1,mealy,1011,1,pattern_1011_overlap_1,30.324,5.17,0.24,9.56,DOMINATED,fsm_original_1011;mealy_1101_overlap_0;moore_10101_overlap_0;moore_1011_overlap_0,PARETO,
+mealy_1101_overlap_0,mealy,1101,0,pattern_1101_overlap_0,29.526,5.02,0.23,9.57,DOMINATED,fsm_original_1011;moore_10101_overlap_0;moore_1011_overlap_0,PARETO,
+mealy_1101_overlap_1,mealy,1101,1,pattern_1101_overlap_1,31.92,5.26,0.23,9.57,DOMINATED,fsm_original_1011;mealy_1101_overlap_0;moore_10101_overlap_0;moore_1011_overlap_0,PARETO,
+moore_10101_overlap_0,moore,10101,0,pattern_10101_overlap_0,25.536,4.26,0.19,9.61,DOMINATED,moore_1011_overlap_0,PARETO,
+moore_10101_overlap_1,moore,10101,1,pattern_10101_overlap_1,31.388,4.71,0.36,9.6,DOMINATED,moore_10101_overlap_0;moore_1011_overlap_0;moore_1011_overlap_1;moore_1101_overlap_0;moore_1101_overlap_1,PARETO,
+moore_1011_overlap_0,moore,1011,0,pattern_1011_overlap_0,24.738,4.0,0.13,9.67,PARETO,,PARETO,
+moore_1011_overlap_1,moore,1011,1,pattern_1011_overlap_1,23.94,3.95,0.3,9.66,PARETO,,PARETO,
+moore_1101_overlap_0,moore,1101,0,pattern_1101_overlap_0,28.196,4.39,0.32,9.65,DOMINATED,moore_10101_overlap_0;moore_1011_overlap_0;moore_1011_overlap_1,PARETO,
+moore_1101_overlap_1,moore,1101,1,pattern_1101_overlap_1,26.6,4.26,0.35,9.61,DOMINATED,moore_10101_overlap_0;moore_1011_overlap_0;moore_1011_overlap_1,PARETO,

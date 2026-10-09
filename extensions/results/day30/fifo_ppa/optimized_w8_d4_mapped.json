@@ -1,0 +1,3674 @@
+{
+  "creator": "Yosys 0.52 (git sha1 fee39a3284c90249e1d9684cf6944ffbbcbb8f90)",
+  "modules": {
+    "fifo_opt": {
+      "attributes": {
+        "src": "/home/maham_mtech/Mtech_project/AI_RTL_Verification/extensions/rtl/optimized/fifo_opt.v:6.1-58.10",
+        "top": "00000000000000000000000000000001",
+        "dynports": "00000000000000000000000000000001",
+        "hdlname": "fifo_opt"
+      },
+      "parameter_default_values": {
+        "ADDR_WIDTH": "00000000000000000000000000000010",
+        "DATA_WIDTH": "00000000000000000000000000001000",
+        "DEPTH": "00000000000000000000000000000100"
+      },
+      "ports": {
+        "clk": {
+          "direction": "input",
+          "bits": [ 2 ]
+        },
+        "rst": {
+          "direction": "input",
+          "bits": [ 3 ]
+        },
+        "wr_en": {
+          "direction": "input",
+          "bits": [ 4 ]
+        },
+        "rd_en": {
+          "direction": "input",
+          "bits": [ 5 ]
+        },
+        "data_in": {
+          "direction": "input",
+          "bits": [ 6, 7, 8, 9, 10, 11, 12, 13 ]
+        },
+        "data_out": {
+          "direction": "output",
+          "bits": [ 14, 15, 16, 17, 18, 19, 20, 21 ]
+        },
+        "full": {
+          "direction": "output",
+          "bits": [ 22 ]
+        },
+        "empty": {
+          "direction": "output",
+          "bits": [ 23 ]
+        }
+      },
+      "cells": {
+        "$abc$699$auto$blifparse.cc:396:parse_blif$700": {
+          "hide_name": 1,
+          "type": "INV_X1",
+          "parameters": {
+          },
+          "attributes": {
+          },
+          "connections": {
+            "A": [ 24 ],
+            "ZN": [ 25 ]
+          }
+        },
+        "$abc$699$auto$blifparse.cc:396:parse_blif$701": {
+          "hide_name": 1,
+          "type": "INV_X1",
+          "parameters": {
+          },
+          "attributes": {
+          },
+          "connections": {
+            "A": [ 26 ],
+            "ZN": [ 27 ]
+          }
+        },
+        "$abc$699$auto$blifparse.cc:396:parse_blif$702": {
+          "hide_name": 1,
+          "type": "INV_X1",
+          "parameters": {
+          },
+          "attributes": {
+          },
+          "connections": {
+            "A": [ 28 ],
+            "ZN": [ 29 ]
+          }
+        },
+        "$abc$699$auto$blifparse.cc:396:parse_blif$703": {
+          "hide_name": 1,
+          "type": "INV_X1",
+          "parameters": {
+          },
+          "attributes": {
+          },
+          "connections": {
+            "A": [ 30 ],
+            "ZN": [ 31 ]
+          }
+        },
+        "$abc$699$auto$blifparse.cc:396:parse_blif$704": {
+          "hide_name": 1,
+          "type": "INV_X1",
+          "parameters": {
+          },
+          "attributes": {
+          },
+          "connections": {
+            "A": [ 5 ],
+            "ZN": [ 32 ]
+          }
+        },
+        "$abc$699$auto$blifparse.cc:396:parse_blif$705": {
+          "hide_name": 1,
+          "type": "INV_X1",
+          "parameters": {
+          },
+          "attributes": {
+          },
+          "connections": {
+            "A": [ 4 ],
+            "ZN": [ 33 ]
+          }
+        },
+        "$abc$699$auto$blifparse.cc:396:parse_blif$706": {
+          "hide_name": 1,
+          "type": "INV_X1",
+          "parameters": {
+          },
+          "attributes": {
+          },
+          "connections": {
+            "A": [ 34 ],
+            "ZN": [ 35 ]
+          }
+        },
+        "$abc$699$auto$blifparse.cc:396:parse_blif$707": {
+          "hide_name": 1,
+          "type": "INV_X1",
+          "parameters": {
+          },
+          "attributes": {
+          },
+          "connections": {
+            "A": [ 36 ],
+            "ZN": [ 37 ]
+          }
+        },
+        "$abc$699$auto$blifparse.cc:396:parse_blif$708": {
+          "hide_name": 1,
+          "type": "INV_X1",
+          "parameters": {
+          },
+          "attributes": {
+          },
+          "connections": {
+            "A": [ 38 ],
+            "ZN": [ 39 ]
+          }
+        },
+        "$abc$699$auto$blifparse.cc:396:parse_blif$709": {
+          "hide_name": 1,
+          "type": "INV_X1",
+          "parameters": {
+          },
+          "attributes": {
+          },
+          "connections": {
+            "A": [ 40 ],
+            "ZN": [ 41 ]
+          }
+        },
+        "$abc$699$auto$blifparse.cc:396:parse_blif$710": {
+          "hide_name": 1,
+          "type": "INV_X1",
+          "parameters": {
+          },
+          "attributes": {
+          },
+          "connections": {
+            "A": [ 42 ],
+            "ZN": [ 43 ]
+          }
+        },
+        "$abc$699$auto$blifparse.cc:396:parse_blif$711": {
+          "hide_name": 1,
+          "type": "INV_X1",
+          "parameters": {
+          },
+          "attributes": {
+          },
+          "connections": {
+            "A": [ 44 ],
+            "ZN": [ 45 ]
+          }
+        },
+        "$abc$699$auto$blifparse.cc:396:parse_blif$712": {
+          "hide_name": 1,
+          "type": "INV_X1",
+          "parameters": {
+          },
+          "attributes": {
+          },
+          "connections": {
+            "A": [ 46 ],
+            "ZN": [ 47 ]
+          }
+        },
+        "$abc$699$auto$blifparse.cc:396:parse_blif$713": {
+          "hide_name": 1,
+          "type": "INV_X1",
+          "parameters": {
+          },
+          "attributes": {
+          },
+          "connections": {
+            "A": [ 48 ],
+            "ZN": [ 49 ]
+          }
+        },
+        "$abc$699$auto$blifparse.cc:396:parse_blif$714": {
+          "hide_name": 1,
+          "type": "INV_X1",
+          "parameters": {
+          },
+          "attributes": {
+          },
+          "connections": {
+            "A": [ 3 ],
+            "ZN": [ 50 ]
+          }
+        },
+        "$abc$699$auto$blifparse.cc:396:parse_blif$715": {
+          "hide_name": 1,
+          "type": "NOR2_X1",
+          "parameters": {
+          },
+          "attributes": {
+          },
+          "connections": {
+            "A1": [ 51 ],
+            "A2": [ 52 ],
+            "ZN": [ 53 ]
+          }
+        },
+        "$abc$699$auto$blifparse.cc:396:parse_blif$716": {
+          "hide_name": 1,
+          "type": "OR2_X1",
+          "parameters": {
+          },
+          "attributes": {
+          },
+          "connections": {
+            "A1": [ 51 ],
+            "A2": [ 52 ],
+            "ZN": [ 54 ]
+          }
+        },
+        "$abc$699$auto$blifparse.cc:396:parse_blif$717": {
+          "hide_name": 1,
+          "type": "AND2_X1",
+          "parameters": {
+          },
+          "attributes": {
+          },
+          "connections": {
+            "A1": [ 55 ],
+            "A2": [ 53 ],
+            "ZN": [ 23 ]
+          }
+        },
+        "$abc$699$auto$blifparse.cc:396:parse_blif$718": {
+          "hide_name": 1,
+          "type": "NOR2_X1",
+          "parameters": {
+          },
+          "attributes": {
+          },
+          "connections": {
+            "A1": [ 25 ],
+            "A2": [ 54 ],
+            "ZN": [ 22 ]
+          }
+        },
+        "$abc$699$auto$blifparse.cc:396:parse_blif$719": {
+          "hide_name": 1,
+          "type": "AOI21_X1",
+          "parameters": {
+          },
+          "attributes": {
+          },
+          "connections": {
+            "A": [ 32 ],
+            "B1": [ 53 ],
+            "B2": [ 55 ],
+            "ZN": [ 56 ]
+          }
+        },
+        "$abc$699$auto$blifparse.cc:396:parse_blif$720": {
+          "hide_name": 1,
+          "type": "NAND2_X1",
+          "parameters": {
+          },
+          "attributes": {
+          },
+          "connections": {
+            "A1": [ 57 ],
+            "A2": [ 58 ],
+            "ZN": [ 59 ]
+          }
+        },
+        "$abc$699$auto$blifparse.cc:396:parse_blif$721": {
+          "hide_name": 1,
+          "type": "OAI211_X1",
+          "parameters": {
+          },
+          "attributes": {
+          },
+          "connections": {
+            "A": [ 60 ],
+            "B": [ 59 ],
+            "C1": [ 35 ],
+            "C2": [ 57 ],
+            "ZN": [ 61 ]
+          }
+        },
+        "$abc$699$auto$blifparse.cc:396:parse_blif$722": {
+          "hide_name": 1,
+          "type": "MUX2_X1",
+          "parameters": {
+          },
+          "attributes": {
+          },
+          "connections": {
+            "A": [ 62 ],
+            "B": [ 63 ],
+            "S": [ 57 ],
+            "Z": [ 64 ]
+          }
+        },
+        "$abc$699$auto$blifparse.cc:396:parse_blif$723": {
+          "hide_name": 1,
+          "type": "OAI21_X1",
+          "parameters": {
+          },
+          "attributes": {
+          },
+          "connections": {
+            "A": [ 61 ],
+            "B1": [ 64 ],
+            "B2": [ 60 ],
+            "ZN": [ 65 ]
+          }
+        },
+        "$abc$699$auto$blifparse.cc:396:parse_blif$724": {
+          "hide_name": 1,
+          "type": "OAI21_X1",
+          "parameters": {
+          },
+          "attributes": {
+          },
+          "connections": {
+            "A": [ 50 ],
+            "B1": [ 56 ],
+            "B2": [ 14 ],
+            "ZN": [ 66 ]
+          }
+        },
+        "$abc$699$auto$blifparse.cc:396:parse_blif$725": {
+          "hide_name": 1,
+          "type": "AOI21_X1",
+          "parameters": {
+          },
+          "attributes": {
+          },
+          "connections": {
+            "A": [ 66 ],
+            "B1": [ 65 ],
+            "B2": [ 56 ],
+            "ZN": [ 67 ]
+          }
+        },
+        "$abc$699$auto$blifparse.cc:396:parse_blif$726": {
+          "hide_name": 1,
+          "type": "NAND2_X1",
+          "parameters": {
+          },
+          "attributes": {
+          },
+          "connections": {
+            "A1": [ 57 ],
+            "A2": [ 68 ],
+            "ZN": [ 69 ]
+          }
+        },
+        "$abc$699$auto$blifparse.cc:396:parse_blif$727": {
+          "hide_name": 1,
+          "type": "OAI211_X1",
+          "parameters": {
+          },
+          "attributes": {
+          },
+          "connections": {
+            "A": [ 60 ],
+            "B": [ 69 ],
+            "C1": [ 37 ],
+            "C2": [ 57 ],
+            "ZN": [ 70 ]
+          }
+        },
+        "$abc$699$auto$blifparse.cc:396:parse_blif$728": {
+          "hide_name": 1,
+          "type": "MUX2_X1",
+          "parameters": {
+          },
+          "attributes": {
+          },
+          "connections": {
+            "A": [ 71 ],
+            "B": [ 72 ],
+            "S": [ 57 ],
+            "Z": [ 73 ]
+          }
+        },
+        "$abc$699$auto$blifparse.cc:396:parse_blif$729": {
+          "hide_name": 1,
+          "type": "OAI21_X1",
+          "parameters": {
+          },
+          "attributes": {
+          },
+          "connections": {
+            "A": [ 70 ],
+            "B1": [ 73 ],
+            "B2": [ 60 ],
+            "ZN": [ 74 ]
+          }
+        },
+        "$abc$699$auto$blifparse.cc:396:parse_blif$730": {
+          "hide_name": 1,
+          "type": "OAI21_X1",
+          "parameters": {
+          },
+          "attributes": {
+          },
+          "connections": {
+            "A": [ 50 ],
+            "B1": [ 56 ],
+            "B2": [ 15 ],
+            "ZN": [ 75 ]
+          }
+        },
+        "$abc$699$auto$blifparse.cc:396:parse_blif$731": {
+          "hide_name": 1,
+          "type": "AOI21_X1",
+          "parameters": {
+          },
+          "attributes": {
+          },
+          "connections": {
+            "A": [ 75 ],
+            "B1": [ 74 ],
+            "B2": [ 56 ],
+            "ZN": [ 76 ]
+          }
+        },
+        "$abc$699$auto$blifparse.cc:396:parse_blif$732": {
+          "hide_name": 1,
+          "type": "NAND2_X1",
+          "parameters": {
+          },
+          "attributes": {
+          },
+          "connections": {
+            "A1": [ 57 ],
+            "A2": [ 77 ],
+            "ZN": [ 78 ]
+          }
+        },
+        "$abc$699$auto$blifparse.cc:396:parse_blif$733": {
+          "hide_name": 1,
+          "type": "OAI211_X1",
+          "parameters": {
+          },
+          "attributes": {
+          },
+          "connections": {
+            "A": [ 60 ],
+            "B": [ 78 ],
+            "C1": [ 39 ],
+            "C2": [ 57 ],
+            "ZN": [ 79 ]
+          }
+        },
+        "$abc$699$auto$blifparse.cc:396:parse_blif$734": {
+          "hide_name": 1,
+          "type": "MUX2_X1",
+          "parameters": {
+          },
+          "attributes": {
+          },
+          "connections": {
+            "A": [ 80 ],
+            "B": [ 81 ],
+            "S": [ 57 ],
+            "Z": [ 82 ]
+          }
+        },
+        "$abc$699$auto$blifparse.cc:396:parse_blif$735": {
+          "hide_name": 1,
+          "type": "OAI21_X1",
+          "parameters": {
+          },
+          "attributes": {
+          },
+          "connections": {
+            "A": [ 79 ],
+            "B1": [ 82 ],
+            "B2": [ 60 ],
+            "ZN": [ 83 ]
+          }
+        },
+        "$abc$699$auto$blifparse.cc:396:parse_blif$736": {
+          "hide_name": 1,
+          "type": "OAI21_X1",
+          "parameters": {
+          },
+          "attributes": {
+          },
+          "connections": {
+            "A": [ 50 ],
+            "B1": [ 56 ],
+            "B2": [ 16 ],
+            "ZN": [ 84 ]
+          }
+        },
+        "$abc$699$auto$blifparse.cc:396:parse_blif$737": {
+          "hide_name": 1,
+          "type": "AOI21_X1",
+          "parameters": {
+          },
+          "attributes": {
+          },
+          "connections": {
+            "A": [ 84 ],
+            "B1": [ 83 ],
+            "B2": [ 56 ],
+            "ZN": [ 85 ]
+          }
+        },
+        "$abc$699$auto$blifparse.cc:396:parse_blif$738": {
+          "hide_name": 1,
+          "type": "NAND2_X1",
+          "parameters": {
+          },
+          "attributes": {
+          },
+          "connections": {
+            "A1": [ 57 ],
+            "A2": [ 86 ],
+            "ZN": [ 87 ]
+          }
+        },
+        "$abc$699$auto$blifparse.cc:396:parse_blif$739": {
+          "hide_name": 1,
+          "type": "OAI211_X1",
+          "parameters": {
+          },
+          "attributes": {
+          },
+          "connections": {
+            "A": [ 60 ],
+            "B": [ 87 ],
+            "C1": [ 41 ],
+            "C2": [ 57 ],
+            "ZN": [ 88 ]
+          }
+        },
+        "$abc$699$auto$blifparse.cc:396:parse_blif$740": {
+          "hide_name": 1,
+          "type": "MUX2_X1",
+          "parameters": {
+          },
+          "attributes": {
+          },
+          "connections": {
+            "A": [ 89 ],
+            "B": [ 90 ],
+            "S": [ 57 ],
+            "Z": [ 91 ]
+          }
+        },
+        "$abc$699$auto$blifparse.cc:396:parse_blif$741": {
+          "hide_name": 1,
+          "type": "OAI21_X1",
+          "parameters": {
+          },
+          "attributes": {
+          },
+          "connections": {
+            "A": [ 88 ],
+            "B1": [ 91 ],
+            "B2": [ 60 ],
+            "ZN": [ 92 ]
+          }
+        },
+        "$abc$699$auto$blifparse.cc:396:parse_blif$742": {
+          "hide_name": 1,
+          "type": "OAI21_X1",
+          "parameters": {
+          },
+          "attributes": {
+          },
+          "connections": {
+            "A": [ 50 ],
+            "B1": [ 56 ],
+            "B2": [ 17 ],
+            "ZN": [ 93 ]
+          }
+        },
+        "$abc$699$auto$blifparse.cc:396:parse_blif$743": {
+          "hide_name": 1,
+          "type": "AOI21_X1",
+          "parameters": {
+          },
+          "attributes": {
+          },
+          "connections": {
+            "A": [ 93 ],
+            "B1": [ 92 ],
+            "B2": [ 56 ],
+            "ZN": [ 94 ]
+          }
+        },
+        "$abc$699$auto$blifparse.cc:396:parse_blif$744": {
+          "hide_name": 1,
+          "type": "NAND2_X1",
+          "parameters": {
+          },
+          "attributes": {
+          },
+          "connections": {
+            "A1": [ 57 ],
+            "A2": [ 95 ],
+            "ZN": [ 96 ]
+          }
+        },
+        "$abc$699$auto$blifparse.cc:396:parse_blif$745": {
+          "hide_name": 1,
+          "type": "OAI211_X1",
+          "parameters": {
+          },
+          "attributes": {
+          },
+          "connections": {
+            "A": [ 60 ],
+            "B": [ 96 ],
+            "C1": [ 43 ],
+            "C2": [ 57 ],
+            "ZN": [ 97 ]
+          }
+        },
+        "$abc$699$auto$blifparse.cc:396:parse_blif$746": {
+          "hide_name": 1,
+          "type": "MUX2_X1",
+          "parameters": {
+          },
+          "attributes": {
+          },
+          "connections": {
+            "A": [ 98 ],
+            "B": [ 99 ],
+            "S": [ 57 ],
+            "Z": [ 100 ]
+          }
+        },
+        "$abc$699$auto$blifparse.cc:396:parse_blif$747": {
+          "hide_name": 1,
+          "type": "OAI21_X1",
+          "parameters": {
+          },
+          "attributes": {
+          },
+          "connections": {
+            "A": [ 97 ],
+            "B1": [ 100 ],
+            "B2": [ 60 ],
+            "ZN": [ 101 ]
+          }
+        },
+        "$abc$699$auto$blifparse.cc:396:parse_blif$748": {
+          "hide_name": 1,
+          "type": "OAI21_X1",
+          "parameters": {
+          },
+          "attributes": {
+          },
+          "connections": {
+            "A": [ 50 ],
+            "B1": [ 56 ],
+            "B2": [ 18 ],
+            "ZN": [ 102 ]
+          }
+        },
+        "$abc$699$auto$blifparse.cc:396:parse_blif$749": {
+          "hide_name": 1,
+          "type": "AOI21_X1",
+          "parameters": {
+          },
+          "attributes": {
+          },
+          "connections": {
+            "A": [ 102 ],
+            "B1": [ 101 ],
+            "B2": [ 56 ],
+            "ZN": [ 103 ]
+          }
+        },
+        "$abc$699$auto$blifparse.cc:396:parse_blif$750": {
+          "hide_name": 1,
+          "type": "NAND2_X1",
+          "parameters": {
+          },
+          "attributes": {
+          },
+          "connections": {
+            "A1": [ 57 ],
+            "A2": [ 104 ],
+            "ZN": [ 105 ]
+          }
+        },
+        "$abc$699$auto$blifparse.cc:396:parse_blif$751": {
+          "hide_name": 1,
+          "type": "OAI211_X1",
+          "parameters": {
+          },
+          "attributes": {
+          },
+          "connections": {
+            "A": [ 60 ],
+            "B": [ 105 ],
+            "C1": [ 45 ],
+            "C2": [ 57 ],
+            "ZN": [ 106 ]
+          }
+        },
+        "$abc$699$auto$blifparse.cc:396:parse_blif$752": {
+          "hide_name": 1,
+          "type": "MUX2_X1",
+          "parameters": {
+          },
+          "attributes": {
+          },
+          "connections": {
+            "A": [ 107 ],
+            "B": [ 108 ],
+            "S": [ 57 ],
+            "Z": [ 109 ]
+          }
+        },
+        "$abc$699$auto$blifparse.cc:396:parse_blif$753": {
+          "hide_name": 1,
+          "type": "OAI21_X1",
+          "parameters": {
+          },
+          "attributes": {
+          },
+          "connections": {
+            "A": [ 106 ],
+            "B1": [ 109 ],
+            "B2": [ 60 ],
+            "ZN": [ 110 ]
+          }
+        },
+        "$abc$699$auto$blifparse.cc:396:parse_blif$754": {
+          "hide_name": 1,
+          "type": "OAI21_X1",
+          "parameters": {
+          },
+          "attributes": {
+          },
+          "connections": {
+            "A": [ 50 ],
+            "B1": [ 56 ],
+            "B2": [ 19 ],
+            "ZN": [ 111 ]
+          }
+        },
+        "$abc$699$auto$blifparse.cc:396:parse_blif$755": {
+          "hide_name": 1,
+          "type": "AOI21_X1",
+          "parameters": {
+          },
+          "attributes": {
+          },
+          "connections": {
+            "A": [ 111 ],
+            "B1": [ 110 ],
+            "B2": [ 56 ],
+            "ZN": [ 112 ]
+          }
+        },
+        "$abc$699$auto$blifparse.cc:396:parse_blif$756": {
+          "hide_name": 1,
+          "type": "NAND2_X1",
+          "parameters": {
+          },
+          "attributes": {
+          },
+          "connections": {
+            "A1": [ 57 ],
+            "A2": [ 113 ],
+            "ZN": [ 114 ]
+          }
+        },
+        "$abc$699$auto$blifparse.cc:396:parse_blif$757": {
+          "hide_name": 1,
+          "type": "OAI211_X1",
+          "parameters": {
+          },
+          "attributes": {
+          },
+          "connections": {
+            "A": [ 60 ],
+            "B": [ 114 ],
+            "C1": [ 47 ],
+            "C2": [ 57 ],
+            "ZN": [ 115 ]
+          }
+        },
+        "$abc$699$auto$blifparse.cc:396:parse_blif$758": {
+          "hide_name": 1,
+          "type": "MUX2_X1",
+          "parameters": {
+          },
+          "attributes": {
+          },
+          "connections": {
+            "A": [ 116 ],
+            "B": [ 117 ],
+            "S": [ 57 ],
+            "Z": [ 118 ]
+          }
+        },
+        "$abc$699$auto$blifparse.cc:396:parse_blif$759": {
+          "hide_name": 1,
+          "type": "OAI21_X1",
+          "parameters": {
+          },
+          "attributes": {
+          },
+          "connections": {
+            "A": [ 115 ],
+            "B1": [ 118 ],
+            "B2": [ 60 ],
+            "ZN": [ 119 ]
+          }
+        },
+        "$abc$699$auto$blifparse.cc:396:parse_blif$760": {
+          "hide_name": 1,
+          "type": "OAI21_X1",
+          "parameters": {
+          },
+          "attributes": {
+          },
+          "connections": {
+            "A": [ 50 ],
+            "B1": [ 56 ],
+            "B2": [ 20 ],
+            "ZN": [ 120 ]
+          }
+        },
+        "$abc$699$auto$blifparse.cc:396:parse_blif$761": {
+          "hide_name": 1,
+          "type": "AOI21_X1",
+          "parameters": {
+          },
+          "attributes": {
+          },
+          "connections": {
+            "A": [ 120 ],
+            "B1": [ 119 ],
+            "B2": [ 56 ],
+            "ZN": [ 121 ]
+          }
+        },
+        "$abc$699$auto$blifparse.cc:396:parse_blif$762": {
+          "hide_name": 1,
+          "type": "NAND2_X1",
+          "parameters": {
+          },
+          "attributes": {
+          },
+          "connections": {
+            "A1": [ 57 ],
+            "A2": [ 122 ],
+            "ZN": [ 123 ]
+          }
+        },
+        "$abc$699$auto$blifparse.cc:396:parse_blif$763": {
+          "hide_name": 1,
+          "type": "OAI211_X1",
+          "parameters": {
+          },
+          "attributes": {
+          },
+          "connections": {
+            "A": [ 60 ],
+            "B": [ 123 ],
+            "C1": [ 49 ],
+            "C2": [ 57 ],
+            "ZN": [ 124 ]
+          }
+        },
+        "$abc$699$auto$blifparse.cc:396:parse_blif$764": {
+          "hide_name": 1,
+          "type": "MUX2_X1",
+          "parameters": {
+          },
+          "attributes": {
+          },
+          "connections": {
+            "A": [ 125 ],
+            "B": [ 126 ],
+            "S": [ 57 ],
+            "Z": [ 127 ]
+          }
+        },
+        "$abc$699$auto$blifparse.cc:396:parse_blif$765": {
+          "hide_name": 1,
+          "type": "OAI21_X1",
+          "parameters": {
+          },
+          "attributes": {
+          },
+          "connections": {
+            "A": [ 124 ],
+            "B1": [ 127 ],
+            "B2": [ 60 ],
+            "ZN": [ 128 ]
+          }
+        },
+        "$abc$699$auto$blifparse.cc:396:parse_blif$766": {
+          "hide_name": 1,
+          "type": "OAI21_X1",
+          "parameters": {
+          },
+          "attributes": {
+          },
+          "connections": {
+            "A": [ 50 ],
+            "B1": [ 56 ],
+            "B2": [ 21 ],
+            "ZN": [ 129 ]
+          }
+        },
+        "$abc$699$auto$blifparse.cc:396:parse_blif$767": {
+          "hide_name": 1,
+          "type": "AOI21_X1",
+          "parameters": {
+          },
+          "attributes": {
+          },
+          "connections": {
+            "A": [ 129 ],
+            "B1": [ 128 ],
+            "B2": [ 56 ],
+            "ZN": [ 130 ]
+          }
+        },
+        "$abc$699$auto$blifparse.cc:396:parse_blif$768": {
+          "hide_name": 1,
+          "type": "NOR2_X1",
+          "parameters": {
+          },
+          "attributes": {
+          },
+          "connections": {
+            "A1": [ 33 ],
+            "A2": [ 22 ],
+            "ZN": [ 131 ]
+          }
+        },
+        "$abc$699$auto$blifparse.cc:396:parse_blif$769": {
+          "hide_name": 1,
+          "type": "OAI21_X1",
+          "parameters": {
+          },
+          "attributes": {
+          },
+          "connections": {
+            "A": [ 4 ],
+            "B1": [ 54 ],
+            "B2": [ 25 ],
+            "ZN": [ 132 ]
+          }
+        },
+        "$abc$699$auto$blifparse.cc:396:parse_blif$770": {
+          "hide_name": 1,
+          "type": "NAND3_X1",
+          "parameters": {
+          },
+          "attributes": {
+          },
+          "connections": {
+            "A1": [ 133 ],
+            "A2": [ 30 ],
+            "A3": [ 131 ],
+            "ZN": [ 134 ]
+          }
+        },
+        "$abc$699$auto$blifparse.cc:396:parse_blif$771": {
+          "hide_name": 1,
+          "type": "NOR2_X1",
+          "parameters": {
+          },
+          "attributes": {
+          },
+          "connections": {
+            "A1": [ 3 ],
+            "A2": [ 134 ],
+            "ZN": [ 135 ]
+          }
+        },
+        "$abc$699$auto$blifparse.cc:396:parse_blif$772": {
+          "hide_name": 1,
+          "type": "MUX2_X1",
+          "parameters": {
+          },
+          "attributes": {
+          },
+          "connections": {
+            "A": [ 58 ],
+            "B": [ 6 ],
+            "S": [ 135 ],
+            "Z": [ 136 ]
+          }
+        },
+        "$abc$699$auto$blifparse.cc:396:parse_blif$773": {
+          "hide_name": 1,
+          "type": "MUX2_X1",
+          "parameters": {
+          },
+          "attributes": {
+          },
+          "connections": {
+            "A": [ 68 ],
+            "B": [ 7 ],
+            "S": [ 135 ],
+            "Z": [ 137 ]
+          }
+        },
+        "$abc$699$auto$blifparse.cc:396:parse_blif$774": {
+          "hide_name": 1,
+          "type": "MUX2_X1",
+          "parameters": {
+          },
+          "attributes": {
+          },
+          "connections": {
+            "A": [ 77 ],
+            "B": [ 8 ],
+            "S": [ 135 ],
+            "Z": [ 138 ]
+          }
+        },
+        "$abc$699$auto$blifparse.cc:396:parse_blif$775": {
+          "hide_name": 1,
+          "type": "MUX2_X1",
+          "parameters": {
+          },
+          "attributes": {
+          },
+          "connections": {
+            "A": [ 86 ],
+            "B": [ 9 ],
+            "S": [ 135 ],
+            "Z": [ 139 ]
+          }
+        },
+        "$abc$699$auto$blifparse.cc:396:parse_blif$776": {
+          "hide_name": 1,
+          "type": "MUX2_X1",
+          "parameters": {
+          },
+          "attributes": {
+          },
+          "connections": {
+            "A": [ 95 ],
+            "B": [ 10 ],
+            "S": [ 135 ],
+            "Z": [ 140 ]
+          }
+        },
+        "$abc$699$auto$blifparse.cc:396:parse_blif$777": {
+          "hide_name": 1,
+          "type": "MUX2_X1",
+          "parameters": {
+          },
+          "attributes": {
+          },
+          "connections": {
+            "A": [ 104 ],
+            "B": [ 11 ],
+            "S": [ 135 ],
+            "Z": [ 141 ]
+          }
+        },
+        "$abc$699$auto$blifparse.cc:396:parse_blif$778": {
+          "hide_name": 1,
+          "type": "MUX2_X1",
+          "parameters": {
+          },
+          "attributes": {
+          },
+          "connections": {
+            "A": [ 113 ],
+            "B": [ 12 ],
+            "S": [ 135 ],
+            "Z": [ 142 ]
+          }
+        },
+        "$abc$699$auto$blifparse.cc:396:parse_blif$779": {
+          "hide_name": 1,
+          "type": "MUX2_X1",
+          "parameters": {
+          },
+          "attributes": {
+          },
+          "connections": {
+            "A": [ 122 ],
+            "B": [ 13 ],
+            "S": [ 135 ],
+            "Z": [ 143 ]
+          }
+        },
+        "$abc$699$auto$blifparse.cc:396:parse_blif$780": {
+          "hide_name": 1,
+          "type": "NAND4_X1",
+          "parameters": {
+          },
+          "attributes": {
+          },
+          "connections": {
+            "A1": [ 133 ],
+            "A2": [ 31 ],
+            "A3": [ 50 ],
+            "A4": [ 131 ],
+            "ZN": [ 144 ]
+          }
+        },
+        "$abc$699$auto$blifparse.cc:396:parse_blif$781": {
+          "hide_name": 1,
+          "type": "MUX2_X1",
+          "parameters": {
+          },
+          "attributes": {
+          },
+          "connections": {
+            "A": [ 6 ],
+            "B": [ 34 ],
+            "S": [ 144 ],
+            "Z": [ 145 ]
+          }
+        },
+        "$abc$699$auto$blifparse.cc:396:parse_blif$782": {
+          "hide_name": 1,
+          "type": "MUX2_X1",
+          "parameters": {
+          },
+          "attributes": {
+          },
+          "connections": {
+            "A": [ 7 ],
+            "B": [ 36 ],
+            "S": [ 144 ],
+            "Z": [ 146 ]
+          }
+        },
+        "$abc$699$auto$blifparse.cc:396:parse_blif$783": {
+          "hide_name": 1,
+          "type": "MUX2_X1",
+          "parameters": {
+          },
+          "attributes": {
+          },
+          "connections": {
+            "A": [ 8 ],
+            "B": [ 38 ],
+            "S": [ 144 ],
+            "Z": [ 147 ]
+          }
+        },
+        "$abc$699$auto$blifparse.cc:396:parse_blif$784": {
+          "hide_name": 1,
+          "type": "MUX2_X1",
+          "parameters": {
+          },
+          "attributes": {
+          },
+          "connections": {
+            "A": [ 9 ],
+            "B": [ 40 ],
+            "S": [ 144 ],
+            "Z": [ 148 ]
+          }
+        },
+        "$abc$699$auto$blifparse.cc:396:parse_blif$785": {
+          "hide_name": 1,
+          "type": "MUX2_X1",
+          "parameters": {
+          },
+          "attributes": {
+          },
+          "connections": {
+            "A": [ 10 ],
+            "B": [ 42 ],
+            "S": [ 144 ],
+            "Z": [ 149 ]
+          }
+        },
+        "$abc$699$auto$blifparse.cc:396:parse_blif$786": {
+          "hide_name": 1,
+          "type": "MUX2_X1",
+          "parameters": {
+          },
+          "attributes": {
+          },
+          "connections": {
+            "A": [ 11 ],
+            "B": [ 44 ],
+            "S": [ 144 ],
+            "Z": [ 150 ]
+          }
+        },
+        "$abc$699$auto$blifparse.cc:396:parse_blif$787": {
+          "hide_name": 1,
+          "type": "MUX2_X1",
+          "parameters": {
+          },
+          "attributes": {
+          },
+          "connections": {
+            "A": [ 12 ],
+            "B": [ 46 ],
+            "S": [ 144 ],
+            "Z": [ 151 ]
+          }
+        },
+        "$abc$699$auto$blifparse.cc:396:parse_blif$788": {
+          "hide_name": 1,
+          "type": "MUX2_X1",
+          "parameters": {
+          },
+          "attributes": {
+          },
+          "connections": {
+            "A": [ 13 ],
+            "B": [ 48 ],
+            "S": [ 144 ],
+            "Z": [ 152 ]
+          }
+        },
+        "$abc$699$auto$blifparse.cc:396:parse_blif$789": {
+          "hide_name": 1,
+          "type": "NOR4_X1",
+          "parameters": {
+          },
+          "attributes": {
+          },
+          "connections": {
+            "A1": [ 133 ],
+            "A2": [ 30 ],
+            "A3": [ 3 ],
+            "A4": [ 132 ],
+            "ZN": [ 153 ]
+          }
+        },
+        "$abc$699$auto$blifparse.cc:396:parse_blif$790": {
+          "hide_name": 1,
+          "type": "MUX2_X1",
+          "parameters": {
+          },
+          "attributes": {
+          },
+          "connections": {
+            "A": [ 62 ],
+            "B": [ 6 ],
+            "S": [ 153 ],
+            "Z": [ 154 ]
+          }
+        },
+        "$abc$699$auto$blifparse.cc:396:parse_blif$791": {
+          "hide_name": 1,
+          "type": "MUX2_X1",
+          "parameters": {
+          },
+          "attributes": {
+          },
+          "connections": {
+            "A": [ 71 ],
+            "B": [ 7 ],
+            "S": [ 153 ],
+            "Z": [ 155 ]
+          }
+        },
+        "$abc$699$auto$blifparse.cc:396:parse_blif$792": {
+          "hide_name": 1,
+          "type": "MUX2_X1",
+          "parameters": {
+          },
+          "attributes": {
+          },
+          "connections": {
+            "A": [ 80 ],
+            "B": [ 8 ],
+            "S": [ 153 ],
+            "Z": [ 156 ]
+          }
+        },
+        "$abc$699$auto$blifparse.cc:396:parse_blif$793": {
+          "hide_name": 1,
+          "type": "MUX2_X1",
+          "parameters": {
+          },
+          "attributes": {
+          },
+          "connections": {
+            "A": [ 89 ],
+            "B": [ 9 ],
+            "S": [ 153 ],
+            "Z": [ 157 ]
+          }
+        },
+        "$abc$699$auto$blifparse.cc:396:parse_blif$794": {
+          "hide_name": 1,
+          "type": "MUX2_X1",
+          "parameters": {
+          },
+          "attributes": {
+          },
+          "connections": {
+            "A": [ 98 ],
+            "B": [ 10 ],
+            "S": [ 153 ],
+            "Z": [ 158 ]
+          }
+        },
+        "$abc$699$auto$blifparse.cc:396:parse_blif$795": {
+          "hide_name": 1,
+          "type": "MUX2_X1",
+          "parameters": {
+          },
+          "attributes": {
+          },
+          "connections": {
+            "A": [ 107 ],
+            "B": [ 11 ],
+            "S": [ 153 ],
+            "Z": [ 159 ]
+          }
+        },
+        "$abc$699$auto$blifparse.cc:396:parse_blif$796": {
+          "hide_name": 1,
+          "type": "MUX2_X1",
+          "parameters": {
+          },
+          "attributes": {
+          },
+          "connections": {
+            "A": [ 116 ],
+            "B": [ 12 ],
+            "S": [ 153 ],
+            "Z": [ 160 ]
+          }
+        },
+        "$abc$699$auto$blifparse.cc:396:parse_blif$797": {
+          "hide_name": 1,
+          "type": "MUX2_X1",
+          "parameters": {
+          },
+          "attributes": {
+          },
+          "connections": {
+            "A": [ 125 ],
+            "B": [ 13 ],
+            "S": [ 153 ],
+            "Z": [ 161 ]
+          }
+        },
+        "$abc$699$auto$blifparse.cc:396:parse_blif$798": {
+          "hide_name": 1,
+          "type": "NOR2_X1",
+          "parameters": {
+          },
+          "attributes": {
+          },
+          "connections": {
+            "A1": [ 162 ],
+            "A2": [ 132 ],
+            "ZN": [ 163 ]
+          }
+        },
+        "$abc$699$auto$blifparse.cc:396:parse_blif$799": {
+          "hide_name": 1,
+          "type": "AOI211_X1",
+          "parameters": {
+          },
+          "attributes": {
+          },
+          "connections": {
+            "A": [ 3 ],
+            "B": [ 163 ],
+            "C1": [ 132 ],
+            "C2": [ 31 ],
+            "ZN": [ 164 ]
+          }
+        },
+        "$abc$699$auto$blifparse.cc:396:parse_blif$800": {
+          "hide_name": 1,
+          "type": "AOI21_X1",
+          "parameters": {
+          },
+          "attributes": {
+          },
+          "connections": {
+            "A": [ 133 ],
+            "B1": [ 30 ],
+            "B2": [ 131 ],
+            "ZN": [ 165 ]
+          }
+        },
+        "$abc$699$auto$blifparse.cc:396:parse_blif$801": {
+          "hide_name": 1,
+          "type": "NAND2_X1",
+          "parameters": {
+          },
+          "attributes": {
+          },
+          "connections": {
+            "A1": [ 50 ],
+            "A2": [ 134 ],
+            "ZN": [ 166 ]
+          }
+        },
+        "$abc$699$auto$blifparse.cc:396:parse_blif$802": {
+          "hide_name": 1,
+          "type": "NOR2_X1",
+          "parameters": {
+          },
+          "attributes": {
+          },
+          "connections": {
+            "A1": [ 165 ],
+            "A2": [ 166 ],
+            "ZN": [ 167 ]
+          }
+        },
+        "$abc$699$auto$blifparse.cc:396:parse_blif$803": {
+          "hide_name": 1,
+          "type": "NOR2_X1",
+          "parameters": {
+          },
+          "attributes": {
+          },
+          "connections": {
+            "A1": [ 57 ],
+            "A2": [ 56 ],
+            "ZN": [ 168 ]
+          }
+        },
+        "$abc$699$auto$blifparse.cc:396:parse_blif$804": {
+          "hide_name": 1,
+          "type": "AOI211_X1",
+          "parameters": {
+          },
+          "attributes": {
+          },
+          "connections": {
+            "A": [ 3 ],
+            "B": [ 168 ],
+            "C1": [ 56 ],
+            "C2": [ 29 ],
+            "ZN": [ 169 ]
+          }
+        },
+        "$abc$699$auto$blifparse.cc:396:parse_blif$805": {
+          "hide_name": 1,
+          "type": "NAND2_X1",
+          "parameters": {
+          },
+          "attributes": {
+          },
+          "connections": {
+            "A1": [ 57 ],
+            "A2": [ 56 ],
+            "ZN": [ 170 ]
+          }
+        },
+        "$abc$699$auto$blifparse.cc:396:parse_blif$806": {
+          "hide_name": 1,
+          "type": "XOR2_X1",
+          "parameters": {
+          },
+          "attributes": {
+          },
+          "connections": {
+            "A": [ 60 ],
+            "B": [ 170 ],
+            "Z": [ 171 ]
+          }
+        },
+        "$abc$699$auto$blifparse.cc:396:parse_blif$807": {
+          "hide_name": 1,
+          "type": "NOR2_X1",
+          "parameters": {
+          },
+          "attributes": {
+          },
+          "connections": {
+            "A1": [ 3 ],
+            "A2": [ 171 ],
+            "ZN": [ 172 ]
+          }
+        },
+        "$abc$699$auto$blifparse.cc:396:parse_blif$808": {
+          "hide_name": 1,
+          "type": "AND2_X1",
+          "parameters": {
+          },
+          "attributes": {
+          },
+          "connections": {
+            "A1": [ 56 ],
+            "A2": [ 132 ],
+            "ZN": [ 173 ]
+          }
+        },
+        "$abc$699$auto$blifparse.cc:396:parse_blif$809": {
+          "hide_name": 1,
+          "type": "NOR2_X1",
+          "parameters": {
+          },
+          "attributes": {
+          },
+          "connections": {
+            "A1": [ 56 ],
+            "A2": [ 132 ],
+            "ZN": [ 174 ]
+          }
+        },
+        "$abc$699$auto$blifparse.cc:396:parse_blif$810": {
+          "hide_name": 1,
+          "type": "OR2_X1",
+          "parameters": {
+          },
+          "attributes": {
+          },
+          "connections": {
+            "A1": [ 173 ],
+            "A2": [ 174 ],
+            "ZN": [ 175 ]
+          }
+        },
+        "$abc$699$auto$blifparse.cc:396:parse_blif$811": {
+          "hide_name": 1,
+          "type": "NOR2_X1",
+          "parameters": {
+          },
+          "attributes": {
+          },
+          "connections": {
+            "A1": [ 52 ],
+            "A2": [ 175 ],
+            "ZN": [ 176 ]
+          }
+        },
+        "$abc$699$auto$blifparse.cc:396:parse_blif$812": {
+          "hide_name": 1,
+          "type": "AOI211_X1",
+          "parameters": {
+          },
+          "attributes": {
+          },
+          "connections": {
+            "A": [ 3 ],
+            "B": [ 176 ],
+            "C1": [ 175 ],
+            "C2": [ 27 ],
+            "ZN": [ 177 ]
+          }
+        },
+        "$abc$699$auto$blifparse.cc:396:parse_blif$813": {
+          "hide_name": 1,
+          "type": "MUX2_X1",
+          "parameters": {
+          },
+          "attributes": {
+          },
+          "connections": {
+            "A": [ 173 ],
+            "B": [ 174 ],
+            "S": [ 27 ],
+            "Z": [ 178 ]
+          }
+        },
+        "$abc$699$auto$blifparse.cc:396:parse_blif$814": {
+          "hide_name": 1,
+          "type": "OAI21_X1",
+          "parameters": {
+          },
+          "attributes": {
+          },
+          "connections": {
+            "A": [ 50 ],
+            "B1": [ 178 ],
+            "B2": [ 51 ],
+            "ZN": [ 179 ]
+          }
+        },
+        "$abc$699$auto$blifparse.cc:396:parse_blif$815": {
+          "hide_name": 1,
+          "type": "AOI21_X1",
+          "parameters": {
+          },
+          "attributes": {
+          },
+          "connections": {
+            "A": [ 179 ],
+            "B1": [ 178 ],
+            "B2": [ 51 ],
+            "ZN": [ 180 ]
+          }
+        },
+        "$abc$699$auto$blifparse.cc:396:parse_blif$816": {
+          "hide_name": 1,
+          "type": "NAND2_X1",
+          "parameters": {
+          },
+          "attributes": {
+          },
+          "connections": {
+            "A1": [ 51 ],
+            "A2": [ 52 ],
+            "ZN": [ 181 ]
+          }
+        },
+        "$abc$699$auto$blifparse.cc:396:parse_blif$817": {
+          "hide_name": 1,
+          "type": "MUX2_X1",
+          "parameters": {
+          },
+          "attributes": {
+          },
+          "connections": {
+            "A": [ 181 ],
+            "B": [ 54 ],
+            "S": [ 173 ],
+            "Z": [ 182 ]
+          }
+        },
+        "$abc$699$auto$blifparse.cc:396:parse_blif$818": {
+          "hide_name": 1,
+          "type": "XNOR2_X1",
+          "parameters": {
+          },
+          "attributes": {
+          },
+          "connections": {
+            "A": [ 55 ],
+            "B": [ 182 ],
+            "ZN": [ 183 ]
+          }
+        },
+        "$abc$699$auto$blifparse.cc:396:parse_blif$819": {
+          "hide_name": 1,
+          "type": "OAI21_X1",
+          "parameters": {
+          },
+          "attributes": {
+          },
+          "connections": {
+            "A": [ 50 ],
+            "B1": [ 175 ],
+            "B2": [ 24 ],
+            "ZN": [ 184 ]
+          }
+        },
+        "$abc$699$auto$blifparse.cc:396:parse_blif$820": {
+          "hide_name": 1,
+          "type": "AOI21_X1",
+          "parameters": {
+          },
+          "attributes": {
+          },
+          "connections": {
+            "A": [ 184 ],
+            "B1": [ 183 ],
+            "B2": [ 175 ],
+            "ZN": [ 185 ]
+          }
+        },
+        "$abc$699$auto$blifparse.cc:396:parse_blif$821": {
+          "hide_name": 1,
+          "type": "NOR2_X1",
+          "parameters": {
+          },
+          "attributes": {
+          },
+          "connections": {
+            "A1": [ 133 ],
+            "A2": [ 3 ],
+            "ZN": [ 186 ]
+          }
+        },
+        "$abc$699$auto$blifparse.cc:396:parse_blif$822": {
+          "hide_name": 1,
+          "type": "NAND3_X1",
+          "parameters": {
+          },
+          "attributes": {
+          },
+          "connections": {
+            "A1": [ 30 ],
+            "A2": [ 131 ],
+            "A3": [ 186 ],
+            "ZN": [ 187 ]
+          }
+        },
+        "$abc$699$auto$blifparse.cc:396:parse_blif$823": {
+          "hide_name": 1,
+          "type": "MUX2_X1",
+          "parameters": {
+          },
+          "attributes": {
+          },
+          "connections": {
+            "A": [ 6 ],
+            "B": [ 63 ],
+            "S": [ 187 ],
+            "Z": [ 188 ]
+          }
+        },
+        "$abc$699$auto$blifparse.cc:396:parse_blif$824": {
+          "hide_name": 1,
+          "type": "MUX2_X1",
+          "parameters": {
+          },
+          "attributes": {
+          },
+          "connections": {
+            "A": [ 7 ],
+            "B": [ 72 ],
+            "S": [ 187 ],
+            "Z": [ 189 ]
+          }
+        },
+        "$abc$699$auto$blifparse.cc:396:parse_blif$825": {
+          "hide_name": 1,
+          "type": "MUX2_X1",
+          "parameters": {
+          },
+          "attributes": {
+          },
+          "connections": {
+            "A": [ 8 ],
+            "B": [ 81 ],
+            "S": [ 187 ],
+            "Z": [ 190 ]
+          }
+        },
+        "$abc$699$auto$blifparse.cc:396:parse_blif$826": {
+          "hide_name": 1,
+          "type": "MUX2_X1",
+          "parameters": {
+          },
+          "attributes": {
+          },
+          "connections": {
+            "A": [ 9 ],
+            "B": [ 90 ],
+            "S": [ 187 ],
+            "Z": [ 191 ]
+          }
+        },
+        "$abc$699$auto$blifparse.cc:396:parse_blif$827": {
+          "hide_name": 1,
+          "type": "MUX2_X1",
+          "parameters": {
+          },
+          "attributes": {
+          },
+          "connections": {
+            "A": [ 10 ],
+            "B": [ 99 ],
+            "S": [ 187 ],
+            "Z": [ 192 ]
+          }
+        },
+        "$abc$699$auto$blifparse.cc:396:parse_blif$828": {
+          "hide_name": 1,
+          "type": "MUX2_X1",
+          "parameters": {
+          },
+          "attributes": {
+          },
+          "connections": {
+            "A": [ 11 ],
+            "B": [ 108 ],
+            "S": [ 187 ],
+            "Z": [ 193 ]
+          }
+        },
+        "$abc$699$auto$blifparse.cc:396:parse_blif$829": {
+          "hide_name": 1,
+          "type": "MUX2_X1",
+          "parameters": {
+          },
+          "attributes": {
+          },
+          "connections": {
+            "A": [ 12 ],
+            "B": [ 117 ],
+            "S": [ 187 ],
+            "Z": [ 194 ]
+          }
+        },
+        "$abc$699$auto$blifparse.cc:396:parse_blif$830": {
+          "hide_name": 1,
+          "type": "MUX2_X1",
+          "parameters": {
+          },
+          "attributes": {
+          },
+          "connections": {
+            "A": [ 13 ],
+            "B": [ 126 ],
+            "S": [ 187 ],
+            "Z": [ 195 ]
+          }
+        },
+        "$auto$ff.cc:266:slice$261": {
+          "hide_name": 1,
+          "type": "DFF_X1",
+          "parameters": {
+          },
+          "attributes": {
+          },
+          "connections": {
+            "CK": [ 2 ],
+            "D": [ 67 ],
+            "Q": [ 14 ],
+            "QN": [ 196 ]
+          }
+        },
+        "$auto$ff.cc:266:slice$262": {
+          "hide_name": 1,
+          "type": "DFF_X1",
+          "parameters": {
+          },
+          "attributes": {
+          },
+          "connections": {
+            "CK": [ 2 ],
+            "D": [ 76 ],
+            "Q": [ 15 ],
+            "QN": [ 197 ]
+          }
+        },
+        "$auto$ff.cc:266:slice$263": {
+          "hide_name": 1,
+          "type": "DFF_X1",
+          "parameters": {
+          },
+          "attributes": {
+          },
+          "connections": {
+            "CK": [ 2 ],
+            "D": [ 85 ],
+            "Q": [ 16 ],
+            "QN": [ 198 ]
+          }
+        },
+        "$auto$ff.cc:266:slice$264": {
+          "hide_name": 1,
+          "type": "DFF_X1",
+          "parameters": {
+          },
+          "attributes": {
+          },
+          "connections": {
+            "CK": [ 2 ],
+            "D": [ 94 ],
+            "Q": [ 17 ],
+            "QN": [ 199 ]
+          }
+        },
+        "$auto$ff.cc:266:slice$265": {
+          "hide_name": 1,
+          "type": "DFF_X1",
+          "parameters": {
+          },
+          "attributes": {
+          },
+          "connections": {
+            "CK": [ 2 ],
+            "D": [ 103 ],
+            "Q": [ 18 ],
+            "QN": [ 200 ]
+          }
+        },
+        "$auto$ff.cc:266:slice$266": {
+          "hide_name": 1,
+          "type": "DFF_X1",
+          "parameters": {
+          },
+          "attributes": {
+          },
+          "connections": {
+            "CK": [ 2 ],
+            "D": [ 112 ],
+            "Q": [ 19 ],
+            "QN": [ 201 ]
+          }
+        },
+        "$auto$ff.cc:266:slice$267": {
+          "hide_name": 1,
+          "type": "DFF_X1",
+          "parameters": {
+          },
+          "attributes": {
+          },
+          "connections": {
+            "CK": [ 2 ],
+            "D": [ 121 ],
+            "Q": [ 20 ],
+            "QN": [ 202 ]
+          }
+        },
+        "$auto$ff.cc:266:slice$268": {
+          "hide_name": 1,
+          "type": "DFF_X1",
+          "parameters": {
+          },
+          "attributes": {
+          },
+          "connections": {
+            "CK": [ 2 ],
+            "D": [ 130 ],
+            "Q": [ 21 ],
+            "QN": [ 203 ]
+          }
+        },
+        "$auto$ff.cc:266:slice$290": {
+          "hide_name": 1,
+          "type": "DFF_X1",
+          "parameters": {
+          },
+          "attributes": {
+          },
+          "connections": {
+            "CK": [ 2 ],
+            "D": [ 136 ],
+            "Q": [ 58 ],
+            "QN": [ 204 ]
+          }
+        },
+        "$auto$ff.cc:266:slice$291": {
+          "hide_name": 1,
+          "type": "DFF_X1",
+          "parameters": {
+          },
+          "attributes": {
+          },
+          "connections": {
+            "CK": [ 2 ],
+            "D": [ 137 ],
+            "Q": [ 68 ],
+            "QN": [ 205 ]
+          }
+        },
+        "$auto$ff.cc:266:slice$292": {
+          "hide_name": 1,
+          "type": "DFF_X1",
+          "parameters": {
+          },
+          "attributes": {
+          },
+          "connections": {
+            "CK": [ 2 ],
+            "D": [ 138 ],
+            "Q": [ 77 ],
+            "QN": [ 206 ]
+          }
+        },
+        "$auto$ff.cc:266:slice$293": {
+          "hide_name": 1,
+          "type": "DFF_X1",
+          "parameters": {
+          },
+          "attributes": {
+          },
+          "connections": {
+            "CK": [ 2 ],
+            "D": [ 139 ],
+            "Q": [ 86 ],
+            "QN": [ 207 ]
+          }
+        },
+        "$auto$ff.cc:266:slice$294": {
+          "hide_name": 1,
+          "type": "DFF_X1",
+          "parameters": {
+          },
+          "attributes": {
+          },
+          "connections": {
+            "CK": [ 2 ],
+            "D": [ 140 ],
+            "Q": [ 95 ],
+            "QN": [ 208 ]
+          }
+        },
+        "$auto$ff.cc:266:slice$295": {
+          "hide_name": 1,
+          "type": "DFF_X1",
+          "parameters": {
+          },
+          "attributes": {
+          },
+          "connections": {
+            "CK": [ 2 ],
+            "D": [ 141 ],
+            "Q": [ 104 ],
+            "QN": [ 209 ]
+          }
+        },
+        "$auto$ff.cc:266:slice$296": {
+          "hide_name": 1,
+          "type": "DFF_X1",
+          "parameters": {
+          },
+          "attributes": {
+          },
+          "connections": {
+            "CK": [ 2 ],
+            "D": [ 142 ],
+            "Q": [ 113 ],
+            "QN": [ 210 ]
+          }
+        },
+        "$auto$ff.cc:266:slice$297": {
+          "hide_name": 1,
+          "type": "DFF_X1",
+          "parameters": {
+          },
+          "attributes": {
+          },
+          "connections": {
+            "CK": [ 2 ],
+            "D": [ 143 ],
+            "Q": [ 122 ],
+            "QN": [ 211 ]
+          }
+        },
+        "$auto$ff.cc:266:slice$308": {
+          "hide_name": 1,
+          "type": "DFF_X1",
+          "parameters": {
+          },
+          "attributes": {
+          },
+          "connections": {
+            "CK": [ 2 ],
+            "D": [ 145 ],
+            "Q": [ 34 ],
+            "QN": [ 212 ]
+          }
+        },
+        "$auto$ff.cc:266:slice$309": {
+          "hide_name": 1,
+          "type": "DFF_X1",
+          "parameters": {
+          },
+          "attributes": {
+          },
+          "connections": {
+            "CK": [ 2 ],
+            "D": [ 146 ],
+            "Q": [ 36 ],
+            "QN": [ 213 ]
+          }
+        },
+        "$auto$ff.cc:266:slice$310": {
+          "hide_name": 1,
+          "type": "DFF_X1",
+          "parameters": {
+          },
+          "attributes": {
+          },
+          "connections": {
+            "CK": [ 2 ],
+            "D": [ 147 ],
+            "Q": [ 38 ],
+            "QN": [ 214 ]
+          }
+        },
+        "$auto$ff.cc:266:slice$311": {
+          "hide_name": 1,
+          "type": "DFF_X1",
+          "parameters": {
+          },
+          "attributes": {
+          },
+          "connections": {
+            "CK": [ 2 ],
+            "D": [ 148 ],
+            "Q": [ 40 ],
+            "QN": [ 215 ]
+          }
+        },
+        "$auto$ff.cc:266:slice$312": {
+          "hide_name": 1,
+          "type": "DFF_X1",
+          "parameters": {
+          },
+          "attributes": {
+          },
+          "connections": {
+            "CK": [ 2 ],
+            "D": [ 149 ],
+            "Q": [ 42 ],
+            "QN": [ 216 ]
+          }
+        },
+        "$auto$ff.cc:266:slice$313": {
+          "hide_name": 1,
+          "type": "DFF_X1",
+          "parameters": {
+          },
+          "attributes": {
+          },
+          "connections": {
+            "CK": [ 2 ],
+            "D": [ 150 ],
+            "Q": [ 44 ],
+            "QN": [ 217 ]
+          }
+        },
+        "$auto$ff.cc:266:slice$314": {
+          "hide_name": 1,
+          "type": "DFF_X1",
+          "parameters": {
+          },
+          "attributes": {
+          },
+          "connections": {
+            "CK": [ 2 ],
+            "D": [ 151 ],
+            "Q": [ 46 ],
+            "QN": [ 218 ]
+          }
+        },
+        "$auto$ff.cc:266:slice$315": {
+          "hide_name": 1,
+          "type": "DFF_X1",
+          "parameters": {
+          },
+          "attributes": {
+          },
+          "connections": {
+            "CK": [ 2 ],
+            "D": [ 152 ],
+            "Q": [ 48 ],
+            "QN": [ 219 ]
+          }
+        },
+        "$auto$ff.cc:266:slice$323": {
+          "hide_name": 1,
+          "type": "DFF_X1",
+          "parameters": {
+          },
+          "attributes": {
+          },
+          "connections": {
+            "CK": [ 2 ],
+            "D": [ 154 ],
+            "Q": [ 62 ],
+            "QN": [ 220 ]
+          }
+        },
+        "$auto$ff.cc:266:slice$324": {
+          "hide_name": 1,
+          "type": "DFF_X1",
+          "parameters": {
+          },
+          "attributes": {
+          },
+          "connections": {
+            "CK": [ 2 ],
+            "D": [ 155 ],
+            "Q": [ 71 ],
+            "QN": [ 221 ]
+          }
+        },
+        "$auto$ff.cc:266:slice$325": {
+          "hide_name": 1,
+          "type": "DFF_X1",
+          "parameters": {
+          },
+          "attributes": {
+          },
+          "connections": {
+            "CK": [ 2 ],
+            "D": [ 156 ],
+            "Q": [ 80 ],
+            "QN": [ 222 ]
+          }
+        },
+        "$auto$ff.cc:266:slice$326": {
+          "hide_name": 1,
+          "type": "DFF_X1",
+          "parameters": {
+          },
+          "attributes": {
+          },
+          "connections": {
+            "CK": [ 2 ],
+            "D": [ 157 ],
+            "Q": [ 89 ],
+            "QN": [ 223 ]
+          }
+        },
+        "$auto$ff.cc:266:slice$327": {
+          "hide_name": 1,
+          "type": "DFF_X1",
+          "parameters": {
+          },
+          "attributes": {
+          },
+          "connections": {
+            "CK": [ 2 ],
+            "D": [ 158 ],
+            "Q": [ 98 ],
+            "QN": [ 224 ]
+          }
+        },
+        "$auto$ff.cc:266:slice$328": {
+          "hide_name": 1,
+          "type": "DFF_X1",
+          "parameters": {
+          },
+          "attributes": {
+          },
+          "connections": {
+            "CK": [ 2 ],
+            "D": [ 159 ],
+            "Q": [ 107 ],
+            "QN": [ 225 ]
+          }
+        },
+        "$auto$ff.cc:266:slice$329": {
+          "hide_name": 1,
+          "type": "DFF_X1",
+          "parameters": {
+          },
+          "attributes": {
+          },
+          "connections": {
+            "CK": [ 2 ],
+            "D": [ 160 ],
+            "Q": [ 116 ],
+            "QN": [ 226 ]
+          }
+        },
+        "$auto$ff.cc:266:slice$330": {
+          "hide_name": 1,
+          "type": "DFF_X1",
+          "parameters": {
+          },
+          "attributes": {
+          },
+          "connections": {
+            "CK": [ 2 ],
+            "D": [ 161 ],
+            "Q": [ 125 ],
+            "QN": [ 227 ]
+          }
+        },
+        "$auto$ff.cc:266:slice$372": {
+          "hide_name": 1,
+          "type": "DFF_X1",
+          "parameters": {
+          },
+          "attributes": {
+            "src": "/home/maham_mtech/Mtech_project/AI_RTL_Verification/extensions/rtl/optimized/fifo_opt.v:38.5-57.8"
+          },
+          "connections": {
+            "CK": [ 2 ],
+            "D": [ 164 ],
+            "Q": [ 30 ],
+            "QN": [ 162 ]
+          }
+        },
+        "$auto$ff.cc:266:slice$373": {
+          "hide_name": 1,
+          "type": "DFF_X1",
+          "parameters": {
+          },
+          "attributes": {
+            "src": "/home/maham_mtech/Mtech_project/AI_RTL_Verification/extensions/rtl/optimized/fifo_opt.v:38.5-57.8"
+          },
+          "connections": {
+            "CK": [ 2 ],
+            "D": [ 167 ],
+            "Q": [ 133 ],
+            "QN": [ 228 ]
+          }
+        },
+        "$auto$ff.cc:266:slice$374": {
+          "hide_name": 1,
+          "type": "DFF_X1",
+          "parameters": {
+          },
+          "attributes": {
+            "src": "/home/maham_mtech/Mtech_project/AI_RTL_Verification/extensions/rtl/optimized/fifo_opt.v:38.5-57.8"
+          },
+          "connections": {
+            "CK": [ 2 ],
+            "D": [ 169 ],
+            "Q": [ 57 ],
+            "QN": [ 28 ]
+          }
+        },
+        "$auto$ff.cc:266:slice$375": {
+          "hide_name": 1,
+          "type": "DFF_X1",
+          "parameters": {
+          },
+          "attributes": {
+            "src": "/home/maham_mtech/Mtech_project/AI_RTL_Verification/extensions/rtl/optimized/fifo_opt.v:38.5-57.8"
+          },
+          "connections": {
+            "CK": [ 2 ],
+            "D": [ 172 ],
+            "Q": [ 60 ],
+            "QN": [ 229 ]
+          }
+        },
+        "$auto$ff.cc:266:slice$376": {
+          "hide_name": 1,
+          "type": "DFF_X1",
+          "parameters": {
+          },
+          "attributes": {
+            "src": "/home/maham_mtech/Mtech_project/AI_RTL_Verification/extensions/rtl/optimized/fifo_opt.v:38.5-57.8"
+          },
+          "connections": {
+            "CK": [ 2 ],
+            "D": [ 177 ],
+            "Q": [ 52 ],
+            "QN": [ 26 ]
+          }
+        },
+        "$auto$ff.cc:266:slice$377": {
+          "hide_name": 1,
+          "type": "DFF_X1",
+          "parameters": {
+          },
+          "attributes": {
+            "src": "/home/maham_mtech/Mtech_project/AI_RTL_Verification/extensions/rtl/optimized/fifo_opt.v:38.5-57.8"
+          },
+          "connections": {
+            "CK": [ 2 ],
+            "D": [ 180 ],
+            "Q": [ 51 ],
+            "QN": [ 230 ]
+          }
+        },
+        "$auto$ff.cc:266:slice$378": {
+          "hide_name": 1,
+          "type": "DFF_X1",
+          "parameters": {
+          },
+          "attributes": {
+            "src": "/home/maham_mtech/Mtech_project/AI_RTL_Verification/extensions/rtl/optimized/fifo_opt.v:38.5-57.8"
+          },
+          "connections": {
+            "CK": [ 2 ],
+            "D": [ 185 ],
+            "Q": [ 24 ],
+            "QN": [ 55 ]
+          }
+        },
+        "$auto$ff.cc:266:slice$379": {
+          "hide_name": 1,
+          "type": "DFF_X1",
+          "parameters": {
+          },
+          "attributes": {
+          },
+          "connections": {
+            "CK": [ 2 ],
+            "D": [ 188 ],
+            "Q": [ 63 ],
+            "QN": [ 231 ]
+          }
+        },
+        "$auto$ff.cc:266:slice$380": {
+          "hide_name": 1,
+          "type": "DFF_X1",
+          "parameters": {
+          },
+          "attributes": {
+          },
+          "connections": {
+            "CK": [ 2 ],
+            "D": [ 189 ],
+            "Q": [ 72 ],
+            "QN": [ 232 ]
+          }
+        },
+        "$auto$ff.cc:266:slice$381": {
+          "hide_name": 1,
+          "type": "DFF_X1",
+          "parameters": {
+          },
+          "attributes": {
+          },
+          "connections": {
+            "CK": [ 2 ],
+            "D": [ 190 ],
+            "Q": [ 81 ],
+            "QN": [ 233 ]
+          }
+        },
+        "$auto$ff.cc:266:slice$382": {
+          "hide_name": 1,
+          "type": "DFF_X1",
+          "parameters": {
+          },
+          "attributes": {
+          },
+          "connections": {
+            "CK": [ 2 ],
+            "D": [ 191 ],
+            "Q": [ 90 ],
+            "QN": [ 234 ]
+          }
+        },
+        "$auto$ff.cc:266:slice$383": {
+          "hide_name": 1,
+          "type": "DFF_X1",
+          "parameters": {
+          },
+          "attributes": {
+          },
+          "connections": {
+            "CK": [ 2 ],
+            "D": [ 192 ],
+            "Q": [ 99 ],
+            "QN": [ 235 ]
+          }
+        },
+        "$auto$ff.cc:266:slice$384": {
+          "hide_name": 1,
+          "type": "DFF_X1",
+          "parameters": {
+          },
+          "attributes": {
+          },
+          "connections": {
+            "CK": [ 2 ],
+            "D": [ 193 ],
+            "Q": [ 108 ],
+            "QN": [ 236 ]
+          }
+        },
+        "$auto$ff.cc:266:slice$385": {
+          "hide_name": 1,
+          "type": "DFF_X1",
+          "parameters": {
+          },
+          "attributes": {
+          },
+          "connections": {
+            "CK": [ 2 ],
+            "D": [ 194 ],
+            "Q": [ 117 ],
+            "QN": [ 237 ]
+          }
+        },
+        "$auto$ff.cc:266:slice$386": {
+          "hide_name": 1,
+          "type": "DFF_X1",
+          "parameters": {
+          },
+          "attributes": {
+          },
+          "connections": {
+            "CK": [ 2 ],
+            "D": [ 195 ],
+            "Q": [ 126 ],
+            "QN": [ 238 ]
+          }
+        }
+      },
+      "netnames": {
+        "$abc$469$new_n67": {
+          "hide_name": 1,
+          "bits": [ 55 ],
+          "attributes": {
+          }
+        },
+        "$abc$699$auto$rtlil.cc:3025:MuxGate$527": {
+          "hide_name": 1,
+          "bits": [ 67 ],
+          "attributes": {
+          }
+        },
+        "$abc$699$auto$rtlil.cc:3025:MuxGate$531": {
+          "hide_name": 1,
+          "bits": [ 76 ],
+          "attributes": {
+          }
+        },
+        "$abc$699$auto$rtlil.cc:3025:MuxGate$535": {
+          "hide_name": 1,
+          "bits": [ 85 ],
+          "attributes": {
+          }
+        },
+        "$abc$699$auto$rtlil.cc:3025:MuxGate$539": {
+          "hide_name": 1,
+          "bits": [ 94 ],
+          "attributes": {
+          }
+        },
+        "$abc$699$auto$rtlil.cc:3025:MuxGate$543": {
+          "hide_name": 1,
+          "bits": [ 103 ],
+          "attributes": {
+          }
+        },
+        "$abc$699$auto$rtlil.cc:3025:MuxGate$547": {
+          "hide_name": 1,
+          "bits": [ 112 ],
+          "attributes": {
+          }
+        },
+        "$abc$699$auto$rtlil.cc:3025:MuxGate$551": {
+          "hide_name": 1,
+          "bits": [ 121 ],
+          "attributes": {
+          }
+        },
+        "$abc$699$auto$rtlil.cc:3025:MuxGate$555": {
+          "hide_name": 1,
+          "bits": [ 130 ],
+          "attributes": {
+          }
+        },
+        "$abc$699$auto$rtlil.cc:3025:MuxGate$557": {
+          "hide_name": 1,
+          "bits": [ 136 ],
+          "attributes": {
+          }
+        },
+        "$abc$699$auto$rtlil.cc:3025:MuxGate$559": {
+          "hide_name": 1,
+          "bits": [ 137 ],
+          "attributes": {
+          }
+        },
+        "$abc$699$auto$rtlil.cc:3025:MuxGate$561": {
+          "hide_name": 1,
+          "bits": [ 138 ],
+          "attributes": {
+          }
+        },
+        "$abc$699$auto$rtlil.cc:3025:MuxGate$563": {
+          "hide_name": 1,
+          "bits": [ 139 ],
+          "attributes": {
+          }
+        },
+        "$abc$699$auto$rtlil.cc:3025:MuxGate$565": {
+          "hide_name": 1,
+          "bits": [ 140 ],
+          "attributes": {
+          }
+        },
+        "$abc$699$auto$rtlil.cc:3025:MuxGate$567": {
+          "hide_name": 1,
+          "bits": [ 141 ],
+          "attributes": {
+          }
+        },
+        "$abc$699$auto$rtlil.cc:3025:MuxGate$569": {
+          "hide_name": 1,
+          "bits": [ 142 ],
+          "attributes": {
+          }
+        },
+        "$abc$699$auto$rtlil.cc:3025:MuxGate$571": {
+          "hide_name": 1,
+          "bits": [ 143 ],
+          "attributes": {
+          }
+        },
+        "$abc$699$auto$rtlil.cc:3025:MuxGate$573": {
+          "hide_name": 1,
+          "bits": [ 145 ],
+          "attributes": {
+          }
+        },
+        "$abc$699$auto$rtlil.cc:3025:MuxGate$575": {
+          "hide_name": 1,
+          "bits": [ 146 ],
+          "attributes": {
+          }
+        },
+        "$abc$699$auto$rtlil.cc:3025:MuxGate$577": {
+          "hide_name": 1,
+          "bits": [ 147 ],
+          "attributes": {
+          }
+        },
+        "$abc$699$auto$rtlil.cc:3025:MuxGate$579": {
+          "hide_name": 1,
+          "bits": [ 148 ],
+          "attributes": {
+          }
+        },
+        "$abc$699$auto$rtlil.cc:3025:MuxGate$581": {
+          "hide_name": 1,
+          "bits": [ 149 ],
+          "attributes": {
+          }
+        },
+        "$abc$699$auto$rtlil.cc:3025:MuxGate$583": {
+          "hide_name": 1,
+          "bits": [ 150 ],
+          "attributes": {
+          }
+        },
+        "$abc$699$auto$rtlil.cc:3025:MuxGate$585": {
+          "hide_name": 1,
+          "bits": [ 151 ],
+          "attributes": {
+          }
+        },
+        "$abc$699$auto$rtlil.cc:3025:MuxGate$587": {
+          "hide_name": 1,
+          "bits": [ 152 ],
+          "attributes": {
+          }
+        },
+        "$abc$699$auto$rtlil.cc:3025:MuxGate$589": {
+          "hide_name": 1,
+          "bits": [ 154 ],
+          "attributes": {
+          }
+        },
+        "$abc$699$auto$rtlil.cc:3025:MuxGate$591": {
+          "hide_name": 1,
+          "bits": [ 155 ],
+          "attributes": {
+          }
+        },
+        "$abc$699$auto$rtlil.cc:3025:MuxGate$593": {
+          "hide_name": 1,
+          "bits": [ 156 ],
+          "attributes": {
+          }
+        },
+        "$abc$699$auto$rtlil.cc:3025:MuxGate$595": {
+          "hide_name": 1,
+          "bits": [ 157 ],
+          "attributes": {
+          }
+        },
+        "$abc$699$auto$rtlil.cc:3025:MuxGate$597": {
+          "hide_name": 1,
+          "bits": [ 158 ],
+          "attributes": {
+          }
+        },
+        "$abc$699$auto$rtlil.cc:3025:MuxGate$599": {
+          "hide_name": 1,
+          "bits": [ 159 ],
+          "attributes": {
+          }
+        },
+        "$abc$699$auto$rtlil.cc:3025:MuxGate$601": {
+          "hide_name": 1,
+          "bits": [ 160 ],
+          "attributes": {
+          }
+        },
+        "$abc$699$auto$rtlil.cc:3025:MuxGate$603": {
+          "hide_name": 1,
+          "bits": [ 161 ],
+          "attributes": {
+          }
+        },
+        "$abc$699$auto$rtlil.cc:3025:MuxGate$607": {
+          "hide_name": 1,
+          "bits": [ 164 ],
+          "attributes": {
+          }
+        },
+        "$abc$699$auto$rtlil.cc:3025:MuxGate$611": {
+          "hide_name": 1,
+          "bits": [ 167 ],
+          "attributes": {
+          }
+        },
+        "$abc$699$auto$rtlil.cc:3025:MuxGate$615": {
+          "hide_name": 1,
+          "bits": [ 169 ],
+          "attributes": {
+          }
+        },
+        "$abc$699$auto$rtlil.cc:3025:MuxGate$619": {
+          "hide_name": 1,
+          "bits": [ 172 ],
+          "attributes": {
+          }
+        },
+        "$abc$699$auto$rtlil.cc:3025:MuxGate$623": {
+          "hide_name": 1,
+          "bits": [ 177 ],
+          "attributes": {
+          }
+        },
+        "$abc$699$auto$rtlil.cc:3025:MuxGate$627": {
+          "hide_name": 1,
+          "bits": [ 180 ],
+          "attributes": {
+          }
+        },
+        "$abc$699$auto$rtlil.cc:3025:MuxGate$631": {
+          "hide_name": 1,
+          "bits": [ 185 ],
+          "attributes": {
+          }
+        },
+        "$abc$699$auto$rtlil.cc:3025:MuxGate$633": {
+          "hide_name": 1,
+          "bits": [ 188 ],
+          "attributes": {
+          }
+        },
+        "$abc$699$auto$rtlil.cc:3025:MuxGate$635": {
+          "hide_name": 1,
+          "bits": [ 189 ],
+          "attributes": {
+          }
+        },
+        "$abc$699$auto$rtlil.cc:3025:MuxGate$637": {
+          "hide_name": 1,
+          "bits": [ 190 ],
+          "attributes": {
+          }
+        },
+        "$abc$699$auto$rtlil.cc:3025:MuxGate$639": {
+          "hide_name": 1,
+          "bits": [ 191 ],
+          "attributes": {
+          }
+        },
+        "$abc$699$auto$rtlil.cc:3025:MuxGate$641": {
+          "hide_name": 1,
+          "bits": [ 192 ],
+          "attributes": {
+          }
+        },
+        "$abc$699$auto$rtlil.cc:3025:MuxGate$643": {
+          "hide_name": 1,
+          "bits": [ 193 ],
+          "attributes": {
+          }
+        },
+        "$abc$699$auto$rtlil.cc:3025:MuxGate$645": {
+          "hide_name": 1,
+          "bits": [ 194 ],
+          "attributes": {
+          }
+        },
+        "$abc$699$auto$rtlil.cc:3025:MuxGate$647": {
+          "hide_name": 1,
+          "bits": [ 195 ],
+          "attributes": {
+          }
+        },
+        "$abc$699$new_n112": {
+          "hide_name": 1,
+          "bits": [ 25 ],
+          "attributes": {
+          }
+        },
+        "$abc$699$new_n113": {
+          "hide_name": 1,
+          "bits": [ 27 ],
+          "attributes": {
+          }
+        },
+        "$abc$699$new_n114": {
+          "hide_name": 1,
+          "bits": [ 29 ],
+          "attributes": {
+          }
+        },
+        "$abc$699$new_n115": {
+          "hide_name": 1,
+          "bits": [ 31 ],
+          "attributes": {
+          }
+        },
+        "$abc$699$new_n116": {
+          "hide_name": 1,
+          "bits": [ 32 ],
+          "attributes": {
+          }
+        },
+        "$abc$699$new_n117": {
+          "hide_name": 1,
+          "bits": [ 33 ],
+          "attributes": {
+          }
+        },
+        "$abc$699$new_n118": {
+          "hide_name": 1,
+          "bits": [ 35 ],
+          "attributes": {
+          }
+        },
+        "$abc$699$new_n119": {
+          "hide_name": 1,
+          "bits": [ 37 ],
+          "attributes": {
+          }
+        },
+        "$abc$699$new_n120": {
+          "hide_name": 1,
+          "bits": [ 39 ],
+          "attributes": {
+          }
+        },
+        "$abc$699$new_n121": {
+          "hide_name": 1,
+          "bits": [ 41 ],
+          "attributes": {
+          }
+        },
+        "$abc$699$new_n122": {
+          "hide_name": 1,
+          "bits": [ 43 ],
+          "attributes": {
+          }
+        },
+        "$abc$699$new_n123": {
+          "hide_name": 1,
+          "bits": [ 45 ],
+          "attributes": {
+          }
+        },
+        "$abc$699$new_n124": {
+          "hide_name": 1,
+          "bits": [ 47 ],
+          "attributes": {
+          }
+        },
+        "$abc$699$new_n125": {
+          "hide_name": 1,
+          "bits": [ 49 ],
+          "attributes": {
+          }
+        },
+        "$abc$699$new_n126": {
+          "hide_name": 1,
+          "bits": [ 50 ],
+          "attributes": {
+          }
+        },
+        "$abc$699$new_n127": {
+          "hide_name": 1,
+          "bits": [ 53 ],
+          "attributes": {
+          }
+        },
+        "$abc$699$new_n128": {
+          "hide_name": 1,
+          "bits": [ 54 ],
+          "attributes": {
+          }
+        },
+        "$abc$699$new_n131": {
+          "hide_name": 1,
+          "bits": [ 56 ],
+          "attributes": {
+          }
+        },
+        "$abc$699$new_n132": {
+          "hide_name": 1,
+          "bits": [ 59 ],
+          "attributes": {
+          }
+        },
+        "$abc$699$new_n133": {
+          "hide_name": 1,
+          "bits": [ 61 ],
+          "attributes": {
+          }
+        },
+        "$abc$699$new_n134": {
+          "hide_name": 1,
+          "bits": [ 64 ],
+          "attributes": {
+          }
+        },
+        "$abc$699$new_n135": {
+          "hide_name": 1,
+          "bits": [ 65 ],
+          "attributes": {
+          }
+        },
+        "$abc$699$new_n136": {
+          "hide_name": 1,
+          "bits": [ 66 ],
+          "attributes": {
+          }
+        },
+        "$abc$699$new_n138": {
+          "hide_name": 1,
+          "bits": [ 69 ],
+          "attributes": {
+          }
+        },
+        "$abc$699$new_n139": {
+          "hide_name": 1,
+          "bits": [ 70 ],
+          "attributes": {
+          }
+        },
+        "$abc$699$new_n140": {
+          "hide_name": 1,
+          "bits": [ 73 ],
+          "attributes": {
+          }
+        },
+        "$abc$699$new_n141": {
+          "hide_name": 1,
+          "bits": [ 74 ],
+          "attributes": {
+          }
+        },
+        "$abc$699$new_n142": {
+          "hide_name": 1,
+          "bits": [ 75 ],
+          "attributes": {
+          }
+        },
+        "$abc$699$new_n144": {
+          "hide_name": 1,
+          "bits": [ 78 ],
+          "attributes": {
+          }
+        },
+        "$abc$699$new_n145": {
+          "hide_name": 1,
+          "bits": [ 79 ],
+          "attributes": {
+          }
+        },
+        "$abc$699$new_n146": {
+          "hide_name": 1,
+          "bits": [ 82 ],
+          "attributes": {
+          }
+        },
+        "$abc$699$new_n147": {
+          "hide_name": 1,
+          "bits": [ 83 ],
+          "attributes": {
+          }
+        },
+        "$abc$699$new_n148": {
+          "hide_name": 1,
+          "bits": [ 84 ],
+          "attributes": {
+          }
+        },
+        "$abc$699$new_n150": {
+          "hide_name": 1,
+          "bits": [ 87 ],
+          "attributes": {
+          }
+        },
+        "$abc$699$new_n151": {
+          "hide_name": 1,
+          "bits": [ 88 ],
+          "attributes": {
+          }
+        },
+        "$abc$699$new_n152": {
+          "hide_name": 1,
+          "bits": [ 91 ],
+          "attributes": {
+          }
+        },
+        "$abc$699$new_n153": {
+          "hide_name": 1,
+          "bits": [ 92 ],
+          "attributes": {
+          }
+        },
+        "$abc$699$new_n154": {
+          "hide_name": 1,
+          "bits": [ 93 ],
+          "attributes": {
+          }
+        },
+        "$abc$699$new_n156": {
+          "hide_name": 1,
+          "bits": [ 96 ],
+          "attributes": {
+          }
+        },
+        "$abc$699$new_n157": {
+          "hide_name": 1,
+          "bits": [ 97 ],
+          "attributes": {
+          }
+        },
+        "$abc$699$new_n158": {
+          "hide_name": 1,
+          "bits": [ 100 ],
+          "attributes": {
+          }
+        },
+        "$abc$699$new_n159": {
+          "hide_name": 1,
+          "bits": [ 101 ],
+          "attributes": {
+          }
+        },
+        "$abc$699$new_n160": {
+          "hide_name": 1,
+          "bits": [ 102 ],
+          "attributes": {
+          }
+        },
+        "$abc$699$new_n162": {
+          "hide_name": 1,
+          "bits": [ 105 ],
+          "attributes": {
+          }
+        },
+        "$abc$699$new_n163": {
+          "hide_name": 1,
+          "bits": [ 106 ],
+          "attributes": {
+          }
+        },
+        "$abc$699$new_n164": {
+          "hide_name": 1,
+          "bits": [ 109 ],
+          "attributes": {
+          }
+        },
+        "$abc$699$new_n165": {
+          "hide_name": 1,
+          "bits": [ 110 ],
+          "attributes": {
+          }
+        },
+        "$abc$699$new_n166": {
+          "hide_name": 1,
+          "bits": [ 111 ],
+          "attributes": {
+          }
+        },
+        "$abc$699$new_n168": {
+          "hide_name": 1,
+          "bits": [ 114 ],
+          "attributes": {
+          }
+        },
+        "$abc$699$new_n169": {
+          "hide_name": 1,
+          "bits": [ 115 ],
+          "attributes": {
+          }
+        },
+        "$abc$699$new_n170": {
+          "hide_name": 1,
+          "bits": [ 118 ],
+          "attributes": {
+          }
+        },
+        "$abc$699$new_n171": {
+          "hide_name": 1,
+          "bits": [ 119 ],
+          "attributes": {
+          }
+        },
+        "$abc$699$new_n172": {
+          "hide_name": 1,
+          "bits": [ 120 ],
+          "attributes": {
+          }
+        },
+        "$abc$699$new_n174": {
+          "hide_name": 1,
+          "bits": [ 123 ],
+          "attributes": {
+          }
+        },
+        "$abc$699$new_n175": {
+          "hide_name": 1,
+          "bits": [ 124 ],
+          "attributes": {
+          }
+        },
+        "$abc$699$new_n176": {
+          "hide_name": 1,
+          "bits": [ 127 ],
+          "attributes": {
+          }
+        },
+        "$abc$699$new_n177": {
+          "hide_name": 1,
+          "bits": [ 128 ],
+          "attributes": {
+          }
+        },
+        "$abc$699$new_n178": {
+          "hide_name": 1,
+          "bits": [ 129 ],
+          "attributes": {
+          }
+        },
+        "$abc$699$new_n180": {
+          "hide_name": 1,
+          "bits": [ 131 ],
+          "attributes": {
+          }
+        },
+        "$abc$699$new_n181": {
+          "hide_name": 1,
+          "bits": [ 132 ],
+          "attributes": {
+          }
+        },
+        "$abc$699$new_n182": {
+          "hide_name": 1,
+          "bits": [ 134 ],
+          "attributes": {
+          }
+        },
+        "$abc$699$new_n183": {
+          "hide_name": 1,
+          "bits": [ 135 ],
+          "attributes": {
+          }
+        },
+        "$abc$699$new_n192": {
+          "hide_name": 1,
+          "bits": [ 144 ],
+          "attributes": {
+          }
+        },
+        "$abc$699$new_n201": {
+          "hide_name": 1,
+          "bits": [ 153 ],
+          "attributes": {
+          }
+        },
+        "$abc$699$new_n210": {
+          "hide_name": 1,
+          "bits": [ 163 ],
+          "attributes": {
+          }
+        },
+        "$abc$699$new_n212": {
+          "hide_name": 1,
+          "bits": [ 165 ],
+          "attributes": {
+          }
+        },
+        "$abc$699$new_n213": {
+          "hide_name": 1,
+          "bits": [ 166 ],
+          "attributes": {
+          }
+        },
+        "$abc$699$new_n215": {
+          "hide_name": 1,
+          "bits": [ 168 ],
+          "attributes": {
+          }
+        },
+        "$abc$699$new_n217": {
+          "hide_name": 1,
+          "bits": [ 170 ],
+          "attributes": {
+          }
+        },
+        "$abc$699$new_n218": {
+          "hide_name": 1,
+          "bits": [ 171 ],
+          "attributes": {
+          }
+        },
+        "$abc$699$new_n220": {
+          "hide_name": 1,
+          "bits": [ 173 ],
+          "attributes": {
+          }
+        },
+        "$abc$699$new_n221": {
+          "hide_name": 1,
+          "bits": [ 174 ],
+          "attributes": {
+          }
+        },
+        "$abc$699$new_n222": {
+          "hide_name": 1,
+          "bits": [ 175 ],
+          "attributes": {
+          }
+        },
+        "$abc$699$new_n223": {
+          "hide_name": 1,
+          "bits": [ 176 ],
+          "attributes": {
+          }
+        },
+        "$abc$699$new_n225": {
+          "hide_name": 1,
+          "bits": [ 178 ],
+          "attributes": {
+          }
+        },
+        "$abc$699$new_n226": {
+          "hide_name": 1,
+          "bits": [ 179 ],
+          "attributes": {
+          }
+        },
+        "$abc$699$new_n228": {
+          "hide_name": 1,
+          "bits": [ 181 ],
+          "attributes": {
+          }
+        },
+        "$abc$699$new_n229": {
+          "hide_name": 1,
+          "bits": [ 182 ],
+          "attributes": {
+          }
+        },
+        "$abc$699$new_n230": {
+          "hide_name": 1,
+          "bits": [ 183 ],
+          "attributes": {
+          }
+        },
+        "$abc$699$new_n231": {
+          "hide_name": 1,
+          "bits": [ 184 ],
+          "attributes": {
+          }
+        },
+        "$abc$699$new_n233": {
+          "hide_name": 1,
+          "bits": [ 186 ],
+          "attributes": {
+          }
+        },
+        "$abc$699$new_n234": {
+          "hide_name": 1,
+          "bits": [ 187 ],
+          "attributes": {
+          }
+        },
+        "$auto$alumacc.cc:495:replace_alu$103.Y": {
+          "hide_name": 1,
+          "bits": [ 26, 239, 240 ],
+          "attributes": {
+            "force_downto": "00000000000000000000000000000001",
+            "src": "/home/maham_mtech/Mtech_project/AI_RTL_Verification/extensions/rtl/optimized/fifo_opt.v:53.33-53.45|/usr/bin/../share/yosys/techmap.v:270.26-270.27",
+            "unused_bits": "1 2"
+          }
+        },
+        "$auto$alumacc.cc:495:replace_alu$94.X": {
+          "hide_name": 1,
+          "bits": [ 162, 133 ],
+          "attributes": {
+            "force_downto": "00000000000000000000000000000001",
+            "src": "/home/maham_mtech/Mtech_project/AI_RTL_Verification/extensions/rtl/optimized/fifo_opt.v:46.30-46.46|/usr/bin/../share/yosys/techmap.v:270.23-270.24"
+          }
+        },
+        "$auto$alumacc.cc:495:replace_alu$97.X": {
+          "hide_name": 1,
+          "bits": [ 28, 60 ],
+          "attributes": {
+            "force_downto": "00000000000000000000000000000001",
+            "src": "/home/maham_mtech/Mtech_project/AI_RTL_Verification/extensions/rtl/optimized/fifo_opt.v:49.29-49.44|/usr/bin/../share/yosys/techmap.v:270.23-270.24"
+          }
+        },
+        "$auto$dfflibmap.cc:514:dfflibmap$648": {
+          "hide_name": 1,
+          "bits": [ 238 ],
+          "attributes": {
+          }
+        },
+        "$auto$dfflibmap.cc:514:dfflibmap$649": {
+          "hide_name": 1,
+          "bits": [ 237 ],
+          "attributes": {
+          }
+        },
+        "$auto$dfflibmap.cc:514:dfflibmap$650": {
+          "hide_name": 1,
+          "bits": [ 236 ],
+          "attributes": {
+          }
+        },
+        "$auto$dfflibmap.cc:514:dfflibmap$651": {
+          "hide_name": 1,
+          "bits": [ 235 ],
+          "attributes": {
+          }
+        },
+        "$auto$dfflibmap.cc:514:dfflibmap$652": {
+          "hide_name": 1,
+          "bits": [ 234 ],
+          "attributes": {
+          }
+        },
+        "$auto$dfflibmap.cc:514:dfflibmap$653": {
+          "hide_name": 1,
+          "bits": [ 233 ],
+          "attributes": {
+          }
+        },
+        "$auto$dfflibmap.cc:514:dfflibmap$654": {
+          "hide_name": 1,
+          "bits": [ 232 ],
+          "attributes": {
+          }
+        },
+        "$auto$dfflibmap.cc:514:dfflibmap$655": {
+          "hide_name": 1,
+          "bits": [ 231 ],
+          "attributes": {
+          }
+        },
+        "$auto$dfflibmap.cc:514:dfflibmap$658": {
+          "hide_name": 1,
+          "bits": [ 230 ],
+          "attributes": {
+          }
+        },
+        "$auto$dfflibmap.cc:514:dfflibmap$661": {
+          "hide_name": 1,
+          "bits": [ 229 ],
+          "attributes": {
+          }
+        },
+        "$auto$dfflibmap.cc:514:dfflibmap$664": {
+          "hide_name": 1,
+          "bits": [ 228 ],
+          "attributes": {
+          }
+        },
+        "$auto$dfflibmap.cc:514:dfflibmap$667": {
+          "hide_name": 1,
+          "bits": [ 227 ],
+          "attributes": {
+          }
+        },
+        "$auto$dfflibmap.cc:514:dfflibmap$668": {
+          "hide_name": 1,
+          "bits": [ 226 ],
+          "attributes": {
+          }
+        },
+        "$auto$dfflibmap.cc:514:dfflibmap$669": {
+          "hide_name": 1,
+          "bits": [ 225 ],
+          "attributes": {
+          }
+        },
+        "$auto$dfflibmap.cc:514:dfflibmap$670": {
+          "hide_name": 1,
+          "bits": [ 224 ],
+          "attributes": {
+          }
+        },
+        "$auto$dfflibmap.cc:514:dfflibmap$671": {
+          "hide_name": 1,
+          "bits": [ 223 ],
+          "attributes": {
+          }
+        },
+        "$auto$dfflibmap.cc:514:dfflibmap$672": {
+          "hide_name": 1,
+          "bits": [ 222 ],
+          "attributes": {
+          }
+        },
+        "$auto$dfflibmap.cc:514:dfflibmap$673": {
+          "hide_name": 1,
+          "bits": [ 221 ],
+          "attributes": {
+          }
+        },
+        "$auto$dfflibmap.cc:514:dfflibmap$674": {
+          "hide_name": 1,
+          "bits": [ 220 ],
+          "attributes": {
+          }
+        },
+        "$auto$dfflibmap.cc:514:dfflibmap$675": {
+          "hide_name": 1,
+          "bits": [ 219 ],
+          "attributes": {
+          }
+        },
+        "$auto$dfflibmap.cc:514:dfflibmap$676": {
+          "hide_name": 1,
+          "bits": [ 218 ],
+          "attributes": {
+          }
+        },
+        "$auto$dfflibmap.cc:514:dfflibmap$677": {
+          "hide_name": 1,
+          "bits": [ 217 ],
+          "attributes": {
+          }
+        },
+        "$auto$dfflibmap.cc:514:dfflibmap$678": {
+          "hide_name": 1,
+          "bits": [ 216 ],
+          "attributes": {
+          }
+        },
+        "$auto$dfflibmap.cc:514:dfflibmap$679": {
+          "hide_name": 1,
+          "bits": [ 215 ],
+          "attributes": {
+          }
+        },
+        "$auto$dfflibmap.cc:514:dfflibmap$680": {
+          "hide_name": 1,
+          "bits": [ 214 ],
+          "attributes": {
+          }
+        },
+        "$auto$dfflibmap.cc:514:dfflibmap$681": {
+          "hide_name": 1,
+          "bits": [ 213 ],
+          "attributes": {
+          }
+        },
+        "$auto$dfflibmap.cc:514:dfflibmap$682": {
+          "hide_name": 1,
+          "bits": [ 212 ],
+          "attributes": {
+          }
+        },
+        "$auto$dfflibmap.cc:514:dfflibmap$683": {
+          "hide_name": 1,
+          "bits": [ 211 ],
+          "attributes": {
+          }
+        },
+        "$auto$dfflibmap.cc:514:dfflibmap$684": {
+          "hide_name": 1,
+          "bits": [ 210 ],
+          "attributes": {
+          }
+        },
+        "$auto$dfflibmap.cc:514:dfflibmap$685": {
+          "hide_name": 1,
+          "bits": [ 209 ],
+          "attributes": {
+          }
+        },
+        "$auto$dfflibmap.cc:514:dfflibmap$686": {
+          "hide_name": 1,
+          "bits": [ 208 ],
+          "attributes": {
+          }
+        },
+        "$auto$dfflibmap.cc:514:dfflibmap$687": {
+          "hide_name": 1,
+          "bits": [ 207 ],
+          "attributes": {
+          }
+        },
+        "$auto$dfflibmap.cc:514:dfflibmap$688": {
+          "hide_name": 1,
+          "bits": [ 206 ],
+          "attributes": {
+          }
+        },
+        "$auto$dfflibmap.cc:514:dfflibmap$689": {
+          "hide_name": 1,
+          "bits": [ 205 ],
+          "attributes": {
+          }
+        },
+        "$auto$dfflibmap.cc:514:dfflibmap$690": {
+          "hide_name": 1,
+          "bits": [ 204 ],
+          "attributes": {
+          }
+        },
+        "$auto$dfflibmap.cc:514:dfflibmap$691": {
+          "hide_name": 1,
+          "bits": [ 203 ],
+          "attributes": {
+          }
+        },
+        "$auto$dfflibmap.cc:514:dfflibmap$692": {
+          "hide_name": 1,
+          "bits": [ 202 ],
+          "attributes": {
+          }
+        },
+        "$auto$dfflibmap.cc:514:dfflibmap$693": {
+          "hide_name": 1,
+          "bits": [ 201 ],
+          "attributes": {
+          }
+        },
+        "$auto$dfflibmap.cc:514:dfflibmap$694": {
+          "hide_name": 1,
+          "bits": [ 200 ],
+          "attributes": {
+          }
+        },
+        "$auto$dfflibmap.cc:514:dfflibmap$695": {
+          "hide_name": 1,
+          "bits": [ 199 ],
+          "attributes": {
+          }
+        },
+        "$auto$dfflibmap.cc:514:dfflibmap$696": {
+          "hide_name": 1,
+          "bits": [ 198 ],
+          "attributes": {
+          }
+        },
+        "$auto$dfflibmap.cc:514:dfflibmap$697": {
+          "hide_name": 1,
+          "bits": [ 197 ],
+          "attributes": {
+          }
+        },
+        "$auto$dfflibmap.cc:514:dfflibmap$698": {
+          "hide_name": 1,
+          "bits": [ 196 ],
+          "attributes": {
+          }
+        },
+        "clk": {
+          "hide_name": 0,
+          "bits": [ 2 ],
+          "attributes": {
+            "src": "/home/maham_mtech/Mtech_project/AI_RTL_Verification/extensions/rtl/optimized/fifo_opt.v:11.33-11.36"
+          }
+        },
+        "count": {
+          "hide_name": 0,
+          "bits": [ 52, 51, 24 ],
+          "attributes": {
+            "src": "/home/maham_mtech/Mtech_project/AI_RTL_Verification/extensions/rtl/optimized/fifo_opt.v:23.24-23.29"
+          }
+        },
+        "data_in": {
+          "hide_name": 0,
+          "bits": [ 6, 7, 8, 9, 10, 11, 12, 13 ],
+          "attributes": {
+            "src": "/home/maham_mtech/Mtech_project/AI_RTL_Verification/extensions/rtl/optimized/fifo_opt.v:15.33-15.40"
+          }
+        },
+        "data_out": {
+          "hide_name": 0,
+          "bits": [ 14, 15, 16, 17, 18, 19, 20, 21 ],
+          "attributes": {
+            "src": "/home/maham_mtech/Mtech_project/AI_RTL_Verification/extensions/rtl/optimized/fifo_opt.v:16.33-16.41"
+          }
+        },
+        "empty": {
+          "hide_name": 0,
+          "bits": [ 23 ],
+          "attributes": {
+            "src": "/home/maham_mtech/Mtech_project/AI_RTL_Verification/extensions/rtl/optimized/fifo_opt.v:18.33-18.38"
+          }
+        },
+        "full": {
+          "hide_name": 0,
+          "bits": [ 22 ],
+          "attributes": {
+            "src": "/home/maham_mtech/Mtech_project/AI_RTL_Verification/extensions/rtl/optimized/fifo_opt.v:17.33-17.37"
+          }
+        },
+        "memory[0]": {
+          "hide_name": 0,
+          "bits": [ 62, 71, 80, 89, 98, 107, 116, 125 ],
+          "attributes": {
+          }
+        },
+        "memory[1]": {
+          "hide_name": 0,
+          "bits": [ 63, 72, 81, 90, 99, 108, 117, 126 ],
+          "attributes": {
+          }
+        },
+        "memory[2]": {
+          "hide_name": 0,
+          "bits": [ 34, 36, 38, 40, 42, 44, 46, 48 ],
+          "attributes": {
+          }
+        },
+        "memory[3]": {
+          "hide_name": 0,
+          "bits": [ 58, 68, 77, 86, 95, 104, 113, 122 ],
+          "attributes": {
+          }
+        },
+        "rd_en": {
+          "hide_name": 0,
+          "bits": [ 5 ],
+          "attributes": {
+            "src": "/home/maham_mtech/Mtech_project/AI_RTL_Verification/extensions/rtl/optimized/fifo_opt.v:14.33-14.38"
+          }
+        },
+        "read_ptr": {
+          "hide_name": 0,
+          "bits": [ 57, 60 ],
+          "attributes": {
+            "src": "/home/maham_mtech/Mtech_project/AI_RTL_Verification/extensions/rtl/optimized/fifo_opt.v:22.26-22.34"
+          }
+        },
+        "rst": {
+          "hide_name": 0,
+          "bits": [ 3 ],
+          "attributes": {
+            "src": "/home/maham_mtech/Mtech_project/AI_RTL_Verification/extensions/rtl/optimized/fifo_opt.v:12.33-12.36"
+          }
+        },
+        "wr_en": {
+          "hide_name": 0,
+          "bits": [ 4 ],
+          "attributes": {
+            "src": "/home/maham_mtech/Mtech_project/AI_RTL_Verification/extensions/rtl/optimized/fifo_opt.v:13.33-13.38"
+          }
+        },
+        "write_ptr": {
+          "hide_name": 0,
+          "bits": [ 30, 133 ],
+          "attributes": {
+            "src": "/home/maham_mtech/Mtech_project/AI_RTL_Verification/extensions/rtl/optimized/fifo_opt.v:21.26-21.35"
+          }
+        }
+      }
+    }
+  }
+}

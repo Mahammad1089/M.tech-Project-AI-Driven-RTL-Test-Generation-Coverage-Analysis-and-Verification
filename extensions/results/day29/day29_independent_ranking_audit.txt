@@ -1,0 +1,85 @@
+DAY 29 - STEP 2
+INDEPENDENT FSM ARCHITECTURE RANKING AUDIT
+==================================================================
+Status: PASS
+Passed checks: 45
+Failed checks: 0
+Configurations: 13
+Ranking records: 52
+
+GLOBAL SCENARIO WINNERS
+area_priority:
+  Independently calculated: moore_1011_overlap_1
+  Saved Day 28 winner:     moore_1011_overlap_1
+  Match: True
+power_priority:
+  Independently calculated: moore_1011_overlap_1
+  Saved Day 28 winner:     moore_1011_overlap_1
+  Match: True
+timing_priority:
+  Independently calculated: moore_1011_overlap_0
+  Saved Day 28 winner:     moore_1011_overlap_0
+  Match: True
+balanced:
+  Independently calculated: moore_1011_overlap_0
+  Saved Day 28 winner:     moore_1011_overlap_0
+  Match: True
+
+CHECKS
+[PASS] Source exists: day27_efficiency_metrics.csv
+[PASS] Source exists: day28_architecture_rankings.csv
+[PASS] Source exists: day28_architecture_selection.json
+[PASS] Source exists: day29_baseline_validation.json
+[PASS] Day 29 Step 1 baseline status PASS
+[PASS] Day 28 selection status PASS
+[PASS] Exactly 13 source configurations
+[PASS] Exactly 52 saved ranking records
+[PASS] Required Day 27 source columns present
+[PASS] Required Day 28 ranking columns present
+[PASS] Expected scoring method
+[PASS] Expected normalization population
+[PASS] No hard constraints in baseline selection
+[PASS] Valid weights: area_priority
+[PASS] Weights sum to one: area_priority
+[PASS] Complete unique ranking set: area_priority
+[PASS] Consecutive saved ranks: area_priority
+[PASS] All weighted scores match: area_priority
+[PASS] All normalized metrics match: area_priority
+[PASS] Saved ranking order valid: area_priority
+[PASS] Global winner and ties match: area_priority
+[PASS] Valid weights: power_priority
+[PASS] Weights sum to one: power_priority
+[PASS] Complete unique ranking set: power_priority
+[PASS] Consecutive saved ranks: power_priority
+[PASS] All weighted scores match: power_priority
+[PASS] All normalized metrics match: power_priority
+[PASS] Saved ranking order valid: power_priority
+[PASS] Global winner and ties match: power_priority
+[PASS] Valid weights: timing_priority
+[PASS] Weights sum to one: timing_priority
+[PASS] Complete unique ranking set: timing_priority
+[PASS] Consecutive saved ranks: timing_priority
+[PASS] All weighted scores match: timing_priority
+[PASS] All normalized metrics match: timing_priority
+[PASS] Saved ranking order valid: timing_priority
+[PASS] Global winner and ties match: timing_priority
+[PASS] Valid weights: balanced
+[PASS] Weights sum to one: balanced
+[PASS] Complete unique ranking set: balanced
+[PASS] Consecutive saved ranks: balanced
+[PASS] All weighted scores match: balanced
+[PASS] All normalized metrics match: balanced
+[PASS] Saved ranking order valid: balanced
+[PASS] Global winner and ties match: balanced
+
+METHODOLOGY
+Recalculated from Day 27 efficiency CSV.
+Min-max normalization across all 13 configurations.
+Weighted sum with Day 28 saved scenario weights.
+Full ranking compared against Day 28 ranking CSV.
+No RTL or EDA reruns performed.
+Power is estimated using assumed activity.
+Timing is reported arrival time, not signoff delay.
+Functional equivalence is not established.
+
+DAY 29 STEP 2: PASS

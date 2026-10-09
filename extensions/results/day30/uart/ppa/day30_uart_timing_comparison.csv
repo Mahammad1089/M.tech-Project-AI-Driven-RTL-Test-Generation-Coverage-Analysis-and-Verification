@@ -1,0 +1,5 @@
+design,top_module,technology,clks_per_bit,clock_period_ns,input_delay_ns,output_delay_ns,input_transition_ns,output_load_ff,reported_paths,worst_setup_slack_ns,setup_status,timing_log
+baseline_tx,uart_tx,Nangate45 typical,16,10.0,0.2,0.2,0.05,5.0,20,9.47,MET,extensions/results/day30/uart/ppa/baseline_tx_timing.log
+optimized_tx,uart_tx_opt,Nangate45 typical,16,10.0,0.2,0.2,0.05,5.0,20,9.52,MET,extensions/results/day30/uart/ppa/optimized_tx_timing.log
+baseline_rx,uart_rx,Nangate45 typical,16,10.0,0.2,0.2,0.05,5.0,20,9.46,MET,extensions/results/day30/uart/ppa/baseline_rx_timing.log
+optimized_rx,uart_rx_opt,Nangate45 typical,16,10.0,0.2,0.2,0.05,5.0,20,9.39,MET,extensions/results/day30/uart/ppa/optimized_rx_timing.log

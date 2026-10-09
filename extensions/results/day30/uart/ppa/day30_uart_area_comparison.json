@@ -1,0 +1,70 @@
+{
+  "status": "PASS",
+  "scope": "Technology-mapped synthesis area only",
+  "technology": "Nangate45 typical",
+  "clks_per_bit": 16,
+  "limitations": [
+    "Pre-layout standard-cell area, not routed area",
+    "No timing analysis performed in this step",
+    "No dynamic or leakage power analysis performed in this step",
+    "Functional equivalence supported by earlier simulation tests"
+  ],
+  "designs": [
+    {
+      "design": "baseline_tx",
+      "top_module": "uart_tx",
+      "clks_per_bit": 16,
+      "technology": "Nangate45 typical",
+      "mapped_cells": 113,
+      "cell_area_um2": 187.264,
+      "mapped_netlist": "extensions/results/day30/uart/ppa/baseline_tx_mapped.v",
+      "synthesis_log": "extensions/results/day30/uart/ppa/baseline_tx_synthesis.log"
+    },
+    {
+      "design": "optimized_tx",
+      "top_module": "uart_tx_opt",
+      "clks_per_bit": 16,
+      "technology": "Nangate45 typical",
+      "mapped_cells": 115,
+      "cell_area_um2": 201.894,
+      "mapped_netlist": "extensions/results/day30/uart/ppa/optimized_tx_mapped.v",
+      "synthesis_log": "extensions/results/day30/uart/ppa/optimized_tx_synthesis.log"
+    },
+    {
+      "design": "baseline_rx",
+      "top_module": "uart_rx",
+      "clks_per_bit": 16,
+      "technology": "Nangate45 typical",
+      "mapped_cells": 153,
+      "cell_area_um2": 263.34,
+      "mapped_netlist": "extensions/results/day30/uart/ppa/baseline_rx_mapped.v",
+      "synthesis_log": "extensions/results/day30/uart/ppa/baseline_rx_synthesis.log"
+    },
+    {
+      "design": "optimized_rx",
+      "top_module": "uart_rx_opt",
+      "clks_per_bit": 16,
+      "technology": "Nangate45 typical",
+      "mapped_cells": 124,
+      "cell_area_um2": 238.336,
+      "mapped_netlist": "extensions/results/day30/uart/ppa/optimized_rx_mapped.v",
+      "synthesis_log": "extensions/results/day30/uart/ppa/optimized_rx_synthesis.log"
+    }
+  ],
+  "comparisons": [
+    {
+      "block": "TX",
+      "baseline_area_um2": 187.264,
+      "optimized_area_um2": 201.894,
+      "area_reduction_percent": -7.812499999999997,
+      "optimized_area_is_smaller": false
+    },
+    {
+      "block": "RX",
+      "baseline_area_um2": 263.34,
+      "optimized_area_um2": 238.336,
+      "area_reduction_percent": 9.49494949494948,
+      "optimized_area_is_smaller": true
+    }
+  ]
+}

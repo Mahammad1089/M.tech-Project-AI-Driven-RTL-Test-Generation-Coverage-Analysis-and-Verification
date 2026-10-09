@@ -1,0 +1,115 @@
+
+====================================================================
+DAY 26 FINAL VERIFICATION RESULTS
+====================================================================
+[PASS] CSV report exists
+[PASS] JSON report exists
+[PASS] Text report exists
+[PASS] CSV contains 13 configurations
+[PASS] JSON configuration count is 13
+[PASS] JSON status is PASS
+[PASS] No duplicate CSV cases
+[PASS] JSON has 13 unique cases
+[PASS] CSV case names match required configurations
+[PASS] JSON case names match required configurations
+[PASS] fsm_original_1011: all four source artifacts exist
+[PASS] fsm_original_1011: no source-log errors
+[PASS] fsm_original_1011: area matches source mapping log
+[PASS] fsm_original_1011: nonnegative setup slack matches timing log
+[PASS] fsm_original_1011: arrival time matches timing log
+[PASS] fsm_original_1011: power matches source power log
+[PASS] fsm_original_1011: analysis completion markers present
+[PASS] mealy_10101_overlap_0: all four source artifacts exist
+[PASS] mealy_10101_overlap_0: no source-log errors
+[PASS] mealy_10101_overlap_0: area matches source mapping log
+[PASS] mealy_10101_overlap_0: nonnegative setup slack matches timing log
+[PASS] mealy_10101_overlap_0: arrival time matches timing log
+[PASS] mealy_10101_overlap_0: power matches source power log
+[PASS] mealy_10101_overlap_0: analysis completion markers present
+[PASS] mealy_10101_overlap_1: all four source artifacts exist
+[PASS] mealy_10101_overlap_1: no source-log errors
+[PASS] mealy_10101_overlap_1: area matches source mapping log
+[PASS] mealy_10101_overlap_1: nonnegative setup slack matches timing log
+[PASS] mealy_10101_overlap_1: arrival time matches timing log
+[PASS] mealy_10101_overlap_1: power matches source power log
+[PASS] mealy_10101_overlap_1: analysis completion markers present
+[PASS] mealy_1011_overlap_0: all four source artifacts exist
+[PASS] mealy_1011_overlap_0: no source-log errors
+[PASS] mealy_1011_overlap_0: area matches source mapping log
+[PASS] mealy_1011_overlap_0: nonnegative setup slack matches timing log
+[PASS] mealy_1011_overlap_0: arrival time matches timing log
+[PASS] mealy_1011_overlap_0: power matches source power log
+[PASS] mealy_1011_overlap_0: analysis completion markers present
+[PASS] mealy_1011_overlap_1: all four source artifacts exist
+[PASS] mealy_1011_overlap_1: no source-log errors
+[PASS] mealy_1011_overlap_1: area matches source mapping log
+[PASS] mealy_1011_overlap_1: nonnegative setup slack matches timing log
+[PASS] mealy_1011_overlap_1: arrival time matches timing log
+[PASS] mealy_1011_overlap_1: power matches source power log
+[PASS] mealy_1011_overlap_1: analysis completion markers present
+[PASS] mealy_1101_overlap_0: all four source artifacts exist
+[PASS] mealy_1101_overlap_0: no source-log errors
+[PASS] mealy_1101_overlap_0: area matches source mapping log
+[PASS] mealy_1101_overlap_0: nonnegative setup slack matches timing log
+[PASS] mealy_1101_overlap_0: arrival time matches timing log
+[PASS] mealy_1101_overlap_0: power matches source power log
+[PASS] mealy_1101_overlap_0: analysis completion markers present
+[PASS] mealy_1101_overlap_1: all four source artifacts exist
+[PASS] mealy_1101_overlap_1: no source-log errors
+[PASS] mealy_1101_overlap_1: area matches source mapping log
+[PASS] mealy_1101_overlap_1: nonnegative setup slack matches timing log
+[PASS] mealy_1101_overlap_1: arrival time matches timing log
+[PASS] mealy_1101_overlap_1: power matches source power log
+[PASS] mealy_1101_overlap_1: analysis completion markers present
+[PASS] moore_10101_overlap_0: all four source artifacts exist
+[PASS] moore_10101_overlap_0: no source-log errors
+[PASS] moore_10101_overlap_0: area matches source mapping log
+[PASS] moore_10101_overlap_0: nonnegative setup slack matches timing log
+[PASS] moore_10101_overlap_0: arrival time matches timing log
+[PASS] moore_10101_overlap_0: power matches source power log
+[PASS] moore_10101_overlap_0: analysis completion markers present
+[PASS] moore_10101_overlap_1: all four source artifacts exist
+[PASS] moore_10101_overlap_1: no source-log errors
+[PASS] moore_10101_overlap_1: area matches source mapping log
+[PASS] moore_10101_overlap_1: nonnegative setup slack matches timing log
+[PASS] moore_10101_overlap_1: arrival time matches timing log
+[PASS] moore_10101_overlap_1: power matches source power log
+[PASS] moore_10101_overlap_1: analysis completion markers present
+[PASS] moore_1011_overlap_0: all four source artifacts exist
+[PASS] moore_1011_overlap_0: no source-log errors
+[PASS] moore_1011_overlap_0: area matches source mapping log
+[PASS] moore_1011_overlap_0: nonnegative setup slack matches timing log
+[PASS] moore_1011_overlap_0: arrival time matches timing log
+[PASS] moore_1011_overlap_0: power matches source power log
+[PASS] moore_1011_overlap_0: analysis completion markers present
+[PASS] moore_1011_overlap_1: all four source artifacts exist
+[PASS] moore_1011_overlap_1: no source-log errors
+[PASS] moore_1011_overlap_1: area matches source mapping log
+[PASS] moore_1011_overlap_1: nonnegative setup slack matches timing log
+[PASS] moore_1011_overlap_1: arrival time matches timing log
+[PASS] moore_1011_overlap_1: power matches source power log
+[PASS] moore_1011_overlap_1: analysis completion markers present
+[PASS] moore_1101_overlap_0: all four source artifacts exist
+[PASS] moore_1101_overlap_0: no source-log errors
+[PASS] moore_1101_overlap_0: area matches source mapping log
+[PASS] moore_1101_overlap_0: nonnegative setup slack matches timing log
+[PASS] moore_1101_overlap_0: arrival time matches timing log
+[PASS] moore_1101_overlap_0: power matches source power log
+[PASS] moore_1101_overlap_0: analysis completion markers present
+[PASS] moore_1101_overlap_1: all four source artifacts exist
+[PASS] moore_1101_overlap_1: no source-log errors
+[PASS] moore_1101_overlap_1: area matches source mapping log
+[PASS] moore_1101_overlap_1: nonnegative setup slack matches timing log
+[PASS] moore_1101_overlap_1: arrival time matches timing log
+[PASS] moore_1101_overlap_1: power matches source power log
+[PASS] moore_1101_overlap_1: analysis completion markers present
+[PASS] mealy: saved PASS evidence found
+[PASS] moore: saved PASS evidence found
+[WARN] Power is based on assumed switching activity; VCD/SAIF validation is not established
+[WARN] Hold closure, post-layout timing and cross-variant functional equivalence are outside this check
+
+Passed checks : 103
+Failed checks : 0
+Warnings      : 2
+
+FINAL STATUS: PASS - CHECKED EVIDENCE CONSISTENT

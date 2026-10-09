@@ -1,0 +1,83 @@
+==========================================================================================
+DAY 27 - STEP 4 - FSM PARETO ANALYSIS
+==========================================================================================
+
+OBJECTIVES: MINIMIZE AREA, POWER, ARRIVAL TIME
+SOURCE: DAY 27 STEP 3 EFFICIENCY METRICS
+CONFIGURATIONS: 13
+
+1. GLOBAL NUMERICAL PARETO ANALYSIS
+------------------------------------------------------------------------------------------
+fsm_original_1011              DOMINATED
+    Dominated by: moore_10101_overlap_0, moore_1011_overlap_0
+mealy_10101_overlap_0          DOMINATED
+    Dominated by: fsm_original_1011, mealy_1011_overlap_0, mealy_1101_overlap_0, mealy_1101_overlap_1, moore_10101_overlap_0, moore_1011_overlap_0
+mealy_10101_overlap_1          DOMINATED
+    Dominated by: fsm_original_1011, mealy_10101_overlap_0, mealy_1011_overlap_0, mealy_1101_overlap_0, mealy_1101_overlap_1, moore_10101_overlap_0, moore_1011_overlap_0
+mealy_1011_overlap_0           DOMINATED
+    Dominated by: fsm_original_1011, mealy_1101_overlap_0, mealy_1101_overlap_1, moore_10101_overlap_0, moore_1011_overlap_0
+mealy_1011_overlap_1           DOMINATED
+    Dominated by: fsm_original_1011, mealy_1101_overlap_0, moore_10101_overlap_0, moore_1011_overlap_0
+mealy_1101_overlap_0           DOMINATED
+    Dominated by: fsm_original_1011, moore_10101_overlap_0, moore_1011_overlap_0
+mealy_1101_overlap_1           DOMINATED
+    Dominated by: fsm_original_1011, mealy_1101_overlap_0, moore_10101_overlap_0, moore_1011_overlap_0
+moore_10101_overlap_0          DOMINATED
+    Dominated by: moore_1011_overlap_0
+moore_10101_overlap_1          DOMINATED
+    Dominated by: moore_10101_overlap_0, moore_1011_overlap_0, moore_1011_overlap_1, moore_1101_overlap_0, moore_1101_overlap_1
+moore_1011_overlap_0           PARETO
+moore_1011_overlap_1           PARETO
+moore_1101_overlap_0           DOMINATED
+    Dominated by: moore_10101_overlap_0, moore_1011_overlap_0, moore_1011_overlap_1
+moore_1101_overlap_1           DOMINATED
+    Dominated by: moore_10101_overlap_0, moore_1011_overlap_0, moore_1011_overlap_1
+
+2. CONTROLLED MEALY VS MOORE COMPARISONS
+------------------------------------------------------------------------------------------
+
+GROUP: pattern_10101_overlap_0
+  mealy  area=38.304 um2 power=6.550 uW arrival=0.230 ns status=DOMINATED
+  moore  area=25.536 um2 power=4.260 uW arrival=0.190 ns status=PARETO
+
+GROUP: pattern_10101_overlap_1
+  mealy  area=41.762 um2 power=6.930 uW arrival=0.230 ns status=PARETO
+  moore  area=31.388 um2 power=4.710 uW arrival=0.360 ns status=PARETO
+
+GROUP: pattern_1011_overlap_0
+  mealy  area=32.452 um2 power=5.300 uW arrival=0.230 ns status=DOMINATED
+  moore  area=24.738 um2 power=4.000 uW arrival=0.130 ns status=PARETO
+
+GROUP: pattern_1011_overlap_1
+  mealy  area=30.324 um2 power=5.170 uW arrival=0.240 ns status=PARETO
+  moore  area=23.940 um2 power=3.950 uW arrival=0.300 ns status=PARETO
+
+GROUP: pattern_1101_overlap_0
+  mealy  area=29.526 um2 power=5.020 uW arrival=0.230 ns status=PARETO
+  moore  area=28.196 um2 power=4.390 uW arrival=0.320 ns status=PARETO
+
+GROUP: pattern_1101_overlap_1
+  mealy  area=31.920 um2 power=5.260 uW arrival=0.230 ns status=PARETO
+  moore  area=26.600 um2 power=4.260 uW arrival=0.350 ns status=PARETO
+
+3. METHODOLOGY AND LIMITATIONS
+------------------------------------------------------------------------------------------
+Pareto dominance uses three minimized metrics.
+A dominated design is no better in any metric
+and strictly worse in at least one metric.
+
+The baseline is included in global numerical
+analysis only, not the controlled comparisons.
+
+Mealy and Moore designs can have different
+output timing and cycle-level semantics.
+A numerical Pareto result does not prove
+functional interchangeability.
+
+Timing uses reported data arrival time,
+which may include external input delay.
+
+Power uses assumed switching activity.
+These are pre-layout technology-mapped results.
+
+DAY 27 STEP 4: PASS

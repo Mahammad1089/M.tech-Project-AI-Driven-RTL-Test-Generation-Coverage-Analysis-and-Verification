@@ -1,0 +1,127 @@
+==========================================================================
+DAY 28 - STEP 4
+CONSTRAINT SENSITIVITY AND FSM TRADE-OFF ANALYSIS
+==========================================================================
+
+Constraint cases: 8
+Optimization scenarios: 4
+
+--------------------------------------------------------------------------
+CASE: original_constraints
+DESCRIPTION: Original Day 28 configuration
+ELIGIBLE: 13
+EXCLUDED: 0
+area limit: UNRESTRICTED
+power limit: UNRESTRICTED
+arrival_time limit: UNRESTRICTED
+area_priority: moore_1011_overlap_1
+power_priority: moore_1011_overlap_1
+timing_priority: moore_1011_overlap_0
+balanced: moore_1011_overlap_0
+
+--------------------------------------------------------------------------
+CASE: area_95pct
+DESCRIPTION: area <= 95% of observed maximum
+ELIGIBLE: 12
+EXCLUDED: 1
+area limit: 39.673900
+power limit: UNRESTRICTED
+arrival_time limit: UNRESTRICTED
+area_priority: moore_1011_overlap_1
+power_priority: moore_1011_overlap_1
+timing_priority: moore_1011_overlap_0
+balanced: moore_1011_overlap_0
+
+--------------------------------------------------------------------------
+CASE: area_85pct
+DESCRIPTION: area <= 85% of observed maximum
+ELIGIBLE: 11
+EXCLUDED: 2
+area limit: 35.497700
+power limit: UNRESTRICTED
+arrival_time limit: UNRESTRICTED
+area_priority: moore_1011_overlap_1
+power_priority: moore_1011_overlap_1
+timing_priority: moore_1011_overlap_0
+balanced: moore_1011_overlap_0
+
+--------------------------------------------------------------------------
+CASE: power_95pct
+DESCRIPTION: power <= 95% of observed maximum
+ELIGIBLE: 12
+EXCLUDED: 1
+area limit: UNRESTRICTED
+power limit: 6.583500
+arrival_time limit: UNRESTRICTED
+area_priority: moore_1011_overlap_1
+power_priority: moore_1011_overlap_1
+timing_priority: moore_1011_overlap_0
+balanced: moore_1011_overlap_0
+
+--------------------------------------------------------------------------
+CASE: power_85pct
+DESCRIPTION: power <= 85% of observed maximum
+ELIGIBLE: 11
+EXCLUDED: 2
+area limit: UNRESTRICTED
+power limit: 5.890500
+arrival_time limit: UNRESTRICTED
+area_priority: moore_1011_overlap_1
+power_priority: moore_1011_overlap_1
+timing_priority: moore_1011_overlap_0
+balanced: moore_1011_overlap_0
+
+--------------------------------------------------------------------------
+CASE: arrival_95pct
+DESCRIPTION: arrival_time <= 95% of observed maximum
+ELIGIBLE: 11
+EXCLUDED: 2
+area limit: UNRESTRICTED
+power limit: UNRESTRICTED
+arrival_time limit: 0.342000
+area_priority: moore_1011_overlap_1
+power_priority: moore_1011_overlap_1
+timing_priority: moore_1011_overlap_0
+balanced: moore_1011_overlap_0
+
+--------------------------------------------------------------------------
+CASE: arrival_85pct
+DESCRIPTION: arrival_time <= 85% of observed maximum
+ELIGIBLE: 10
+EXCLUDED: 3
+area limit: UNRESTRICTED
+power limit: UNRESTRICTED
+arrival_time limit: 0.306000
+area_priority: moore_1011_overlap_1
+power_priority: moore_1011_overlap_1
+timing_priority: moore_1011_overlap_0
+balanced: moore_1011_overlap_0
+
+--------------------------------------------------------------------------
+CASE: combined_90pct
+DESCRIPTION: All three metrics <= 90% of observed maxima
+ELIGIBLE: 9
+EXCLUDED: 4
+area limit: 37.585800
+power limit: 6.237000
+arrival_time limit: 0.324000
+area_priority: moore_1011_overlap_1
+power_priority: moore_1011_overlap_1
+timing_priority: moore_1011_overlap_0
+balanced: moore_1011_overlap_0
+
+METHODOLOGY AND LIMITATIONS
+--------------------------------------------------------------------------
+1. Uses the existing 13 Day 27 FSM PPA records.
+2. Uses the same min-max bounds as Day 28 Step 3.
+3. Lower weighted score is preferred.
+4. Hard constraints filter candidates before ranking.
+5. Percentage limits are fractions of observed maxima.
+6. These limits are experimental, not signoff targets.
+7. Global comparisons may mix different FSM behaviors.
+8. Cross-architecture functional equivalence is not proven.
+9. Power is estimated using assumed switching activity.
+10. Timing is reported data arrival time.
+11. No RTL changes or EDA reruns are performed.
+
+DAY 28 STEP 4: PASS

@@ -1,0 +1,179 @@
+{
+  "day": 28,
+  "step": 1,
+  "timestamp_utc": "2026-10-09T13:39:11.869381+00:00",
+  "source_day": [
+    26,
+    27
+  ],
+  "configuration_count": 13,
+  "checks_passed": 22,
+  "checks_failed": 0,
+  "status": "PASS",
+  "checks": [
+    {
+      "check": "Day 26 CSV evidence available",
+      "passed": true,
+      "details": "Found 1 CSV file(s)"
+    },
+    {
+      "check": "Required file: extensions/results/day27/day27_mealy_moore_comparison.csv",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "check": "Required file: extensions/results/day27/day27_mealy_moore_comparison.json",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "check": "Required file: extensions/results/day27/day27_efficiency_metrics.csv",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "check": "Required file: extensions/results/day27/day27_efficiency_metrics.json",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "check": "Required file: extensions/results/day27/day27_pareto_analysis.csv",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "check": "Required file: extensions/results/day27/day27_pareto_analysis.json",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "check": "Required file: extensions/results/day27/day27_graph_summary.json",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "check": "13 FSM efficiency records",
+      "passed": true,
+      "details": "Actual records: 13"
+    },
+    {
+      "check": "Configuration column available",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "check": "Configuration names are unique",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "check": "Six Day 27 graphs available",
+      "passed": true,
+      "details": "Actual graphs: 6"
+    },
+    {
+      "check": "Required file: extensions/results/day27/graphs/01_fsm_area_comparison.png",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "check": "Required file: extensions/results/day27/graphs/02_fsm_power_comparison.png",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "check": "Required file: extensions/results/day27/graphs/03_fsm_arrival_time_comparison.png",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "check": "Required file: extensions/results/day27/graphs/04_fsm_area_delay_product.png",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "check": "Required file: extensions/results/day27/graphs/05_fsm_power_delay_product.png",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "check": "Required file: extensions/results/day27/graphs/06_fsm_pareto_tradeoff.png",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "check": "Valid JSON: day27_mealy_moore_comparison.json",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "check": "Valid JSON: day27_efficiency_metrics.json",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "check": "Valid JSON: day27_pareto_analysis.json",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "check": "Valid JSON: day27_graph_summary.json",
+      "passed": true,
+      "details": ""
+    }
+  ],
+  "artifacts": {
+    "extensions/results/day27/day27_mealy_moore_comparison.csv": {
+      "size_bytes": 2241,
+      "sha256": "806d08453ac18359f92806f9819bb0fb961eb7ea793a7898a492f3a1e332a703"
+    },
+    "extensions/results/day27/day27_mealy_moore_comparison.json": {
+      "size_bytes": 8996,
+      "sha256": "9936eeae33283bae1e22f2ce6a57eb9342e99075881d9bbeeae57480ed43f05f"
+    },
+    "extensions/results/day27/day27_efficiency_metrics.csv": {
+      "size_bytes": 1090,
+      "sha256": "4c6908fc5d66bbd5e53ab42fa15cdaf011725f43f4c92dff0eb8b84e2a6b4c43"
+    },
+    "extensions/results/day27/day27_efficiency_metrics.json": {
+      "size_bytes": 5317,
+      "sha256": "56f59ce6f1b0e302a3db400574a0955da61da6b77bcc5cb06cb423071a554dd7"
+    },
+    "extensions/results/day27/day27_pareto_analysis.csv": {
+      "size_bytes": 2429,
+      "sha256": "0f05c5db57b1b1efa66e46653d0143b85d72104db768ad1a279d7f7e0dccd0bf"
+    },
+    "extensions/results/day27/day27_pareto_analysis.json": {
+      "size_bytes": 8928,
+      "sha256": "59d3380ea4adf9c2775f1a0708e8e7bde292c5fea2c2f5b65097a595760ccb1a"
+    },
+    "extensions/results/day27/day27_graph_summary.json": {
+      "size_bytes": 1357,
+      "sha256": "f218f96f6360f2056e8ff6e25a1147a2a163b4f58cd36cf30354f20bbc845db7"
+    },
+    "extensions/results/day27/graphs/01_fsm_area_comparison.png": {
+      "size_bytes": 145033,
+      "sha256": "157cce358204ea7f02ba3033b22c8e8691c5a9c8186b908f084ab81a082d1ed4"
+    },
+    "extensions/results/day27/graphs/02_fsm_power_comparison.png": {
+      "size_bytes": 138036,
+      "sha256": "4e7f902ecf91d9adeacdf4c07581bbc5a00235c65c11f447fb224759c5525a42"
+    },
+    "extensions/results/day27/graphs/03_fsm_arrival_time_comparison.png": {
+      "size_bytes": 141675,
+      "sha256": "eae073d13a570ee008ddbe2fa9849b28773709cd4e9914f011714786fb9eef01"
+    },
+    "extensions/results/day27/graphs/04_fsm_area_delay_product.png": {
+      "size_bytes": 141062,
+      "sha256": "0bb72ec3493100cb54f220c048be6e6d3ad5ed29c4926b8346973aab69f322e5"
+    },
+    "extensions/results/day27/graphs/05_fsm_power_delay_product.png": {
+      "size_bytes": 139322,
+      "sha256": "6c8ef7826fc6483bde59f795645f69cfed74f9f245570b88b12dbec71f314a07"
+    },
+    "extensions/results/day27/graphs/06_fsm_pareto_tradeoff.png": {
+      "size_bytes": 155419,
+      "sha256": "de9d74bc546d9425489b2ad096c5385afc0abedcb4193f9929e4ed39f97732cb"
+    }
+  }
+}

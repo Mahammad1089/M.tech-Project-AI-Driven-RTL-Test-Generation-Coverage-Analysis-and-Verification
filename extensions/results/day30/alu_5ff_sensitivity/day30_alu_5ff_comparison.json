@@ -1,0 +1,49 @@
+{
+  "status": "PASS",
+  "technology": "Nangate45 typical",
+  "output_load_ff": 5.0,
+  "clock_period_ns": 10.0,
+  "input_delay_ns": 0.2,
+  "output_delay_ns": 0.2,
+  "power_activity_transitions_per_ns": 0.1,
+  "power_duty_cycle": 0.5,
+  "results": [
+    {
+      "design": "original",
+      "top_module": "alu",
+      "output_load_ff": 5.0,
+      "mapped_area_um2": 68.096,
+      "setup_slack_ns": 9.27,
+      "minimum_path_slack_ns": 0.43,
+      "internal_power_uw": 4.23,
+      "switching_power_uw": 1.47,
+      "leakage_power_uw": 1.54,
+      "total_power_uw": 7.24,
+      "timing_status": "MET"
+    },
+    {
+      "design": "optimized",
+      "top_module": "alu_opt",
+      "output_load_ff": 5.0,
+      "mapped_area_um2": 59.052,
+      "setup_slack_ns": 9.32,
+      "minimum_path_slack_ns": 0.43,
+      "internal_power_uw": 3.71,
+      "switching_power_uw": 1.13,
+      "leakage_power_uw": 1.32,
+      "total_power_uw": 6.17,
+      "timing_status": "MET"
+    }
+  ],
+  "comparison": {
+    "area_reduction_percent": 13.281250000000005,
+    "estimated_power_reduction_percent": 14.779005524861882,
+    "setup_slack_change_ps": 50.00000000000071
+  },
+  "limitations": [
+    "Pre-layout timing and area",
+    "Assumed switching activity",
+    "No parasitic extraction",
+    "No silicon power measurement"
+  ]
+}
