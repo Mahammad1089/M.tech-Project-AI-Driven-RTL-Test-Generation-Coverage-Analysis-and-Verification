@@ -1,0 +1,233 @@
+{
+  "status": "PASS",
+  "report": "Day 30 UART functional and PPA evidence",
+  "functional_evidence": {
+    "tx_equivalence": [
+      {
+        "cpb": 8,
+        "status": "PASS",
+        "values": {
+          "PASSED CHECKS": 22968,
+          "TOTAL CHECKS": 22968,
+          "FAILED CHECKS": 0,
+          "COMPLETE FRAMES": 273
+        },
+        "log": "extensions/results/day30/uart/tx_equivalence/tx_8.log"
+      },
+      {
+        "cpb": 16,
+        "status": "PASS",
+        "values": {
+          "PASSED CHECKS": 44832,
+          "TOTAL CHECKS": 44832,
+          "FAILED CHECKS": 0,
+          "COMPLETE FRAMES": 273
+        },
+        "log": "extensions/results/day30/uart/tx_equivalence/tx_16.log"
+      },
+      {
+        "cpb": 32,
+        "status": "PASS",
+        "values": {
+          "PASSED CHECKS": 88560,
+          "TOTAL CHECKS": 88560,
+          "FAILED CHECKS": 0,
+          "COMPLETE FRAMES": 273
+        },
+        "log": "extensions/results/day30/uart/tx_equivalence/tx_32.log"
+      },
+      {
+        "cpb": 64,
+        "status": "PASS",
+        "values": {
+          "PASSED CHECKS": 176016,
+          "TOTAL CHECKS": 176016,
+          "FAILED CHECKS": 0,
+          "COMPLETE FRAMES": 273
+        },
+        "log": "extensions/results/day30/uart/tx_equivalence/tx_64.log"
+      }
+    ],
+    "rx_equivalence": [
+      {
+        "cpb": 8,
+        "status": "PASS",
+        "values": {
+          "PASSED CHECKS": 102396,
+          "TOTAL CHECKS": 102396,
+          "FRAMES DRIVEN": 260,
+          "FAILED CHECKS": 0,
+          "FRAMING ERRORS": 3,
+          "VALID FRAMES": 257
+        },
+        "log": "extensions/results/day30/uart/rx_equivalence/rx_8.log"
+      },
+      {
+        "cpb": 16,
+        "status": "PASS",
+        "values": {
+          "PASSED CHECKS": 202652,
+          "TOTAL CHECKS": 202652,
+          "FRAMES DRIVEN": 260,
+          "FAILED CHECKS": 0,
+          "FRAMING ERRORS": 3,
+          "VALID FRAMES": 257
+        },
+        "log": "extensions/results/day30/uart/rx_equivalence/rx_16.log"
+      },
+      {
+        "cpb": 32,
+        "status": "PASS",
+        "values": {
+          "PASSED CHECKS": 403164,
+          "TOTAL CHECKS": 403164,
+          "FRAMES DRIVEN": 260,
+          "FAILED CHECKS": 0,
+          "FRAMING ERRORS": 3,
+          "VALID FRAMES": 257
+        },
+        "log": "extensions/results/day30/uart/rx_equivalence/rx_32.log"
+      },
+      {
+        "cpb": 64,
+        "status": "PASS",
+        "values": {
+          "PASSED CHECKS": 804188,
+          "TOTAL CHECKS": 804188,
+          "FRAMES DRIVEN": 260,
+          "FAILED CHECKS": 0,
+          "FRAMING ERRORS": 3,
+          "VALID FRAMES": 257
+        },
+        "log": "extensions/results/day30/uart/rx_equivalence/rx_64.log"
+      }
+    ],
+    "hybrid_loopback": [
+      {
+        "cpb": 8,
+        "status": "PASS",
+        "values": {
+          "TX FRAMES": 38,
+          "RX FRAMING ERRORS": 1,
+          "TOTAL CHECKS": 194,
+          "PASSED CHECKS": 194,
+          "RX VALID FRAMES": 38,
+          "FAILED CHECKS": 0
+        },
+        "log": "extensions/results/day30/uart/hybrid_loopback/hybrid_8.log"
+      },
+      {
+        "cpb": 16,
+        "status": "PASS",
+        "values": {
+          "TX FRAMES": 38,
+          "RX FRAMING ERRORS": 1,
+          "TOTAL CHECKS": 194,
+          "PASSED CHECKS": 194,
+          "RX VALID FRAMES": 38,
+          "FAILED CHECKS": 0
+        },
+        "log": "extensions/results/day30/uart/hybrid_loopback/hybrid_16.log"
+      },
+      {
+        "cpb": 32,
+        "status": "PASS",
+        "values": {
+          "TX FRAMES": 38,
+          "RX FRAMING ERRORS": 1,
+          "TOTAL CHECKS": 194,
+          "PASSED CHECKS": 194,
+          "RX VALID FRAMES": 38,
+          "FAILED CHECKS": 0
+        },
+        "log": "extensions/results/day30/uart/hybrid_loopback/hybrid_32.log"
+      },
+      {
+        "cpb": 64,
+        "status": "PASS",
+        "values": {
+          "TX FRAMES": 38,
+          "RX FRAMING ERRORS": 1,
+          "TOTAL CHECKS": 194,
+          "PASSED CHECKS": 194,
+          "RX VALID FRAMES": 38,
+          "FAILED CHECKS": 0
+        },
+        "log": "extensions/results/day30/uart/hybrid_loopback/hybrid_64.log"
+      }
+    ]
+  },
+  "total_verified_checks": 1845552,
+  "technology": "Nangate45 typical",
+  "ppa_clks_per_bit": 16,
+  "clock_period_ns": 10.0,
+  "designs": {
+    "baseline_tx": {
+      "area_um2": 187.264,
+      "setup_slack_ns": 9.47,
+      "estimated_power_uw": 179.65970000000002
+    },
+    "optimized_tx": {
+      "area_um2": 201.894,
+      "setup_slack_ns": 9.52,
+      "estimated_power_uw": 205.87369999999999
+    },
+    "baseline_rx": {
+      "area_um2": 263.34,
+      "setup_slack_ns": 9.46,
+      "estimated_power_uw": 190.62199999999999
+    },
+    "optimized_rx": {
+      "area_um2": 238.336,
+      "setup_slack_ns": 9.39,
+      "estimated_power_uw": 186.88729999999998
+    }
+  },
+  "configurations": {
+    "baseline": {
+      "tx": "baseline_tx",
+      "rx": "baseline_rx",
+      "combined_area_um2": 450.604,
+      "combined_estimated_power_uw": 370.2817,
+      "minimum_individual_setup_slack_ns": 9.46
+    },
+    "fully_optimized": {
+      "tx": "optimized_tx",
+      "rx": "optimized_rx",
+      "combined_area_um2": 440.23,
+      "combined_estimated_power_uw": 392.76099999999997,
+      "minimum_individual_setup_slack_ns": 9.39
+    },
+    "hybrid": {
+      "tx": "baseline_tx",
+      "rx": "optimized_rx",
+      "combined_area_um2": 425.6,
+      "combined_estimated_power_uw": 366.547,
+      "minimum_individual_setup_slack_ns": 9.39
+    }
+  },
+  "hybrid_vs_baseline": {
+    "area_reduction_percent": 5.548996458087359,
+    "estimated_power_reduction_percent": 1.0086104714329591
+  },
+  "preferred_configuration": {
+    "tx": "baseline_tx",
+    "rx": "optimized_rx",
+    "reason": "Lowest combined mapped area and assumed-activity power among the three evaluated configurations"
+  },
+  "limitations": [
+    "Simulation-based functional verification, not formal proof",
+    "Area is technology-mapped, pre-layout area",
+    "Power uses assumed switching activity, not VCD/SAIF",
+    "Combined PPA is the sum of separately analyzed modules",
+    "Integrated hybrid STA is not performed",
+    "Timing numbers are from independently analyzed modules",
+    "Post-layout timing, power and area are not available",
+    "FIFO and FSM extension requirements are outside this report"
+  ],
+  "source_files": [
+    "extensions/results/day30/uart/ppa/day30_uart_area_comparison.csv",
+    "extensions/results/day30/uart/ppa/day30_uart_timing_comparison.csv",
+    "extensions/results/day30/uart/ppa/day30_uart_power_comparison.csv"
+  ]
+}

@@ -1,0 +1,9 @@
+# Generated simulation evidence. Archive separately after validation.
+phase_02_parsing/results/
+phase_03_ai_verification/results/
+evaluation/workflow_status.json
+tools/.legacy_file_map.json
+**/__pycache__/
+*.out
+*.vcd
+*.log

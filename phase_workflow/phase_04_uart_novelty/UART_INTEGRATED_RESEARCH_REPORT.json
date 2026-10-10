@@ -1,0 +1,12 @@
+{
+  "status": "PASS",
+  "original_uart_ppa_status": "PASS",
+  "new_ai_source": "HERMES_CHAT_ONESHOT",
+  "ai_coverage_complete": true,
+  "comparison_suites_present": [
+    "directed",
+    "random",
+    "ai_initial"
+  ],
+  "estimated_hardware_metric_not_attributed_to_ai": true
+}
