@@ -1,10 +1,10 @@
 # Final Phase-Wise File Audit
 
-Reviewed commit: `9c44150185d5`
+Reviewed commit: `bfd575d2c4b2`
 
 ## Overall file inventory
 
-- Tracked project files: **851**
+- Tracked project files: **862**
 - Untracked project files: **4567**
 - Chronologically named historical tracked files: **657**, preserved without renaming.
 - Python sources syntax-checked: **19**
@@ -15,11 +15,11 @@ Reviewed commit: `9c44150185d5`
 
 | Logical phase | Git-tracked files | Untracked files |
 |---|---:|---:|
-| Phase 1 — RTL Design | 26 | 3 |
-| Phase 2 — RTL Parsing to Python | 23 | 0 |
-| Phase 3 — AI/LLM Verification | 123 | 0 |
-| Phase 4 — UART Novelty | 562 | 4562 |
-| Research documentation | 22 | 0 |
+| Phase 1 — RTL Design | 27 | 3 |
+| Phase 2 — RTL Parsing to Python | 24 | 0 |
+| Phase 3 — AI/LLM Verification | 124 | 0 |
+| Phase 4 — UART Novelty | 563 | 4562 |
+| Research documentation | 29 | 0 |
 | Shared execution tools | 95 | 1 |
 | Excluded external dependencies | 0 | 1 |
 | Shared | 0 | 0 |
