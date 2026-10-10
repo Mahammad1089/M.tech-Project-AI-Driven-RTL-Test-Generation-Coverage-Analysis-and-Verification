@@ -1,3 +1,3 @@
-# Phase 4 — UART Research Contribution and Architecture Trade-offs
+# Phase 4 — UART Novelty
 
-The original baseline/optimized/hybrid UART PPA reports are copied without modification into `reference/`. Your new experiment should establish whether knowledge-guided Hermes scenarios improve functional coverage efficiency over equal-budget directed and random testing. Those experiments are not substitutes for mapped PPA. Avoid claiming scientific novelty until a current literature review and controlled results support it.
+UART architecture/PPA comparisons and AI verification effectiveness, including repeated Hermes trials, mutation testing and targeted coverage feedback. This is **Phase 4 — UART Novelty**; research evaluation is part of this phase. See `PHASE_04_WORKFLOW.md`.

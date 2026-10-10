@@ -1,3 +1,5 @@
 # Phase 1 — RTL Design
 
-The organizer copies the already verified ALU, FIFO, sequence detector and UART source files here. These are byte-identical review snapshots, not replacement design source paths. RTL equivalence and PPA evidence remain referenced separately. UART parsing and new testbenches work against `uart/` snapshots to preserve the proven versions.
+Reference and optimized ALU, FIFO, FSM and UART modules, with simulation-based equivalence evidence.
+
+Use `PHASE_01_WORKFLOW.md` for the review sequence. Original historical RTL remains at its original paths for reproducibility.
