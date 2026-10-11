@@ -1,0 +1,791 @@
+{
+  "clean_control_runs": 108,
+  "cpbs": [
+    8,
+    16,
+    32,
+    64
+  ],
+  "created_utc": "2026-10-10T10:53:23.749619+00:00",
+  "invalid_mutant_runs": 0,
+  "method_statistics": {
+    "balanced_directed": {
+      "full_mutant_kill_trials": 0,
+      "mean_mutation_score_pct": 92.86,
+      "scores_pct": [
+        92.86
+      ],
+      "trials": 1
+    },
+    "hermes_ai": {
+      "full_mutant_kill_trials": 0,
+      "mean_mutation_score_pct": 92.86,
+      "scores_pct": [
+        92.86,
+        92.86,
+        92.86,
+        92.86,
+        92.86
+      ],
+      "trials": 5
+    },
+    "hermes_archived": {
+      "full_mutant_kill_trials": 0,
+      "mean_mutation_score_pct": 92.86,
+      "scores_pct": [
+        92.86
+      ],
+      "trials": 1
+    },
+    "payload_random": {
+      "full_mutant_kill_trials": 0,
+      "mean_mutation_score_pct": 50.71,
+      "scores_pct": [
+        50.0,
+        50.0,
+        50.0,
+        50.0,
+        57.14,
+        50.0,
+        50.0,
+        50.0,
+        50.0,
+        50.0
+      ],
+      "trials": 10
+    },
+    "protocol_random": {
+      "full_mutant_kill_trials": 0,
+      "mean_mutation_score_pct": 77.14,
+      "scores_pct": [
+        78.57,
+        71.43,
+        78.57,
+        71.43,
+        85.71,
+        78.57,
+        71.43,
+        78.57,
+        78.57,
+        78.57
+      ],
+      "trials": 10
+    }
+  },
+  "mutant_count": 14,
+  "mutant_definitions": [
+    {
+      "category": "transaction",
+      "defect": "TX never responds to start",
+      "file": "uart_tx_opt.v",
+      "id": "TX_START_DISABLED",
+      "mutated_sha256": "ea4edfaffdcd742d1932f81c8e3ce4d11a11ebad148d49eecb9f0638c2c0b719",
+      "new": "if (1'b0 && start) begin",
+      "old": "if (start) begin"
+    },
+    {
+      "category": "payload",
+      "defect": "First transmitted payload bit inverted",
+      "file": "uart_tx_opt.v",
+      "id": "TX_FIRST_DATA_BIT_INVERTED",
+      "mutated_sha256": "3b2370cfb3ad80c3c68c0a95376104e3ec440620e2035779bb552e4b151ccd6e",
+      "new": "tx<=~shift_data[0]; state<=DATA;",
+      "old": "tx<=shift_data[0]; state<=DATA;"
+    },
+    {
+      "category": "protocol",
+      "defect": "TX exits DATA after seven data bits",
+      "file": "uart_tx_opt.v",
+      "id": "TX_EARLY_STOP",
+      "mutated_sha256": "bb3265ff31d3a5cf8856e6c5bcacc4d184e1fe9efd867c63e0925184cc222060",
+      "new": "if (bit_idx==6) begin tx<=1; state<=STOP; end",
+      "old": "if (bit_idx==7) begin tx<=1; state<=STOP; end"
+    },
+    {
+      "category": "handshake",
+      "defect": "TX done pulse lost",
+      "file": "uart_tx_opt.v",
+      "id": "TX_DONE_SUPPRESSED",
+      "mutated_sha256": "b533624e00d59bbea50c1923f0bb291d863529aced4829e6c29c5885473ed61a",
+      "new": "tick<=0; state<=IDLE; busy<=0; done<=0; tx<=1;",
+      "old": "tick<=0; state<=IDLE; busy<=0; done<=1; tx<=1;"
+    },
+    {
+      "category": "reset",
+      "defect": "TX reset drives incorrect idle level during active transfer",
+      "file": "uart_tx_opt.v",
+      "id": "TX_RESET_BUSY_FAULT",
+      "mutated_sha256": "5c4ba8620cc0ce0bc2ca47c58241205a3f6d320f276d6539abfe9b8f482d8f3e",
+      "new": "tx<=1'b1; busy<=0; done<=0; if (busy) tx<=1'b0;",
+      "old": "tx<=1'b1; busy<=0; done<=0;"
+    },
+    {
+      "category": "data_corner",
+      "defect": "Only payload 0x55 corrupted",
+      "file": "uart_tx_opt.v",
+      "id": "TX_55_PAYLOAD_CORRUPT",
+      "mutated_sha256": "cbc6cc835feb0a10afabdb9c87a62e76cccc09e438bfb43fd97e752cccfc8a9b",
+      "new": "shift_data<=(data_in == 8'h55) ? (data_in ^ 8'h01) : data_in; busy<=1; tx<=0; state<=START;",
+      "old": "shift_data<=data_in; busy<=1; tx<=0; state<=START;"
+    },
+    {
+      "category": "busy_start",
+      "defect": "Unexpected TX glitch when start is asserted while busy",
+      "file": "uart_tx_opt.v",
+      "id": "TX_BUSY_START_GLITCH",
+      "mutated_sha256": "bd8bc61b47da63da7150f1803b177b08ff260ef4947d02b7b61bfec9fb9c9570",
+      "new": "done<=0;\n            if (start && busy) tx<=~tx;\n            case (state)",
+      "old": "done<=0;\n            case (state)"
+    },
+    {
+      "category": "handshake",
+      "defect": "RX valid pulse lost",
+      "file": "uart_rx_opt.v",
+      "id": "RX_VALID_SUPPRESSED",
+      "mutated_sha256": "7c59f36243d9393c1217296912ebc5187209917b12a8e6eb6ab7186c52ec00bd",
+      "new": "valid <= 0;",
+      "old": "valid <= 1;"
+    },
+    {
+      "category": "payload",
+      "defect": "Received data bit inverted during shift",
+      "file": "uart_rx_opt.v",
+      "id": "RX_DATA_BIT_INVERTED",
+      "mutated_sha256": "b81f33642c01800b8c752e56242441fce6fc503747ccf4e988368fde13bde569",
+      "new": "payload <= {~rx_sync, payload[7:1]};",
+      "old": "payload <= {rx_sync, payload[7:1]};"
+    },
+    {
+      "category": "framing_error",
+      "defect": "Invalid stop bit does not raise framing_error",
+      "file": "uart_rx_opt.v",
+      "id": "RX_FRAMING_FLAG_SUPPRESSED",
+      "mutated_sha256": "85ba5a5a09056b8d9cf560768ec9adb33b25bedf5524def424caeda00cf52d38",
+      "new": "framing_error <= 0;",
+      "old": "framing_error <= 1;"
+    },
+    {
+      "category": "handshake",
+      "defect": "RX busy stays low when start bit detected",
+      "file": "uart_rx_opt.v",
+      "id": "RX_START_BUSY_SUPPRESSED",
+      "mutated_sha256": "7d15b4b68d66ec7dc6e8a0fe463f605145ce8c3edf3e3ef4201653fcca8171f8",
+      "new": "busy <= 0;\n                        state <= START;",
+      "old": "busy <= 1;\n                        state <= START;"
+    },
+    {
+      "category": "data_corner",
+      "defect": "Valid payload 0xAA incorrectly rejected",
+      "file": "uart_rx_opt.v",
+      "id": "RX_AA_PAYLOAD_REJECTED",
+      "mutated_sha256": "9eb7d56f9d0a46847730662fe0dba5f2468cd572f9599c8643585ecb1bac5025",
+      "new": "if (rx_sync && payload != 8'hAA) begin\n                            data_out <= payload;",
+      "old": "if (rx_sync) begin\n                            data_out <= payload;"
+    },
+    {
+      "category": "framing_error",
+      "defect": "Receiver incorrectly accepts invalid stop bit",
+      "file": "uart_rx_opt.v",
+      "id": "RX_BAD_STOP_ACCEPTED",
+      "mutated_sha256": "d1483d5e1bd946dd57b354abe955f9cd0bd7dc0fe1054e4ffe41827d13d6d0da",
+      "new": "if (1'b1) begin\n                            data_out <= payload;",
+      "old": "if (rx_sync) begin\n                            data_out <= payload;"
+    },
+    {
+      "category": "data_corner",
+      "defect": "Only received payload 0x00 corrupted",
+      "file": "uart_rx_opt.v",
+      "id": "RX_ZERO_PAYLOAD_CORRUPT",
+      "mutated_sha256": "36c50d555ce62aa964cb2d19923930ed1513035b7780b87f28f3bfed59b3c703",
+      "new": "data_out <= (payload == 8'h00) ? 8'h01 : payload;",
+      "old": "data_out <= payload;"
+    }
+  ],
+  "mutated_simulations": 1512,
+  "notes": "Mutation kill requires assertion failure; mutant source is isolated from original RTL.",
+  "scenario_budget_per_suite": 10,
+  "source_sha256_after": {
+    "uart_rx.v": "ab45e6f6d8af3edd0763061f3182cd48b3175d41f74f91f4c2de0e699a044484",
+    "uart_rx_opt.v": "56fa1a341539798bd66917b10e951b28ac8fc0da7a1f38f4ca47bbad29d290ff",
+    "uart_tx.v": "4f9be285b77279ec6dea823117ec4a357a3851fc23ca96acde753ed12cf4ef9a",
+    "uart_tx_opt.v": "8fabd1cd68cf0bc3eb2e9c6e76437be4e7278b35745bd48df0f12890cea3f02b"
+  },
+  "source_sha256_before": {
+    "uart_rx.v": "ab45e6f6d8af3edd0763061f3182cd48b3175d41f74f91f4c2de0e699a044484",
+    "uart_rx_opt.v": "56fa1a341539798bd66917b10e951b28ac8fc0da7a1f38f4ca47bbad29d290ff",
+    "uart_tx.v": "4f9be285b77279ec6dea823117ec4a357a3851fc23ca96acde753ed12cf4ef9a",
+    "uart_tx_opt.v": "8fabd1cd68cf0bc3eb2e9c6e76437be4e7278b35745bd48df0f12890cea3f02b"
+  },
+  "source_unchanged": true,
+  "status": "PASS",
+  "suite_count": 27,
+  "suites": [
+    {
+      "fully_killed_mutants": [
+        "TX_START_DISABLED",
+        "TX_FIRST_DATA_BIT_INVERTED",
+        "TX_EARLY_STOP",
+        "TX_DONE_SUPPRESSED",
+        "TX_55_PAYLOAD_CORRUPT",
+        "TX_BUSY_START_GLITCH",
+        "RX_VALID_SUPPRESSED",
+        "RX_DATA_BIT_INVERTED",
+        "RX_FRAMING_FLAG_SUPPRESSED",
+        "RX_START_BUSY_SUPPRESSED",
+        "RX_AA_PAYLOAD_REJECTED",
+        "RX_BAD_STOP_ACCEPTED",
+        "RX_ZERO_PAYLOAD_CORRUPT"
+      ],
+      "invalid_any_cpb": 0,
+      "killed_all_cpbs": 13,
+      "killed_any_cpb": 13,
+      "method": "hermes_ai",
+      "mutation_score_pct": 92.86,
+      "suite": "hermes_fresh_01",
+      "survived_any_cpb": 1
+    },
+    {
+      "fully_killed_mutants": [
+        "TX_START_DISABLED",
+        "TX_FIRST_DATA_BIT_INVERTED",
+        "TX_EARLY_STOP",
+        "TX_DONE_SUPPRESSED",
+        "TX_55_PAYLOAD_CORRUPT",
+        "TX_BUSY_START_GLITCH",
+        "RX_VALID_SUPPRESSED",
+        "RX_DATA_BIT_INVERTED",
+        "RX_FRAMING_FLAG_SUPPRESSED",
+        "RX_START_BUSY_SUPPRESSED",
+        "RX_AA_PAYLOAD_REJECTED",
+        "RX_BAD_STOP_ACCEPTED",
+        "RX_ZERO_PAYLOAD_CORRUPT"
+      ],
+      "invalid_any_cpb": 0,
+      "killed_all_cpbs": 13,
+      "killed_any_cpb": 13,
+      "method": "hermes_ai",
+      "mutation_score_pct": 92.86,
+      "suite": "hermes_fresh_02",
+      "survived_any_cpb": 1
+    },
+    {
+      "fully_killed_mutants": [
+        "TX_START_DISABLED",
+        "TX_FIRST_DATA_BIT_INVERTED",
+        "TX_EARLY_STOP",
+        "TX_DONE_SUPPRESSED",
+        "TX_55_PAYLOAD_CORRUPT",
+        "TX_BUSY_START_GLITCH",
+        "RX_VALID_SUPPRESSED",
+        "RX_DATA_BIT_INVERTED",
+        "RX_FRAMING_FLAG_SUPPRESSED",
+        "RX_START_BUSY_SUPPRESSED",
+        "RX_AA_PAYLOAD_REJECTED",
+        "RX_BAD_STOP_ACCEPTED",
+        "RX_ZERO_PAYLOAD_CORRUPT"
+      ],
+      "invalid_any_cpb": 0,
+      "killed_all_cpbs": 13,
+      "killed_any_cpb": 13,
+      "method": "hermes_ai",
+      "mutation_score_pct": 92.86,
+      "suite": "hermes_fresh_03",
+      "survived_any_cpb": 1
+    },
+    {
+      "fully_killed_mutants": [
+        "TX_START_DISABLED",
+        "TX_FIRST_DATA_BIT_INVERTED",
+        "TX_EARLY_STOP",
+        "TX_DONE_SUPPRESSED",
+        "TX_55_PAYLOAD_CORRUPT",
+        "TX_BUSY_START_GLITCH",
+        "RX_VALID_SUPPRESSED",
+        "RX_DATA_BIT_INVERTED",
+        "RX_FRAMING_FLAG_SUPPRESSED",
+        "RX_START_BUSY_SUPPRESSED",
+        "RX_AA_PAYLOAD_REJECTED",
+        "RX_BAD_STOP_ACCEPTED",
+        "RX_ZERO_PAYLOAD_CORRUPT"
+      ],
+      "invalid_any_cpb": 0,
+      "killed_all_cpbs": 13,
+      "killed_any_cpb": 13,
+      "method": "hermes_ai",
+      "mutation_score_pct": 92.86,
+      "suite": "hermes_fresh_04",
+      "survived_any_cpb": 1
+    },
+    {
+      "fully_killed_mutants": [
+        "TX_START_DISABLED",
+        "TX_FIRST_DATA_BIT_INVERTED",
+        "TX_EARLY_STOP",
+        "TX_DONE_SUPPRESSED",
+        "TX_55_PAYLOAD_CORRUPT",
+        "TX_BUSY_START_GLITCH",
+        "RX_VALID_SUPPRESSED",
+        "RX_DATA_BIT_INVERTED",
+        "RX_FRAMING_FLAG_SUPPRESSED",
+        "RX_START_BUSY_SUPPRESSED",
+        "RX_AA_PAYLOAD_REJECTED",
+        "RX_BAD_STOP_ACCEPTED",
+        "RX_ZERO_PAYLOAD_CORRUPT"
+      ],
+      "invalid_any_cpb": 0,
+      "killed_all_cpbs": 13,
+      "killed_any_cpb": 13,
+      "method": "hermes_ai",
+      "mutation_score_pct": 92.86,
+      "suite": "hermes_fresh_05",
+      "survived_any_cpb": 1
+    },
+    {
+      "fully_killed_mutants": [
+        "TX_START_DISABLED",
+        "TX_FIRST_DATA_BIT_INVERTED",
+        "TX_EARLY_STOP",
+        "TX_DONE_SUPPRESSED",
+        "TX_55_PAYLOAD_CORRUPT",
+        "TX_BUSY_START_GLITCH",
+        "RX_VALID_SUPPRESSED",
+        "RX_DATA_BIT_INVERTED",
+        "RX_FRAMING_FLAG_SUPPRESSED",
+        "RX_START_BUSY_SUPPRESSED",
+        "RX_AA_PAYLOAD_REJECTED",
+        "RX_BAD_STOP_ACCEPTED",
+        "RX_ZERO_PAYLOAD_CORRUPT"
+      ],
+      "invalid_any_cpb": 0,
+      "killed_all_cpbs": 13,
+      "killed_any_cpb": 13,
+      "method": "hermes_archived",
+      "mutation_score_pct": 92.86,
+      "suite": "hermes_archived",
+      "survived_any_cpb": 1
+    },
+    {
+      "fully_killed_mutants": [
+        "TX_START_DISABLED",
+        "TX_FIRST_DATA_BIT_INVERTED",
+        "TX_EARLY_STOP",
+        "TX_DONE_SUPPRESSED",
+        "TX_55_PAYLOAD_CORRUPT",
+        "TX_BUSY_START_GLITCH",
+        "RX_VALID_SUPPRESSED",
+        "RX_DATA_BIT_INVERTED",
+        "RX_FRAMING_FLAG_SUPPRESSED",
+        "RX_START_BUSY_SUPPRESSED",
+        "RX_AA_PAYLOAD_REJECTED",
+        "RX_BAD_STOP_ACCEPTED",
+        "RX_ZERO_PAYLOAD_CORRUPT"
+      ],
+      "invalid_any_cpb": 0,
+      "killed_all_cpbs": 13,
+      "killed_any_cpb": 13,
+      "method": "balanced_directed",
+      "mutation_score_pct": 92.86,
+      "suite": "balanced_directed",
+      "survived_any_cpb": 1
+    },
+    {
+      "fully_killed_mutants": [
+        "TX_START_DISABLED",
+        "TX_FIRST_DATA_BIT_INVERTED",
+        "TX_EARLY_STOP",
+        "TX_DONE_SUPPRESSED",
+        "TX_55_PAYLOAD_CORRUPT",
+        "TX_BUSY_START_GLITCH",
+        "RX_VALID_SUPPRESSED",
+        "RX_DATA_BIT_INVERTED",
+        "RX_FRAMING_FLAG_SUPPRESSED",
+        "RX_START_BUSY_SUPPRESSED",
+        "RX_BAD_STOP_ACCEPTED"
+      ],
+      "invalid_any_cpb": 0,
+      "killed_all_cpbs": 11,
+      "killed_any_cpb": 11,
+      "method": "protocol_random",
+      "mutation_score_pct": 78.57,
+      "suite": "protocol_random_10007",
+      "survived_any_cpb": 3
+    },
+    {
+      "fully_killed_mutants": [
+        "TX_START_DISABLED",
+        "TX_FIRST_DATA_BIT_INVERTED",
+        "TX_EARLY_STOP",
+        "TX_DONE_SUPPRESSED",
+        "RX_VALID_SUPPRESSED",
+        "RX_DATA_BIT_INVERTED",
+        "RX_START_BUSY_SUPPRESSED"
+      ],
+      "invalid_any_cpb": 0,
+      "killed_all_cpbs": 7,
+      "killed_any_cpb": 7,
+      "method": "payload_random",
+      "mutation_score_pct": 50.0,
+      "suite": "payload_random_10007",
+      "survived_any_cpb": 7
+    },
+    {
+      "fully_killed_mutants": [
+        "TX_START_DISABLED",
+        "TX_FIRST_DATA_BIT_INVERTED",
+        "TX_EARLY_STOP",
+        "TX_DONE_SUPPRESSED",
+        "RX_VALID_SUPPRESSED",
+        "RX_DATA_BIT_INVERTED",
+        "RX_FRAMING_FLAG_SUPPRESSED",
+        "RX_START_BUSY_SUPPRESSED",
+        "RX_AA_PAYLOAD_REJECTED",
+        "RX_BAD_STOP_ACCEPTED"
+      ],
+      "invalid_any_cpb": 0,
+      "killed_all_cpbs": 10,
+      "killed_any_cpb": 10,
+      "method": "protocol_random",
+      "mutation_score_pct": 71.43,
+      "suite": "protocol_random_114736",
+      "survived_any_cpb": 4
+    },
+    {
+      "fully_killed_mutants": [
+        "TX_START_DISABLED",
+        "TX_FIRST_DATA_BIT_INVERTED",
+        "TX_EARLY_STOP",
+        "TX_DONE_SUPPRESSED",
+        "RX_VALID_SUPPRESSED",
+        "RX_DATA_BIT_INVERTED",
+        "RX_START_BUSY_SUPPRESSED"
+      ],
+      "invalid_any_cpb": 0,
+      "killed_all_cpbs": 7,
+      "killed_any_cpb": 7,
+      "method": "payload_random",
+      "mutation_score_pct": 50.0,
+      "suite": "payload_random_114736",
+      "survived_any_cpb": 7
+    },
+    {
+      "fully_killed_mutants": [
+        "TX_START_DISABLED",
+        "TX_FIRST_DATA_BIT_INVERTED",
+        "TX_EARLY_STOP",
+        "TX_DONE_SUPPRESSED",
+        "TX_BUSY_START_GLITCH",
+        "RX_VALID_SUPPRESSED",
+        "RX_DATA_BIT_INVERTED",
+        "RX_FRAMING_FLAG_SUPPRESSED",
+        "RX_START_BUSY_SUPPRESSED",
+        "RX_BAD_STOP_ACCEPTED",
+        "RX_ZERO_PAYLOAD_CORRUPT"
+      ],
+      "invalid_any_cpb": 0,
+      "killed_all_cpbs": 11,
+      "killed_any_cpb": 11,
+      "method": "protocol_random",
+      "mutation_score_pct": 78.57,
+      "suite": "protocol_random_219465",
+      "survived_any_cpb": 3
+    },
+    {
+      "fully_killed_mutants": [
+        "TX_START_DISABLED",
+        "TX_FIRST_DATA_BIT_INVERTED",
+        "TX_EARLY_STOP",
+        "TX_DONE_SUPPRESSED",
+        "RX_VALID_SUPPRESSED",
+        "RX_DATA_BIT_INVERTED",
+        "RX_START_BUSY_SUPPRESSED"
+      ],
+      "invalid_any_cpb": 0,
+      "killed_all_cpbs": 7,
+      "killed_any_cpb": 7,
+      "method": "payload_random",
+      "mutation_score_pct": 50.0,
+      "suite": "payload_random_219465",
+      "survived_any_cpb": 7
+    },
+    {
+      "fully_killed_mutants": [
+        "TX_START_DISABLED",
+        "TX_FIRST_DATA_BIT_INVERTED",
+        "TX_EARLY_STOP",
+        "TX_DONE_SUPPRESSED",
+        "TX_55_PAYLOAD_CORRUPT",
+        "TX_BUSY_START_GLITCH",
+        "RX_VALID_SUPPRESSED",
+        "RX_DATA_BIT_INVERTED",
+        "RX_START_BUSY_SUPPRESSED",
+        "RX_ZERO_PAYLOAD_CORRUPT"
+      ],
+      "invalid_any_cpb": 0,
+      "killed_all_cpbs": 10,
+      "killed_any_cpb": 10,
+      "method": "protocol_random",
+      "mutation_score_pct": 71.43,
+      "suite": "protocol_random_324194",
+      "survived_any_cpb": 4
+    },
+    {
+      "fully_killed_mutants": [
+        "TX_START_DISABLED",
+        "TX_FIRST_DATA_BIT_INVERTED",
+        "TX_EARLY_STOP",
+        "TX_DONE_SUPPRESSED",
+        "RX_VALID_SUPPRESSED",
+        "RX_DATA_BIT_INVERTED",
+        "RX_START_BUSY_SUPPRESSED"
+      ],
+      "invalid_any_cpb": 0,
+      "killed_all_cpbs": 7,
+      "killed_any_cpb": 7,
+      "method": "payload_random",
+      "mutation_score_pct": 50.0,
+      "suite": "payload_random_324194",
+      "survived_any_cpb": 7
+    },
+    {
+      "fully_killed_mutants": [
+        "TX_START_DISABLED",
+        "TX_FIRST_DATA_BIT_INVERTED",
+        "TX_EARLY_STOP",
+        "TX_DONE_SUPPRESSED",
+        "TX_BUSY_START_GLITCH",
+        "RX_VALID_SUPPRESSED",
+        "RX_DATA_BIT_INVERTED",
+        "RX_FRAMING_FLAG_SUPPRESSED",
+        "RX_START_BUSY_SUPPRESSED",
+        "RX_AA_PAYLOAD_REJECTED",
+        "RX_BAD_STOP_ACCEPTED",
+        "RX_ZERO_PAYLOAD_CORRUPT"
+      ],
+      "invalid_any_cpb": 0,
+      "killed_all_cpbs": 12,
+      "killed_any_cpb": 12,
+      "method": "protocol_random",
+      "mutation_score_pct": 85.71,
+      "suite": "protocol_random_428923",
+      "survived_any_cpb": 2
+    },
+    {
+      "fully_killed_mutants": [
+        "TX_START_DISABLED",
+        "TX_FIRST_DATA_BIT_INVERTED",
+        "TX_EARLY_STOP",
+        "TX_DONE_SUPPRESSED",
+        "RX_VALID_SUPPRESSED",
+        "RX_DATA_BIT_INVERTED",
+        "RX_START_BUSY_SUPPRESSED",
+        "RX_AA_PAYLOAD_REJECTED"
+      ],
+      "invalid_any_cpb": 0,
+      "killed_all_cpbs": 8,
+      "killed_any_cpb": 8,
+      "method": "payload_random",
+      "mutation_score_pct": 57.14,
+      "suite": "payload_random_428923",
+      "survived_any_cpb": 6
+    },
+    {
+      "fully_killed_mutants": [
+        "TX_START_DISABLED",
+        "TX_FIRST_DATA_BIT_INVERTED",
+        "TX_EARLY_STOP",
+        "TX_DONE_SUPPRESSED",
+        "TX_BUSY_START_GLITCH",
+        "RX_VALID_SUPPRESSED",
+        "RX_DATA_BIT_INVERTED",
+        "RX_FRAMING_FLAG_SUPPRESSED",
+        "RX_START_BUSY_SUPPRESSED",
+        "RX_AA_PAYLOAD_REJECTED",
+        "RX_BAD_STOP_ACCEPTED"
+      ],
+      "invalid_any_cpb": 0,
+      "killed_all_cpbs": 11,
+      "killed_any_cpb": 11,
+      "method": "protocol_random",
+      "mutation_score_pct": 78.57,
+      "suite": "protocol_random_533652",
+      "survived_any_cpb": 3
+    },
+    {
+      "fully_killed_mutants": [
+        "TX_START_DISABLED",
+        "TX_FIRST_DATA_BIT_INVERTED",
+        "TX_EARLY_STOP",
+        "TX_DONE_SUPPRESSED",
+        "RX_VALID_SUPPRESSED",
+        "RX_DATA_BIT_INVERTED",
+        "RX_START_BUSY_SUPPRESSED"
+      ],
+      "invalid_any_cpb": 0,
+      "killed_all_cpbs": 7,
+      "killed_any_cpb": 7,
+      "method": "payload_random",
+      "mutation_score_pct": 50.0,
+      "suite": "payload_random_533652",
+      "survived_any_cpb": 7
+    },
+    {
+      "fully_killed_mutants": [
+        "TX_START_DISABLED",
+        "TX_FIRST_DATA_BIT_INVERTED",
+        "TX_EARLY_STOP",
+        "TX_DONE_SUPPRESSED",
+        "TX_55_PAYLOAD_CORRUPT",
+        "RX_VALID_SUPPRESSED",
+        "RX_DATA_BIT_INVERTED",
+        "RX_FRAMING_FLAG_SUPPRESSED",
+        "RX_START_BUSY_SUPPRESSED",
+        "RX_BAD_STOP_ACCEPTED"
+      ],
+      "invalid_any_cpb": 0,
+      "killed_all_cpbs": 10,
+      "killed_any_cpb": 10,
+      "method": "protocol_random",
+      "mutation_score_pct": 71.43,
+      "suite": "protocol_random_638381",
+      "survived_any_cpb": 4
+    },
+    {
+      "fully_killed_mutants": [
+        "TX_START_DISABLED",
+        "TX_FIRST_DATA_BIT_INVERTED",
+        "TX_EARLY_STOP",
+        "TX_DONE_SUPPRESSED",
+        "RX_VALID_SUPPRESSED",
+        "RX_DATA_BIT_INVERTED",
+        "RX_START_BUSY_SUPPRESSED"
+      ],
+      "invalid_any_cpb": 0,
+      "killed_all_cpbs": 7,
+      "killed_any_cpb": 7,
+      "method": "payload_random",
+      "mutation_score_pct": 50.0,
+      "suite": "payload_random_638381",
+      "survived_any_cpb": 7
+    },
+    {
+      "fully_killed_mutants": [
+        "TX_START_DISABLED",
+        "TX_FIRST_DATA_BIT_INVERTED",
+        "TX_EARLY_STOP",
+        "TX_DONE_SUPPRESSED",
+        "TX_55_PAYLOAD_CORRUPT",
+        "TX_BUSY_START_GLITCH",
+        "RX_VALID_SUPPRESSED",
+        "RX_DATA_BIT_INVERTED",
+        "RX_FRAMING_FLAG_SUPPRESSED",
+        "RX_START_BUSY_SUPPRESSED",
+        "RX_BAD_STOP_ACCEPTED"
+      ],
+      "invalid_any_cpb": 0,
+      "killed_all_cpbs": 11,
+      "killed_any_cpb": 11,
+      "method": "protocol_random",
+      "mutation_score_pct": 78.57,
+      "suite": "protocol_random_743110",
+      "survived_any_cpb": 3
+    },
+    {
+      "fully_killed_mutants": [
+        "TX_START_DISABLED",
+        "TX_FIRST_DATA_BIT_INVERTED",
+        "TX_EARLY_STOP",
+        "TX_DONE_SUPPRESSED",
+        "RX_VALID_SUPPRESSED",
+        "RX_DATA_BIT_INVERTED",
+        "RX_START_BUSY_SUPPRESSED"
+      ],
+      "invalid_any_cpb": 0,
+      "killed_all_cpbs": 7,
+      "killed_any_cpb": 7,
+      "method": "payload_random",
+      "mutation_score_pct": 50.0,
+      "suite": "payload_random_743110",
+      "survived_any_cpb": 7
+    },
+    {
+      "fully_killed_mutants": [
+        "TX_START_DISABLED",
+        "TX_FIRST_DATA_BIT_INVERTED",
+        "TX_EARLY_STOP",
+        "TX_DONE_SUPPRESSED",
+        "RX_VALID_SUPPRESSED",
+        "RX_DATA_BIT_INVERTED",
+        "RX_FRAMING_FLAG_SUPPRESSED",
+        "RX_START_BUSY_SUPPRESSED",
+        "RX_AA_PAYLOAD_REJECTED",
+        "RX_BAD_STOP_ACCEPTED",
+        "RX_ZERO_PAYLOAD_CORRUPT"
+      ],
+      "invalid_any_cpb": 0,
+      "killed_all_cpbs": 11,
+      "killed_any_cpb": 11,
+      "method": "protocol_random",
+      "mutation_score_pct": 78.57,
+      "suite": "protocol_random_847839",
+      "survived_any_cpb": 3
+    },
+    {
+      "fully_killed_mutants": [
+        "TX_START_DISABLED",
+        "TX_FIRST_DATA_BIT_INVERTED",
+        "TX_EARLY_STOP",
+        "TX_DONE_SUPPRESSED",
+        "RX_VALID_SUPPRESSED",
+        "RX_DATA_BIT_INVERTED",
+        "RX_START_BUSY_SUPPRESSED"
+      ],
+      "invalid_any_cpb": 0,
+      "killed_all_cpbs": 7,
+      "killed_any_cpb": 7,
+      "method": "payload_random",
+      "mutation_score_pct": 50.0,
+      "suite": "payload_random_847839",
+      "survived_any_cpb": 7
+    },
+    {
+      "fully_killed_mutants": [
+        "TX_START_DISABLED",
+        "TX_FIRST_DATA_BIT_INVERTED",
+        "TX_EARLY_STOP",
+        "TX_DONE_SUPPRESSED",
+        "TX_BUSY_START_GLITCH",
+        "RX_VALID_SUPPRESSED",
+        "RX_DATA_BIT_INVERTED",
+        "RX_FRAMING_FLAG_SUPPRESSED",
+        "RX_START_BUSY_SUPPRESSED",
+        "RX_BAD_STOP_ACCEPTED",
+        "RX_ZERO_PAYLOAD_CORRUPT"
+      ],
+      "invalid_any_cpb": 0,
+      "killed_all_cpbs": 11,
+      "killed_any_cpb": 11,
+      "method": "protocol_random",
+      "mutation_score_pct": 78.57,
+      "suite": "protocol_random_952568",
+      "survived_any_cpb": 3
+    },
+    {
+      "fully_killed_mutants": [
+        "TX_START_DISABLED",
+        "TX_FIRST_DATA_BIT_INVERTED",
+        "TX_EARLY_STOP",
+        "TX_DONE_SUPPRESSED",
+        "RX_VALID_SUPPRESSED",
+        "RX_DATA_BIT_INVERTED",
+        "RX_START_BUSY_SUPPRESSED"
+      ],
+      "invalid_any_cpb": 0,
+      "killed_all_cpbs": 7,
+      "killed_any_cpb": 7,
+      "method": "payload_random",
+      "mutation_score_pct": 50.0,
+      "suite": "payload_random_952568",
+      "survived_any_cpb": 7
+    }
+  ]
+}

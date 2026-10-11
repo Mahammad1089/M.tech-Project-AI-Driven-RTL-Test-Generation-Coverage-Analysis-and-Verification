@@ -1,0 +1,1538 @@
+{
+  "checked_original_sha256": {
+    "uart_rx.v": "ab45e6f6d8af3edd0763061f3182cd48b3175d41f74f91f4c2de0e699a044484",
+    "uart_rx_opt.v": "56fa1a341539798bd66917b10e951b28ac8fc0da7a1f38f4ca47bbad29d290ff",
+    "uart_tx.v": "4f9be285b77279ec6dea823117ec4a357a3851fc23ca96acde753ed12cf4ef9a",
+    "uart_tx_opt.v": "8fabd1cd68cf0bc3eb2e9c6e76437be4e7278b35745bd48df0f12890cea3f02b"
+  },
+  "cpbs": [
+    8,
+    16,
+    32,
+    64
+  ],
+  "modified_testbench_only": true,
+  "mutants": [
+    "TX_START_DISABLED",
+    "TX_FIRST_DATA_BIT_INVERTED",
+    "TX_EARLY_STOP",
+    "TX_DONE_SUPPRESSED",
+    "TX_RESET_BUSY_FAULT",
+    "TX_55_PAYLOAD_CORRUPT",
+    "TX_BUSY_START_GLITCH",
+    "RX_VALID_SUPPRESSED",
+    "RX_DATA_BIT_INVERTED",
+    "RX_FRAMING_FLAG_SUPPRESSED",
+    "RX_START_BUSY_SUPPRESSED",
+    "RX_AA_PAYLOAD_REJECTED",
+    "RX_BAD_STOP_ACCEPTED",
+    "RX_ZERO_PAYLOAD_CORRUPT"
+  ],
+  "old_scores_unchanged": true,
+  "reference_mutation_script": "/home/maham_mtech/Mtech_project/AI_RTL_Verification/phase_workflow/tools/phase4d_mutation_test.py",
+  "scope": "all",
+  "suites": [
+    {
+      "method": "hermes_ai",
+      "name": "hermes_fresh_01",
+      "provenance": "/home/maham_mtech/Mtech_project/AI_RTL_Verification/phase_workflow/evaluation/repeatability/hermes_trials/phase4c2_20261010T103303Z/calls/ai_fresh_01/validated_scenarios.json",
+      "scenarios": [
+        {
+          "id": "t01_zero",
+          "kind": "loopback",
+          "value": 0
+        },
+        {
+          "id": "t02_all_ones",
+          "kind": "loopback",
+          "value": 255
+        },
+        {
+          "id": "t03_alt55",
+          "kind": "loopback",
+          "value": 85
+        },
+        {
+          "id": "t04_alt_aa",
+          "kind": "loopback",
+          "value": 170
+        },
+        {
+          "id": "t05_edge81",
+          "kind": "loopback",
+          "value": 129
+        },
+        {
+          "id": "t06_other_data",
+          "kind": "loopback",
+          "value": 100
+        },
+        {
+          "id": "t07_framing_error",
+          "kind": "bad_stop"
+        },
+        {
+          "id": "t08_reset_mid_tx",
+          "kind": "reset_mid_tx"
+        },
+        {
+          "id": "t09_busy_start",
+          "kind": "busy_start",
+          "value": 1
+        },
+        {
+          "id": "t10_paired_frames",
+          "kind": "paired_frames",
+          "value": 200
+        }
+      ]
+    },
+    {
+      "method": "hermes_ai",
+      "name": "hermes_fresh_02",
+      "provenance": "/home/maham_mtech/Mtech_project/AI_RTL_Verification/phase_workflow/evaluation/repeatability/hermes_trials/phase4c2_20261010T103303Z/calls/ai_fresh_02/validated_scenarios.json",
+      "scenarios": [
+        {
+          "id": "test_01",
+          "kind": "loopback",
+          "value": 0
+        },
+        {
+          "id": "test_02",
+          "kind": "loopback",
+          "value": 255
+        },
+        {
+          "id": "test_03",
+          "kind": "loopback",
+          "value": 85
+        },
+        {
+          "id": "test_04",
+          "kind": "loopback",
+          "value": 170
+        },
+        {
+          "id": "test_05",
+          "kind": "loopback",
+          "value": 129
+        },
+        {
+          "id": "test_06",
+          "kind": "loopback",
+          "value": 127
+        },
+        {
+          "id": "test_07",
+          "kind": "bad_stop"
+        },
+        {
+          "id": "test_08",
+          "kind": "reset_mid_tx"
+        },
+        {
+          "id": "test_09",
+          "kind": "busy_start",
+          "value": 18
+        },
+        {
+          "id": "test_10",
+          "kind": "paired_frames",
+          "value": 51
+        }
+      ]
+    },
+    {
+      "method": "hermes_ai",
+      "name": "hermes_fresh_03",
+      "provenance": "/home/maham_mtech/Mtech_project/AI_RTL_Verification/phase_workflow/evaluation/repeatability/hermes_trials/phase4c2_20261010T103303Z/calls/ai_fresh_03/validated_scenarios.json",
+      "scenarios": [
+        {
+          "id": "test_01",
+          "kind": "loopback",
+          "value": 0
+        },
+        {
+          "id": "test_02",
+          "kind": "loopback",
+          "value": 255
+        },
+        {
+          "id": "test_03",
+          "kind": "loopback",
+          "value": 85
+        },
+        {
+          "id": "test_04",
+          "kind": "loopback",
+          "value": 170
+        },
+        {
+          "id": "test_05",
+          "kind": "loopback",
+          "value": 129
+        },
+        {
+          "id": "test_06",
+          "kind": "loopback",
+          "value": 42
+        },
+        {
+          "id": "test_07",
+          "kind": "bad_stop"
+        },
+        {
+          "id": "test_08",
+          "kind": "reset_mid_tx"
+        },
+        {
+          "id": "test_09",
+          "kind": "busy_start",
+          "value": 129
+        },
+        {
+          "id": "test_10",
+          "kind": "paired_frames",
+          "value": 17
+        }
+      ]
+    },
+    {
+      "method": "hermes_ai",
+      "name": "hermes_fresh_04",
+      "provenance": "/home/maham_mtech/Mtech_project/AI_RTL_Verification/phase_workflow/evaluation/repeatability/hermes_trials/phase4c2_20261010T103303Z/calls/ai_fresh_04/validated_scenarios.json",
+      "scenarios": [
+        {
+          "id": "loop_00",
+          "kind": "loopback",
+          "value": 0
+        },
+        {
+          "id": "loop_ff",
+          "kind": "loopback",
+          "value": 255
+        },
+        {
+          "id": "loop_55",
+          "kind": "loopback",
+          "value": 85
+        },
+        {
+          "id": "loop_aa",
+          "kind": "loopback",
+          "value": 170
+        },
+        {
+          "id": "loop_81",
+          "kind": "loopback",
+          "value": 129
+        },
+        {
+          "id": "loop_7f",
+          "kind": "loopback",
+          "value": 127
+        },
+        {
+          "id": "framing_err",
+          "kind": "bad_stop"
+        },
+        {
+          "id": "reset_mid",
+          "kind": "reset_mid_tx"
+        },
+        {
+          "id": "busy_start_tx",
+          "kind": "busy_start",
+          "value": 129
+        },
+        {
+          "id": "paired_frames",
+          "kind": "paired_frames",
+          "value": 17
+        }
+      ]
+    },
+    {
+      "method": "hermes_ai",
+      "name": "hermes_fresh_05",
+      "provenance": "/home/maham_mtech/Mtech_project/AI_RTL_Verification/phase_workflow/evaluation/repeatability/hermes_trials/phase4c2_20261010T103303Z/calls/ai_fresh_05/validated_scenarios.json",
+      "scenarios": [
+        {
+          "id": "test_01",
+          "kind": "loopback",
+          "value": 0
+        },
+        {
+          "id": "test_02",
+          "kind": "loopback",
+          "value": 255
+        },
+        {
+          "id": "test_03",
+          "kind": "loopback",
+          "value": 85
+        },
+        {
+          "id": "test_04",
+          "kind": "loopback",
+          "value": 170
+        },
+        {
+          "id": "test_05",
+          "kind": "loopback",
+          "value": 81
+        },
+        {
+          "id": "test_06",
+          "kind": "loopback",
+          "value": 60
+        },
+        {
+          "id": "test_07",
+          "kind": "bad_stop"
+        },
+        {
+          "id": "test_08",
+          "kind": "reset_mid_tx"
+        },
+        {
+          "id": "test_09",
+          "kind": "busy_start",
+          "value": 194
+        },
+        {
+          "id": "test_10",
+          "kind": "paired_frames",
+          "value": 18
+        }
+      ]
+    },
+    {
+      "method": "hermes_archived",
+      "name": "hermes_archived",
+      "provenance": "/home/maham_mtech/Mtech_project/AI_RTL_Verification/phase_workflow/phase_03_ai_verification/results/hermes/validated_ai_scenarios.json",
+      "scenarios": [
+        {
+          "id": "test_01",
+          "kind": "loopback",
+          "value": 0
+        },
+        {
+          "id": "test_02",
+          "kind": "loopback",
+          "value": 255
+        },
+        {
+          "id": "test_03",
+          "kind": "loopback",
+          "value": 85
+        },
+        {
+          "id": "test_04",
+          "kind": "loopback",
+          "value": 170
+        },
+        {
+          "id": "test_05",
+          "kind": "loopback",
+          "value": 129
+        },
+        {
+          "id": "test_06",
+          "kind": "loopback",
+          "value": 42
+        },
+        {
+          "id": "test_07",
+          "kind": "bad_stop"
+        },
+        {
+          "id": "test_08",
+          "kind": "reset_mid_tx"
+        },
+        {
+          "id": "test_09",
+          "kind": "busy_start",
+          "value": 1
+        },
+        {
+          "id": "test_10",
+          "kind": "paired_frames",
+          "value": 17
+        }
+      ]
+    },
+    {
+      "method": "balanced_directed",
+      "name": "balanced_directed",
+      "provenance": "phase4c_repeatability.balanced_directed",
+      "scenarios": [
+        {
+          "id": "balanced_00",
+          "kind": "loopback",
+          "value": 0
+        },
+        {
+          "id": "balanced_01",
+          "kind": "loopback",
+          "value": 255
+        },
+        {
+          "id": "balanced_02",
+          "kind": "loopback",
+          "value": 85
+        },
+        {
+          "id": "balanced_03",
+          "kind": "loopback",
+          "value": 170
+        },
+        {
+          "id": "balanced_04",
+          "kind": "loopback",
+          "value": 129
+        },
+        {
+          "id": "balanced_05",
+          "kind": "loopback",
+          "value": 55
+        },
+        {
+          "id": "balanced_06",
+          "kind": "bad_stop"
+        },
+        {
+          "id": "balanced_07",
+          "kind": "reset_mid_tx"
+        },
+        {
+          "id": "balanced_08",
+          "kind": "busy_start",
+          "value": 129
+        },
+        {
+          "id": "balanced_09",
+          "kind": "paired_frames",
+          "value": 17
+        }
+      ]
+    },
+    {
+      "method": "protocol_random",
+      "name": "protocol_random_10007",
+      "provenance": "phase4c_repeatability.protocol_random seed 10007",
+      "scenarios": [
+        {
+          "id": "protocol_random_00",
+          "kind": "loopback",
+          "value": 129
+        },
+        {
+          "id": "protocol_random_01",
+          "kind": "loopback",
+          "value": 129
+        },
+        {
+          "id": "protocol_random_02",
+          "kind": "loopback",
+          "value": 85
+        },
+        {
+          "id": "protocol_random_03",
+          "kind": "busy_start",
+          "value": 129
+        },
+        {
+          "id": "protocol_random_04",
+          "kind": "loopback",
+          "value": 85
+        },
+        {
+          "id": "protocol_random_05",
+          "kind": "loopback",
+          "value": 55
+        },
+        {
+          "id": "protocol_random_06",
+          "kind": "bad_stop"
+        },
+        {
+          "id": "protocol_random_07",
+          "kind": "loopback",
+          "value": 129
+        },
+        {
+          "id": "protocol_random_08",
+          "kind": "reset_mid_tx"
+        },
+        {
+          "id": "protocol_random_09",
+          "kind": "loopback",
+          "value": 85
+        }
+      ]
+    },
+    {
+      "method": "payload_random",
+      "name": "payload_random_10007",
+      "provenance": "uart_ai_pipeline.randomized seed 10007",
+      "scenarios": [
+        {
+          "id": "random_00",
+          "kind": "loopback",
+          "value": 131
+        },
+        {
+          "id": "random_01",
+          "kind": "loopback",
+          "value": 147
+        },
+        {
+          "id": "random_02",
+          "kind": "loopback",
+          "value": 74
+        },
+        {
+          "id": "random_03",
+          "kind": "loopback",
+          "value": 87
+        },
+        {
+          "id": "random_04",
+          "kind": "loopback",
+          "value": 171
+        },
+        {
+          "id": "random_05",
+          "kind": "loopback",
+          "value": 197
+        },
+        {
+          "id": "random_06",
+          "kind": "loopback",
+          "value": 144
+        },
+        {
+          "id": "random_07",
+          "kind": "loopback",
+          "value": 224
+        },
+        {
+          "id": "random_08",
+          "kind": "loopback",
+          "value": 92
+        },
+        {
+          "id": "random_09",
+          "kind": "loopback",
+          "value": 111
+        }
+      ]
+    },
+    {
+      "method": "protocol_random",
+      "name": "protocol_random_114736",
+      "provenance": "phase4c_repeatability.protocol_random seed 114736",
+      "scenarios": [
+        {
+          "id": "protocol_random_00",
+          "kind": "loopback",
+          "value": 255
+        },
+        {
+          "id": "protocol_random_01",
+          "kind": "loopback",
+          "value": 170
+        },
+        {
+          "id": "protocol_random_02",
+          "kind": "loopback",
+          "value": 170
+        },
+        {
+          "id": "protocol_random_03",
+          "kind": "bad_stop"
+        },
+        {
+          "id": "protocol_random_04",
+          "kind": "loopback",
+          "value": 255
+        },
+        {
+          "id": "protocol_random_05",
+          "kind": "bad_stop"
+        },
+        {
+          "id": "protocol_random_06",
+          "kind": "loopback",
+          "value": 129
+        },
+        {
+          "id": "protocol_random_07",
+          "kind": "loopback",
+          "value": 170
+        },
+        {
+          "id": "protocol_random_08",
+          "kind": "loopback",
+          "value": 255
+        },
+        {
+          "id": "protocol_random_09",
+          "kind": "paired_frames",
+          "value": 17
+        }
+      ]
+    },
+    {
+      "method": "payload_random",
+      "name": "payload_random_114736",
+      "provenance": "uart_ai_pipeline.randomized seed 114736",
+      "scenarios": [
+        {
+          "id": "random_00",
+          "kind": "loopback",
+          "value": 38
+        },
+        {
+          "id": "random_01",
+          "kind": "loopback",
+          "value": 107
+        },
+        {
+          "id": "random_02",
+          "kind": "loopback",
+          "value": 103
+        },
+        {
+          "id": "random_03",
+          "kind": "loopback",
+          "value": 212
+        },
+        {
+          "id": "random_04",
+          "kind": "loopback",
+          "value": 41
+        },
+        {
+          "id": "random_05",
+          "kind": "loopback",
+          "value": 209
+        },
+        {
+          "id": "random_06",
+          "kind": "loopback",
+          "value": 132
+        },
+        {
+          "id": "random_07",
+          "kind": "loopback",
+          "value": 121
+        },
+        {
+          "id": "random_08",
+          "kind": "loopback",
+          "value": 46
+        },
+        {
+          "id": "random_09",
+          "kind": "loopback",
+          "value": 201
+        }
+      ]
+    },
+    {
+      "method": "protocol_random",
+      "name": "protocol_random_219465",
+      "provenance": "phase4c_repeatability.protocol_random seed 219465",
+      "scenarios": [
+        {
+          "id": "protocol_random_00",
+          "kind": "loopback",
+          "value": 0
+        },
+        {
+          "id": "protocol_random_01",
+          "kind": "loopback",
+          "value": 255
+        },
+        {
+          "id": "protocol_random_02",
+          "kind": "busy_start",
+          "value": 129
+        },
+        {
+          "id": "protocol_random_03",
+          "kind": "reset_mid_tx"
+        },
+        {
+          "id": "protocol_random_04",
+          "kind": "busy_start",
+          "value": 129
+        },
+        {
+          "id": "protocol_random_05",
+          "kind": "bad_stop"
+        },
+        {
+          "id": "protocol_random_06",
+          "kind": "loopback",
+          "value": 129
+        },
+        {
+          "id": "protocol_random_07",
+          "kind": "reset_mid_tx"
+        },
+        {
+          "id": "protocol_random_08",
+          "kind": "loopback",
+          "value": 255
+        },
+        {
+          "id": "protocol_random_09",
+          "kind": "loopback",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "method": "payload_random",
+      "name": "payload_random_219465",
+      "provenance": "uart_ai_pipeline.randomized seed 219465",
+      "scenarios": [
+        {
+          "id": "random_00",
+          "kind": "loopback",
+          "value": 28
+        },
+        {
+          "id": "random_01",
+          "kind": "loopback",
+          "value": 42
+        },
+        {
+          "id": "random_02",
+          "kind": "loopback",
+          "value": 225
+        },
+        {
+          "id": "random_03",
+          "kind": "loopback",
+          "value": 195
+        },
+        {
+          "id": "random_04",
+          "kind": "loopback",
+          "value": 142
+        },
+        {
+          "id": "random_05",
+          "kind": "loopback",
+          "value": 252
+        },
+        {
+          "id": "random_06",
+          "kind": "loopback",
+          "value": 56
+        },
+        {
+          "id": "random_07",
+          "kind": "loopback",
+          "value": 30
+        },
+        {
+          "id": "random_08",
+          "kind": "loopback",
+          "value": 140
+        },
+        {
+          "id": "random_09",
+          "kind": "loopback",
+          "value": 134
+        }
+      ]
+    },
+    {
+      "method": "protocol_random",
+      "name": "protocol_random_324194",
+      "provenance": "phase4c_repeatability.protocol_random seed 324194",
+      "scenarios": [
+        {
+          "id": "protocol_random_00",
+          "kind": "paired_frames",
+          "value": 17
+        },
+        {
+          "id": "protocol_random_01",
+          "kind": "loopback",
+          "value": 85
+        },
+        {
+          "id": "protocol_random_02",
+          "kind": "loopback",
+          "value": 129
+        },
+        {
+          "id": "protocol_random_03",
+          "kind": "loopback",
+          "value": 0
+        },
+        {
+          "id": "protocol_random_04",
+          "kind": "busy_start",
+          "value": 129
+        },
+        {
+          "id": "protocol_random_05",
+          "kind": "paired_frames",
+          "value": 17
+        },
+        {
+          "id": "protocol_random_06",
+          "kind": "reset_mid_tx"
+        },
+        {
+          "id": "protocol_random_07",
+          "kind": "reset_mid_tx"
+        },
+        {
+          "id": "protocol_random_08",
+          "kind": "busy_start",
+          "value": 129
+        },
+        {
+          "id": "protocol_random_09",
+          "kind": "paired_frames",
+          "value": 17
+        }
+      ]
+    },
+    {
+      "method": "payload_random",
+      "name": "payload_random_324194",
+      "provenance": "uart_ai_pipeline.randomized seed 324194",
+      "scenarios": [
+        {
+          "id": "random_00",
+          "kind": "loopback",
+          "value": 94
+        },
+        {
+          "id": "random_01",
+          "kind": "loopback",
+          "value": 143
+        },
+        {
+          "id": "random_02",
+          "kind": "loopback",
+          "value": 27
+        },
+        {
+          "id": "random_03",
+          "kind": "loopback",
+          "value": 234
+        },
+        {
+          "id": "random_04",
+          "kind": "loopback",
+          "value": 240
+        },
+        {
+          "id": "random_05",
+          "kind": "loopback",
+          "value": 231
+        },
+        {
+          "id": "random_06",
+          "kind": "loopback",
+          "value": 132
+        },
+        {
+          "id": "random_07",
+          "kind": "loopback",
+          "value": 44
+        },
+        {
+          "id": "random_08",
+          "kind": "loopback",
+          "value": 41
+        },
+        {
+          "id": "random_09",
+          "kind": "loopback",
+          "value": 83
+        }
+      ]
+    },
+    {
+      "method": "protocol_random",
+      "name": "protocol_random_428923",
+      "provenance": "phase4c_repeatability.protocol_random seed 428923",
+      "scenarios": [
+        {
+          "id": "protocol_random_00",
+          "kind": "paired_frames",
+          "value": 17
+        },
+        {
+          "id": "protocol_random_01",
+          "kind": "loopback",
+          "value": 129
+        },
+        {
+          "id": "protocol_random_02",
+          "kind": "busy_start",
+          "value": 129
+        },
+        {
+          "id": "protocol_random_03",
+          "kind": "loopback",
+          "value": 255
+        },
+        {
+          "id": "protocol_random_04",
+          "kind": "busy_start",
+          "value": 129
+        },
+        {
+          "id": "protocol_random_05",
+          "kind": "paired_frames",
+          "value": 17
+        },
+        {
+          "id": "protocol_random_06",
+          "kind": "loopback",
+          "value": 0
+        },
+        {
+          "id": "protocol_random_07",
+          "kind": "bad_stop"
+        },
+        {
+          "id": "protocol_random_08",
+          "kind": "paired_frames",
+          "value": 17
+        },
+        {
+          "id": "protocol_random_09",
+          "kind": "loopback",
+          "value": 170
+        }
+      ]
+    },
+    {
+      "method": "payload_random",
+      "name": "payload_random_428923",
+      "provenance": "uart_ai_pipeline.randomized seed 428923",
+      "scenarios": [
+        {
+          "id": "random_00",
+          "kind": "loopback",
+          "value": 137
+        },
+        {
+          "id": "random_01",
+          "kind": "loopback",
+          "value": 51
+        },
+        {
+          "id": "random_02",
+          "kind": "loopback",
+          "value": 20
+        },
+        {
+          "id": "random_03",
+          "kind": "loopback",
+          "value": 200
+        },
+        {
+          "id": "random_04",
+          "kind": "loopback",
+          "value": 97
+        },
+        {
+          "id": "random_05",
+          "kind": "loopback",
+          "value": 5
+        },
+        {
+          "id": "random_06",
+          "kind": "loopback",
+          "value": 116
+        },
+        {
+          "id": "random_07",
+          "kind": "loopback",
+          "value": 204
+        },
+        {
+          "id": "random_08",
+          "kind": "loopback",
+          "value": 205
+        },
+        {
+          "id": "random_09",
+          "kind": "loopback",
+          "value": 170
+        }
+      ]
+    },
+    {
+      "method": "protocol_random",
+      "name": "protocol_random_533652",
+      "provenance": "phase4c_repeatability.protocol_random seed 533652",
+      "scenarios": [
+        {
+          "id": "protocol_random_00",
+          "kind": "bad_stop"
+        },
+        {
+          "id": "protocol_random_01",
+          "kind": "loopback",
+          "value": 170
+        },
+        {
+          "id": "protocol_random_02",
+          "kind": "loopback",
+          "value": 255
+        },
+        {
+          "id": "protocol_random_03",
+          "kind": "loopback",
+          "value": 129
+        },
+        {
+          "id": "protocol_random_04",
+          "kind": "loopback",
+          "value": 170
+        },
+        {
+          "id": "protocol_random_05",
+          "kind": "loopback",
+          "value": 55
+        },
+        {
+          "id": "protocol_random_06",
+          "kind": "loopback",
+          "value": 170
+        },
+        {
+          "id": "protocol_random_07",
+          "kind": "paired_frames",
+          "value": 17
+        },
+        {
+          "id": "protocol_random_08",
+          "kind": "busy_start",
+          "value": 129
+        },
+        {
+          "id": "protocol_random_09",
+          "kind": "loopback",
+          "value": 255
+        }
+      ]
+    },
+    {
+      "method": "payload_random",
+      "name": "payload_random_533652",
+      "provenance": "uart_ai_pipeline.randomized seed 533652",
+      "scenarios": [
+        {
+          "id": "random_00",
+          "kind": "loopback",
+          "value": 214
+        },
+        {
+          "id": "random_01",
+          "kind": "loopback",
+          "value": 101
+        },
+        {
+          "id": "random_02",
+          "kind": "loopback",
+          "value": 50
+        },
+        {
+          "id": "random_03",
+          "kind": "loopback",
+          "value": 130
+        },
+        {
+          "id": "random_04",
+          "kind": "loopback",
+          "value": 98
+        },
+        {
+          "id": "random_05",
+          "kind": "loopback",
+          "value": 168
+        },
+        {
+          "id": "random_06",
+          "kind": "loopback",
+          "value": 101
+        },
+        {
+          "id": "random_07",
+          "kind": "loopback",
+          "value": 48
+        },
+        {
+          "id": "random_08",
+          "kind": "loopback",
+          "value": 36
+        },
+        {
+          "id": "random_09",
+          "kind": "loopback",
+          "value": 249
+        }
+      ]
+    },
+    {
+      "method": "protocol_random",
+      "name": "protocol_random_638381",
+      "provenance": "phase4c_repeatability.protocol_random seed 638381",
+      "scenarios": [
+        {
+          "id": "protocol_random_00",
+          "kind": "loopback",
+          "value": 255
+        },
+        {
+          "id": "protocol_random_01",
+          "kind": "loopback",
+          "value": 85
+        },
+        {
+          "id": "protocol_random_02",
+          "kind": "bad_stop"
+        },
+        {
+          "id": "protocol_random_03",
+          "kind": "bad_stop"
+        },
+        {
+          "id": "protocol_random_04",
+          "kind": "paired_frames",
+          "value": 17
+        },
+        {
+          "id": "protocol_random_05",
+          "kind": "bad_stop"
+        },
+        {
+          "id": "protocol_random_06",
+          "kind": "loopback",
+          "value": 55
+        },
+        {
+          "id": "protocol_random_07",
+          "kind": "loopback",
+          "value": 255
+        },
+        {
+          "id": "protocol_random_08",
+          "kind": "loopback",
+          "value": 255
+        },
+        {
+          "id": "protocol_random_09",
+          "kind": "bad_stop"
+        }
+      ]
+    },
+    {
+      "method": "payload_random",
+      "name": "payload_random_638381",
+      "provenance": "uart_ai_pipeline.randomized seed 638381",
+      "scenarios": [
+        {
+          "id": "random_00",
+          "kind": "loopback",
+          "value": 49
+        },
+        {
+          "id": "random_01",
+          "kind": "loopback",
+          "value": 88
+        },
+        {
+          "id": "random_02",
+          "kind": "loopback",
+          "value": 195
+        },
+        {
+          "id": "random_03",
+          "kind": "loopback",
+          "value": 199
+        },
+        {
+          "id": "random_04",
+          "kind": "loopback",
+          "value": 200
+        },
+        {
+          "id": "random_05",
+          "kind": "loopback",
+          "value": 177
+        },
+        {
+          "id": "random_06",
+          "kind": "loopback",
+          "value": 48
+        },
+        {
+          "id": "random_07",
+          "kind": "loopback",
+          "value": 36
+        },
+        {
+          "id": "random_08",
+          "kind": "loopback",
+          "value": 218
+        },
+        {
+          "id": "random_09",
+          "kind": "loopback",
+          "value": 19
+        }
+      ]
+    },
+    {
+      "method": "protocol_random",
+      "name": "protocol_random_743110",
+      "provenance": "phase4c_repeatability.protocol_random seed 743110",
+      "scenarios": [
+        {
+          "id": "protocol_random_00",
+          "kind": "loopback",
+          "value": 129
+        },
+        {
+          "id": "protocol_random_01",
+          "kind": "paired_frames",
+          "value": 17
+        },
+        {
+          "id": "protocol_random_02",
+          "kind": "bad_stop"
+        },
+        {
+          "id": "protocol_random_03",
+          "kind": "loopback",
+          "value": 85
+        },
+        {
+          "id": "protocol_random_04",
+          "kind": "loopback",
+          "value": 129
+        },
+        {
+          "id": "protocol_random_05",
+          "kind": "busy_start",
+          "value": 129
+        },
+        {
+          "id": "protocol_random_06",
+          "kind": "bad_stop"
+        },
+        {
+          "id": "protocol_random_07",
+          "kind": "busy_start",
+          "value": 129
+        },
+        {
+          "id": "protocol_random_08",
+          "kind": "loopback",
+          "value": 129
+        },
+        {
+          "id": "protocol_random_09",
+          "kind": "reset_mid_tx"
+        }
+      ]
+    },
+    {
+      "method": "payload_random",
+      "name": "payload_random_743110",
+      "provenance": "uart_ai_pipeline.randomized seed 743110",
+      "scenarios": [
+        {
+          "id": "random_00",
+          "kind": "loopback",
+          "value": 138
+        },
+        {
+          "id": "random_01",
+          "kind": "loopback",
+          "value": 195
+        },
+        {
+          "id": "random_02",
+          "kind": "loopback",
+          "value": 73
+        },
+        {
+          "id": "random_03",
+          "kind": "loopback",
+          "value": 138
+        },
+        {
+          "id": "random_04",
+          "kind": "loopback",
+          "value": 203
+        },
+        {
+          "id": "random_05",
+          "kind": "loopback",
+          "value": 145
+        },
+        {
+          "id": "random_06",
+          "kind": "loopback",
+          "value": 235
+        },
+        {
+          "id": "random_07",
+          "kind": "loopback",
+          "value": 195
+        },
+        {
+          "id": "random_08",
+          "kind": "loopback",
+          "value": 81
+        },
+        {
+          "id": "random_09",
+          "kind": "loopback",
+          "value": 111
+        }
+      ]
+    },
+    {
+      "method": "protocol_random",
+      "name": "protocol_random_847839",
+      "provenance": "phase4c_repeatability.protocol_random seed 847839",
+      "scenarios": [
+        {
+          "id": "protocol_random_00",
+          "kind": "loopback",
+          "value": 255
+        },
+        {
+          "id": "protocol_random_01",
+          "kind": "loopback",
+          "value": 0
+        },
+        {
+          "id": "protocol_random_02",
+          "kind": "loopback",
+          "value": 129
+        },
+        {
+          "id": "protocol_random_03",
+          "kind": "paired_frames",
+          "value": 17
+        },
+        {
+          "id": "protocol_random_04",
+          "kind": "loopback",
+          "value": 55
+        },
+        {
+          "id": "protocol_random_05",
+          "kind": "loopback",
+          "value": 170
+        },
+        {
+          "id": "protocol_random_06",
+          "kind": "reset_mid_tx"
+        },
+        {
+          "id": "protocol_random_07",
+          "kind": "loopback",
+          "value": 55
+        },
+        {
+          "id": "protocol_random_08",
+          "kind": "loopback",
+          "value": 55
+        },
+        {
+          "id": "protocol_random_09",
+          "kind": "bad_stop"
+        }
+      ]
+    },
+    {
+      "method": "payload_random",
+      "name": "payload_random_847839",
+      "provenance": "uart_ai_pipeline.randomized seed 847839",
+      "scenarios": [
+        {
+          "id": "random_00",
+          "kind": "loopback",
+          "value": 37
+        },
+        {
+          "id": "random_01",
+          "kind": "loopback",
+          "value": 18
+        },
+        {
+          "id": "random_02",
+          "kind": "loopback",
+          "value": 129
+        },
+        {
+          "id": "random_03",
+          "kind": "loopback",
+          "value": 164
+        },
+        {
+          "id": "random_04",
+          "kind": "loopback",
+          "value": 102
+        },
+        {
+          "id": "random_05",
+          "kind": "loopback",
+          "value": 255
+        },
+        {
+          "id": "random_06",
+          "kind": "loopback",
+          "value": 176
+        },
+        {
+          "id": "random_07",
+          "kind": "loopback",
+          "value": 188
+        },
+        {
+          "id": "random_08",
+          "kind": "loopback",
+          "value": 203
+        },
+        {
+          "id": "random_09",
+          "kind": "loopback",
+          "value": 110
+        }
+      ]
+    },
+    {
+      "method": "protocol_random",
+      "name": "protocol_random_952568",
+      "provenance": "phase4c_repeatability.protocol_random seed 952568",
+      "scenarios": [
+        {
+          "id": "protocol_random_00",
+          "kind": "busy_start",
+          "value": 129
+        },
+        {
+          "id": "protocol_random_01",
+          "kind": "reset_mid_tx"
+        },
+        {
+          "id": "protocol_random_02",
+          "kind": "loopback",
+          "value": 0
+        },
+        {
+          "id": "protocol_random_03",
+          "kind": "loopback",
+          "value": 129
+        },
+        {
+          "id": "protocol_random_04",
+          "kind": "loopback",
+          "value": 255
+        },
+        {
+          "id": "protocol_random_05",
+          "kind": "reset_mid_tx"
+        },
+        {
+          "id": "protocol_random_06",
+          "kind": "bad_stop"
+        },
+        {
+          "id": "protocol_random_07",
+          "kind": "paired_frames",
+          "value": 17
+        },
+        {
+          "id": "protocol_random_08",
+          "kind": "loopback",
+          "value": 55
+        },
+        {
+          "id": "protocol_random_09",
+          "kind": "loopback",
+          "value": 55
+        }
+      ]
+    },
+    {
+      "method": "payload_random",
+      "name": "payload_random_952568",
+      "provenance": "uart_ai_pipeline.randomized seed 952568",
+      "scenarios": [
+        {
+          "id": "random_00",
+          "kind": "loopback",
+          "value": 254
+        },
+        {
+          "id": "random_01",
+          "kind": "loopback",
+          "value": 28
+        },
+        {
+          "id": "random_02",
+          "kind": "loopback",
+          "value": 158
+        },
+        {
+          "id": "random_03",
+          "kind": "loopback",
+          "value": 50
+        },
+        {
+          "id": "random_04",
+          "kind": "loopback",
+          "value": 228
+        },
+        {
+          "id": "random_05",
+          "kind": "loopback",
+          "value": 197
+        },
+        {
+          "id": "random_06",
+          "kind": "loopback",
+          "value": 183
+        },
+        {
+          "id": "random_07",
+          "kind": "loopback",
+          "value": 190
+        },
+        {
+          "id": "random_08",
+          "kind": "loopback",
+          "value": 49
+        },
+        {
+          "id": "random_09",
+          "kind": "loopback",
+          "value": 155
+        }
+      ]
+    }
+  ]
+}

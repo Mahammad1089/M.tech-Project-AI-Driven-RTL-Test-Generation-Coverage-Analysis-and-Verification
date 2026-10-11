@@ -1,0 +1,109 @@
+{
+  "checks": {
+    "clean_controls": 108,
+    "invalid": 0,
+    "mutant_simulations": 1512
+  },
+  "method_counts": {
+    "balanced_directed": {
+      "KILLED": 56
+    },
+    "hermes_ai": {
+      "KILLED": 280
+    },
+    "hermes_archived": {
+      "KILLED": 56
+    },
+    "payload_random": {
+      "KILLED": 284,
+      "SURVIVED": 276
+    },
+    "protocol_random": {
+      "KILLED": 456,
+      "SURVIVED": 104
+    }
+  },
+  "method_score_pct": {
+    "balanced_directed": {
+      "mean": 100.0,
+      "scores": [
+        100.0
+      ],
+      "trials": 1
+    },
+    "hermes_ai": {
+      "mean": 100.0,
+      "scores": [
+        100.0,
+        100.0,
+        100.0,
+        100.0,
+        100.0
+      ],
+      "trials": 5
+    },
+    "hermes_archived": {
+      "mean": 100.0,
+      "scores": [
+        100.0
+      ],
+      "trials": 1
+    },
+    "payload_random": {
+      "mean": 50.71,
+      "scores": [
+        50.0,
+        50.0,
+        50.0,
+        50.0,
+        57.14,
+        50.0,
+        50.0,
+        50.0,
+        50.0,
+        50.0
+      ],
+      "trials": 10
+    },
+    "protocol_random": {
+      "mean": 81.43,
+      "scores": [
+        85.71,
+        71.43,
+        85.71,
+        78.57,
+        85.71,
+        78.57,
+        71.43,
+        85.71,
+        85.71,
+        85.71
+      ],
+      "trials": 10
+    }
+  },
+  "note": "Same scenarios, extended oracle. Changes in score are caused by stronger assertions, not additional AI test generation.",
+  "old_experiment_unchanged": true,
+  "old_reset_mutant_summary": {
+    "by_method": {
+      "balanced_directed": {
+        "SURVIVED": 4
+      },
+      "hermes_ai": {
+        "SURVIVED": 20
+      },
+      "hermes_archived": {
+        "SURVIVED": 4
+      },
+      "payload_random": {
+        "SURVIVED": 40
+      },
+      "protocol_random": {
+        "SURVIVED": 40
+      }
+    },
+    "path": "/home/maham_mtech/Mtech_project/AI_RTL_Verification/phase_workflow/evaluation/fault_injection/phase4d_20261010T105113Z"
+  },
+  "original_rtl_unchanged": true,
+  "status": "PASS"
+}

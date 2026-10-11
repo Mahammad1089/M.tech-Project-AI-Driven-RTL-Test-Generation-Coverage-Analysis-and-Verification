@@ -1,0 +1,71 @@
+{
+  "status": "PASS",
+  "purpose": "Independent active-reset-cycle observation",
+  "original_rtl_unchanged": true,
+  "results": [
+    {
+      "cpb": 8,
+      "implementation": "clean",
+      "verdict": "PASS",
+      "reset_excited": true,
+      "reset_mismatch": false,
+      "exit_code": 0
+    },
+    {
+      "cpb": 8,
+      "implementation": "mutant",
+      "verdict": "FAIL",
+      "reset_excited": true,
+      "reset_mismatch": true,
+      "exit_code": 0
+    },
+    {
+      "cpb": 16,
+      "implementation": "clean",
+      "verdict": "PASS",
+      "reset_excited": true,
+      "reset_mismatch": false,
+      "exit_code": 0
+    },
+    {
+      "cpb": 16,
+      "implementation": "mutant",
+      "verdict": "FAIL",
+      "reset_excited": true,
+      "reset_mismatch": true,
+      "exit_code": 0
+    },
+    {
+      "cpb": 32,
+      "implementation": "clean",
+      "verdict": "PASS",
+      "reset_excited": true,
+      "reset_mismatch": false,
+      "exit_code": 0
+    },
+    {
+      "cpb": 32,
+      "implementation": "mutant",
+      "verdict": "FAIL",
+      "reset_excited": true,
+      "reset_mismatch": true,
+      "exit_code": 0
+    },
+    {
+      "cpb": 64,
+      "implementation": "clean",
+      "verdict": "PASS",
+      "reset_excited": true,
+      "reset_mismatch": false,
+      "exit_code": 0
+    },
+    {
+      "cpb": 64,
+      "implementation": "mutant",
+      "verdict": "FAIL",
+      "reset_excited": true,
+      "reset_mismatch": true,
+      "exit_code": 0
+    }
+  ]
+}

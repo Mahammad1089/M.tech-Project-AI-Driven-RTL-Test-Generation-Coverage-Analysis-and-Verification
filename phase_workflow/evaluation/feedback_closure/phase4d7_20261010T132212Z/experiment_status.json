@@ -1,0 +1,227 @@
+{
+  "additional_ai_scenarios": 1,
+  "ai_feedback": {
+    "all_pass": true,
+    "checks": 39324,
+    "coverage_by_cpb": {
+      "16": {
+        "all_ones": 1,
+        "alternating_55": 1,
+        "alternating_aa": 1,
+        "busy_start": 1,
+        "edge_81": 1,
+        "framing_error": 1,
+        "other_data": 1,
+        "paired_frames": 1,
+        "reset_mid_tx": 1,
+        "zero": 1
+      },
+      "32": {
+        "all_ones": 1,
+        "alternating_55": 1,
+        "alternating_aa": 1,
+        "busy_start": 1,
+        "edge_81": 1,
+        "framing_error": 1,
+        "other_data": 1,
+        "paired_frames": 1,
+        "reset_mid_tx": 1,
+        "zero": 1
+      },
+      "64": {
+        "all_ones": 1,
+        "alternating_55": 1,
+        "alternating_aa": 1,
+        "busy_start": 1,
+        "edge_81": 1,
+        "framing_error": 1,
+        "other_data": 1,
+        "paired_frames": 1,
+        "reset_mid_tx": 1,
+        "zero": 1
+      },
+      "8": {
+        "all_ones": 1,
+        "alternating_55": 1,
+        "alternating_aa": 1,
+        "busy_start": 1,
+        "edge_81": 1,
+        "framing_error": 1,
+        "other_data": 1,
+        "paired_frames": 1,
+        "reset_mid_tx": 1,
+        "zero": 1
+      }
+    },
+    "cycles": 19592,
+    "failed_checks": 0,
+    "min_coverage_pct": 100.0,
+    "seconds": 0.2727,
+    "tested_cpbs": [
+      8,
+      16,
+      32,
+      64
+    ]
+  },
+  "ai_feedback_min_coverage_pct": 100.0,
+  "baseline_replay_coverage_pct": 90.0,
+  "closure_target_met": true,
+  "created_utc": "2026-10-10T13:22:12.570756+00:00",
+  "feedback_kind": "loopback",
+  "feedback_value": 129,
+  "final_ai_scenario_count": 11,
+  "frozen_uart_sha256": {
+    "uart_rx.v": "ab45e6f6d8af3edd0763061f3182cd48b3175d41f74f91f4c2de0e699a044484",
+    "uart_rx_opt.v": "56fa1a341539798bd66917b10e951b28ac8fc0da7a1f38f4ca47bbad29d290ff",
+    "uart_tx.v": "4f9be285b77279ec6dea823117ec4a357a3851fc23ca96acde753ed12cf4ef9a",
+    "uart_tx_opt.v": "8fabd1cd68cf0bc3eb2e9c6e76437be4e7278b35745bd48df0f12890cea3f02b"
+  },
+  "hermes_calls": 1,
+  "hermes_seconds": 25.116,
+  "hermes_status": "PASS",
+  "matched_directed": {
+    "all_pass": true,
+    "checks": 39324,
+    "coverage_by_cpb": {
+      "16": {
+        "all_ones": 1,
+        "alternating_55": 1,
+        "alternating_aa": 1,
+        "busy_start": 1,
+        "edge_81": 1,
+        "framing_error": 1,
+        "other_data": 1,
+        "paired_frames": 1,
+        "reset_mid_tx": 1,
+        "zero": 1
+      },
+      "32": {
+        "all_ones": 1,
+        "alternating_55": 1,
+        "alternating_aa": 1,
+        "busy_start": 1,
+        "edge_81": 1,
+        "framing_error": 1,
+        "other_data": 1,
+        "paired_frames": 1,
+        "reset_mid_tx": 1,
+        "zero": 1
+      },
+      "64": {
+        "all_ones": 1,
+        "alternating_55": 1,
+        "alternating_aa": 1,
+        "busy_start": 1,
+        "edge_81": 1,
+        "framing_error": 1,
+        "other_data": 1,
+        "paired_frames": 1,
+        "reset_mid_tx": 1,
+        "zero": 1
+      },
+      "8": {
+        "all_ones": 1,
+        "alternating_55": 1,
+        "alternating_aa": 1,
+        "busy_start": 1,
+        "edge_81": 1,
+        "framing_error": 1,
+        "other_data": 1,
+        "paired_frames": 1,
+        "reset_mid_tx": 1,
+        "zero": 1
+      }
+    },
+    "cycles": 19592,
+    "failed_checks": 0,
+    "min_coverage_pct": 100.0,
+    "seconds": 0.2694,
+    "tested_cpbs": [
+      8,
+      16,
+      32,
+      64
+    ]
+  },
+  "matched_directed_min_coverage_pct": 100.0,
+  "replayed_baseline": {
+    "all_pass": true,
+    "checks": 36408,
+    "coverage_by_cpb": {
+      "16": {
+        "all_ones": 1,
+        "alternating_55": 1,
+        "alternating_aa": 1,
+        "busy_start": 1,
+        "edge_81": 0,
+        "framing_error": 1,
+        "other_data": 1,
+        "paired_frames": 1,
+        "reset_mid_tx": 1,
+        "zero": 1
+      },
+      "32": {
+        "all_ones": 1,
+        "alternating_55": 1,
+        "alternating_aa": 1,
+        "busy_start": 1,
+        "edge_81": 0,
+        "framing_error": 1,
+        "other_data": 1,
+        "paired_frames": 1,
+        "reset_mid_tx": 1,
+        "zero": 1
+      },
+      "64": {
+        "all_ones": 1,
+        "alternating_55": 1,
+        "alternating_aa": 1,
+        "busy_start": 1,
+        "edge_81": 0,
+        "framing_error": 1,
+        "other_data": 1,
+        "paired_frames": 1,
+        "reset_mid_tx": 1,
+        "zero": 1
+      },
+      "8": {
+        "all_ones": 1,
+        "alternating_55": 1,
+        "alternating_aa": 1,
+        "busy_start": 1,
+        "edge_81": 0,
+        "framing_error": 1,
+        "other_data": 1,
+        "paired_frames": 1,
+        "reset_mid_tx": 1,
+        "zero": 1
+      }
+    },
+    "cycles": 18144,
+    "failed_checks": 0,
+    "min_coverage_pct": 90.0,
+    "seconds": 0.3965,
+    "tested_cpbs": [
+      8,
+      16,
+      32,
+      64
+    ]
+  },
+  "research_limitations": [
+    "The prompt discloses the missing functional bin and exact loopback(129) remedy.",
+    "This test demonstrates one targeted feedback integration, not autonomous discovery.",
+    "The same additional scenario can be generated deterministically by a directed rule.",
+    "Final 100% is over 10 predefined bins only, not all possible UART faults."
+  ],
+  "source_min_coverage_pct": 90.0,
+  "source_missing_bins": [
+    "edge_81"
+  ],
+  "source_scenario_count": 10,
+  "source_scenarios_sha256": "ba8dec7f36139635b15a0b713e35654a59153450fd0d6f69ef0812253f2a8809",
+  "source_trial5": "/home/maham_mtech/Mtech_project/AI_RTL_Verification/phase_workflow/evaluation/repeatability/hermes_trials/phase4c2_20261010T103303Z",
+  "stage": "Phase 4D-7",
+  "status": "PASS"
+}
