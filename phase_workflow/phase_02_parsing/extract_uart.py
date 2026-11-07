@@ -88,6 +88,59 @@ def parse_file(path, expected_name):
             'parameters':sorted(parameters), 'states':sorted(states), 'posedge_clocked': posedge,
             'parser': 'PyVerilog VerilogParser AST'}
 
+def build_module_specifications(parsed):
+    """Attach reviewed *candidate* requirements to the existing UART knowledge.
+
+    This is a minimal specification/verification-feature bridge to Hermes,
+    not SystemVerilog assertion generation or a formal correctness proof.
+    The four UART RTL modules have no internal module hierarchy to invent.
+    """
+    tx_requirements = [
+        {'id': 'TX_RESET',
+         'expectation': 'On an active-high synchronous reset, tx=1, busy=0 and done=0.',
+         'related_existing_bins': ['reset_mid_tx']},
+        {'id': 'TX_FRAME',
+         'expectation': 'Accepted start sends a low start bit, 8 data bits LSB-first, and a high stop bit.',
+         'related_existing_bins': ['zero', 'all_ones', 'alternating_55', 'alternating_aa', 'edge_81', 'other_data']},
+        {'id': 'TX_BUSY',
+         'expectation': 'A start request while the transmitter is busy does not initiate a new frame.',
+         'related_existing_bins': ['busy_start']},
+        {'id': 'TX_DONE',
+         'expectation': 'done indicates frame completion and is cleared on the following clock.',
+         'related_existing_bins': ['paired_frames']},
+    ]
+    rx_requirements = [
+        {'id': 'RX_RESET',
+         'expectation': 'On an active-high synchronous reset, valid=0, busy=0 and framing_error=0.',
+         'related_existing_bins': ['reset_mid_tx']},
+        {'id': 'RX_FRAME',
+         'expectation': 'Receive an 8N1 frame as eight LSB-first bits between low start and high stop.',
+         'related_existing_bins': ['zero', 'all_ones', 'alternating_55', 'alternating_aa', 'edge_81', 'other_data']},
+        {'id': 'RX_GOOD_STOP',
+         'expectation': 'A valid high stop bit results in data_out update and a valid pulse.',
+         'related_existing_bins': ['paired_frames']},
+        {'id': 'RX_BAD_STOP',
+         'expectation': 'A low stop bit raises framing_error rather than valid.',
+         'related_existing_bins': ['framing_error']},
+    ]
+    result = {}
+    for module, source in parsed.items():
+        kind = 'transmitter' if module.startswith('uart_tx') else 'receiver'
+        expected_ports = set(EXPECTED[module])
+        actual_ports = {port['name'] for port in source['ports']}
+        if actual_ports != expected_ports:
+            raise ValueError(f'{module}: interface changed during module specification extraction')
+        result[module] = {
+            'role': kind,
+            'variant': 'optimized' if module.endswith('_opt') else 'baseline',
+            'source_sha256': source['sha256'],
+            'basis': 'Existing project 8N1 protocol contract and AST-checked UART ports',
+            'status': 'Candidate module-level requirements; not independently proven',
+            'requirements': [dict(item) for item in
+                             (tx_requirements if kind == 'transmitter' else rx_requirements)],
+        }
+    return result
+
 def knowledge():
     files = {
         'uart_tx': 'uart_tx.v', 'uart_rx': 'uart_rx.v',
@@ -109,6 +162,7 @@ def knowledge():
     return {
         'schema': 'uart_knowledge_v1', 'generated_utc': datetime.now(timezone.utc).isoformat(),
         'source_analysis': parsed,
+        'module_specifications': build_module_specifications(parsed),
         'protocol': {'format':'8N1', 'data_bits':8, 'parity':'none', 'stop_bits':1,
                      'bit_order':'LSB_first', 'clock_parameter':'CLKS_PER_BIT',
                      'tested_clocks_per_bit':[8,16,32,64],

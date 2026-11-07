@@ -54,6 +54,11 @@ def prompt(knowledge, uncovered=None, prior=None):
         {'id':'test_05','kind':'paired_frames','value':17}
        ]}
     bins=uncovered if uncovered is not None else list(BINS)
+    # Phase 2 specifications are candidates: pass them as context, not as proven assertions.
+    module_requirements = {
+        name: info['requirements']
+        for name, info in knowledge.get('module_specifications', {}).items()
+    }
     return ("You are developing SAFE FUNCTIONAL VERILOG TEST SCENARIOS for a fixed 8N1 UART.\n"
             "Respond with ONLY one JSON object (not Markdown) containing an array key 'scenarios'.\n"
             "Do not write code or commands. The deterministic generator supplies its own testbench.\n"
@@ -65,6 +70,9 @@ def prompt(knowledge, uncovered=None, prior=None):
             + "Prioritize missing bins and avoid duplicate operations.\n"
             f"REQUIRED BINS: {json.dumps(bins)}\n"
             f"CONTRACT: {json.dumps(knowledge['protocol'],sort_keys=True)}\n"
+            "Candidate requirements are NOT formal proofs. Use them only to guide selection "
+            "of supported scenarios; do not invent new scenario types or claim property validation.\n"
+            f"MODULE-LEVEL REQUIREMENTS: {json.dumps(module_requirements,sort_keys=True)}\n"
             f"OBJECTIVES: {json.dumps(OBJ,sort_keys=True)}\n"
             f"ALREADY TESTED: {json.dumps(prior or [],sort_keys=True)}\n"
             f"EXAMPLE RESPONSE: {json.dumps(schema)}\n")
