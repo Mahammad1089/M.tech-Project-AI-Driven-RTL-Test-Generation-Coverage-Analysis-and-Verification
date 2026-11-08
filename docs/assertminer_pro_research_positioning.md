@@ -1,6 +1,6 @@
 # Research positioning, metric alignment and claim boundaries
 
-**Project:** AI-Driven RTL Test Generation, Coverage Analysis and Verification  
+**Project:** AI-Driven RTL Test Generation, Coverage Analysis and Verification
 **Base paper:** Y. Wang et al., “AssertMiner-pro: Enhanced module-level spec generation and assertion mining with LLM guided by top-down hierarchical strategies,” *Integration*, vol. 110, art. 102797, 2026. DOI: https://doi.org/10.1016/j.vlsi.2026.102797.
 
 ## 1. Suggested abstract wording (for the manuscript)
@@ -28,3 +28,18 @@ AssertMiner-pro extracts structural RTL information and propagates specification
 **Avoid:** “Outperforms AssertMiner-pro,” “achieves 100% RTL/code coverage,” “proves formal correctness,” or “autonomously derived all protocol requirements.” Scenario categories and allowed scenario kinds are constrained by the existing prompt/contract; a balanced-directed control also attains complete defined-bin coverage. An assertion embedded in a simulation testbench does not by itself establish formal-property verification.
 
 **Scope:** Documentation/positioning only. Existing four phases, RTL, testbenches, simulation results, mutation data and PPA evidence remain unchanged.
+
+## 5. Optional LLM-authored simulation checks (Step 4)
+
+The previous `spec_assertions` mode was already implemented as SystemVerilog **immediate simulation assertions**. A separate Phase-3 experiment now evaluates three additional GPT-6-authored UART checker families (TX completion, RX valid, RX framing error) on the unchanged, archived Hermes scenario set. These properties are **not automatically mined by Hermes**, and the exercise does **not** reproduce AssertMiner-pro deep concurrent SVA or formal proof.
+
+| Saved AI suite setting | Existing simulator verdict | New checks activated |
+|---|---|---|
+| CPB 8 | PASS | TX done 20; RX valid 20; RX error 2 |
+| CPB 16 | PASS | TX done 20; RX valid 20; RX error 2 |
+| CPB 32 | PASS | TX done 20; RX valid 20; RX error 2 |
+| CPB 64 | PASS | TX done 20; RX valid 20; RX error 2 |
+
+**Evidence location (outside repo):** `/home/maham_mtech/MTech_Step4_Assertion_Check_20261108_102827`; see `step4_assertion_results.json`, per-setting `compile.log` and `simulation.log`.
+
+**Limits:** These are new isolated simulation runs, not a fresh Hermes generation or fault-injection campaign. No formal proof, structural coverage or improved mutation-detection claim is made. Original RTL, prompt, historical logs and existing four phases remain unchanged.
