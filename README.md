@@ -134,3 +134,8 @@ python3 validate_project_results.py
 2. LLM-written assertions as checkers, combining the base paper's output type with the closed loop.
 3. A design from the base paper's benchmark set (for example I2C or UART from IWLS 2005) for a direct comparison.
 4. Automatic mutant generation.
+
+<!-- ASSERTMINER_PRO_POSITIONING_236 -->
+### Relationship to the base paper and evidence limits
+
+This project is **informed by** AssertMiner-pro (Wang et al., *Integration*, 2026, [DOI:10.1016/j.vlsi.2026.102797](https://doi.org/10.1016/j.vlsi.2026.102797)), but focuses on AI-guided **test stimuli, dynamic simulation and coverage feedback**, not reproduction of hierarchical formal assertion mining. The initial 100% result is coverage of **ten predefined UART scenario categories**, not 100% code/structural coverage or proof of superiority to the base paper. A balanced-directed control also reaches those ten categories. For a paper-ready abstract, related-work comparison, metric interpretation and defensible claims, see [Research positioning](docs/assertminer_pro_research_positioning.md).
