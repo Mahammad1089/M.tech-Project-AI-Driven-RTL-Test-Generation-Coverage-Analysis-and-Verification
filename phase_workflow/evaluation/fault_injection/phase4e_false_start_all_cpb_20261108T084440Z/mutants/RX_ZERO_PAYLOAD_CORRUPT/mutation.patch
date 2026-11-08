@@ -1,0 +1,11 @@
+--- uart_rx_opt.v (frozen)
++++ uart_rx_opt.v (mutant)
+@@ -79,7 +79,7 @@
+                         state <= IDLE;
+                         busy <= 0;
+                         if (rx_sync) begin
+-                            data_out <= payload;
++                            data_out <= (payload == 8'h00) ? 8'h01 : payload;
+                             valid <= 1;
+                         end else
+                             framing_error <= 1;

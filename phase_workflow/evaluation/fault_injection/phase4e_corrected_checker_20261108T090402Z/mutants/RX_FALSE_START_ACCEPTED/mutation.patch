@@ -1,0 +1,14 @@
+--- uart_rx_opt.v (frozen)
++++ uart_rx_opt.v (mutant)
+@@ -52,10 +52,7 @@
+                         tick <= 0;
+                         if (!rx_sync)
+                             state <= DATA;
+-                        else begin
+-                            state <= IDLE;
+-                            busy <= 0;
+-                        end
++                            else state <= DATA;
+                     end else
+                         tick <= tick + 1'b1;
+                 end

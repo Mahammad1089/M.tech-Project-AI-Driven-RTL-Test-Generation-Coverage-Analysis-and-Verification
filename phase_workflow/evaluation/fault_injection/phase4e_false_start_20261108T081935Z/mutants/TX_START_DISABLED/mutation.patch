@@ -1,0 +1,11 @@
+--- uart_tx_opt.v (frozen)
++++ uart_tx_opt.v (mutant)
+@@ -25,7 +25,7 @@
+             case (state)
+                 IDLE: begin
+                     tx<=1; busy<=0; tick<=0;
+-                    if (start) begin
++                    if (1'b0 && start) begin
+                         shift_data<=data_in; busy<=1; tx<=0; state<=START;
+                     end
+                 end

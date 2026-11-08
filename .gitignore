@@ -8,3 +8,17 @@ __pycache__/
 simulation.out
 
 
+*.bak
+*.backup
+*.backup2
+*.before_*
+*.step4_pass
+*.previous
+*.syntax_error_backup
+*.tar.gz
+.history_sta
+proj/
+**/mutation_runs/
+**/runs/
+**/simulations/
+**/simulation_runs/

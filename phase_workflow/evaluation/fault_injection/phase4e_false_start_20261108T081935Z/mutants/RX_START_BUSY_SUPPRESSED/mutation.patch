@@ -1,0 +1,11 @@
+--- uart_rx_opt.v (frozen)
++++ uart_rx_opt.v (mutant)
+@@ -43,7 +43,7 @@
+                     busy <= 0;
+                     tick <= 0;
+                     if (!rx_sync) begin
+-                        busy <= 1;
++                        busy <= 0;
+                         state <= START;
+                     end
+                 end

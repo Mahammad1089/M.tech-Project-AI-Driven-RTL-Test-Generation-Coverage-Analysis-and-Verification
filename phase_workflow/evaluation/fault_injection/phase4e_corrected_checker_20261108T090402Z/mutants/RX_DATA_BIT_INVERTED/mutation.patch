@@ -1,0 +1,11 @@
+--- uart_rx_opt.v (frozen)
++++ uart_rx_opt.v (mutant)
+@@ -64,7 +64,7 @@
+                         tick <= 0;
+                         // LSB-first serial input shifts into MSB position.
+                         // After 8 samples, payload[7:0] = input byte[7:0].
+-                        payload <= {rx_sync, payload[7:1]};
++                        payload <= {~rx_sync, payload[7:1]};
+                         if (bit_idx == 7) begin
+                             bit_idx <= 0;
+                             state <= STOP;
