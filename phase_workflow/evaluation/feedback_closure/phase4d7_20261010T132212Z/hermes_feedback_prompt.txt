@@ -1,0 +1,13 @@
+You are generating one safe, structured UART verification scenario.
+Return ONLY a JSON object, no Markdown, in exactly this shape:
+{"scenarios":[{"id":"unique_identifier","kind":"allowed_kind","value":0}]}
+The project has 10 predefined functional coverage bins. A verified previous
+trial hit 9/10 bins and missed only edge_81 in CPB 8, 16, 32, and 64.
+The deterministic testbench credits edge_81 ONLY when loopback transmits
+byte 0x81 (decimal 129) and its self-checking receive oracle passes.
+Allowed kinds are loopback, bad_stop, reset_mid_tx, busy_start, paired_frames.
+Generate EXACTLY ONE scenario that satisfies the missing bin.
+Use a unique simple alphanumeric underscore id not present in the list.
+Do not return code, commands, explanations or additional scenarios.
+Previously tested scenario IDs: ['test_01', 'test_02', 'test_03', 'test_04', 'test_05', 'test_06', 'test_07', 'test_08', 'test_09', 'test_10']
+Previously tested scenario operations: [{"kind": "loopback", "value": 0}, {"kind": "loopback", "value": 255}, {"kind": "loopback", "value": 85}, {"kind": "loopback", "value": 170}, {"kind": "loopback", "value": 81}, {"kind": "loopback", "value": 60}, {"kind": "bad_stop"}, {"kind": "reset_mid_tx"}, {"kind": "busy_start", "value": 194}, {"kind": "paired_frames", "value": 18}]

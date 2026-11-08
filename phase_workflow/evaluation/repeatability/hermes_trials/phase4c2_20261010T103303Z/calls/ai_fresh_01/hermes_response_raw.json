@@ -1,0 +1,19 @@
+{
+  "duration_ms": 42568,
+  "event_count": 238,
+  "hermes_exit_code": 0,
+  "invalid_line_count": 0,
+  "response_text": "{\n  \"scenarios\": [\n    {\"id\": \"t01_zero\", \"kind\": \"loopback\", \"value\": 0},\n    {\"id\": \"t02_all_ones\", \"kind\": \"loopback\", \"value\": 255},\n    {\"id\": \"t03_alt55\", \"kind\": \"loopback\", \"value\": 85},\n    {\"id\": \"t04_alt_aa\", \"kind\": \"loopback\", \"value\": 170},\n    {\"id\": \"t05_edge81\", \"kind\": \"loopback\", \"value\": 129},\n    {\"id\": \"t06_other_data\", \"kind\": \"loopback\", \"value\": 100},\n    {\"id\": \"t07_framing_error\", \"kind\": \"bad_stop\"},\n    {\"id\": \"t08_reset_mid_tx\", \"kind\": \"reset_mid_tx\"},\n    {\"id\": \"t09_busy_start\", \"kind\": \"busy_start\", \"value\": 1},\n    {\"id\": \"t10_paired_frames\", \"kind\": \"paired_frames\", \"value\": 200}\n  ]\n}",
+  "return_code": 0,
+  "session_id": "20261010_103305_9ec0e3",
+  "stage": "complete",
+  "status": "PASS",
+  "stderr": "\nsession_id: 20261010_103305_9ec0e3\n",
+  "tokens": {
+    "cache_read": 1664,
+    "cache_write": 0,
+    "input": 13386,
+    "output": 2475,
+    "total": 17525
+  }
+}

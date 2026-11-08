@@ -1,0 +1,11 @@
+--- uart_rx_opt.v (frozen)
++++ uart_rx_opt.v (mutant)
+@@ -78,7 +78,7 @@
+                         tick <= 0;
+                         state <= IDLE;
+                         busy <= 0;
+-                        if (rx_sync) begin
++                        if (rx_sync && payload != 8'hAA) begin
+                             data_out <= payload;
+                             valid <= 1;
+                         end else

@@ -1,0 +1,11 @@
+--- uart_rx_opt.v (frozen)
++++ uart_rx_opt.v (mutant)
+@@ -82,7 +82,7 @@
+                             data_out <= payload;
+                             valid <= 1;
+                         end else
+-                            framing_error <= 1;
++                            framing_error <= 0;
+                     end else
+                         tick <= tick + 1'b1;
+                 end

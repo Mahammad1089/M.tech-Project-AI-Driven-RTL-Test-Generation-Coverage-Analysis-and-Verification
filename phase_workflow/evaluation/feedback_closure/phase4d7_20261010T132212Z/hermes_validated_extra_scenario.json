@@ -1,0 +1,10 @@
+{
+  "origin": "LIVE_HERMES_SINGLE_FEEDBACK",
+  "scenarios": [
+    {
+      "id": "loopback_129_edge81",
+      "kind": "loopback",
+      "value": 129
+    }
+  ]
+}

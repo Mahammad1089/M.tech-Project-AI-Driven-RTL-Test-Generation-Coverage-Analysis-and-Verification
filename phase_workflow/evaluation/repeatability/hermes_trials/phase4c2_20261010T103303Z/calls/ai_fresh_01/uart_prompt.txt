@@ -1,0 +1,13 @@
+You are developing SAFE FUNCTIONAL VERILOG TEST SCENARIOS for a fixed 8N1 UART.
+Respond with ONLY one JSON object (not Markdown) containing an array key 'scenarios'.
+Do not write code or commands. The deterministic generator supplies its own testbench.
+Allowed kind values: loopback, bad_stop, reset_mid_tx, busy_start, paired_frames.
+For loopback, busy_start and paired_frames provide integer 'value' 0..255.
+For bad_stop and reset_mid_tx omit 'value'.
+Each scenario must have a unique short alphanumeric underscore id. Generate exactly 10 scenarios.
+Prioritize missing bins and avoid duplicate operations.
+REQUIRED BINS: ["zero", "all_ones", "alternating_55", "alternating_aa", "edge_81", "other_data", "framing_error", "reset_mid_tx", "busy_start", "paired_frames"]
+CONTRACT: {"bit_order": "LSB_first", "clock_parameter": "CLKS_PER_BIT", "data_bits": 8, "format": "8N1", "note": "Observed design contract, not a full formal protocol proof", "parity": "none", "receiver_input_synchronizer_stages": 2, "receiver_stop_check": "framing_error on low stop bit", "reset": "synchronous active-high", "stop_bits": 1, "tested_clocks_per_bit": [8, 16, 32, 64]}
+OBJECTIVES: {"closure": "Select legal tests for bins not covered by previous validated simulations", "corners": "00, FF, 55, AA, 81, other payload, bad stop, reset mid-frame, ignored start while busy, repeated frames", "oracle": "Compare RX received byte to stimulus; check valid and stop bit; compare optimized and baseline TX/RX every clock", "timing": "Exercise 8, 16, 32 and 64 clocks per bit, without modifying RTL", "transaction": "Each 8N1 payload must traverse baseline TX to both baseline and optimized RX"}
+ALREADY TESTED: []
+EXAMPLE RESPONSE: {"scenarios": [{"id": "test_01", "kind": "loopback", "value": 85}, {"id": "test_02", "kind": "bad_stop"}, {"id": "test_03", "kind": "reset_mid_tx"}, {"id": "test_04", "kind": "busy_start", "value": 129}, {"id": "test_05", "kind": "paired_frames", "value": 17}]}

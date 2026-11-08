@@ -1,0 +1,19 @@
+{
+  "duration_ms": 27476,
+  "event_count": 215,
+  "hermes_exit_code": 0,
+  "invalid_line_count": 0,
+  "response_text": "{\n  \"scenarios\": [\n    {\"id\": \"loop_00\", \"kind\": \"loopback\", \"value\": 0},\n    {\"id\": \"loop_ff\", \"kind\": \"loopback\", \"value\": 255},\n    {\"id\": \"loop_55\", \"kind\": \"loopback\", \"value\": 85},\n    {\"id\": \"loop_aa\", \"kind\": \"loopback\", \"value\": 170},\n    {\"id\": \"loop_81\", \"kind\": \"loopback\", \"value\": 129},\n    {\"id\": \"loop_7f\", \"kind\": \"loopback\", \"value\": 127},\n    {\"id\": \"framing_err\", \"kind\": \"bad_stop\"},\n    {\"id\": \"reset_mid\", \"kind\": \"reset_mid_tx\"},\n    {\"id\": \"busy_start_tx\", \"kind\": \"busy_start\", \"value\": 129},\n    {\"id\": \"paired_frames\", \"kind\": \"paired_frames\", \"value\": 17}\n  ]\n}",
+  "return_code": 0,
+  "session_id": "20261010_103452_b7ce2d",
+  "stage": "complete",
+  "status": "PASS",
+  "stderr": "\nsession_id: 20261010_103452_b7ce2d\n",
+  "tokens": {
+    "cache_read": 1664,
+    "cache_write": 0,
+    "input": 13386,
+    "output": 1618,
+    "total": 16668
+  }
+}

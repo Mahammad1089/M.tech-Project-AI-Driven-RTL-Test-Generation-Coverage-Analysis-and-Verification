@@ -1,0 +1,19 @@
+{
+  "duration_ms": 26103,
+  "event_count": 215,
+  "hermes_exit_code": 0,
+  "invalid_line_count": 0,
+  "response_text": "{\"scenarios\": [{\"id\": \"test_01\", \"kind\": \"loopback\", \"value\": 0}, {\"id\": \"test_02\", \"kind\": \"loopback\", \"value\": 255}, {\"id\": \"test_03\", \"kind\": \"loopback\", \"value\": 85}, {\"id\": \"test_04\", \"kind\": \"loopback\", \"value\": 170}, {\"id\": \"test_05\", \"kind\": \"loopback\", \"value\": 129}, {\"id\": \"test_06\", \"kind\": \"loopback\", \"value\": 127}, {\"id\": \"test_07\", \"kind\": \"bad_stop\"}, {\"id\": \"test_08\", \"kind\": \"reset_mid_tx\"}, {\"id\": \"test_09\", \"kind\": \"busy_start\", \"value\": 18}, {\"id\": \"test_10\", \"kind\": \"paired_frames\", \"value\": 51}]}",
+  "return_code": 0,
+  "session_id": "20261010_103351_cdbaad",
+  "stage": "complete",
+  "status": "PASS",
+  "stderr": "\nsession_id: 20261010_103351_cdbaad\n",
+  "tokens": {
+    "cache_read": 1600,
+    "cache_write": 0,
+    "input": 13450,
+    "output": 2039,
+    "total": 17089
+  }
+}

@@ -1,0 +1,11 @@
+--- uart_tx_opt.v (frozen)
++++ uart_tx_opt.v (mutant)
+@@ -47,7 +47,7 @@
+                 end
+                 STOP: begin
+                     if (tick == CLKS_PER_BIT-1) begin
+-                        tick<=0; state<=IDLE; busy<=0; done<=1; tx<=1;
++                        tick<=0; state<=IDLE; busy<=0; done<=0; tx<=1;
+                     end else tick<=tick+1'b1;
+                 end
+                 default: state<=IDLE;

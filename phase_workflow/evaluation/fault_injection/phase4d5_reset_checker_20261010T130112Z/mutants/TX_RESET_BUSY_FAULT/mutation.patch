@@ -1,0 +1,11 @@
+--- uart_tx_opt.v (frozen)
++++ uart_tx_opt.v (mutant)
+@@ -19,7 +19,7 @@
+     always @(posedge clk) begin
+         if (rst) begin
+             state<=IDLE; tick<=0; bit_idx<=0; shift_data<=0;
+-            tx<=1'b1; busy<=0; done<=0;
++            tx<=1'b1; busy<=0; done<=0; if (busy) tx<=1'b0;
+         end else begin
+             done<=0;
+             case (state)

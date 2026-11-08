@@ -1,0 +1,53 @@
+{
+  "scenarios": [
+    {
+      "id": "test_01",
+      "kind": "loopback",
+      "value": 0
+    },
+    {
+      "id": "test_02",
+      "kind": "loopback",
+      "value": 255
+    },
+    {
+      "id": "test_03",
+      "kind": "loopback",
+      "value": 85
+    },
+    {
+      "id": "test_04",
+      "kind": "loopback",
+      "value": 170
+    },
+    {
+      "id": "test_05",
+      "kind": "loopback",
+      "value": 129
+    },
+    {
+      "id": "test_06",
+      "kind": "loopback",
+      "value": 127
+    },
+    {
+      "id": "test_07",
+      "kind": "bad_stop"
+    },
+    {
+      "id": "test_08",
+      "kind": "reset_mid_tx"
+    },
+    {
+      "id": "test_09",
+      "kind": "busy_start",
+      "value": 18
+    },
+    {
+      "id": "test_10",
+      "kind": "paired_frames",
+      "value": 51
+    }
+  ],
+  "source": "LIVE_HERMES_NEW_ONESHOT"
+}

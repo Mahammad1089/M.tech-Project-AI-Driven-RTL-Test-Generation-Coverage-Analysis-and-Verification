@@ -1,0 +1,53 @@
+{
+  "scenarios": [
+    {
+      "id": "t01_zero",
+      "kind": "loopback",
+      "value": 0
+    },
+    {
+      "id": "t02_all_ones",
+      "kind": "loopback",
+      "value": 255
+    },
+    {
+      "id": "t03_alt55",
+      "kind": "loopback",
+      "value": 85
+    },
+    {
+      "id": "t04_alt_aa",
+      "kind": "loopback",
+      "value": 170
+    },
+    {
+      "id": "t05_edge81",
+      "kind": "loopback",
+      "value": 129
+    },
+    {
+      "id": "t06_other_data",
+      "kind": "loopback",
+      "value": 100
+    },
+    {
+      "id": "t07_framing_error",
+      "kind": "bad_stop"
+    },
+    {
+      "id": "t08_reset_mid_tx",
+      "kind": "reset_mid_tx"
+    },
+    {
+      "id": "t09_busy_start",
+      "kind": "busy_start",
+      "value": 1
+    },
+    {
+      "id": "t10_paired_frames",
+      "kind": "paired_frames",
+      "value": 200
+    }
+  ],
+  "source": "LIVE_HERMES_NEW_ONESHOT"
+}
