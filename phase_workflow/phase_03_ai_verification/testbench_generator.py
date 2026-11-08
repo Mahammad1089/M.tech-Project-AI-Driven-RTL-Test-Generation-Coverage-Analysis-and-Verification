@@ -104,7 +104,7 @@ module tb_uart_phase;
             if (error_ref) framing_count = framing_count + 1;
         end
     end
-    task one_loopback;
+__SPEC_ASSERTIONS__    task one_loopback;
         input [7:0] value;
         input integer bin_number;
         begin
@@ -198,7 +198,7 @@ module tb_uart_phase;
         @(negedge clk); #2; rst=0;
 __SCENARIO_CALLS__
         repeat(CPB*4) @(negedge clk);
-        $display("TOTAL_CHECKS=%0d",checks);
+__SPEC_MONITOR_MARKER__        $display("TOTAL_CHECKS=%0d",checks);
         $display("FAILED_CHECKS=%0d",failed);
         $display("CYCLES=%0d",cycles);
         $display("RX_FRAMES=%0d",received_count);
@@ -214,7 +214,56 @@ __SCENARIO_CALLS__
 endmodule
 '''
 
-def make_tb(scenarios, cpb):
+SPEC_ASSERTION_MONITOR = r'''
+    // Base-paper alignment: module-level SystemVerilog immediate assertions.
+    // These are executable checks, not deep concurrent SVA or formal proofs.
+    // Runs only with --spec-assertions; historical default TB is identical.
+    integer spec_monitored_cycles = 0;
+    reg spec_sampled_rst = 1'b1;
+    reg spec_prev_done_ref = 1'b0, spec_prev_done_opt = 1'b0;
+    reg spec_prev_valid_ref = 1'b0, spec_prev_valid_opt = 1'b0;
+    reg spec_prev_error_ref = 1'b0, spec_prev_error_opt = 1'b0;
+    always @(posedge clk) spec_sampled_rst <= rst;
+    always @(negedge clk) begin
+        #3; // outputs settled after the preceding rising edge
+        spec_monitored_cycles = spec_monitored_cycles + 1;
+        if (spec_sampled_rst) begin
+            assert ((tx_ref === 1'b1) && (busy_ref === 1'b0) && (done_ref === 1'b0))
+                else $fatal(1, "SPEC_TX_RESET: baseline");
+            assert ((tx_opt === 1'b1) && (busy_tx_opt === 1'b0) && (done_tx_opt === 1'b0))
+                else $fatal(1, "SPEC_TX_RESET: optimized");
+            assert ((valid_ref === 1'b0) && (busy_rx_ref === 1'b0) && (error_ref === 1'b0))
+                else $fatal(1, "SPEC_RX_RESET: baseline");
+            assert ((valid_opt === 1'b0) && (busy_rx_opt === 1'b0) && (error_opt === 1'b0))
+                else $fatal(1, "SPEC_RX_RESET: optimized");
+        end else begin
+            assert (!(valid_ref && error_ref))
+                else $fatal(1, "SPEC_RX_FLAGS: baseline valid/error overlap");
+            assert (!(valid_opt && error_opt))
+                else $fatal(1, "SPEC_RX_FLAGS: optimized valid/error overlap");
+            assert (!(done_ref && spec_prev_done_ref))
+                else $fatal(1, "SPEC_TX_DONE: baseline pulse >1 cycle");
+            assert (!(done_tx_opt && spec_prev_done_opt))
+                else $fatal(1, "SPEC_TX_DONE: optimized pulse >1 cycle");
+            assert (!(valid_ref && spec_prev_valid_ref))
+                else $fatal(1, "SPEC_RX_VALID: baseline pulse >1 cycle");
+            assert (!(valid_opt && spec_prev_valid_opt))
+                else $fatal(1, "SPEC_RX_VALID: optimized pulse >1 cycle");
+            assert (!(error_ref && spec_prev_error_ref))
+                else $fatal(1, "SPEC_RX_ERROR: baseline pulse >1 cycle");
+            assert (!(error_opt && spec_prev_error_opt))
+                else $fatal(1, "SPEC_RX_ERROR: optimized pulse >1 cycle");
+        end
+        spec_prev_done_ref = done_ref;
+        spec_prev_done_opt = done_tx_opt;
+        spec_prev_valid_ref = valid_ref;
+        spec_prev_valid_opt = valid_opt;
+        spec_prev_error_ref = error_ref;
+        spec_prev_error_opt = error_opt;
+    end
+'''
+
+def make_tb(scenarios, cpb, spec_assertions=False):
     if type(cpb) is not int or cpb < 8 or cpb > 256:
         raise ValueError('CPB must be integer between 8 and 256')
     scenarios=validate_scenarios(scenarios)
@@ -233,7 +282,12 @@ def make_tb(scenarios, cpb):
             calls.append(f"          one_loopback(8'd{value^255},{BINS.index(payload_bin(value^255))});")
             calls.append("          if (failed==pair_failed_prior) mark_bin(9);")
             calls.append("        end")
-    return TB_TEMPLATE.replace('__CPB__',str(cpb)).replace('__SCENARIO_CALLS__','\n'.join(calls))
+    return (TB_TEMPLATE.replace('__CPB__',str(cpb))
+            .replace('__SCENARIO_CALLS__','\n'.join(calls))
+            .replace('__SPEC_ASSERTIONS__', SPEC_ASSERTION_MONITOR if spec_assertions else '')
+            .replace('__SPEC_MONITOR_MARKER__',
+                     '        $display("SPEC_MONITORED_CYCLES=%0d",spec_monitored_cycles);\n'
+                     if spec_assertions else ''))
 
 if __name__=='__main__':
     import argparse

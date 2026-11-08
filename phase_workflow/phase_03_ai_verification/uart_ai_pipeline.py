@@ -106,7 +106,7 @@ def call_hermes(prompt_path,timeout,require_count=None):
         raise RuntimeError('Hermes call failed: '+str(result.get('error') or result.get('stage')))
     return parse_hermes_response(result,require_count=require_count)
 
-def simulate(name,scenarios,cpb):
+def simulate(name,scenarios,cpb,spec_assertions=False):
     if not shutil.which('iverilog') or not shutil.which('vvp'):
         raise RuntimeError('Icarus Verilog missing; install iverilog in Ubuntu WSL')
     stem=f'{name}_cpb{cpb}'
@@ -114,9 +114,9 @@ def simulate(name,scenarios,cpb):
     dest.mkdir(parents=True,exist_ok=True)
     tb=dest/'tb_uart_phase.v'
     exe=dest/'uart_sim.out'
-    tb.write_text(make_tb(scenarios,cpb),encoding='utf-8')
+    tb.write_text(make_tb(scenarios,cpb,spec_assertions=spec_assertions),encoding='utf-8')
     save(dest/'scenarios.json',{'scenarios':scenarios,'origin':name})
-    cmd=['iverilog','-g2012','-s','tb_uart_phase','-o',str(exe),str(tb),*(str(f) for f in SRC)]
+    cmd=['iverilog','-g2012',*(['-gassertions'] if spec_assertions else []),'-s','tb_uart_phase','-o',str(exe),str(tb),*(str(f) for f in SRC)]
     c=subprocess.run(cmd,capture_output=True,text=True,timeout=120)
     (dest/'compile.log').write_text(c.stdout+'\n'+c.stderr,encoding='utf-8')
     if c.returncode:
@@ -140,19 +140,26 @@ def simulate(name,scenarios,cpb):
         raise RuntimeError(f'{stem}: coverage signature incorrect')
     verdict=re.search(r'^VERDICT=(PASS|FAIL)\s*$',r.stdout,re.M)
     status=('PASS' if r.returncode==0 and failed==0 and verdict and verdict.group(1)=='PASS' else 'FAIL')
+    if spec_assertions:
+        monitored=field('SPEC_MONITORED_CYCLES')
+        if monitored <= 0:
+            raise RuntimeError(f'{stem}: assertion monitor never ran')
     report={'status':status,'suite':name,'cpb':cpb,'scenarios':len(scenarios),
             'checks':checks,'failed':failed,'cycles':cycles,'wall_seconds':duration,
             'coverage':bins,'covered_bins':sum(bins.values()),
             'coverage_pct':round(100*sum(bins.values())/len(BINS),2),
             'simulation_log':(dest/'simulation.log').relative_to(ROOT).as_posix()}
+    if spec_assertions:
+        report['spec_monitored_cycles']=monitored
+        report['spec_assertion_status']='PASS' if status=='PASS' else 'FAIL'
     save(dest/'result.json',report)
     print(f'[{status}] {stem}: {checks} checks; {report["covered_bins"]}/{len(BINS)} bins; {duration}s')
     if status!='PASS': raise RuntimeError(f'{stem}: simulation failed. See {dest / "simulation.log"}')
     return report
 
-def evaluate(name,scenarios,cpbs):
+def evaluate(name,scenarios,cpbs,spec_assertions=False):
     result=[]
-    for cpb in cpbs: result.append(simulate(name,scenarios,cpb))
+    for cpb in cpbs: result.append(simulate(name,scenarios,cpb,spec_assertions=spec_assertions))
     return result
 
 def aggregate(records):
@@ -200,6 +207,7 @@ def main():
     ap.add_argument('--cpb',nargs='+',type=int,default=[8,16,32,64])
     ap.add_argument('--ai-json',type=Path,help='Raw Hermes response JSON captured externally; documented AI provenance required')
     ap.add_argument('--timeout',type=int,default=180)
+    ap.add_argument('--spec-assertions',action='store_true',help='Opt-in UART specification monitors; defaults unchanged')
     ap.add_argument('--feedback-rounds',type=int,default=2)
     args=ap.parse_args()
     if args.cpb != sorted(set(args.cpb)) or any(not 8<=c<=256 for c in args.cpb):
@@ -220,7 +228,7 @@ def main():
              'note':'Actual measurements only; no estimated or fabricated test results'}
     if args.mode in ('baseline','all'):
         for name,scenarios in [('directed',directed()),('random',randomized(20261010))]:
-            results=evaluate(name,scenarios,args.cpb)
+            results=evaluate(name,scenarios,args.cpb,spec_assertions=args.spec_assertions)
             summary['suites'][name]=aggregate(results)
         save(RESULTS/'evaluation_summary.json',summary)
     if args.mode in ('ai','all'):
@@ -233,7 +241,7 @@ def main():
             ai=call_hermes(path,args.timeout,require_count=10)
             summary['ai_generation']='HERMES_CHAT_ONESHOT'
         save(RESULTS/'hermes'/'validated_ai_scenarios.json',{'scenarios':ai,'origin':summary['ai_generation']})
-        result=evaluate('ai_initial',ai,args.cpb)
+        result=evaluate('ai_initial',ai,args.cpb,spec_assertions=args.spec_assertions)
         summary['suites']['ai_initial']=aggregate(result)
         save(RESULTS/'evaluation_summary.json',summary)
         current=ai
@@ -251,7 +259,7 @@ def main():
             new=merge(current,extra)
             if len(new)==len(current):break
             current=new
-            result=evaluate(f'ai_feedback_{round_no}',current,args.cpb)
+            result=evaluate(f'ai_feedback_{round_no}',current,args.cpb,spec_assertions=args.spec_assertions)
             summary['suites'][f'ai_feedback_{round_no}']=aggregate(result)
             save(RESULTS/'evaluation_summary.json',summary)
         summary['ai_total_scenarios']=len(current)
